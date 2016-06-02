@@ -2,10 +2,30 @@
 	padding: 0px !important;
 }
 
+.m0 {
+	margin: 0px !important;
+}
+
 .ad-category {
     display: inline-block;
 }
 
 .ad-title {
-	
+	margin-top: 0px !important;
+	margin-bottom: 0px !important;
+}
+.mb20{
+	margin-bottom: 20px;
+	border-bottom: 1px solid #DAD6D6;
+}
+.listing-widget{
+    margin-top: -20px;
+}
+.img-reponsive{
+	width: 100%;
+	height: auto;
+}
+
+.category-link-home {
+	border: 1px solid #fefefe;
 }
