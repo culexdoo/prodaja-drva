@@ -47,13 +47,13 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a href="ad-list.html">Oglasnik</a>
+                            <a href="#">Prijavi se</a>
                         </li>
                         <li>
-                            <a href="about.html">O nama</a>
+                            <a href="#">Registriraj se</a>
                         </li>
                         <li>
-                            <a href="kontakt.html">Kontakt</a>
+                            <button type="button" class="btn btn-primary bmt10">Prijavi oglas</button>
                         </li>
                     </ul>
                 </div>
@@ -64,30 +64,27 @@
     </div>
     <div class="row m0">
         <!-- Header Carousel -->
-        <!-- Header Carousel -->
-        <div id="carousel-example" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carousel-example" data-slide-to="0" class="active"></li>
-                <li data-target="#carousel-example" data-slide-to="1"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="item active">
-                    <img src="images/main-banner1.jpg" />
-                    <div class="carousel-caption">
+        <div class="mh400" style="background-image: url(images/main-banner2.jpg);">
+            <div class="container text-center ">
+                <h1 class="text-white mt100"> Pretražite oglasnik </h1>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="col-lg-12 search-county">
+                            <i class="fa fa-map-marker fa-2x bgw icon-append"></i>
+                            <input type="text" name="country" id="autocomplete-ajax" class="form-control locinput input-rel searchtag-input has-icon" placeholder="Unesite županiju..." value="" autocomplete="off">
+                        </div>
                     </div>
-                </div>
-                <div class="item">
-                    <img src="images/main-banner3.jpeg" />
-                    <div class="carousel-caption">
+                    <div class="col-lg-4">
+                        <div class="col-lg-12 search-county">
+                            <i class="fa fa-tree fa-2x bgw icon-append"></i>
+                            <input type="text" name="ads" class="form-control has-icon" placeholder="Vrsta drveta..." value="">
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mt4">
+                        <button class="btn btn-primary btn-search btn-block"><i class="icon-search"></i><strong>Find</strong></button>
                     </div>
                 </div>
             </div>
-            <a class="left carousel-control" href="#carousel-example" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left"></span>
-            </a>
-            <a class="right carousel-control" href="#carousel-example" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right"></span>
-            </a>
         </div>
     </div>
     <!-- Kategorije start -->
@@ -95,55 +92,42 @@
         <div class="container">
             <div class="row m0">
                 <div class="col-lg-12">
-                    <h2 class="page-header">Vrsta drveta</h2>
+                    <h2 class="page-header text-center">Kategorije</h2>
                 </div>
-                <div class="col-md-3 col-sm-12">
+                <div class="col-md-4">
                     <div class="category-link-home">
                         <div class="row m0">
                             <div class="col-lg-12">
-                                <img src="images/bukva.jpg" class="img-reponsive" />
+                                <img src="images/ogrjevno-drvo.png" class="img-reponsive" />
                             </div>
-                            <div class="col-lg-12">
-                                <h5 class="category-title-homepage">Bukva</h5>
+                            <div class="col-lg-12 text-center">
+                                <h5 class="category-title-homepage">Ogrjevno drvo</h5>
                                 <a href="#" class="btn btn-primary">Pogledajte</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-12">
+                <div class="col-md-4">
                     <div class="category-link-home">
                         <div class="row m0">
                             <div class="col-lg-12">
-                                <img src="images/hrast.jpg" class="img-reponsive" />
+                                <img src="images/briketi.png" class="img-reponsive" />
                             </div>
-                            <div class="col-lg-12">
-                                <h5 class="category-title-homepage">Hrast</h5>
+                            <div class="col-lg-12 text-center">
+                                <h5 class="category-title-homepage ">Briketi</h5>
                                 <a href="#" class="btn btn-primary">Pogledajte</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-12">
+                <div class="col-md-4">
                     <div class="category-link-home">
                         <div class="row m0">
                             <div class="col-lg-12">
-                                <img src="images/grab.jpg" class="img-reponsive" />
+                                <img src="images/pelet.png" class="img-reponsive" />
                             </div>
-                            <div class="col-lg-12">
-                                <h5 class="category-title-homepage">Grab</h5>
-                                <a href="#" class="btn btn-primary">Pogledajte</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-12">
-                    <div class="category-link-home">
-                        <div class="row m0">
-                            <div class="col-lg-12">
-                                <img src="images/agacija.jpg" class="img-reponsive" />
-                            </div>
-                            <div class="col-lg-12">
-                                <h5 class="category-title-homepage">Agacija</h5>
+                            <div class="col-lg-12 text-center">
+                                <h5 class="category-title-homepage">Pelet</h5>
                                 <a href="#" class="btn btn-primary">Pogledajte</a>
                             </div>
                         </div>
@@ -153,6 +137,134 @@
         </div>
     </div>
     <!-- Kategorije end -->
+    <!-- Lista županija start -->
+    <section id="locations">
+        <div class="container">
+            <h2 class="page-header text-center">Izaberite županiju</h2>
+            <div class="location clearfix">
+                <div class="col-lg-12">
+                    <div class="col-lg-4">
+                        <div class="span3">
+                            <a href="#"><i class="fa fa-map-marker"></i>Zagrebačka županija</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="span3">
+                            <a href="#"><i class="fa fa-map-marker"></i>Krapinsko-zagorska županija</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="span3">
+                            <a href="#"><i class="fa fa-map-marker"></i>Sisačko-moslavačka županija</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="col-lg-4">
+                        <div class="span3">
+                            <a href="#"><i class="fa fa-map-marker"></i>Karlovačka županija</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="span3">
+                            <a href="#"><i class="fa fa-map-marker"></i>Varaždinska županija</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="span3">
+                            <a href="#"><i class="fa fa-map-marker"></i>Ličko-senjska županija</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="col-lg-4">
+                        <div class="span3">
+                            <a href="#"><i class="fa fa-map-marker"></i>Bjelovarsko-bilogorska županija</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="span3">
+                            <a href="#"><i class="fa fa-map-marker"></i>Primorsko-goranska županija</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="span3">
+                            <a href="#"><i class="fa fa-map-marker"></i>Koprivničko-križevačka županija</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="col-lg-4">
+                        <div class="span3">
+                            <a href="#"><i class="fa fa-map-marker"></i>Osječko-baranjska županija</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="span3">
+                            <a href="#"><i class="fa fa-map-marker"></i>Požeško-slavonska županija</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="span3">
+                            <a href="#"><i class="fa fa-map-marker"></i>Brodsko-posavska županija</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="col-lg-4">
+                        <div class="span3">
+                            <a href="#"><i class="fa fa-map-marker"></i>Zadarska županija</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="span3">
+                            <a href="#"><i class="fa fa-map-marker"></i>Istarska županija</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="span3">
+                            <a href="#"><i class="fa fa-map-marker"></i>Šibensko-kninska županija</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="col-lg-4">
+                        <div class="span3">
+                            <a href="#"><i class="fa fa-map-marker"></i>Vukovarsko-srijemska županija</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="span3">
+                            <a href="#"><i class="fa fa-map-marker"></i>Splitsko-dalmatinska županija</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="span3">
+                            <a href="#"><i class="fa fa-map-marker"></i>Virovitičko-podravska županija</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="col-lg-4">
+                        <div class="span3">
+                            <a href="#"><i class="fa fa-map-marker"></i>Dubrovačko-neretvanska županija</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="span3">
+                            <a href="#"><i class="fa fa-map-marker"></i>Dubrovačko-neretvanska županija</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="span3">
+                            <a href="#"><i class="fa fa-map-marker"></i>Grad Zagreb</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Lista županija end -->
     <!-- Najnoviji oglasi start -->
     <div class="row m0">
         <div class="container">
@@ -161,8 +273,8 @@
             </div>
             <div class="col-lg-3">
                 <div class="customnavigation">
-                    <a class="btn prev">Previous</a>
-                    <a class="btn next">Next</a>
+                    <a class="btn prev">Prethodni</a>
+                    <a class="btn next">Sljedeći</a>
                 </div>
             </div>
             <div id="owl-demo" class="owl-carousel owl-theme">
@@ -174,9 +286,9 @@
                         <div class="panel">
                             <div class="panel-body p0">
                                 <a href="ad-view.html">
-                                    <p class="text-center">Naslov 1</p>
+                                    <p class="ad-title-homepage">Naslov 1</p>
                                 </a>
-                                <p class="text-center" style="font-weight: bold;">200 kn</p>
+                                <p class="ad-price-homepage">200 kn </p>
                             </div>
                         </div>
                     </div>
@@ -189,9 +301,9 @@
                         <div class="panel">
                             <div class="panel-body p0">
                                 <a href="single-ad-view.html">
-                                    <p class="text-center">Naslov 2</p>
+                                    <p class="ad-title-homepage">Naslov 2</p>
                                 </a>
-                                <p class="text-center" style="font-weight: bold;">200 kn</p>
+                                <p class="ad-price-homepage">200 kn </p>
                             </div>
                         </div>
                     </div>
@@ -204,9 +316,9 @@
                         <div class="panel">
                             <div class="panel-body p0">
                                 <a href="single-ad-view.html">
-                                    <p class="text-center">Naslov 3</p>
+                                    <p class="ad-title-homepage">Naslov 3</p>
                                 </a>
-                                <p class="text-center" style="font-weight: bold;">200 kn</p>
+                                <p class="ad-price-homepage">200 kn </p>
                             </div>
                         </div>
                     </div>
@@ -219,9 +331,9 @@
                         <div class="panel">
                             <div class="panel-body p0">
                                 <a href="single-ad-view.html">
-                                    <p class="text-center">Naslov 4</p>
+                                    <p class="ad-title-homepage">Naslov 4</p>
                                 </a>
-                                <p class="text-center" style="font-weight: bold;">200 kn</p>
+                                <p class="ad-price-homepage">200 kn </p>
                             </div>
                         </div>
                     </div>
@@ -234,9 +346,9 @@
                         <div class="panel">
                             <div class="panel-body p0">
                                 <a href="single-ad-view.html">
-                                    <p class="text-center">Naslov 5</p>
+                                    <p class="ad-title-homepage">Naslov 5</p>
                                 </a>
-                                <p class="text-center" style="font-weight: bold;">200 kn</p>
+                                <p class="ad-price-homepage">200 kn </p>
                             </div>
                         </div>
                     </div>
@@ -249,9 +361,9 @@
                         <div class="panel">
                             <div class="panel-body p0">
                                 <a href="single-ad-view.html">
-                                    <p class="text-center">Naslov 6</p>
+                                    <p class="ad-title-homepage">Naslov 6</p>
                                 </a>
-                                <p class="text-center" style="font-weight: bold;">200 kn</p>
+                                <p class="ad-price-homepage">200 kn </p>
                             </div>
                         </div>
                     </div>
@@ -264,9 +376,9 @@
                         <div class="panel">
                             <div class="panel-body p0">
                                 <a href="single-ad-view.html">
-                                    <p class="text-center">Naslov 7</p>
+                                    <p class="ad-title-homepage">Naslov 7</p>
                                 </a>
-                                <p class="text-center" style="font-weight: bold;">200 kn</p>
+                                <p class="ad-price-homepage">200 kn </p>
                             </div>
                         </div>
                     </div>
@@ -286,55 +398,55 @@
             <div class="col-lg-12">
                 <h2 class="page-header">Izdvojeni oglasi</h2>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-3">
                 <a href="featured-ad-view.html">
                     <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
                 </a>
                 <div class="panel">
                     <div class="panel-body p0">
                         <a href="featured-ad-view.html">
-                            <p class="text-center">Naslov 1</p>
+                            <p class="featured-ad-title-homepage">Naslov 1</p>
                         </a>
-                        <p class="text-center" style="font-weight: bold;">200 kn</p>
+                        <p class="featured-ad-price-homepage">100 kn </p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-3">
                 <a href="featured-ad-view.html">
                     <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
                 </a>
                 <div class="panel">
                     <div class="panel-body p0">
                         <a href="featured-ad-view.html">
-                            <p class="text-center">Naslov 2</p>
+                            <p class="featured-ad-title-homepage">Naslov 2</p>
                         </a>
-                        <p class="text-center" style="font-weight: bold;">200 kn</p>
+                        <p class="featured-ad-price-homepage">100 kn </p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-3">
                 <a href="featured-ad-view.html">
                     <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
                 </a>
                 <div class="panel">
                     <div class="panel-body p0">
                         <a href="featured-ad-view.html">
-                            <p class="text-center">Naslov 3</p>
+                            <p class="featured-ad-title-homepage">Naslov 3</p>
                         </a>
-                        <p class="text-center" style="font-weight: bold;">200 kn</p>
+                        <p class="featured-ad-price-homepage">100 kn </p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-3">
                 <a href="featured-ad-view.html">
                     <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
                 </a>
                 <div class="panel">
                     <div class="panel-body p0">
                         <a href="featured-ad-view.html">
-                            <p class="text-center">Naslov 4</p>
+                            <p class="featured-ad-title-homepage">Naslov 4</p>
                         </a>
-                        <p class="text-center" style="font-weight: bold;">200 kn</p>
+                        <p class="featured-ad-price-homepage">100 kn </p>
                     </div>
                 </div>
             </div>
@@ -348,7 +460,7 @@
         </div>
     </div>
     <!-- Featured list button end -->
-    <!-- stats start -->
+    <!-- Stats start -->
     <div class="row m0">
         <div class="stats-homepage">
             <div class="col-md-4">
@@ -380,74 +492,75 @@
             </div>
         </div>
     </div>
-    <!-- stats end -->
+    <!-- Stats end -->
     <!-- tipka za oglasavanje -->
     <div class="row m0 bgcol">
-        <div class="text-center publish-ad">
+        <div class="text-center publish-ad pt20">
             <h2 class="font-white"> Objavi svoj oglas</h2>
             <a href="#" class="btn btn-default">Objavi</a>
         </div>
     </div>
     <!-- Testimonials start -->
-    <div class="row m0">
-        <div class="container">
-            <div class="row m0">
-                <div class="col-md-12" data-wow-delay="0.2s">
-                    <div class="carousel slide" data-ride="carousel" id="quote-carousel">
-                        <!-- Bottom Carousel Indicators -->
-                        <ol class="carousel-indicators">
-                            <li data-target="#quote-carousel" data-slide-to="0" class="active"><img class="img-responsive " src="https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg" alt="">
-                            </li>
-                            <li data-target="#quote-carousel" data-slide-to="1"><img class="img-responsive" src="https://s3.amazonaws.com/uifaces/faces/twitter/rssems/128.jpg" alt="">
-                            </li>
-                            <li data-target="#quote-carousel" data-slide-to="2"><img class="img-responsive" src="https://s3.amazonaws.com/uifaces/faces/twitter/adellecharles/128.jpg" alt="">
-                            </li>
-                        </ol>
-                        <!-- Carousel Slides / Quotes -->
-                        <div class="carousel-inner text-center">
-                            <!-- Quote 1 -->
-                            <div class="item active">
-                                <blockquote>
-                                    <div class="row m0">
-                                        <div class="col-sm-8 col-sm-offset-2">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. !</p>
-                                            <small>Someone famous</small>
-                                        </div>
+<div class="row m0">
+    <div class="container">
+        <div class="row m0">
+            <div class="col-md-12" data-wow-delay="0.2s">
+                <div class="carousel slide" data-ride="carousel" id="quote-carousel">
+                    <!-- Bottom Carousel Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#quote-carousel" data-slide-to="0" class="active"><img class="img-responsive " src="https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg" alt="">
+                        </li>
+                        <li data-target="#quote-carousel" data-slide-to="1"><img class="img-responsive" src="https://s3.amazonaws.com/uifaces/faces/twitter/rssems/128.jpg" alt="">
+                        </li>
+                        <li data-target="#quote-carousel" data-slide-to="2"><img class="img-responsive" src="https://s3.amazonaws.com/uifaces/faces/twitter/adellecharles/128.jpg" alt="">
+                        </li>
+                    </ol>
+                    <!-- Carousel Slides / Quotes -->
+                    <div class="carousel-inner text-center">
+                        <!-- Quote 1 -->
+                        <div class="item active">
+                            <blockquote>
+                                <div class="row m0">
+                                    <div class="col-sm-8 col-sm-offset-2">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. !</p>
+                                        <small>Someone famous</small>
                                     </div>
-                                </blockquote>
-                            </div>
-                            <!-- Quote 2 -->
-                            <div class="item">
-                                <blockquote>
-                                    <div class="row m0">
-                                        <div class="col-sm-8 col-sm-offset-2">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
-                                            <small>Someone famous</small>
-                                        </div>
-                                    </div>
-                                </blockquote>
-                            </div>
-                            <!-- Quote 3 -->
-                            <div class="item">
-                                <blockquote>
-                                    <div class="row m0">
-                                        <div class="col-sm-8 col-sm-offset-2">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. .</p>
-                                            <small>Someone famous</small>
-                                        </div>
-                                    </div>
-                                </blockquote>
-                            </div>
+                                </div>
+                            </blockquote>
                         </div>
-                        <!-- Carousel Buttons Next/Prev -->
-                        <a data-slide="prev" href="#quote-carousel" class="left carousel-control"><i class="fa fa-chevron-left"></i></a>
-                        <a data-slide="next" href="#quote-carousel" class="right carousel-control"><i class="fa fa-chevron-right"></i></a>
+                        <!-- Quote 2 -->
+                        <div class="item">
+                            <blockquote>
+                                <div class="row m0">
+                                    <div class="col-sm-8 col-sm-offset-2">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+                                        <small>Someone famous</small>
+                                    </div>
+                                </div>
+                            </blockquote>
+                        </div>
+                        <!-- Quote 3 -->
+                        <div class="item">
+                            <blockquote>
+                                <div class="row m0">
+                                    <div class="col-sm-8 col-sm-offset-2">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. .</p>
+                                        <small>Someone famous</small>
+                                    </div>
+                                </div>
+                            </blockquote>
+                        </div>
                     </div>
+                    <!-- Carousel Buttons Next/Prev -->
+                    <a data-slide="prev" href="#quote-carousel" class="left carousel-control"><i class="fa fa-chevron-left"></i></a>
+                    <a data-slide="next" href="#quote-carousel" class="right carousel-control"><i class="fa fa-chevron-right"></i></a>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Testimonials end -->
+</div>
+<!-- Testimonials end -->
+
     <!-- /tipka za oglasavanje -->
     <!-- Footer -->
     <div class="row m0">
