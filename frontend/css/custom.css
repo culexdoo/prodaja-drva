@@ -1,3 +1,19 @@
+body {
+    font-family: 'Lora', serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: 'Bree Serif', serif;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
 .p0 {
     padding: 0px !important;
 }
@@ -10,6 +26,10 @@
     margin-top: 4px;
 }
 
+.mt25 {
+    margin-top: 25px !important;
+}
+
 .mb35 {
     margin-bottom: 35px !important;
 }
@@ -18,8 +38,24 @@
     padding-top: 20px;
 }
 
+.mt10 {
+    margin-top: 10px;
+}
+
 .mt100 {
     margin-top: 100px;
+}
+
+.mh45 {
+    min-height: 45px;
+}
+
+.mh95 {
+    min-height: 95px;
+}
+
+.h50 {
+    height: 50px !important;
 }
 
 .ad-category {
@@ -84,14 +120,72 @@
 
 .search-county {
     padding: 5px;
+    background: #fff;
+    border-radius: 1px;
 }
+
+.btn-block {
+    display: block;
+    width: 100%;
+    height: 38px;
+    margin-top: -4px;
+}
+
+.br0 {
+    border-radius: 0px;
+}
+
+.bl1pxs {
+    border-left: 1px solid #222;
+}
+
+.posrel83l {
+    position: relative;
+    left: 83px;
+}
+
+
+/* Select 2 start */
+
+.select2 {
+    width: 280px !important;
+}
+
+.select2-container--open {
+    width: 380px !important;
+}
+
+.select2-container--open .select2-dropdown {
+    left: -5px;
+    top: 10px;
+}
+
+.select2-container--default .select2-selection--single {
+    border: 0px;
+}
+
+.select2-container {
+    top: 7px;
+    font-size: 16px;
+}
+
+
+/* Select 2 end */
 
 .icon-append {
     color: #949494;
-    font-size: 18px;
-    left: 20px;
+    font-size: 25px;
+    left: 13px;
     position: absolute;
-    top: 12px;
+    top: 13px;
+    z-index: 9999;
+}
+
+.h2-seprator {
+    height: 1px;
+    width: 100px;
+    background: #e96969;
+    margin: 40px auto;
 }
 
 .has-icon {
@@ -109,7 +203,6 @@ section#locations .location {
 section#locations .location .span3 {
     margin-left: 30px;
     margin-bottom: 30px;
-    border-left: 5px solid #333;
     width: 265px;
     box-shadow: 0px 2px 0px 0px #F1F1F1;
 }
@@ -117,7 +210,7 @@ section#locations .location .span3 {
 section#locations .location .span3 a {
     display: block;
     font-size: 14px;
-    font-family: 'Montserrat';
+    font-family: 'Bree Serif';
     color: #333;
     padding: 10px;
     border: 1px solid #eee;
@@ -125,16 +218,151 @@ section#locations .location .span3 a {
     text-transform: uppercase;
 }
 
-section#locations .location .span3 {
-    margin-left: 30px;
-    margin-bottom: 30px;
+.border-black-red {
     border-left: 5px solid #333;
-    width: 265px;
-    box-shadow: 0px 2px 0px 0px #F1F1F1;
+}
+
+.border-black-red:hover {
+    border-left: 5px solid #e96969;
+}
+
+section#locations .location .span3 a:hover {
+    color: #e96969 !important
+}
+
+section#locations .location a:hover {
+    color: #e96969 !important;
+    text-decoration: none;
 }
 
 
-/* testimonials start */
+/* Paralax background & tipka za oglašavanje start */
+
+.callout-section {
+    padding: 125px 0px;
+    text-align: center;
+}
+
+.callout-inner {
+    line-height: 24px;
+}
+
+.callout-inner h4,
+.callout-inner h4 span {
+    margin: 0;
+    font-size: 48px !important;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: "Bree Serif";
+    color: #fff;
+}
+
+.callout-inner p {
+    margin: 20px 0px 30px;
+    font-size: 32px !important;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: "Bree Serif";
+    color: #fff;
+}
+
+.callout .view-more-btn {
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    position: relative !important;
+    background: none;
+}
+
+.view-more-btn {
+    width: 210px;
+    height: 48px;
+    margin: 0 auto;
+    z-index: 999;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -29px;
+    background: #fff;
+}
+
+.callout .view-more-btn .more-btn-inner {
+    box-shadow: none;
+}
+
+.more-btn-inner {
+    background: #f8f8f8;
+    line-height: 48px;
+    text-align: center;
+    font-size: 14px;
+    color: #ffffff;
+    font-family: 'Bree Serif';
+    font-weight: 400;
+    border-radius: 60px;
+    box-shadow: 0px 3px 0px 0px #F1F1F1;
+}
+
+.callout-section .more-btn-inner a {
+    font-weight: 700;
+    display: block;
+}
+
+.more-btn-inner a {
+    font-size: 14px;
+    color: #333;
+    font-family: "Bree Serif";
+    font-weight: 400;
+    line-height: 48px;
+    text-transform: uppercase;
+    display: block;
+}
+
+.more-btn-inner a:hover {
+    text-decoration: none !important;
+    background-color: #e96969 !important;
+    border-radius: 60px;
+}
+
+
+/* Paralax background & tipka za oglašavanje end */
+
+.btn-default:hover {
+    color: #333;
+    background-color: #e96969 !important;
+    border-color: #e96969 !important;
+}
+
+.page-header {
+    border-bottom: 0px;
+}
+
+.btn-primary {
+    color: #333;
+    background-color: #f8f8f8;
+    border-color: #d8d2d2;
+}
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: #e96969 !important;
+    border-color: #e96969 !important;
+}
+
+.btn-primary:active {
+    background-color: #e96969 !important;
+    border-color: #e96969 !important;
+}
+
+.btn-primary:focus {
+    background-color: #e96969 !important;
+    border-color: #e96969 !important;
+}
+
+.category-title-homepage {
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 
 
 /* Carousel */
@@ -211,6 +439,53 @@ section#locations .location .span3 {
 }
 
 
+/*  tipka za poziv start */
+
+.page-bottom-info {
+    color: #fff;
+    background: #16A085;
+}
+
+.page-bottom-info-inner {
+    background-size: cover;
+    padding: 75px 0;
+}
+
+.page-bottom-info-content {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.page-bottom-info-content h1 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    margin-top: 0;
+    position: relative;
+}
+
+.btn-primary-dark {
+    background-color: #028c71;
+    border-color: #028c71;
+    color: #fff;
+}
+
+.btn-primary-dark:hover {
+    background-color: #008166;
+    border-color: #008166;
+    color: #FFFFFF;
+}
+
+.color50 {
+    opacity: 0.5;
+}
+
+
+/*  tipka za poziv end */
+
+
 /* Testimonials end */
 
 .stats-homepage {
@@ -243,7 +518,7 @@ section#locations .location .span3 {
 
 .footer-nav {
     list-style-type: none;
-    color: #fff;
+    color: #333;
 }
 
 .footer-nav a {
@@ -251,7 +526,11 @@ section#locations .location .span3 {
     border-left: 1px solid #c1bbbb;
     padding-left: 5px;
     padding-right: 2px;
-    color: #fff;
+    color: #333;
+}
+
+.footer-nav a:hover {
+    text-decoration: underline;
 }
 
 .footer-nav li a:first-child {
@@ -266,9 +545,25 @@ section#locations .location .span3 {
     min-height: 856px;
 }
 
+.ad-title {
+    color: #222;
+}
+
+.ad-title:hover {
+    color: #e96969 !important
+}
+
 .ad-title-homepage {
     text-align: center;
     font-size: 16px;
+    color: #222;
+}
+
+.category-title-homepage {}
+
+.ad-title-homepage:hover {
+    text-decoration: none;
+    color: #e96969 !important;
 }
 
 .ad-price-homepage {
@@ -279,6 +574,16 @@ section#locations .location .span3 {
 .featured-ad-title-homepage {
     text-align: center;
     font-size: 16px;
+    color: #222;
+}
+
+.featured-ad-title-homepage:hover {
+    text-decoration: none;
+    color: #e96969 !important;
+}
+
+.featured-ad-title-homepage:hover {
+    text-decoration: none;
 }
 
 .featured-ad-price-homepage {
@@ -292,7 +597,7 @@ section#locations .location .span3 {
 }
 
 .navbar-inverse .navbar-nav>li>a {
-    color: #e2e2e2 !important;
+    color: #fff !important;
 }
 
 
@@ -426,7 +731,7 @@ pre.pre-show {
 
 #footer {
     padding: 20px 0px;
-    background: #B69F6B;
+    background: #fff;
     text-align: center
 }
 

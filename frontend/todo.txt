@@ -1,0 +1,34 @@
+homepage slider height: 400px    ----------
+trazilica s 2 elementa:
+1. search zupanije dropdown meni   -------
+2. vrsta drveta	   dropwodn meni   -------
+
+navigacija: 
+lijevo logo     
+desno login, signup, post ad tipka  ------
+
+umjesto vrsta drveta staviti kategorije (ogrijevno drvo, briket, pelet) -------
+izdvojeni oglasi: kategorija, vrsta drveta, zupanija, slicno kao na indexu...
+
+statistika kopirati s bootclasifieda ----
+
+
+defaultni font - Lora ------- 
+h1, h2, h3... - Bree Serif -----
+
+
+
+vrsta pakiranja: paleta, rinfuza, metrice, vreæe, -------
+
+select 2 integrirati na main-banneru... odabir zupanije i vrsti drveta ( promijeniti u kategorija ogrijeva) -------
+
+
+
+
+
+
+
+
+
+
+
