@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
 body {
     font-family: 'Lora', serif;
 }
@@ -14,6 +15,19 @@ a:hover {
     text-decoration: none;
 }
 
+.bg-whitesmoke {
+    background-color: whitesmoke;
+}
+
+.logo-img {
+    width: 150px;
+    margin-top: -15px;
+}
+
+.scrolloff {
+    pointer-events: none;
+}
+
 .p0 {
     padding: 0px !important;
 }
@@ -22,12 +36,32 @@ a:hover {
     margin: 0px !important;
 }
 
+.ml0 {
+    margin-left: 0px !important;
+}
+
+.mt0 {
+    margin-top: 0px !important;
+}
+
 .mb0 {
     margin-bottom: 0px !important;
 }
 
+.mt2 {
+    margin-top: 2px;
+}
+
 .mt4 {
     margin-top: 4px;
+}
+
+.mr8 {
+    margin-right: 8px !important;
+}
+
+.mt15 {
+    margin-top: 15px;
 }
 
 .mt25 {
@@ -66,6 +100,26 @@ a:hover {
     min-height: 95px;
 }
 
+.mh190 {
+    max-height: 190px;
+}
+
+.mtb120 {
+    margin-top: 120px !important;
+    margin-bottom: 120px !important;
+}
+
+.mt120 {
+    margin-top: 120px !important;
+}
+
+.setwh {
+    width: 100%;
+    max-width: 255px;
+    max-height: 160px;
+    overflow: hidden;
+}
+
 .mtb30 {
     margin-top: 30px;
     margin-bottom: 30px;
@@ -97,6 +151,28 @@ a:hover {
 
 .fs65 {
     font-size: 65px;
+}
+
+.cta {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 800;
+    background-color: #e74c3c !important;
+    color: #fff !important;
+    border: 0px !important;
+    box-shadow: 0px 5px 0px 0px #CE3323;
+    border-radius: 3px !important;
+}
+
+.cta:hover {
+    background-color: #FF6656;
+}
+
+.stat-icon {}
+
+.stat-title {
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 500 !important;
 }
 
 .ad-category {
@@ -134,6 +210,10 @@ a:hover {
     margin-top: 30px;
 }
 
+.mt50 {
+    margin-top: 50px;
+}
+
 .img-reponsive {
     width: 100%;
     height: auto;
@@ -165,6 +245,23 @@ a:hover {
     border-radius: 1px;
 }
 
+.btn {
+    border-radius: 5px;
+    padding: 15px 25px;
+    font-size: 22px;
+    text-decoration: none;
+    margin: 20px;
+    color: #fff;
+    position: relative;
+    display: inline-block;
+}
+
+.btn:active {
+    transform: translate(0px, 5px);
+    -webkit-transform: translate(0px, 5px);
+    box-shadow: 0px 1px 0px 0px;
+}
+
 .btn-block {
     display: block;
     width: 100%;
@@ -174,6 +271,10 @@ a:hover {
 
 .br0 {
     border-radius: 0px;
+}
+
+.bl1pxw {
+    border-left: 1px solid #fff;
 }
 
 .bl1pxs {
@@ -225,7 +326,7 @@ a:hover {
 .h2-separator {
     height: 1px;
     width: 100px;
-    background: #e96969;
+    background: #e74c3c;
     margin: 30px auto;
 }
 
@@ -264,15 +365,15 @@ section#locations .location .span3 a {
 }
 
 .border-black-red:hover {
-    border-left: 5px solid #e96969;
+    border-left: 5px solid #e74c3c;
 }
 
 section#locations .location .span3 a:hover {
-    color: #e96969 !important
+    color: #e74c3c !important
 }
 
 section#locations .location a:hover {
-    color: #e96969 !important;
+    color: #e74c3c !important;
     text-decoration: none;
 }
 
@@ -360,7 +461,7 @@ section#locations .location a:hover {
 
 .more-btn-inner a:hover {
     text-decoration: none !important;
-    background-color: #e96969 !important;
+    background-color: #e74c3c !important;
     border-radius: 60px;
     color: #fff;
 }
@@ -368,10 +469,16 @@ section#locations .location a:hover {
 
 /* Paralax background & tipka za oglašavanje end */
 
+.btn-default {
+    color: #fff;
+    background-color: #e74c3c;
+    border-color: #e74c3c;
+}
+
 .btn-default:hover {
     color: #fff;
-    background-color: #e96969 !important;
-    border-color: #e96969 !important;
+    background-color: #e74c3c !important;
+    border-color: #e74c3c !important;
 }
 
 .page-header {
@@ -379,32 +486,28 @@ section#locations .location a:hover {
 }
 
 .btn-primary {
-    color: #333;
-    background-color: #f8f8f8;
-    border-color: #d8d2d2;
+    color: #fff;
+    background-color: #e74c3c;
+    border-color: #e74c3c;
     text-transform: uppercase;
     font-size: 14px;
+    border-radius: 0px;
 }
 
 .btn-primary:hover {
     color: #fff;
-    background-color: #e96969 !important;
-    border-color: #e96969 !important;
+    background-color: #e74c3c !important;
+    border-color: #e74c3c !important;
 }
 
 .btn-primary:active {
-    background-color: #e96969 !important;
-    border-color: #e96969 !important;
+    background-color: #e74c3c !important;
+    border-color: #e74c3c !important;
 }
 
 .btn-primary:focus {
-    background-color: #e96969 !important;
-    border-color: #e96969 !important;
-}
-
-.btn:active:focus,
-.btn:focus {
-    outline: 0px;
+    background-color: #e74c3c !important;
+    border-color: #e74c3c !important;
 }
 
 .category-title-homepage {
@@ -492,7 +595,7 @@ section#locations .location a:hover {
 
 .page-bottom-info {
     color: #fff;
-    background: #16A085;
+    background: #26A65B;
 }
 
 .page-bottom-info-inner {
@@ -603,10 +706,10 @@ section#locations .location a:hover {
 }
 
 .btn-lg {
-    padding: 6px 16px;
+    padding: 10px 15px 5px;
     font-size: 16px;
     line-height: 1.3333333;
-    border-radius: 6px;
+    border-radius: 0px;
     text-transform: uppercase;
 }
 
@@ -629,7 +732,7 @@ section#locations .location a:hover {
 
 .publish-ad {
     max-width: 1920px;
-    background-color: #B69F6B;
+    background-color: #26A65B;
     height: 160px;
 }
 
@@ -675,7 +778,7 @@ section#locations .location a:hover {
 }
 
 .ad-title:hover {
-    color: #e96969 !important
+    color: #e74c3c !important
 }
 
 .ad-title-homepage {
@@ -688,7 +791,7 @@ section#locations .location a:hover {
 
 .ad-title-homepage:hover {
     text-decoration: none;
-    color: #e96969 !important;
+    color: #e74c3c !important;
 }
 
 .ad-price-homepage {
@@ -704,7 +807,7 @@ section#locations .location a:hover {
 
 .featured-ad-title-homepage:hover {
     text-decoration: none;
-    color: #e96969 !important;
+    color: #e74c3c !important;
 }
 
 .featured-ad-title-homepage:hover {
@@ -717,12 +820,14 @@ section#locations .location a:hover {
 }
 
 .navbar-inverse {
-    background-color: #B69F6B;
-    border-color: #B69F6B;
+    background-color: #26A65B;
+    border-color: #26A65B;
 }
 
 .navbar-inverse .navbar-nav>li>a {
     color: #fff !important;
+    text-transform: uppercase;
+    font-size: 12px;
 }
 
 .table>thead>tr>th {
@@ -749,7 +854,7 @@ section#locations .location a:hover {
 }
 
 .glyphicon {
-    color: #e96969;
+    color: #e74c3c;
     margin-top: 10px;
     margin-bottom: 10px;
 }

@@ -16,6 +16,7 @@
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Lora&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Bree+Serif&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,900,800&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <!-- select2 -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
     <!-- Carousel plugin -->
@@ -45,7 +46,9 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html">LOGO</a>
+                    <a class="navbar-brand" href="index.html">
+                        <img class="logo-img" src="images/loog.png">
+                    </a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -57,7 +60,8 @@
                             <a href="registration.html">Registracija</a>
                         </li>
                         <li>
-                            <button type="button" class="btn btn-primary bmt10">Objavi oglas</button>
+                            <a href="#" class="btn btn-primary btn-lg cta mt0"> <i class="fa fa-pencil-square stat-icon pull-left mt4 mr8"></i> Objavi oglas
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -68,7 +72,7 @@
     </div>
     <div class="row m0">
         <!-- Header Carousel -->
-        <div class="mh400" style="background-image: url(images/main-banner2.jpg);">
+        <div class="mh400" style="background-image: url(images/main-banner.jpg);">
             <div class="container text-center ">
                 <h1 class="text-white mt100"> Pretražite oglasnik </h1>
                 <div class="row">
@@ -164,7 +168,7 @@
                             </div>
                         </div>
                         <div class="col-lg-2 mt4 p0">
-                            <button class="btn btn-primary btn-search btn-block br0 h50"><i class="icon-search"></i><strong style="font-size: 16px; text-transform: uppercase;">Pretraži</strong></button>
+                            <button class="btn btn-primary btn-search btn-block br0 h50 ml0"><i class="fa fa-search pull-left"></i><strong>Pretraži</strong></button>
                         </div>
                     </div>
                 </div>
@@ -172,7 +176,7 @@
         </div>
     </div>
     <!-- Kategorije start -->
-    <div class="row m0">
+    <div class="row m0 mtb120">
         <div class="container">
             <div class="row m0">
                 <div class="col-lg-12">
@@ -190,7 +194,7 @@
                             </div>
                             <div class="col-lg-12 text-center">
                                 <h5 class="category-title-homepage">Ogrjevno drvo</h5>
-                                <a href="#" class="btn btn-primary">Pogledajte</a>
+                                <a href="#" class="btn btn-primary btn-lg cta"> <i class="fa fa-eye pull-left mt2"></i>Pogledajte</a>
                             </div>
                         </div>
                     </div>
@@ -203,7 +207,7 @@
                             </div>
                             <div class="col-lg-12 text-center">
                                 <h5 class="category-title-homepage ">Briketi</h5>
-                                <a href="#" class="btn btn-primary">Pogledajte</a>
+                                <a href="#" class="btn btn-primary btn-lg  cta"><i class="fa fa-eye pull-left mt2"></i>Pogledajte</a>
                             </div>
                         </div>
                     </div>
@@ -216,7 +220,7 @@
                             </div>
                             <div class="col-lg-12 text-center">
                                 <h5 class="category-title-homepage">Pelet</h5>
-                                <a href="#" class="btn btn-primary">Pogledajte</a>
+                                <a href="#" class="btn btn-primary btn-lg  cta"><i class="fa fa-eye pull-left mt2"></i>Pogledajte</a>
                             </div>
                         </div>
                     </div>
@@ -225,6 +229,15 @@
         </div>
     </div>
     <!-- Kategorije end -->
+    <!-- Google map start -->
+    <div class="row m0 mtb120">
+        <div class="col-lg-12 p0">
+            <section id="canvas1" class="map">
+                <iframe id="map_canvas1" src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d1206571.1652117604!2d16.059186210497877!3d45.37975313453692!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1shrvatska!5e0!3m2!1shr!2shr!4v1465813840173" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </section>
+        </div>
+    </div>
+    <!-- Google map end -->
     <!-- Lista županija start -->
     <section id="locations">
         <div class="container">
@@ -359,7 +372,7 @@
     </section>
     <!-- Lista županija end -->
     <!-- Paralax background & tipka za oglašavanje start -->
-    <section class="callout-section" style="background:url(images/callout-bg1.jpg) center center fixed">
+    <section class="callout-section mtb120" style="background:url(images/callout-bg1.jpg) center center fixed">
         <div class="container ">
             <div class="callout clearfix">
                 <div class="callout-inner">
@@ -402,7 +415,7 @@
                 <div class="item">
                     <div class="col-md-12">
                         <a href="single-ad-view.html">
-                            <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
+                            <img class="img-responsive img-portfolio img-hover setwh" src="http://www.njuskalo.hr/image-w920x690/grijanje-hladenje-ostalo/drva-ogrijev-bukva-slika-65133805.jpg" alt="">
                         </a>
                         <div class="panel">
                             <div class="panel-body p0">
@@ -417,7 +430,7 @@
                 <div class="item">
                     <div class="col-md-12">
                         <a href="single-ad-view.html">
-                            <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
+                            <img class="img-responsive img-portfolio img-hover setwh" src="http://www.njuskalo.hr/image-w920x690/grijanje-hladenje-ostalo/drva-ogrijev-1-klasa-slika-66298450.jpg" alt="">
                         </a>
                         <div class="panel">
                             <div class="panel-body p0">
@@ -432,7 +445,7 @@
                 <div class="item">
                     <div class="col-md-12">
                         <a href="single-ad-view.html">
-                            <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
+                            <img class="img-responsive img-portfolio img-hover setwh" src="http://www.njuskalo.hr/image-w920x690/grijanje-hladenje-ostalo/drva-ogrijev-besplatna-dostava-slika-66297816.jpg" alt="">
                         </a>
                         <div class="panel">
                             <div class="panel-body p0">
@@ -447,7 +460,7 @@
                 <div class="item">
                     <div class="col-md-12">
                         <a href="single-ad-view.html">
-                            <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
+                            <img class="img-responsive img-portfolio img-hover setwh" src="http://www.njuskalo.hr/image-w920x690/grijanje-hladenje-ostalo/drva-ogrijev-besplatna-dostava-slika-46716888.jpg" alt="">
                         </a>
                         <div class="panel">
                             <div class="panel-body p0">
@@ -462,7 +475,7 @@
                 <div class="item">
                     <div class="col-md-12">
                         <a href="single-ad-view.html">
-                            <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
+                            <img class="img-responsive img-portfolio img-hover setwh" src="http://www.njuskalo.hr/image-w920x690/grijanje-hladenje-ostalo/drva-ogrijev-1-klasa-slika-46718012.jpg" alt="">
                         </a>
                         <div class="panel">
                             <div class="panel-body p0">
@@ -477,7 +490,7 @@
                 <div class="item">
                     <div class="col-md-12">
                         <a href="single-ad-view.html">
-                            <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
+                            <img class="img-responsive img-portfolio img-hover setwh" src="http://www.njuskalo.hr/image-w920x690/grijanje-hladenje-ostalo/drva-ogrijev-besplatna-dostava-slika-42706312.jpg" alt="">
                         </a>
                         <div class="panel">
                             <div class="panel-body p0">
@@ -492,7 +505,7 @@
                 <div class="item">
                     <div class="col-md-12">
                         <a href="single-ad-view.html">
-                            <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
+                            <img class="img-responsive img-portfolio img-hover setwh" src="http://www.njuskalo.hr/image-w920x690/grijanje-hladenje-ostalo/drva-ogrijev-1-klasa-slika-66298106.jpg" alt="">
                         </a>
                         <div class="panel">
                             <div class="panel-body p0">
@@ -509,24 +522,23 @@
     </div>
     <div class="row m0">
         <div class="col-md-offset-4 col-md-4 text-center">
-            <a class="btn btn-lg btn-default" href="ad-list.html">Svi oglasi</a>
+            <a class="btn btn-lg btn-default mt15 cta" href="ad-list.html"> <i class="fa fa-list pull-left mt4 mr8"></i>Svi oglasi</a>
         </div>
     </div>
     <!-- Najnoviji oglasi end -->
     <!-- Izdvojeni oglasi start -->
-    <div class="row m0">
+    <div class="row m0 mt120">
         <div class="container">
             <div class="col-lg-12">
                 <h2 class="page-header text-center fs40">Izdvojeni oglasi</h2>
                 <div class="text-center h2-separator"></div>
                 <div class="text-center mb35 fs18">
                     Novi ste korisnik stranice? Pogledajte naše izdvojene oglase birane od strane starih korisnika.
-
                 </div>
             </div>
             <div class="col-md-3">
                 <a href="featured-ad-view.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
+                    <img class="img-responsive img-portfolio img-hover" src="http://www.njuskalo.hr/image-w920x690/grijanje-hladenje-ostalo/drva-ogrijev-slika-66849028.jpg" alt="">
                 </a>
                 <div class="panel">
                     <div class="panel-body p0">
@@ -539,7 +551,7 @@
             </div>
             <div class="col-md-3">
                 <a href="featured-ad-view.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
+                    <img class="img-responsive img-portfolio img-hover" src="http://www.njuskalo.hr/image-w920x690/grijanje-hladenje-ostalo/drva-ogrijev-bjelovar-slika-17078006.jpg" alt="">
                 </a>
                 <div class="panel">
                     <div class="panel-body p0">
@@ -552,7 +564,7 @@
             </div>
             <div class="col-md-3">
                 <a href="featured-ad-view.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
+                    <img class="img-responsive img-portfolio img-hover" src="http://www.njuskalo.hr/image-w920x690/grijanje-hladenje-ostalo/drva-ogrijev-slika-8124511.jpg" alt="">
                 </a>
                 <div class="panel">
                     <div class="panel-body p0">
@@ -565,7 +577,7 @@
             </div>
             <div class="col-md-3">
                 <a href="featured-ad-view.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
+                    <img class="img-responsive img-portfolio img-hover" src="http://www.njuskalo.hr/image-w920x690/grijanje-hladenje-ostalo/drva-ogrijev-hrast-bukva-grab-povoljno-slika-62608090.jpg" alt="">
                 </a>
                 <div class="panel">
                     <div class="panel-body p0">
@@ -582,12 +594,12 @@
     <!-- Featured list button start -->
     <div class="row m0">
         <div class="col-md-offset-4 col-md-4 text-center">
-            <a class="btn btn-lg btn-default" href="featured-ad-list.html">Još izdvojenih oglasa</a>
+            <a class="btn btn-lg btn-default mt15 cta" href="featured-ad-list.html"><i class="fa fa-list pull-left mt4 mr8"></i>Još izdvojenih oglasa</a>
         </div>
     </div>
     <!-- Featured list button end -->
     <!-- Testimonials start -->
-    <div class="row m0">
+    <div class="row m0 mt120">
         <div class="container">
             <div class="row m0">
                 <div class="col-md-12">
@@ -655,28 +667,28 @@
         <div class="stats-homepage">
             <div class="col-md-4">
                 <div class="col-md-6">
-                    <i class="fa fa-pencil-square fa-5x pull-right"></i>
+                    <i class="fa fa-pencil-square fa-4x pull-right stat-icon"></i>
                 </div>
-                <div class="col-md-6">
-                    <h3 class="mt5">Aktivnih oglasa:</h3>
+                <div class="col-md-6 bl1pxw">
+                    <h3 class="mt5 stat-title">Aktivnih oglasa:</h3>
                     <p style="font-size: 16px;">400</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="col-md-6">
-                    <i class="fa fa-plus-square fa-5x pull-right"></i>
+                    <i class="fa fa-plus-square fa-4x pull-right stat-icon"></i>
                 </div>
-                <div class="col-md-6">
-                    <h3 class="mt5">Novih oglasa:</h3>
+                <div class="col-md-6 bl1pxw">
+                    <h3 class="mt5 stat-title">Novih oglasa:</h3>
                     <p style="font-size: 16px;">30</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="col-md-6">
-                    <i class="fa fa-user fa-5x pull-right"></i>
+                    <i class="fa fa-user fa-4x pull-right stat-icon"></i>
                 </div>
-                <div class="col-md-6">
-                    <h3 class="mt5">Aktivnih korisnika:</h3>
+                <div class="col-md-6 bl1pxw">
+                    <h3 class="mt5 stat-title">Aktivnih korisnika:</h3>
                     <p style="font-size: 16px;">400</p>
                 </div>
             </div>
@@ -687,9 +699,9 @@
     <div class="page-bottom-info">
         <div class="page-bottom-info-inner">
             <div class="page-bottom-info-content text-center">
-                <h1>Ako imate bilo kakvih pitanja, komentara ili pritužbi, slobodno nas kontaktirajte na broj 09x/xxx - xx - xx, ili email: info@prodaja-drva.com.hr</h1>
-                <a class="btn  btn-lg btn-primary-dark" href="tel:+000000000">
-                    <i class="icon-mobile"></i> <span class="hide-xs color50">Nazovite nas</span> 09x/xxx - xx - xx </a>
+                <h3>Ako imate bilo kakvih pitanja, komentara ili pritužbi, slobodno nas kontaktirajte na broj 09x/xxx - xx - xx, ili email: info@prodaja-drva.com.hr</h3>
+                <a class="btn  btn-lg mt50 cta" href="tel:+000000000">
+                    <i class="fa fa-phone mr8"></i> Nazovite nas 09x/xxx - xx - xx </a>
             </div>
         </div>
     </div>
@@ -748,6 +760,23 @@
     $('.choose-category').select2({
         placeholder: "Odaberite kategoriju",
         allowClear: true
+    });
+    </script>
+    <script>
+    $(document).ready(function() {
+
+        // you want to enable the pointer events only on click;
+
+        $('#map_canvas1').addClass('scrolloff'); // set the pointer events to none on doc ready
+        $('#canvas1').on('click', function() {
+            $('#map_canvas1').removeClass('scrolloff'); // set the pointer events true on click
+        });
+
+        // you want to disable pointer events when the mouse leave the canvas area;
+
+        $("#map_canvas1").mouseleave(function() {
+            $('#map_canvas1').addClass('scrolloff'); // set the pointer events to none when mouse leaves the map area
+        });
     });
     </script>
 </body>
