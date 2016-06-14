@@ -1,0 +1,17 @@
+eeee moj nikice
+
+objavi oglas na single page...paralax
+desne social sharing ikone 
+podaci o oglasivacu
+link na pregled svih njegovih oglasa
+
+na katalogu stavit razlicite slike 
+
+registracija -> napravit linkove za reset passworda i ako je vec korisnik link na sign in
+
+sign in -> stavit u nekakav box 
+i gumbic za zaboravljenu lozinku 
+
+na homepage dodati custom pinove na google mapu
+
+stranica za objavu oglasu i forma za pregled oglasa

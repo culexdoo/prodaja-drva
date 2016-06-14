@@ -11,8 +11,13 @@ h5 {
     font-family: 'Bree Serif', serif;
 }
 
+a {
+    color: #222;
+}
+
 a:hover {
     text-decoration: none;
+    color: #e74c3c;
 }
 
 .bg-whitesmoke {
@@ -70,6 +75,10 @@ a:hover {
 
 .mb35 {
     margin-bottom: 35px !important;
+}
+
+.mt65 {
+    margin-top: 65px;
 }
 
 .pl15 {
@@ -153,6 +162,11 @@ a:hover {
     font-size: 65px;
 }
 
+.box {
+    border: 1px solid #ddd;
+    margin-bottom: 15px;
+}
+
 .cta {
     font-family: 'Raleway', sans-serif;
     font-weight: 800;
@@ -165,6 +179,11 @@ a:hover {
 
 .cta:hover {
     background-color: #FF6656;
+}
+
+.btn-search {
+    margin: 0 !important;
+    font-size: 13px !important;
 }
 
 .stat-icon {}
@@ -180,13 +199,12 @@ a:hover {
 }
 
 .ad-title {
-    margin-top: 0px !important;
+    margin-top: 5px !important;
     margin-bottom: 0px !important;
 }
 
 .mt5 {
     margin-top: 5px;
-    font-weight: 700;
 }
 
 .bmt10 {
@@ -199,7 +217,10 @@ a:hover {
 
 .mb20 {
     margin-bottom: 20px;
-    border-bottom: 1px solid #DAD6D6;
+}
+
+.mb25 {
+    margin-bottom: 25px !important;
 }
 
 .widget-title {
@@ -207,7 +228,7 @@ a:hover {
 }
 
 .mt30 {
-    margin-top: 30px;
+    margin-top: 30px !important;
 }
 
 .mt50 {
@@ -224,7 +245,13 @@ a:hover {
 }
 
 .ad-image {
-    max-width: 220px;
+    max-width: 273px;
+}
+
+.ad-footer {
+    border-top: 1px solid #ddd;
+    position: relative;
+    top: 15px;
 }
 
 .mh400 {
@@ -250,7 +277,7 @@ a:hover {
     padding: 15px 25px;
     font-size: 22px;
     text-decoration: none;
-    margin: 20px;
+    margin: 15px;
     color: #fff;
     position: relative;
     display: inline-block;
@@ -287,7 +314,23 @@ a:hover {
 }
 
 
+/*
+
+.panel-default {
+    border-color: #fff;
+} 
+*/
+
+.panel-heading {
+    border-left: 5px solid #e74c3c !important;
+}
+
+
 /* Select 2 start */
+
+.sidebar-listing-page .select2 {
+    width: 250px !important;
+}
 
 .select2 {
     width: 280px !important;
@@ -736,6 +779,8 @@ section#locations .location a:hover {
     height: 160px;
 }
 
+
+/*
 .footer {
     background: #fff;
     border-top: solid 1px #ddd;
@@ -764,6 +809,85 @@ section#locations .location a:hover {
 .footer-nav li a:first-child {
     border-left: 0;
 }
+*/
+
+
+/* FOOTER start */
+
+.footer {
+    background-color: rgba(45, 28, 6, 0.7);
+    padding: 40px 0;
+}
+
+.footer-logo {
+    height: 32px;
+    margin-top: -5px;
+    line-height: 32px;
+}
+
+.footer-logo,
+.footer-nav {
+    float: left;
+    padding: 0 20px;
+    list-style: none;
+}
+
+dl {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.footer-logo a {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+.footer-logo img {
+    margin: 0 auto;
+    display: block;
+}
+
+.nav-title {
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.footer-nav {
+    margin-bottom: 15px;
+    color: #e6e9ed;
+}
+
+dt {
+    font-weight: 700;
+}
+
+.footer-nav .nav-item {
+    line-height: 28px;
+}
+
+dd {
+    margin-left: 0;
+}
+
+.footer-nav .nav-item > a {
+    color: #aab2bd;
+}
+
+.bg-color-38281b {
+    background-color: #38281b;
+}
+
+.col-white {
+    color: #fff;
+}
+
+.col-white:hover {
+    color: #e74c3c;
+}
+
+
+/* FOOTER end */
 
 .bgcol {
     background: #d09349;
@@ -843,6 +967,10 @@ section#locations .location a:hover {
 
 /* Owl Carousel Bootstrap Custom CSS */
 
+.owl-pagination {
+    display: none;
+}
+
 
 /* Header Navigation */
 
@@ -857,6 +985,7 @@ section#locations .location a:hover {
     color: #e74c3c;
     margin-top: 10px;
     margin-bottom: 10px;
+    top: 35px;
 }
 
 #top-nav {
@@ -978,8 +1107,10 @@ pre.pre-show {
 
 #footer {
     padding: 20px 0px;
-    background: #fff;
-    text-align: center
+    background: #38281b;
+    text-align: center;
+    color: #fff;
+    font-size: 15px;
 }
 
 .twitter-share-button {
