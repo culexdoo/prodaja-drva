@@ -20,6 +20,10 @@ a:hover {
     color: #e74c3c;
 }
 
+.border0 {
+    border-left: 0;
+}
+
 .bg-whitesmoke {
     background-color: whitesmoke;
 }
@@ -39,6 +43,10 @@ a:hover {
 
 .m0 {
     margin: 0px !important;
+}
+
+.m5 {
+    margin: 5px;
 }
 
 .ml0 {
@@ -162,6 +170,11 @@ a:hover {
     font-size: 65px;
 }
 
+.add-ad-image {
+    max-height: 300px;
+    max-width: 400px;
+}
+
 .box {
     border: 1px solid #ddd;
     margin-bottom: 15px;
@@ -281,6 +294,10 @@ a:hover {
     color: #fff;
     position: relative;
     display: inline-block;
+}
+
+#googlemap {
+    min-height: 500px;
 }
 
 .btn:active {
@@ -687,6 +704,8 @@ section#locations .location a:hover {
     max-width: 330px;
     padding: 15px;
     margin: 0 auto;
+    border: 1px solid #ddd;
+    border-top: 0;
 }
 
 .form-signin .form-signin-heading,

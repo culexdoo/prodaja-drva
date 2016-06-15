@@ -60,7 +60,7 @@
                             <a href="registration.html">Registracija</a>
                         </li>
                         <li>
-                            <a href="#" class="btn btn-primary btn-lg cta mt0"> <i class="fa fa-pencil-square stat-icon pull-left mt4 mr8"></i> Objavi oglas
+                            <a href="publish-ad.html" class="btn btn-primary btn-lg cta mt0"> <i class="fa fa-pencil-square stat-icon pull-left mt4 mr8"></i> Objavi oglas
                             </a>
                         </li>
                     </ul>
@@ -232,9 +232,8 @@
     <!-- Google map start -->
     <div class="row m0 mtb120">
         <div class="col-lg-12 p0">
-            <section id="canvas1" class="map">
-                <iframe id="map_canvas1" src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d1206571.1652117604!2d16.059186210497877!3d45.37975313453692!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1shrvatska!5e0!3m2!1shr!2shr!4v1465813840173" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
-            </section>
+            <div id="googlemap" class="map">
+            </div>
         </div>
     </div>
     <!-- Google map end -->
@@ -384,7 +383,7 @@
                 </div>
                 <div class="view-more-btn">
                     <div class="more-btn-inner">
-                        <a href="#">
+                        <a href="publish-ad.html">
                             <span>Objavi oglas </span>
                         </a>
                     </div>
@@ -724,8 +723,8 @@
                                         <dl class="footer-nav">
                                             <dt class="nav-title">PRODAJEM DRVA</dt>
                                             <dd class="nav-item"><a href="index.html">Naslovna</a></dd>
-                                            <dd class="nav-item"><a href="search.html">Prodajem drva</a></dd>
-                                            <dd class="nav-item"><a href="search.html">Kupujem drva</a></dd>
+                                            <dd class="nav-item"><a href="publish-ad.html">Prodajem drva</a></dd>
+                                            <dd class="nav-item"><a href="ad-list.html">Kupujem drva</a></dd>
                                             <dd class="nav-item"><a href="kontakt.html">Kontakt</a></dd>
                                         </dl>
                                     </div>
@@ -742,8 +741,8 @@
                                         <dl class="footer-nav">
                                             <dt class="nav-title">ČLANSTVO</dt>
                                             <dd class="nav-item"><a href="about.html">O nama</a></dd>
-                                            <dd class="nav-item"><a href="/login">Prijava</a></dd>
-                                            <dd class="nav-item"><a href="/register">Registracija</a></dd>
+                                            <dd class="nav-item"><a href="sign-in.html">Prijava</a></dd>
+                                            <dd class="nav-item"><a href="registration.html">Registracija</a></dd>
                                         </dl>
                                     </div>
                                 </div>
@@ -817,6 +816,83 @@
             $('#map_canvas1').addClass('scrolloff'); // set the pointer events to none when mouse leaves the map area
         });
     });
+    </script>
+    <script>
+    function initMap() {
+        var map;
+        var bounds = new google.maps.LatLngBounds();
+        var mapOptions = {
+            mapTypeId: 'roadmap',
+            center: new google.maps.LatLng(51.605139, -2.918567),
+            scrollwheel: false,
+            draggable: true
+        };
+
+        // Display a map on the page
+        map = new google.maps.Map(document.getElementById("googlemap"), mapOptions);
+        map.setTilt(45);
+
+        // Multiple Markers
+        var markers = [
+            ['Zagreb', 45.7888865, 16.0005137, 12]
+        ];
+
+        // Info Window Content
+        var infoWindowContent = [
+            ['<div class="info_content">' +
+                '<h3>Zagreb</h3>' +
+                '<p>The London Eye is a giant Ferris wheel situated on the banks of the River Thames. The entire structure is 135 metres (443 ft) tall and the wheel has a diameter of 120 metres (394 ft).</p>' + '</div>'
+            ]
+
+        ];
+
+        // Display multiple markers on a map
+        var infoWindow = new google.maps.InfoWindow(),
+            marker, i;
+
+        // Loop through our array of markers & place each one on the map  
+        for (i = 0; i < markers.length; i++) {
+            var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
+            bounds.extend(position);
+            var iconBase = 'https://maps.google.com/mapfiles/kml/pushpin/';
+            marker = new google.maps.Marker({
+                position: position,
+                map: map,
+                title: markers[i][0],
+                icon: iconBase + 'purple-pushpin.png'
+            });
+
+            // Allow each marker to have an info window    
+            google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                return function() {
+                    infoWindow.setContent(infoWindowContent[i][0]);
+                    infoWindow.open(map, marker);
+                }
+            })(marker, i));
+
+            google.maps.event.addListener(map, 'click', function(event) {
+                this.setOptions({
+                    scrollwheel: true
+                });
+            });
+            google.maps.event.addListener(map, 'mouseout', function(event) {
+                this.setOptions({
+                    scrollwheel: false
+                });
+            });
+
+            // Automatically center the map fitting all markers on the screen
+            map.fitBounds(bounds);
+        }
+
+        // Override our map zoom level once our fitBounds function runs (Make sure it only runs once)
+        var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
+            this.setZoom(11);
+            google.maps.event.removeListener(boundsListener);
+        });
+    }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAGZyUPlcENH-4yfK4IzBvnclrAO-M5cCo&callback=initMap">
     </script>
 </body>
 
