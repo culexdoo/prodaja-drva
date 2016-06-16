@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Dentist Finder</title>
+    <title>Prodaja drva - oglasnik</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <meta name="description" content="Developed By M Abdur Rokib Promy">
     <meta name="keywords" content="Admin, Bootstrap 3, Template, Theme, Responsive">
@@ -32,7 +32,6 @@
     <header class="header">
         <a href="dashboard.html" class="logo">
             <!-- Add the class icon to your logo image or logo icon to add the margining -->
-             
         </a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top" role="navigation">
@@ -247,10 +246,10 @@
                 <!-- Sidebar user panel -->
                 <div class="user-panel">
                     <div class="pull-left image">
-                        <img src="img/avatar3.png" class="img-circle" alt="User Image" />
+                        <img src="img/avatar2.png" class="img-circle" alt="User Image" />
                     </div>
                     <div class="pull-left info">
-                        <p>Josip Čes</p>
+                        <p>Admin podaci </p>
                         <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                     </div>
                 </div>
@@ -261,23 +260,13 @@
                         </a>
                     </li>
                     <li>
-                        <a href="dentist-list.html">
-                            <i class="fa fa-male"></i> <span>Zubari</span>
+                        <a href="user-list.html">
+                            <i class="fa fa-male"></i> <span>Korisnici</span>
                         </a>
                     </li>
                     <li>
-                        <a href="patient-list.html">
-                            <i class="fa fa-user"></i> <span>Pacijenti</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="blog-list.html">
-                            <i class="fa fa-book"></i> <span>Blog</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="quote-list.html">
-                            <i class="fa fa-asterisk"></i> <span>Upiti</span>
+                        <a href="ad-list.html">
+                            <i class="fa fa-pencil"></i> <span>Oglasi</span>
                         </a>
                     </li>
                     <li>
@@ -295,8 +284,8 @@
                 <!-- Main content -->
                 <ul class="breadcrumb">
                     <li><a href="dashboard.html"><i class="fa fa-home"></i> Početna</a></li>
-                    <li><a href="quote-list.html">Upiti</a></li>
-                    <li class="active">Vidi upit</li>
+                    <li><a href="ad-list.html">Oglasi</a></li>
+                    <li class="active">Vidi oglas</li>
                 </ul>
                 <div class="col-md-12">
                     <section class="panel">
@@ -314,6 +303,10 @@
                                     <input type="text" class="form-control" id="exampleInputLastName" placeholder="Prezime" readonly="true">
                                 </div>
                                 <div class="form-group">
+                                    <label for="exampleInputUsername">Korisničko ime</label>
+                                    <input type="text" class="form-control" id="exampleInputUsername" placeholder="Korisničko ime" readonly="true">
+                                </div>
+                                <div class="form-group">
                                     <label for="exampleInputEmail">Email</label>
                                     <input type="email" class="form-control" id="exampleInputEmail" placeholder="Email" readonly="true">
                                 </div>
@@ -321,16 +314,12 @@
                                     <label for="exampleInputKontakt">Kontakt</label>
                                     <input type="text" class="form-control" id="exampleInputKontakt" placeholder="Kontakt" readonly="true">
                                 </div>
-                                 <div class="form-group">
-                                    <label for="exampleInputDate">Datum kreiranja upita</label>
-                                    <input type="text" class="form-control" id="exampleInputDate" placeholder="dd-mm-yyyy" readonly="true">
-                                </div>
                                 <div class="form-group">
                                     <label for="exampleInputQuoteTitle">Naslov oglasa</label>
                                     <input type="text" class="form-control" id="exampleInputQuoteTitle" placeholder="Naslov oglasa" readonly="true">
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputTitle">Sadržaj upita</label>
+                                    <label for="exampleInputTitle">Sadržaj oglasa</label>
                                     <div class="textarea">
                                         <textarea rows="7" cols="150" style="border: 1px solid #CCC; border-radius: 5px;"> </textarea>
                                     </div>
@@ -341,30 +330,19 @@
                                             <div class="stat-icon">
                                                 <i class="fa fa-paperclip fa-2x stat-elem"></i>
                                             </div>
-                                            <h5 class="stat-info">zub.png</h5>
+                                            <h5 class="stat-info">slika.png</h5>
                                         </a>
                                     </div>
                                 </div>
                             </form>
-                        </div>    
-                        <!-- Odgovor na upit -->
-                        <div class="panel-body col-md-9 ">
-                            <label for="exampleInputTitle">Odgovor</label>
-                            <div class="textarea">
-                                <textarea rows="7" cols="150" style="border: 1px solid #CCC; border-radius: 5px;"> </textarea>
-                            </div>
-                            <a href="quote-edit.html">
-                            <button type="button" class="btn btn-info">Uredi</button>
-                            </a>
                         </div>
-                        <!-- /Odgovor na upit -->
                     </section>
                 </div>
             </div>
             <!-- /.content -->
             <div class="row">
                 <div class="footer-main">
-                    Copyright &copy dentist-finder, 2016
+                    Copyright &copy prodaja-drva, 2016
                 </div>
             </div>
         </aside>

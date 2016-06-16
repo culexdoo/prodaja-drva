@@ -271,6 +271,11 @@
                             <i class="fa fa-pencil"></i> <span>Oglasi</span>
                         </a>
                     </li>
+                    <li>
+                        <a href="review-list.html">
+                            <i class="fa fa-comment"></i> <span>Recenzije</span>
+                        </a>
+                    </li>
                 </ul>
             </section>
             <!-- /.sidebar -->
@@ -285,15 +290,14 @@
                             Oglasi
                         </header>
                         <div class="panel-body table-responsive">
-                            <table class="table table-hover" id="quote-list">
+                            <table class="table table-hover" id="ad-list">
                                 <thead>
                                     <tr>
                                         <th>Id</th>
                                         <th>Ime</th>
                                         <th>Prezime</th>
                                         <th>Email</th>
-                                        <th>Usluge</th>
-                                        <th>Doktor</th>
+                                        <th>Naslov</th>
                                         <th>Akcije</th>
                                     </tr>
                                 </thead>
@@ -303,16 +307,15 @@
                                         <td>Marko</td>
                                         <td>Marković</td>
                                         <td>testmail@gmail.com</td>
-                                        <td>Brušenje zubi</td>
-                                        <td>Vilimor Brušić </td>
+                                        <td>Prodajem drva</td>
                                         <td>
-                                            <a href="quote-view.html">
+                                            <a href="ad-view.html">
                                                 <button class="btn btn-primary btn-xs"><i class="fa fa-eye"></i></button>
                                             </a>
-                                            <a href="quote-edit.html">
+                                            <a href="ad-edit.html">
                                                 <button class="btn btn-success btn-xs"><i class="fa fa-pencil"></i></button>
                                             </a>
-                                            <button type="button" id="btn-delete-quote-id-1" class="btn btn-danger btn-xs" data-target="#delete-quote-id-1"><i class="fa fa-times"></i>
+                                            <button type="button" id="btn-delete-ad-id-1" class="btn btn-danger btn-xs" data-target="#delete-ad-id-1"><i class="fa fa-times"></i>
                                             </button>
                                         </td>
                                     </tr>
@@ -321,16 +324,15 @@
                                         <td>Jozo</td>
                                         <td>Jozić</td>
                                         <td>testmail@gmail.com</td>
-                                        <td>Pregled zubi</td>
-                                        <td>Hrvoje Mlinar</td>
+                                        <td>Prodaja drva</td>
                                         <td>
-                                            <a href="quote-view.html">
+                                            <a href="ad-view.html">
                                                 <button class="btn btn-primary btn-xs"><i class="fa fa-eye"></i></button>
                                             </a>
-                                            <a href="quote-edit.html">
+                                            <a href="ad-edit.html">
                                                 <button class="btn btn-success btn-xs"><i class="fa fa-pencil"></i></button>
                                             </a>
-                                            <button type="button" id="btn-delete-quote-id-2" class="btn btn-danger btn-xs" data-target="#delete-quote-id-2"><i class="fa fa-times"></i>
+                                            <button type="button" id="btn-delete-ad-id-2" class="btn btn-danger btn-xs" data-target="#delete-ad-id-2"><i class="fa fa-times"></i>
                                             </button>
                                         </td>
                                     </tr>
@@ -339,16 +341,15 @@
                                         <td>Nino</td>
                                         <td>Ninić</td>
                                         <td>testmail@gmail.com</td>
-                                        <td>Ugradnja plombe</td>
-                                        <td>Hrvoje Mlinar</td>
+                                        <td>Prodajem drva</td>
                                         <td>
-                                            <a href="quote-view.html">
+                                            <a href="ad-view.html">
                                                 <button class="btn btn-primary btn-xs"><i class="fa fa-eye"></i></button>
                                             </a>
-                                            <a href="quote-edit.html">
+                                            <a href="ad-edit.html">
                                                 <button class="btn btn-success btn-xs"><i class="fa fa-pencil"></i></button>
                                             </a>
-                                            <button type="button" id="btn-delete-quote-id-3" class="btn btn-danger btn-xs" data-target="#delete-quote-id-3"><i class="fa fa-times"></i>
+                                            <button type="button" id="btn-delete-ad-id-3" class="btn btn-danger btn-xs" data-target="#delete-ad-id-3"><i class="fa fa-times"></i>
                                             </button>
                                         </td>
                                     </tr>
@@ -357,16 +358,15 @@
                                         <td>Mira</td>
                                         <td>Mirić</td>
                                         <td>testmail@gmail.com</td>
-                                        <td>Ugradnja plombe</td>
-                                        <td>Davor Darić</td>
+                                        <td>Prodaja drva</td>
                                         <td>
-                                            <a href="quote-view.html">
+                                            <a href="ad-view.html">
                                                 <button class="btn btn-primary btn-xs"><i class="fa fa-eye"></i></button>
                                             </a>
-                                            <a href="quote-edit.html">
+                                            <a href="ad-edit.html">
                                                 <button class="btn btn-success btn-xs"><i class="fa fa-pencil"></i></button>
                                             </a>
-                                            <button type="button" id="btn-delete-quote-id-4" class="btn btn-danger btn-xs" data-target="#delete-quote-id-4"><i class="fa fa-times"></i>
+                                            <button type="button" id="btn-delete-ad-id-4" class="btn btn-danger btn-xs" data-target="#delete-ad-id-4"><i class="fa fa-times"></i>
                                             </button>
                                         </td>
                                     </tr>
@@ -375,16 +375,15 @@
                                         <td>Monika</td>
                                         <td>Belući</td>
                                         <td>testmail@gmail.com</td>
-                                        <td>Ugradnja plombe</td>
-                                        <td>Ana Anić</td>
+                                        <td>Prodajem drva za ogrijev</td>
                                         <td>
-                                            <a href="quote-view.html">
+                                            <a href="ad-view.html">
                                                 <button class="btn btn-primary btn-xs"><i class="fa fa-eye"></i></button>
                                             </a>
-                                            <a href="quote-edit.html">
+                                            <a href="ad-edit.html">
                                                 <button class="btn btn-success btn-xs"><i class="fa fa-pencil"></i></button>
                                             </a>
-                                            <button type="button" id="btn-delete-quote-id-5" class="btn btn-danger btn-xs" data-target="#delete-quote-id-5"><i class="fa fa-times"></i>
+                                            <button type="button" id="btn-delete-ad-id-5" class="btn btn-danger btn-xs" data-target="#delete-ad-id-5"><i class="fa fa-times"></i>
                                             </button>
                                         </td>
                                     </tr>
@@ -393,16 +392,15 @@
                                         <td>Marija</td>
                                         <td>Marić</td>
                                         <td>testmail@gmail.com</td>
-                                        <td>Ugradnja plombe</td>
-                                        <td>Hrvoje Mlinar</td>
+                                        <td>Prodajem brikete za ogrijev</td>
                                         <td>
-                                            <a href="quote-view.html">
+                                            <a href="ad-view.html">
                                                 <button class="btn btn-primary btn-xs"><i class="fa fa-eye"></i></button>
                                             </a>
-                                            <a href="quote-edit.html">
+                                            <a href="ad-edit.html">
                                                 <button class="btn btn-success btn-xs"><i class="fa fa-pencil"></i></button>
                                             </a>
-                                            <button type="button" id="btn-delete-quote-id-6" class="btn btn-danger btn-xs" data-target="#delete-quote-id-6"><i class="fa fa-times"></i>
+                                            <button type="button" id="btn-delete-ad-id-6" class="btn btn-danger btn-xs" data-target="#delete-ad-id-6"><i class="fa fa-times"></i>
                                             </button>
                                         </td>
                                     </tr>
@@ -411,16 +409,15 @@
                                         <td>Marija</td>
                                         <td>Bubanj</td>
                                         <td>testmail@gmail.com</td>
-                                        <td>Ugradnja plombe</td>
-                                        <td>Borna Borić</td>
+                                        <td>Prodaja drva</td>
                                         <td>
-                                            <a href="quote-view.html">
+                                            <a href="ad-view.html">
                                                 <button class="btn btn-primary btn-xs"><i class="fa fa-eye"></i></button>
                                             </a>
-                                            <a href="quote-edit.html">
+                                            <a href="ad-edit.html">
                                                 <button class="btn btn-success btn-xs"><i class="fa fa-pencil"></i></button>
                                             </a>
-                                            <button type="button" id="btn-delete-quote-id-7" class="btn btn-danger btn-xs" data-target="#delete-quote-id-7"><i class="fa fa-times"></i>
+                                            <button type="button" id="btn-delete-ad-id-7" class="btn btn-danger btn-xs" data-target="#delete-ad-id-7"><i class="fa fa-times"></i>
                                             </button>
                                         </td>
                                     </tr>
@@ -429,16 +426,15 @@
                                         <td>Marija</td>
                                         <td>Bubanj</td>
                                         <td>testmail@gmail.com</td>
-                                        <td>Ugradnja plombe</td>
-                                        <td>Borna Borić</td>
+                                        <td>Prodajem drva za ogrijev</td>
                                         <td>
-                                            <a href="quote-view.html">
+                                            <a href="ad-view.html">
                                                 <button class="btn btn-primary btn-xs"><i class="fa fa-eye"></i></button>
                                             </a>
-                                            <a href="quote-edit.html">
+                                            <a href="ad-edit.html">
                                                 <button class="btn btn-success btn-xs"><i class="fa fa-pencil"></i></button>
                                             </a>
-                                            <button type="button" id="btn-delete-quote-id-8" class="btn btn-danger btn-xs" data-target="#delete-quote-id-8"><i class="fa fa-times"></i>
+                                            <button type="button" id="btn-delete-ad-id-8" class="btn btn-danger btn-xs" data-target="#delete-ad-id-8"><i class="fa fa-times"></i>
                                             </button>
                                         </td>
                                     </tr>
@@ -447,16 +443,15 @@
                                         <td>Marija</td>
                                         <td>Bubanj</td>
                                         <td>testmail@gmail.com</td>
-                                        <td>Ugradnja plombe</td>
-                                        <td>Borna Borić</td>
+                                        <td>Prodaja drva</td>
                                         <td>
-                                            <a href="quote-view.html">
+                                            <a href="ad-view.html">
                                                 <button class="btn btn-primary btn-xs"><i class="fa fa-eye"></i></button>
                                             </a>
-                                            <a href="quote-edit.html">
+                                            <a href="ad-edit.html">
                                                 <button class="btn btn-success btn-xs"><i class="fa fa-pencil"></i></button>
                                             </a>
-                                            <button type="button" id="btn-delete-quote-id-9" class="btn btn-danger btn-xs" data-target="#delete-quote-id-9"><i class="fa fa-times"></i>
+                                            <button type="button" id="btn-delete-ad-id-9" class="btn btn-danger btn-xs" data-target="#delete-ad-id-9"><i class="fa fa-times"></i>
                                             </button>
                                         </td>
                                     </tr>
@@ -465,16 +460,15 @@
                                         <td>Marija</td>
                                         <td>Bubanj</td>
                                         <td>testmail@gmail.com</td>
-                                        <td>Ugradnja plombe</td>
-                                        <td>Borna Borić</td>
+                                        <td>Prodaja drva</td>
                                         <td>
-                                            <a href="quote-view.html">
+                                            <a href="ad-view.html">
                                                 <button class="btn btn-primary btn-xs"><i class="fa fa-eye"></i></button>
                                             </a>
-                                            <a href="quote-edit.html">
+                                            <a href="ad-edit.html">
                                                 <button class="btn btn-success btn-xs"><i class="fa fa-pencil"></i></button>
                                             </a>
-                                            <button type="button" id="btn-delete-quote-id-10" class="btn btn-danger btn-xs" data-target="#delete-quote-id-10"><i class="fa fa-times"></i>
+                                            <button type="button" id="btn-delete-ad-id-10" class="btn btn-danger btn-xs" data-target="#delete-ad-id-10"><i class="fa fa-times"></i>
                                             </button>
                                         </td>
                                     </tr>
@@ -483,16 +477,15 @@
                                         <td>Marija</td>
                                         <td>Bubanj</td>
                                         <td>testmail@gmail.com</td>
-                                        <td>Ugradnja plombe</td>
-                                        <td>Borna Borić</td>
+                                        <td>Prodaja drva</td>
                                         <td>
-                                            <a href="quote-view.html">
+                                            <a href="ad-view.html">
                                                 <button class="btn btn-primary btn-xs"><i class="fa fa-eye"></i></button>
                                             </a>
-                                            <a href="quote-edit.html">
+                                            <a href="ad-edit.html">
                                                 <button class="btn btn-success btn-xs"><i class="fa fa-pencil"></i></button>
                                             </a>
-                                            <button type="button" id="btn-delete-quote-id-11" class="btn btn-danger btn-xs" data-target="#delete-quote-id-11"><i class="fa fa-times"></i>
+                                            <button type="button" id="btn-delete-ad-id-11" class="btn btn-danger btn-xs" data-target="#delete-ad-id-11"><i class="fa fa-times"></i>
                                             </button>
                                         </td>
                                     </tr>
@@ -501,16 +494,15 @@
                                         <td>Marija</td>
                                         <td>Bubanj</td>
                                         <td>testmail@gmail.com</td>
-                                        <td>Ugradnja plombe</td>
-                                        <td>Borna Borić</td>
+                                        <td>Prodaja drva</td>
                                         <td>
-                                            <a href="quote-view.html">
+                                            <a href="ad-view.html">
                                                 <button class="btn btn-primary btn-xs"><i class="fa fa-eye"></i></button>
                                             </a>
-                                            <a href="quote-edit.html">
+                                            <a href="ad-edit.html">
                                                 <button class="btn btn-success btn-xs"><i class="fa fa-pencil"></i></button>
                                             </a>
-                                            <button type="button" id="btn-delete-quote-id-12" class="btn btn-danger btn-xs" data-target="#delete-quote-id-12"><i class="fa fa-times"></i>
+                                            <button type="button" id="btn-delete-ad-id-12" class="btn btn-danger btn-xs" data-target="#delete-ad-id-12"><i class="fa fa-times"></i>
                                             </button>
                                         </td>
                                     </tr>
@@ -519,16 +511,15 @@
                                         <td>Marija</td>
                                         <td>Bubanj</td>
                                         <td>testmail@gmail.com</td>
-                                        <td>Ugradnja plombe</td>
-                                        <td>Borna Borić</td>
+                                        <td>Prodajem drva za ogrijev</td>
                                         <td>
-                                            <a href="quote-view.html">
+                                            <a href="ad-view.html">
                                                 <button class="btn btn-primary btn-xs"><i class="fa fa-eye"></i></button>
                                             </a>
-                                            <a href="quote-edit.html">
+                                            <a href="ad-edit.html">
                                                 <button class="btn btn-success btn-xs"><i class="fa fa-pencil"></i></button>
                                             </a>
-                                            <button type="button" id="btn-delete-quote-id-13" class="btn btn-danger btn-xs" data-target="#delete-quote-id-13"><i class="fa fa-times"></i>
+                                            <button type="button" id="btn-delete-ad-id-13" class="btn btn-danger btn-xs" data-target="#delete-ad-id-13"><i class="fa fa-times"></i>
                                             </button>
                                         </td>
                                     </tr>
@@ -537,16 +528,15 @@
                                         <td>Marija</td>
                                         <td>Bubanj</td>
                                         <td>testmail@gmail.com</td>
-                                        <td>Ugradnja plombe</td>
-                                        <td>Borna Borić</td>
+                                        <td>Prodajem drva za ogrijev</td>
                                         <td>
-                                            <a href="quote-view.html">
+                                            <a href="ad-view.html">
                                                 <button class="btn btn-primary btn-xs"><i class="fa fa-eye"></i></button>
                                             </a>
-                                            <a href="quote-edit.html">
+                                            <a href="ad-edit.html">
                                                 <button class="btn btn-success btn-xs"><i class="fa fa-pencil"></i></button>
                                             </a>
-                                            <button type="button" id="btn-delete-quote-id-14" class="btn btn-danger btn-xs" data-target="#delete-quote-id-14"><i class="fa fa-times"></i>
+                                            <button type="button" id="btn-delete-ad-id-14" class="btn btn-danger btn-xs" data-target="#delete-ad-id-14"><i class="fa fa-times"></i>
                                             </button>
                                         </td>
                                     </tr>
@@ -555,16 +545,15 @@
                                         <td>Marija</td>
                                         <td>Bubanj</td>
                                         <td>testmail@gmail.com</td>
-                                        <td>Ugradnja plombe</td>
-                                        <td>Borna Borić</td>
+                                        <td>Prodajem drva za ogrijev</td>
                                         <td>
-                                            <a href="quote-view.html">
+                                            <a href="ad-view.html">
                                                 <button class="btn btn-primary btn-xs"><i class="fa fa-eye"></i></button>
                                             </a>
-                                            <a href="quote-edit.html">
+                                            <a href="ad-edit.html">
                                                 <button class="btn btn-success btn-xs"><i class="fa fa-pencil"></i></button>
                                             </a>
-                                            <button type="button" id="btn-delete-quote-id-15" class="btn btn-danger btn-xs" data-target="#delete-quote-id-15"><i class="fa fa-times"></i>
+                                            <button type="button" id="btn-delete-ad-id-15" class="btn btn-danger btn-xs" data-target="#delete-ad-id-15"><i class="fa fa-times"></i>
                                             </button>
                                         </td>
                                     </tr>
@@ -573,16 +562,15 @@
                                         <td>Marija</td>
                                         <td>Bubanj</td>
                                         <td>testmail@gmail.com</td>
-                                        <td>Ugradnja plombe</td>
-                                        <td>Borna Borić</td>
+                                        <td>Prodajem drva za ogrijev</td>
                                         <td>
-                                            <a href="quote-view.html">
+                                            <a href="ad-view.html">
                                                 <button class="btn btn-primary btn-xs"><i class="fa fa-eye"></i></button>
                                             </a>
-                                            <a href="quote-edit.html">
+                                            <a href="ad-edit.html">
                                                 <button class="btn btn-success btn-xs"><i class="fa fa-pencil"></i></button>
                                             </a>
-                                            <button type="button" id="btn-delete-quote-id-16" class="btn btn-danger btn-xs" data-target="#delete-quote-id-16"><i class="fa fa-times"></i>
+                                            <button type="button" id="btn-delete-ad-id-16" class="btn btn-danger btn-xs" data-target="#delete-ad-id-16"><i class="fa fa-times"></i>
                                             </button>
                                         </td>
                                     </tr>
@@ -591,16 +579,15 @@
                                         <td>Marija</td>
                                         <td>Bubanj</td>
                                         <td>testmail@gmail.com</td>
-                                        <td>Ugradnja plombe</td>
-                                        <td>Borna Borić</td>
+                                        <td>Prodajem drva za ogrijev</td>
                                         <td>
-                                            <a href="quote-view.html">
+                                            <a href="ad-view.html">
                                                 <button class="btn btn-primary btn-xs"><i class="fa fa-eye"></i></button>
                                             </a>
-                                            <a href="quote-edit.html">
+                                            <a href="ad-edit.html">
                                                 <button class="btn btn-success btn-xs"><i class="fa fa-pencil"></i></button>
                                             </a>
-                                            <button type="button" id="btn-delete-quote-id-17" class="btn btn-danger btn-xs" data-target="#delete-quote-id-17"><i class="fa fa-times"></i>
+                                            <button type="button" id="btn-delete-ad-id-17" class="btn btn-danger btn-xs" data-target="#delete-ad-id-17"><i class="fa fa-times"></i>
                                             </button>
                                         </td>
                                     </tr>
@@ -609,16 +596,15 @@
                                         <td>Marija</td>
                                         <td>Bubanj</td>
                                         <td>testmail@gmail.com</td>
-                                        <td>Ugradnja plombe</td>
-                                        <td>Borna Borić</td>
+                                        <td>Prodajem drva za ogrijev</td>
                                         <td>
-                                            <a href="quote-view.html">
+                                            <a href="ad-view.html">
                                                 <button class="btn btn-primary btn-xs"><i class="fa fa-eye"></i></button>
                                             </a>
-                                            <a href="quote-edit.html">
+                                            <a href="ad-edit.html">
                                                 <button class="btn btn-success btn-xs"><i class="fa fa-pencil"></i></button>
                                             </a>
-                                            <button type="button" id="btn-delete-quote-id-18" class="btn btn-danger btn-xs" data-target="#delete-quote-id-18"><i class="fa fa-times"></i>
+                                            <button type="button" id="btn-delete-ad-id-18" class="btn btn-danger btn-xs" data-target="#delete-ad-id-18"><i class="fa fa-times"></i>
                                             </button>
                                         </td>
                                     </tr>
@@ -627,16 +613,15 @@
                                         <td>Marija</td>
                                         <td>Bubanj</td>
                                         <td>testmail@gmail.com</td>
-                                        <td>Ugradnja plombe</td>
-                                        <td>Borna Borić</td>
+                                        <td>Prodajem brikete</td>
                                         <td>
-                                            <a href="quote-view.html">
+                                            <a href="ad-view.html">
                                                 <button class="btn btn-primary btn-xs"><i class="fa fa-eye"></i></button>
                                             </a>
-                                            <a href="quote-edit.html">
+                                            <a href="ad-edit.html">
                                                 <button class="btn btn-success btn-xs"><i class="fa fa-pencil"></i></button>
                                             </a>
-                                            <button type="button" id="btn-delete-quote-id-19" class="btn btn-danger btn-xs" data-target="#delete-quote-id-19"><i class="fa fa-times"></i>
+                                            <button type="button" id="btn-delete-ad-id-19" class="btn btn-danger btn-xs" data-target="#delete-ad-id-19"><i class="fa fa-times"></i>
                                             </button>
                                         </td>
                                     </tr>
@@ -645,16 +630,15 @@
                                         <td>Marija</td>
                                         <td>Bubanj</td>
                                         <td>testmail@gmail.com</td>
-                                        <td>Ugradnja plombe</td>
-                                        <td>Borna Borić</td>
+                                        <td>Prodajem brikete</td>
                                         <td>
-                                            <a href="quote-view.html">
+                                            <a href="ad-view.html">
                                                 <button class="btn btn-primary btn-xs"><i class="fa fa-eye"></i></button>
                                             </a>
-                                            <a href="quote-edit.html">
+                                            <a href="ad-edit.html">
                                                 <button class="btn btn-success btn-xs"><i class="fa fa-pencil"></i></button>
                                             </a>
-                                            <button type="button" id="btn-delete-quote-id-20" class="btn btn-danger btn-xs" data-target="#delete-quote-id-20"><i class="fa fa-times"></i>
+                                            <button type="button" id="btn-delete-ad-id-20" class="btn btn-danger btn-xs" data-target="#delete-ad-id-20"><i class="fa fa-times"></i>
                                             </button>
                                         </td>
                                     </tr>
@@ -663,16 +647,15 @@
                                         <td>Marija</td>
                                         <td>Bubanj</td>
                                         <td>testmail@gmail.com</td>
-                                        <td>Ugradnja plombe</td>
-                                        <td>Borna Borić</td>
+                                        <td>Prodajem brikete</td>
                                         <td>
-                                            <a href="quote-view.html">
+                                            <a href="ad-view.html">
                                                 <button class="btn btn-primary btn-xs"><i class="fa fa-eye"></i></button>
                                             </a>
-                                            <a href="quote-edit.html">
+                                            <a href="ad-edit.html">
                                                 <button class="btn btn-success btn-xs"><i class="fa fa-pencil"></i></button>
                                             </a>
-                                            <button type="button" id="btn-delete-quote-id-21" class="btn btn-danger btn-xs" data-target="#delete-quote-id-21"><i class="fa fa-times"></i>
+                                            <button type="button" id="btn-delete-ad-id-21" class="btn btn-danger btn-xs" data-target="#delete-ad-id-21"><i class="fa fa-times"></i>
                                             </button>
                                         </td>
                                     </tr>
@@ -681,16 +664,15 @@
                                         <td>Marija</td>
                                         <td>Bubanj</td>
                                         <td>testmail@gmail.com</td>
-                                        <td>Ugradnja plombe</td>
-                                        <td>Borna Borić</td>
+                                        <td>Prodajem brikete</td>
                                         <td>
-                                            <a href="quote-view.html">
+                                            <a href="ad-view.html">
                                                 <button class="btn btn-primary btn-xs"><i class="fa fa-eye"></i></button>
                                             </a>
-                                            <a href="quote-edit.html">
+                                            <a href="ad-edit.html">
                                                 <button class="btn btn-success btn-xs"><i class="fa fa-pencil"></i></button>
                                             </a>
-                                            <button type="button" id="btn-delete-quote-id-22" class="btn btn-danger btn-xs" data-target="#delete-quote-id-22"><i class="fa fa-times"></i>
+                                            <button type="button" id="btn-delete-ad-id-22" class="btn btn-danger btn-xs" data-target="#delete-ad-id-22"><i class="fa fa-times"></i>
                                             </button>
                                         </td>
                                     </tr>
@@ -699,16 +681,15 @@
                                         <td>Marija</td>
                                         <td>Bubanj</td>
                                         <td>testmail@gmail.com</td>
-                                        <td>Ugradnja plombe</td>
-                                        <td>Borna Borić</td>
+                                        <td>Prodajem brikete</td>
                                         <td>
-                                            <a href="quote-view.html">
+                                            <a href="ad-view.html">
                                                 <button class="btn btn-primary btn-xs"><i class="fa fa-eye"></i></button>
                                             </a>
-                                            <a href="quote-edit.html">
+                                            <a href="ad-edit.html">
                                                 <button class="btn btn-success btn-xs"><i class="fa fa-pencil"></i></button>
                                             </a>
-                                            <button type="button" id="btn-delete-quote-id-23" class="btn btn-danger btn-xs" data-target="#delete-quote-id-23"><i class="fa fa-times"></i>
+                                            <button type="button" id="btn-delete-ad-id-23" class="btn btn-danger btn-xs" data-target="#delete-ad-id-23"><i class="fa fa-times"></i>
                                             </button>
                                         </td>
                                     </tr>
@@ -717,16 +698,15 @@
                                         <td>Marija</td>
                                         <td>Bubanj</td>
                                         <td>testmail@gmail.com</td>
-                                        <td>Ugradnja plombe</td>
-                                        <td>Borna Borić</td>
+                                        <td>Prodajem drvo</td>
                                         <td>
-                                            <a href="quote-view.html">
+                                            <a href="ad-view.html">
                                                 <button class="btn btn-primary btn-xs"><i class="fa fa-eye"></i></button>
                                             </a>
-                                            <a href="quote-edit.html">
+                                            <a href="ad-edit.html">
                                                 <button class="btn btn-success btn-xs"><i class="fa fa-pencil"></i></button>
                                             </a>
-                                            <button type="button" id="btn-delete-quote-id-24" class="btn btn-danger btn-xs" data-target="#delete-quote-id-24"><i class="fa fa-times"></i>
+                                            <button type="button" id="btn-delete-ad-id-24" class="btn btn-danger btn-xs" data-target="#delete-ad-id-24"><i class="fa fa-times"></i>
                                             </button>
                                         </td>
                                     </tr>
@@ -735,16 +715,15 @@
                                         <td>Marija</td>
                                         <td>Bubanj</td>
                                         <td>testmail@gmail.com</td>
-                                        <td>Ugradnja plombe</td>
-                                        <td>Borna Borić</td>
+                                        <td>Prodajem drvo</td>
                                         <td>
-                                            <a href="quote-view.html">
+                                            <a href="ad-view.html">
                                                 <button class="btn btn-primary btn-xs"><i class="fa fa-eye"></i></button>
                                             </a>
-                                            <a href="quote-edit.html">
+                                            <a href="ad-edit.html">
                                                 <button class="btn btn-success btn-xs"><i class="fa fa-pencil"></i></button>
                                             </a>
-                                            <button type="button" id="btn-delete-quote-id-25" class="btn btn-danger btn-xs" data-target="#delete-quote-id-25"><i class="fa fa-times"></i>
+                                            <button type="button" id="btn-delete-ad-id-25" class="btn btn-danger btn-xs" data-target="#delete-ad-id-25"><i class="fa fa-times"></i>
                                             </button>
                                         </td>
                                     </tr>
@@ -757,14 +736,14 @@
             </div>
             <div class="row">
                 <div class="footer-main">
-                    Copyright &copy dentist-finder, 2016
+                    Copyright &copy prodaja-drva, 2016
                 </div>
             </div>
         </aside>
         <!-- /.right-side -->
     </div>
     <!-- Modal 1-->
-    <div class="modal fade" id="delete-quote-id-1" role="dialog">
+    <div class="modal fade" id="delete-ad-id-1" role="dialog">
         <div class="modal-dialog">
             <!-- Modal content-->
             <div class="modal-content">
@@ -773,7 +752,7 @@
                     <h4 class="modal-title">Pozor!</h4>
                 </div>
                 <div class="modal-body">
-                    <p>Želite li obrisati upit id: 1?</p>
+                    <p>Želite li obrisati oglas id: 1?</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-ok="modal">U redu</button>
@@ -783,7 +762,7 @@
         </div>
     </div>
     <!-- Modal 2-->
-    <div class="modal fade" id="delete-quote-id-2" role="dialog">
+    <div class="modal fade" id="delete-ad-id-2" role="dialog">
         <div class="modal-dialog">
             <!-- Modal content-->
             <div class="modal-content">
@@ -792,7 +771,7 @@
                     <h4 class="modal-title">Pozor!</h4>
                 </div>
                 <div class="modal-body">
-                    <p>Želite li obrisati upit id: 2?</p>
+                    <p>Želite li obrisati oglas id: 2?</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-ok="modal">U redu</button>
@@ -802,7 +781,7 @@
         </div>
     </div>
     <!-- Modal 3-->
-    <div class="modal fade" id="delete-quote-id-3" role="dialog">
+    <div class="modal fade" id="delete-ad-id-3" role="dialog">
         <div class="modal-dialog">
             <!-- Modal content-->
             <div class="modal-content">
@@ -811,7 +790,7 @@
                     <h4 class="modal-title">Pozor!</h4>
                 </div>
                 <div class="modal-body">
-                    <p>Želite li obrisati upit id: 3?</p>
+                    <p>Želite li obrisati oglas id: 3?</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-ok="modal">U redu</button>
@@ -821,7 +800,7 @@
         </div>
     </div>
     <!-- Modal 4-->
-    <div class="modal fade" id="delete-quote-id-4" role="dialog">
+    <div class="modal fade" id="delete-ad-id-4" role="dialog">
         <div class="modal-dialog">
             <!-- Modal content-->
             <div class="modal-content">
@@ -830,7 +809,7 @@
                     <h4 class="modal-title">Pozor!</h4>
                 </div>
                 <div class="modal-body">
-                    <p>Želite li obrisati upit id: 4?</p>
+                    <p>Želite li obrisati oglas id: 4?</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-ok="modal">U redu</button>
@@ -840,7 +819,7 @@
         </div>
     </div>
     <!-- Modal 5-->
-    <div class="modal fade" id="delete-quote-id-5" role="dialog">
+    <div class="modal fade" id="delete-ad-id-5" role="dialog">
         <div class="modal-dialog">
             <!-- Modal content-->
             <div class="modal-content">
@@ -849,7 +828,7 @@
                     <h4 class="modal-title">Pozor!</h4>
                 </div>
                 <div class="modal-body">
-                    <p>Želite li obrisati upit id: 5?</p>
+                    <p>Želite li obrisati oglas id: 5?</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-ok="modal">U redu</button>
@@ -859,7 +838,7 @@
         </div>
     </div>
     <!-- Modal 6-->
-    <div class="modal fade" id="delete-quote-id-6" role="dialog">
+    <div class="modal fade" id="delete-ad-id-6" role="dialog">
         <div class="modal-dialog">
             <!-- Modal content-->
             <div class="modal-content">
@@ -868,7 +847,7 @@
                     <h4 class="modal-title">Pozor!</h4>
                 </div>
                 <div class="modal-body">
-                    <p>Želite li obrisati upit id: 6?</p>
+                    <p>Želite li obrisati oglas id: 6?</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-ok="modal">U redu</button>
@@ -878,7 +857,7 @@
         </div>
     </div>
     <!-- Modal 7-->
-    <div class="modal fade" id="delete-quote-id-7" role="dialog">
+    <div class="modal fade" id="delete-ad-id-7" role="dialog">
         <div class="modal-dialog">
             <!-- Modal content-->
             <div class="modal-content">
@@ -887,7 +866,7 @@
                     <h4 class="modal-title">Pozor!</h4>
                 </div>
                 <div class="modal-body">
-                    <p>Želite li obrisati upit id: 7?</p>
+                    <p>Želite li obrisati oglas id: 7?</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-ok="modal">U redu</button>
@@ -897,7 +876,7 @@
         </div>
     </div>
     <!-- Modal 8-->
-    <div class="modal fade" id="delete-quote-id-8" role="dialog">
+    <div class="modal fade" id="delete-ad-id-8" role="dialog">
         <div class="modal-dialog">
             <!-- Modal content-->
             <div class="modal-content">
@@ -906,7 +885,7 @@
                     <h4 class="modal-title">Pozor!</h4>
                 </div>
                 <div class="modal-body">
-                    <p>Želite li obrisati upit id: 8?</p>
+                    <p>Želite li obrisati oglas id: 8?</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-ok="modal">U redu</button>
@@ -916,7 +895,7 @@
         </div>
     </div>
     <!-- Modal 9-->
-    <div class="modal fade" id="delete-quote-id-9" role="dialog">
+    <div class="modal fade" id="delete-ad-id-9" role="dialog">
         <div class="modal-dialog">
             <!-- Modal content-->
             <div class="modal-content">
@@ -925,7 +904,7 @@
                     <h4 class="modal-title">Pozor!</h4>
                 </div>
                 <div class="modal-body">
-                    <p>Želite li obrisati upit id: 9?</p>
+                    <p>Želite li obrisati oglas id: 9?</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-ok="modal">U redu</button>
@@ -935,7 +914,7 @@
         </div>
     </div>
     <!-- Modal 10-->
-    <div class="modal fade" id="delete-quote-id-10" role="dialog">
+    <div class="modal fade" id="delete-ad-id-10" role="dialog">
         <div class="modal-dialog">
             <!-- Modal content-->
             <div class="modal-content">
@@ -944,7 +923,7 @@
                     <h4 class="modal-title">Pozor!</h4>
                 </div>
                 <div class="modal-body">
-                    <p>Želite li obrisati upit id: 10?</p>
+                    <p>Želite li obrisati oglas id: 10?</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-ok="modal">U redu</button>
@@ -954,7 +933,7 @@
         </div>
     </div>
     <!-- Modal 11-->
-    <div class="modal fade" id="delete-quote-id-11" role="dialog">
+    <div class="modal fade" id="delete-ad-id-11" role="dialog">
         <div class="modal-dialog">
             <!-- Modal content-->
             <div class="modal-content">
@@ -963,7 +942,7 @@
                     <h4 class="modal-title">Pozor!</h4>
                 </div>
                 <div class="modal-body">
-                    <p>Želite li obrisati upit id: 11?</p>
+                    <p>Želite li obrisati oglas id: 11?</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-ok="modal">U redu</button>
@@ -973,7 +952,7 @@
         </div>
     </div>
     <!-- Modal 12-->
-    <div class="modal fade" id="delete-quote-id-12" role="dialog">
+    <div class="modal fade" id="delete-ad-id-12" role="dialog">
         <div class="modal-dialog">
             <!-- Modal content-->
             <div class="modal-content">
@@ -982,7 +961,7 @@
                     <h4 class="modal-title">Pozor!</h4>
                 </div>
                 <div class="modal-body">
-                    <p>Želite li obrisati upit id: 12?</p>
+                    <p>Želite li obrisati oglas id: 12?</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-ok="modal">U redu</button>
@@ -992,7 +971,7 @@
         </div>
     </div>
     <!-- Modal 13-->
-    <div class="modal fade" id="delete-quote-id-13" role="dialog">
+    <div class="modal fade" id="delete-ad-id-13" role="dialog">
         <div class="modal-dialog">
             <!-- Modal content-->
             <div class="modal-content">
@@ -1001,7 +980,7 @@
                     <h4 class="modal-title">Pozor!</h4>
                 </div>
                 <div class="modal-body">
-                    <p>Želite li obrisati upit id: 13?</p>
+                    <p>Želite li obrisati oglas id: 13?</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-ok="modal">U redu</button>
@@ -1011,7 +990,7 @@
         </div>
     </div>
     <!-- Modal 14-->
-    <div class="modal fade" id="delete-quote-id-14" role="dialog">
+    <div class="modal fade" id="delete-ad-id-14" role="dialog">
         <div class="modal-dialog">
             <!-- Modal content-->
             <div class="modal-content">
@@ -1020,7 +999,7 @@
                     <h4 class="modal-title">Pozor!</h4>
                 </div>
                 <div class="modal-body">
-                    <p>Želite li obrisati upit id: 14?</p>
+                    <p>Želite li obrisati oglas id: 14?</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-ok="modal">U redu</button>
@@ -1030,7 +1009,7 @@
         </div>
     </div>
     <!-- Modal 15-->
-    <div class="modal fade" id="delete-quote-id-15" role="dialog">
+    <div class="modal fade" id="delete-ad-id-15" role="dialog">
         <div class="modal-dialog">
             <!-- Modal content-->
             <div class="modal-content">
@@ -1039,7 +1018,7 @@
                     <h4 class="modal-title">Pozor!</h4>
                 </div>
                 <div class="modal-body">
-                    <p>Želite li obrisati upit id: 15?</p>
+                    <p>Želite li obrisati oglas id: 15?</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-ok="modal">U redu</button>
@@ -1049,7 +1028,7 @@
         </div>
     </div>
     <!-- Modal 16-->
-    <div class="modal fade" id="delete-quote-id-16" role="dialog">
+    <div class="modal fade" id="delete-ad-id-16" role="dialog">
         <div class="modal-dialog">
             <!-- Modal content-->
             <div class="modal-content">
@@ -1058,7 +1037,7 @@
                     <h4 class="modal-title">Pozor!</h4>
                 </div>
                 <div class="modal-body">
-                    <p>Želite li obrisati upit id: 16?</p>
+                    <p>Želite li obrisati oglas id: 16?</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-ok="modal">U redu</button>
@@ -1068,7 +1047,7 @@
         </div>
     </div>
     <!-- Modal 17-->
-    <div class="modal fade" id="delete-quote-id-17" role="dialog">
+    <div class="modal fade" id="delete-ad-id-17" role="dialog">
         <div class="modal-dialog">
             <!-- Modal content-->
             <div class="modal-content">
@@ -1077,7 +1056,7 @@
                     <h4 class="modal-title">Pozor!</h4>
                 </div>
                 <div class="modal-body">
-                    <p>Želite li obrisati upit id: 17?</p>
+                    <p>Želite li obrisati oglas id: 17?</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-ok="modal">U redu</button>
@@ -1087,7 +1066,7 @@
         </div>
     </div>
     <!-- Modal 18-->
-    <div class="modal fade" id="delete-quote-id-18" role="dialog">
+    <div class="modal fade" id="delete-ad-id-18" role="dialog">
         <div class="modal-dialog">
             <!-- Modal content-->
             <div class="modal-content">
@@ -1096,7 +1075,7 @@
                     <h4 class="modal-title">Pozor!</h4>
                 </div>
                 <div class="modal-body">
-                    <p>Želite li obrisati upit id: 18?</p>
+                    <p>Želite li obrisati oglas id: 18?</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-ok="modal">U redu</button>
@@ -1106,7 +1085,7 @@
         </div>
     </div>
     <!-- Modal 19-->
-    <div class="modal fade" id="delete-quote-id-19" role="dialog">
+    <div class="modal fade" id="delete-ad-id-19" role="dialog">
         <div class="modal-dialog">
             <!-- Modal content-->
             <div class="modal-content">
@@ -1115,7 +1094,7 @@
                     <h4 class="modal-title">Pozor!</h4>
                 </div>
                 <div class="modal-body">
-                    <p>Želite li obrisati upit id: 19?</p>
+                    <p>Želite li obrisati oglas id: 19?</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-ok="modal">U redu</button>
@@ -1125,7 +1104,7 @@
         </div>
     </div>
     <!-- Modal 20-->
-    <div class="modal fade" id="delete-quote-id-20" role="dialog">
+    <div class="modal fade" id="delete-ad-id-20" role="dialog">
         <div class="modal-dialog">
             <!-- Modal content-->
             <div class="modal-content">
@@ -1134,7 +1113,7 @@
                     <h4 class="modal-title">Pozor!</h4>
                 </div>
                 <div class="modal-body">
-                    <p>Želite li obrisati upit id: 20?</p>
+                    <p>Želite li obrisati oglas id: 20?</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-ok="modal">U redu</button>
@@ -1144,7 +1123,7 @@
         </div>
     </div>
     <!-- Modal 21-->
-    <div class="modal fade" id="delete-quote-id-21" role="dialog">
+    <div class="modal fade" id="delete-ad-id-21" role="dialog">
         <div class="modal-dialog">
             <!-- Modal content-->
             <div class="modal-content">
@@ -1153,7 +1132,7 @@
                     <h4 class="modal-title">Pozor!</h4>
                 </div>
                 <div class="modal-body">
-                    <p>Želite li obrisati upit id: 21?</p>
+                    <p>Želite li obrisati oglas id: 21?</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-ok="modal">U redu</button>
@@ -1163,7 +1142,7 @@
         </div>
     </div>
     <!-- Modal 22-->
-    <div class="modal fade" id="delete-quote-id-22" role="dialog">
+    <div class="modal fade" id="delete-ad-id-22" role="dialog">
         <div class="modal-dialog">
             <!-- Modal content-->
             <div class="modal-content">
@@ -1172,7 +1151,7 @@
                     <h4 class="modal-title">Pozor!</h4>
                 </div>
                 <div class="modal-body">
-                    <p>Želite li obrisati upit id: 22?</p>
+                    <p>Želite li obrisati oglas id: 22?</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-ok="modal">U redu</button>
@@ -1182,7 +1161,7 @@
         </div>
     </div>
     <!-- Modal 23-->
-    <div class="modal fade" id="delete-quote-id-23" role="dialog">
+    <div class="modal fade" id="delete-ad-id-23" role="dialog">
         <div class="modal-dialog">
             <!-- Modal content-->
             <div class="modal-content">
@@ -1191,7 +1170,7 @@
                     <h4 class="modal-title">Pozor!</h4>
                 </div>
                 <div class="modal-body">
-                    <p>Želite li obrisati upit id: 23?</p>
+                    <p>Želite li obrisati oglas id: 23?</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-ok="modal">U redu</button>
@@ -1201,7 +1180,7 @@
         </div>
     </div>
     <!-- Modal 24-->
-    <div class="modal fade" id="delete-quote-id-24" role="dialog">
+    <div class="modal fade" id="delete-ad-id-24" role="dialog">
         <div class="modal-dialog">
             <!-- Modal content-->
             <div class="modal-content">
@@ -1210,7 +1189,7 @@
                     <h4 class="modal-title">Pozor!</h4>
                 </div>
                 <div class="modal-body">
-                    <p>Želite li obrisati upit id: 24?</p>
+                    <p>Želite li obrisati oglas id: 24?</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-ok="modal">U redu</button>
@@ -1220,7 +1199,7 @@
         </div>
     </div>
     <!-- Modal 25-->
-    <div class="modal fade" id="delete-quote-id-25" role="dialog">
+    <div class="modal fade" id="delete-ad-id-25" role="dialog">
         <div class="modal-dialog">
             <!-- Modal content-->
             <div class="modal-content">
@@ -1229,7 +1208,7 @@
                     <h4 class="modal-title">Pozor!</h4>
                 </div>
                 <div class="modal-body">
-                    <p>Želite li obrisati upit id: 25?</p>
+                    <p>Želite li obrisati oglas id: 25?</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-ok="modal">U redu</button>
@@ -1255,83 +1234,83 @@
     <script type="text/javascript" charset="utf8" src="js/buttons.html5.min.js"></script>
     <script type="text/javascript">
     $(document).ready(function() {
-        $("#btn-delete-quote-id-1").click(function() {
-            $('#delete-quote-id-1').modal('show');
+        $("#btn-delete-ad-id-1").click(function() {
+            $('#delete-ad-id-1').modal('show');
         });
-        $("#btn-delete-quote-id-2").click(function() {
-            $('#delete-quote-id-2').modal('show');
+        $("#btn-delete-ad-id-2").click(function() {
+            $('#delete-ad-id-2').modal('show');
         });
-        $("#btn-delete-quote-id-3").click(function() {
-            $('#delete-quote-id-3').modal('show');
+        $("#btn-delete-ad-id-3").click(function() {
+            $('#delete-ad-id-3').modal('show');
         });
-        $("#btn-delete-quote-id-4").click(function() {
-            $('#delete-quote-id-4').modal('show');
+        $("#btn-delete-ad-id-4").click(function() {
+            $('#delete-ad-id-4').modal('show');
         });
-        $("#btn-delete-quote-id-5").click(function() {
-            $('#delete-quote-id-5').modal('show');
+        $("#btn-delete-ad-id-5").click(function() {
+            $('#delete-ad-id-5').modal('show');
         });
-        $("#btn-delete-quote-id-6").click(function() {
-            $('#delete-quote-id-6').modal('show');
+        $("#btn-delete-ad-id-6").click(function() {
+            $('#delete-ad-id-6').modal('show');
         });
-        $("#btn-delete-quote-id-7").click(function() {
-            $('#delete-quote-id-7').modal('show');
+        $("#btn-delete-ad-id-7").click(function() {
+            $('#delete-ad-id-7').modal('show');
         });
-        $("#btn-delete-quote-id-8").click(function() {
-            $('#delete-quote-id-8').modal('show');
+        $("#btn-delete-ad-id-8").click(function() {
+            $('#delete-ad-id-8').modal('show');
         });
-        $("#btn-delete-quote-id-9").click(function() {
-            $('#delete-quote-id-9').modal('show');
+        $("#btn-delete-ad-id-9").click(function() {
+            $('#delete-ad-id-9').modal('show');
         });
-        $("#btn-delete-quote-id-10").click(function() {
-            $('#delete-quote-id-10').modal('show');
+        $("#btn-delete-ad-id-10").click(function() {
+            $('#delete-ad-id-10').modal('show');
         });
-        $("#btn-delete-quote-id-11").click(function() {
-            $('#delete-quote-id-11').modal('show');
+        $("#btn-delete-ad-id-11").click(function() {
+            $('#delete-ad-id-11').modal('show');
         });
-        $("#btn-delete-quote-id-12").click(function() {
-            $('#delete-quote-id-12').modal('show');
+        $("#btn-delete-ad-id-12").click(function() {
+            $('#delete-ad-id-12').modal('show');
         });
-        $("#btn-delete-quote-id-13").click(function() {
-            $('#delete-quote-id-13').modal('show');
+        $("#btn-delete-ad-id-13").click(function() {
+            $('#delete-ad-id-13').modal('show');
         });
-        $("#btn-delete-quote-id-14").click(function() {
-            $('#delete-quote-id-14').modal('show');
+        $("#btn-delete-ad-id-14").click(function() {
+            $('#delete-ad-id-14').modal('show');
         });
-        $("#btn-delete-quote-id-15").click(function() {
-            $('#delete-quote-id-15').modal('show');
+        $("#btn-delete-ad-id-15").click(function() {
+            $('#delete-ad-id-15').modal('show');
         });
-        $("#btn-delete-quote-id-16").click(function() {
-            $('#delete-quote-id-16').modal('show');
+        $("#btn-delete-ad-id-16").click(function() {
+            $('#delete-ad-id-16').modal('show');
         });
-        $("#btn-delete-quote-id-17").click(function() {
-            $('#delete-quote-id-17').modal('show');
+        $("#btn-delete-ad-id-17").click(function() {
+            $('#delete-ad-id-17').modal('show');
         });
-        $("#btn-delete-quote-id-18").click(function() {
-            $('#delete-quote-id-18').modal('show');
+        $("#btn-delete-ad-id-18").click(function() {
+            $('#delete-ad-id-18').modal('show');
         });
-        $("#btn-delete-quote-id-19").click(function() {
-            $('#delete-quote-id-19').modal('show');
+        $("#btn-delete-ad-id-19").click(function() {
+            $('#delete-ad-id-19').modal('show');
         });
-        $("#btn-delete-quote-id-20").click(function() {
-            $('#delete-quote-id-20').modal('show');
+        $("#btn-delete-ad-id-20").click(function() {
+            $('#delete-ad-id-20').modal('show');
         });
-        $("#btn-delete-quote-id-21").click(function() {
-            $('#delete-quote-id-21').modal('show');
+        $("#btn-delete-ad-id-21").click(function() {
+            $('#delete-ad-id-21').modal('show');
         });
-        $("#btn-delete-quote-id-22").click(function() {
-            $('#delete-quote-id-22').modal('show');
+        $("#btn-delete-ad-id-22").click(function() {
+            $('#delete-ad-id-22').modal('show');
         });
-        $("#btn-delete-quote-id-23").click(function() {
-            $('#delete-quote-id-23').modal('show');
+        $("#btn-delete-ad-id-23").click(function() {
+            $('#delete-ad-id-23').modal('show');
         });
-        $("#btn-delete-quote-id-24").click(function() {
-            $('#delete-quote-id-24').modal('show');
+        $("#btn-delete-ad-id-24").click(function() {
+            $('#delete-ad-id-24').modal('show');
         });
-        $("#btn-delete-quote-id-25").click(function() {
-            $('#delete-quote-id-25').modal('show');
+        $("#btn-delete-ad-id-25").click(function() {
+            $('#delete-ad-id-25').modal('show');
         });
 
-        $('#quote-list').DataTable({
+        $('#ad-list').DataTable({
             "language": {
                 "url": "http://cdn.datatables.net/plug-ins/1.10.11/i18n/Croatian.json"
             },
