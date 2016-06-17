@@ -1,6 +1,7 @@
 .mt20 {
     margin-top: 20px;
 }
+
 .mt30 {
     margin-top: 30px;
 }
@@ -8,43 +9,60 @@
 .panel-footer {
     margin-bottom: 10px;
 }
+
 .btn-xs {
     margin-top: 5px;
 }
+
 .table>tbody>tr>td {
     vertical-align: inherit;
 }
+
 .btn-info {
     margin-top: 10px;
 }
+
 .input-button {
     margin-top: 10px;
 }
+
 .col-md-6 .btn-info {
     margin-bottom: 10px;
 }
+
 .input-profile-picture {
     margin-top: 15px;
 }
+
 .budi-inline {
     display: inline;
 }
+
 .row-top {
     min-height: 892px;
 }
-.form-control[readonly]{
+
+.form-control[readonly] {
     cursor: default;
     background-color: #fff;
 }
-.right-side{
+
+.right-side {
     background-color: #fff;
 }
+
+
 /* 5 star rating */
+
 div.stars {
-  width: 270px;
-  display: flex;
+    width: 270px;
+    display: flex;
 }
-input.star { display: none; }
+
+input.star {
+    display: none;
+}
+
 label.star {
     float: right;
     padding: 2px;
@@ -52,46 +70,65 @@ label.star {
     color: #444;
     transition: all .2s;
 }
+
 input.star:checked ~ label.star:before {
-  content: '\f005';
-  color: #FD4;
-  transition: all .25s;
+    content: '\f005';
+    color: #FD4;
+    transition: all .25s;
 }
+
 input.star-5:checked ~ label.star:before {
-  color: #FE7;
-  text-shadow: 0 0 20px #952;
+    color: #FE7;
+    text-shadow: 0 0 20px #952;
 }
-input.star-1:checked ~ label.star:before { color: #F62; }
-label.star:hover { transform: rotate(-15deg) scale(1.3); }
+
+input.star-1:checked ~ label.star:before {
+    color: #F62;
+}
+
+label.star:hover {
+    transform: rotate(-15deg) scale(1.3);
+}
+
 label.star:before {
-  content: '\f006';
-  font-family: FontAwesome;
+    content: '\f006';
+    font-family: FontAwesome;
 }
+
+
 /* end of 5 star rating */
-.logo{
-    background: url('../img/logo.png');
+
+.logo {
+    background: url('../img/loog.png');
     background-repeat: no-repeat;
     background-position: center center;
 }
-.bg-white{
-    background: #fff; 
+
+.bg-white {
+    background: #fff;
 }
+
 .dataTables_filter {
     float: right;
 }
+
 .move-down {
     margin-top: 20px;
 }
-.center{
+
+.center {
     margin-left: auto;
     margin-right: auto;
 }
+
 .pt300 {
     padding: 300px 0px 0px 0px;
 }
+
 .row-top2 {
     min-height: 941px;
 }
-.table>tbody>tr>td { 
+
+.table>tbody>tr>td {
     min-width: 60px;
 }
