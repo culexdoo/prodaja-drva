@@ -53,6 +53,13 @@ a:hover {
     margin: 0px !important;
 }
 
+.mlr {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+.ml-15 {
+    margin-left: -15px !important;
+}
 .m5 {
     margin: 5px;
 }
@@ -108,6 +115,8 @@ a:hover {
 .pl15 {
     padding-left: 15px;
 }
+
+
 
 .pt11 {
     padding-top: 11px;

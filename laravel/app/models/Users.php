@@ -45,6 +45,7 @@ class Users extends Eloquent
 					'users.contact2 AS contact2',
 					'users.additional_notes AS additional_notes',
 					'users.user_info AS user_info',
+					'users.created_at AS created_at',
 					'city.name AS name'
 				);
 			

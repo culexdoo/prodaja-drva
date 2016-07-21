@@ -102,7 +102,7 @@
                                     <?php foreach($ads as $ad): ?>
                                     <tr>
                                         <td><?php echo $ad->id; ?></td>
-                                        <td><?php echo $ad->username; ?></td>
+                                        <td><?php echo $ad->user; ?></td>
                                         <td><?php echo $ad->title; ?></td>
                                         <td><?php echo $ad->description; ?></td>
                                         <td><?php echo $ad->email; ?></td>

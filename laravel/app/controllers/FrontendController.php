@@ -156,10 +156,14 @@ class FrontendController extends \CoreController {
 	{
 
  		$this->layout->css_files = array( 
+ 			'css/frontend/custom.css'
+
 		);
 		$this->layout->js_footer_files = array( 
+
+
 		);
-		$this->layout->content = View::make('frontend.signIn');
+		$this->layout->content = View::make('frontend.sign-in', array('postSignIn'));
 
 	}
 
@@ -176,7 +180,7 @@ class FrontendController extends \CoreController {
 	{
 		Input::merge(array_map('trim', Input::all()));
 
-		if (Auth::attempt(array('email' => Input::get('sign_in_email'), 'password' => Input::get('sign_in_password'))))
+		if (Auth::attempt(array('email' => Input::get('email'), 'password' => Input::get('password'))))
 		{
 			$user_language = 'en';
 
@@ -198,6 +202,28 @@ class FrontendController extends \CoreController {
 	/*
 	 *	Forgot password segment
 	 */
+
+
+
+	// Do the sign out
+	public function signout()
+	{
+		if (Auth::check())
+		{
+			Auth::logout();
+			Session::flush();
+
+			return Redirect::route('getLanding')->with('info_message', Lang::get('messages.sign_out_success'));
+
+		}
+
+		else
+		{
+			return Redirect::route('getSignIn')->with('info_message', Lang::get('messages.sign_out_resign'));
+		}
+
+	}
+
 
 
 
@@ -284,13 +310,13 @@ class FrontendController extends \CoreController {
 
  
 		 
-		    return Redirect::intended('getLanding')->with('success_message', Lang::get('messages.sign_in_success'));
+		    return Redirect::intended('/')->with('success_message', Lang::get('messages.sign_in_success'));
 	 
 
 			Session::put('lang', 'hr');
 			App::setLocale('hr');
 
-			return Redirect::intended('getLanding')->with('success_message', Lang::get('messages.sign_in_success'));
+			return Redirect::intended('/')->with('success_message', Lang::get('messages.sign_in_success'));
 		}
 		else
 		{
@@ -557,6 +583,288 @@ class FrontendController extends \CoreController {
 
 
 
+	// Show create-ad page
+	public function adsCreate()
+	{ 
+
+		$regionlist = array();
+	 	$region = Region::getEntries(null, null);
+	 	
+		if ($region['status'] == 0)
+		{
+			return Redirect::route('getDashboard')->with('error_message', Lang::get('core.msg_error_getting_entries'));
+		}
+		foreach ($region['entries'] as $region)
+		{
+			$regionlist[$region->id] = $region->name;
+		}
+
+		$citylist = array();
+	 	$city = City::getEntries(null, null);
+	 	
+		if ($city['status'] == 0)
+		{
+			return Redirect::route('getDashboard')->with('error_message', Lang::get('core.msg_error_getting_entries'));
+		}
+		foreach ($city['entries'] as $city)
+		{
+			$citylist[$city->id] = $city->name;
+		}
+
+		$woodlist = array();
+	 	$wood = Wood::getEntries(null, null); 
+		if ($wood['status'] == 0)
+		{
+			return Redirect::route('getDashboard')->with('error_message', Lang::get('core.msg_error_getting_entries'));
+		}
+		foreach ($wood['entries'] as $wood)
+		{
+			$woodlist[$wood->id] = $wood->name;
+		}
+
+		$packaginglist = array();
+	 	$packaging = Packaging::getEntries(null, null); 
+		if ($packaging['status'] == 0)
+		{
+			return Redirect::route('getDashboard')->with('error_message', Lang::get('core.msg_error_getting_entries'));
+		}
+		foreach ($packaging['entries'] as $packaging)
+		{
+			$packaginglist[$packaging->id] = $packaging->name;
+		}
+
+
+		$entries = Ads::getEntries(null, null);
+
+ 		$this->layout->css_files = array( 
+
+ 			'css/frontend/custom.css'
+
+		);
+		$this->layout->js_footer_files = array( 
+		);
+		$this->layout->content = View::make('frontend.create-ad', array('postRoute' =>  'adsStore', 'entries' => $entries['entries'], 'regionlist' => $regionlist, 'citylist' => $citylist, 'woodlist' => $woodlist, 'packaginglist' => $packaginglist));
+	}
+
+	public function adsStore()
+	{
+		Input::merge(array_map('trim', Input::all()));
+
+		$entryValidator = Validator::make(Input::all(), Ads::$store_rules);
+		
+		if ($entryValidator->fails())
+		{
+			return Redirect::back()->with('error_message', Lang::get('core.msg_error_validating_entry'))->withErrors($entryValidator)->withInput();
+		}
+
+		$store = $this->repo->store( 
+			Input::get('title'),
+			Input::get('wood'),
+			Input::get('packaging'),  
+			Input::get('region'), 
+			Input::get('city'),   
+			Input::get('price'),
+			Input::get('description')  
+		);
+
+		if ($store['status'] == 0)
+		{
+			return Redirect::back()->with('error_message', Lang::get('core.msg_error_adding_entry'))->withErrors($entryValidator)->withInput();
+		}
+		else
+		{
+			return Redirect::route('adsCreate')->with('success_message', Lang::get('core.msg_success_entry_added', array('name' => Input::get('name'))));
+		}
+	}
+
+	public function contact() {
+
+		$entries = inquiry::getEntries(null, null);
+
+		$this->layout->css_files = array(
+
+			);
+
+		$this->layout->js_footer_files = array(
+
+			);
+
+
+
+		$this->layout->content = View::make('frontend.contact', array('postRoute' => 'inquiryStore', 'entries' => $entries['entries']));
+
+
+
+	}
+
+
+	public function inquiryStore()
+	{
+		Input::merge(array_map('trim', Input::all()));
+
+		$entryValidator = Validator::make(Input::all(), Inquiry::$store_rules);
+		
+		if ($entryValidator->fails())
+		{
+			return Redirect::back()->with('error_message', Lang::get('core.msg_error_validating_entry'))->withErrors($entryValidator)->withInput();
+		}
+
+		$store = $this->repo->inquiryStore( 
+			Input::get('first_name'),
+			Input::get('last_name'),
+			Input::get('contact'),
+			Input::get('email'),
+			Input::get('content') 
+		);
+
+		if ($store['status'] == 0)
+		{
+			return Redirect::back()->with('error_message', Lang::get('core.msg_error_adding_entry'))->withErrors($entryValidator)->withInput();
+		}
+		else
+		{
+			return Redirect::route('contact')->with('success_message', Lang::get('core.msg_success_entry_added', array('name' => Input::get('name'))));
+		}
+	}
+
+
+	public function about() {
+
+		$this->layout->css_files = array(
+
+			);
+
+		$this->layout->js_footer_files = array(
+
+			);
+
+
+
+		$this->layout->content = View::make('frontend.about');
+
+
+
+	}
+
+
+	public function passwordRecovery() {
+
+		$this->layout->css_files = array(
+
+			);
+
+		$this->layout->js_footer_files = array(
+
+			);
+
+
+
+		$this->layout->content = View::make('frontend.password-recovery');
+
+
+
+	}
+
+
+	public function adList() {
+
+		$entry = Ads::getEntries(null, null);
+
+		$wood = $entry['entries'];
+
+
+		$this->layout->css_files = array(
+
+			);
+
+		$this->layout->js_footer_files = array(
+
+			);
+
+
+
+		$this->layout->content = View::make('frontend.ad-list', array('entry' => $entry['entries']));
+
+		
+
+	}
+
+
+	public function showad($id) {
+
+		$entry = Ads::getEntries($id, null);
+
+		$user = $entry['entry']->user;
+
+		$user = Users::getEntries($user, null);
+
+		$region = $entry['entry']->region;
+
+		$region = Region::getEntries($region,null);
+
+		
+
+		
+ 		if (is_null($entry['entry'])) {
+
+			return Redirect::route('getlanding')->with('error_message', Lang::get('core.user_not_found'));
+
+		}
+
+		if ($entry['status'] == 0)
+		{
+			return Redirect::route('getlanding')->with('error_message', Lang::get('core.msg_error_getting_entries'));
+		}
+
+		$this->layout->title = $entry['entry']->title .' | Prodaja drva';
+
+		$this->layout->css_files = array(
+		);
+
+		$this->layout->js_footer_files = array(
+		);
+
+		$this->layout->content = View::make('frontend.single-ad', array('entry' => $entry['entry'], 'user' => $user['entry'], 'region' => $region['entry'] ));
+	}
+
+	public function singleAd() {
+
+
+
+		$this->layout->css_files = array(
+
+			);
+
+		$this->layout->js_footer_files = array(
+
+			);
+
+		$this->layout->title = $entry['entry']->first_name . ' ' . $entry['entry']->last_name . ' | Zdravizub.hr';
+
+		$this->layout->content = View::make('frontend.single-ad');
+
+
+
+	}
+
+
+	public function myProfile() {
+
+		$this->layout->css_files = array(
+
+			);
+
+		$this->layout->js_footer_files = array(
+
+			);
+
+
+
+		$this->layout->content = View::make('frontend.my-profile');
+
+
+
+	}
  
 
 }

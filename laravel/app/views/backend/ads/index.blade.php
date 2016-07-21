@@ -26,7 +26,7 @@
                                     @foreach($entries as $entry)
                                     <tr>
                                         <td>{{ $entry->id }}</td>
-                                        <td>{{ $entry->username }}</td>
+                                        <td>{{ $entry->user }}</td>
                                         <td>{{ $entry->title }}</td>
                                         <td>{{ $entry->description }}</td>
                                         <td>{{ $entry->email }}</td>

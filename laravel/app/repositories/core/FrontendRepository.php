@@ -43,6 +43,57 @@ class FrontendRepository
 		}
 	}
 
+	public function store($title, $wood, $packaging, $region, $city, $price, $description)
+	{ 
+		try {
+ 
+			$entry = new Ads;
+			$entry->title = $title;
+			$entry->wood = $wood;
+			$entry->packaging = $packaging;
+			$entry->region = $region;
+			$entry->city = $city; 
+			$entry->price = $price;
+			$entry->description = $description;
+			
+
+
+			$entry->save();
+			
+			return array('status' => 1);
+	 	} 
+
+		catch (Exception $exp)
+		{
+			return array('status' => 0, 'reason' => $exp->getMessage());
+		}   
+	}
+
+
+	public function inquiryStore($first_name, $last_name, $contact, $email, $content)
+	{ 
+		try {
+ 
+			$entry = new Inquiry;
+			$entry->first_name = $first_name;
+			$entry->last_name = $last_name;
+			$entry->contact = $contact;
+			$entry->email = $email;
+			$entry->content = $content;
+
+			
+
+
+			$entry->save();
+			
+			return array('status' => 1);
+	 	} 
+
+		catch (Exception $exp)
+		{
+			return array('status' => 0, 'reason' => $exp->getMessage());
+		}   
+	}
 
 
 }

@@ -66,14 +66,14 @@
                     <div class="form-group ">
                         <button type="submit" class="btn btn-primary btn-lg btn-block m0">Registriraj se</button>
                     </div>
-                    {{ Form::close() }}
                     <div class="form-group mt30">
                         <p>Registriran ste korisnik?</p>
-                        <a href="sign-in.html">
+                        <a href="{{URL::route('getSignIn') }}">
                             <button type="button" class="btn btn-primary btn-lg btn-block m0">Prijavi se</button>
                         </a>
                     </div>
                 </form>
+                {{ Form::close() }}
             </div>
         </div>
     </div>

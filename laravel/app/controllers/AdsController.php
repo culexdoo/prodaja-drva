@@ -232,7 +232,7 @@ class AdsController extends \BaseController {
 			Input::get('city'),
 			Input::get('email'),
 			Input::get('contact1'),
-			Input::get('contact2')  
+			Input::get('contact2')
 		);
 
 		if ($store['status'] == 0)

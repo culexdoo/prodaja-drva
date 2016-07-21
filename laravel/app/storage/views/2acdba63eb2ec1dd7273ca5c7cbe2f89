@@ -26,7 +26,7 @@
                                     <?php foreach($entries as $entry): ?>
                                     <tr>
                                         <td><?php echo $entry->id; ?></td>
-                                        <td><?php echo $entry->username; ?></td>
+                                        <td><?php echo $entry->user; ?></td>
                                         <td><?php echo $entry->title; ?></td>
                                         <td><?php echo $entry->description; ?></td>
                                         <td><?php echo $entry->email; ?></td>

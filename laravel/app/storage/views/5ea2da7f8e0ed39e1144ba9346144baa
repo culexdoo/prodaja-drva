@@ -73,15 +73,15 @@
                     <div class="form-group ">
                         <button type="submit" class="btn btn-primary btn-lg btn-block m0">Registriraj se</button>
                     </div>
-                    <?php echo Form::close(); ?>
-
                     <div class="form-group mt30">
                         <p>Registriran ste korisnik?</p>
-                        <a href="sign-in.html">
+                        <a href="<?php echo URL::route('getSignIn'); ?>">
                             <button type="button" class="btn btn-primary btn-lg btn-block m0">Prijavi se</button>
                         </a>
                     </div>
                 </form>
+                <?php echo Form::close(); ?>
+
             </div>
         </div>
     </div>

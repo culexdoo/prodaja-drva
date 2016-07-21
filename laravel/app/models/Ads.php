@@ -25,7 +25,7 @@ class Ads extends Eloquent
 	/*	try
 		{*/
 			$entry = DB::table('ads') 
-				->join('users', 'ads.username', '=', 'users.id')
+				->join('users', 'ads.user', '=', 'users.id')
 				->select(
 					'ads.id AS id', 
 					'ads.title AS title',
@@ -33,13 +33,14 @@ class Ads extends Eloquent
 					'ads.packaging AS packaging',
 					'ads.price AS price',
 					'ads.description AS description',
-					'ads.username AS username',
+					'ads.user AS user',
 					'ads.region AS region',
 					'ads.city AS city',
 					'ads.email AS email',
 					'ads.contact1 AS contact1',
 					'ads.contact2 AS contact2',
-					'users.username AS username',
+					'ads.image AS image',
+					'ads.created_at AS created_at',
 					'users.email AS email' 
 				);
 			

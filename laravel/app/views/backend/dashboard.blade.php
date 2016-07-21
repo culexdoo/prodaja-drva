@@ -102,7 +102,7 @@
                                     @foreach($ads as $ad)
                                     <tr>
                                         <td>{{ $ad->id }}</td>
-                                        <td>{{ $ad->username }}</td>
+                                        <td>{{ $ad->user }}</td>
                                         <td>{{ $ad->title }}</td>
                                         <td>{{ $ad->description }}</td>
                                         <td>{{ $ad->email }}</td>

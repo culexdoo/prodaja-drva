@@ -8,16 +8,16 @@
                                 <div class="clearfix">
                                     <div class="col-md-3">
                                         <div class="footer-logo">
-                                            <a href="#"><img class="logo-img" src="/img/frontend/loog.png"></a>
+                                            <a href="{{URL::route ('getLanding') }}"><img class="logo-img" src="/img/frontend/loog.png"></a>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
                                         <dl class="footer-nav">
                                             <dt class="nav-title">PRODAJEM DRVA</dt>
-                                            <dd class="nav-item"><a href="index.html">Naslovna</a></dd>
-                                            <dd class="nav-item"><a href="publish-ad.html">Prodajem drva</a></dd>
-                                            <dd class="nav-item"><a href="ad-list.html">Kupujem drva</a></dd>
-                                            <dd class="nav-item"><a href="kontakt.html">Kontakt</a></dd>
+                                            <dd class="nav-item"><a href="{{URL::route ('getLanding') }}">Naslovna</a></dd>
+                                            <dd class="nav-item"><a href="{{URL::route ('adsCreate') }}">Prodajem drva</a></dd>
+                                            <dd class="nav-item"><a href="{{URL::route ('adList') }}">Kupujem drva</a></dd>
+                                            <dd class="nav-item"><a href="{{URL::route ('contact') }}">Kontakt</a></dd>
                                         </dl>
                                     </div>
                                     <div class="col-md-3">
@@ -29,14 +29,23 @@
                                             <dd class="nav-item"><a href="pravila_uvjeti.html">Pravila i uvjeti korištenja</a></dd>
                                         </dl>
                                     </div>
+                                    @if (Auth::guest())
                                     <div class="col-md-3">
                                         <dl class="footer-nav">
                                             <dt class="nav-title">ČLANSTVO</dt>
-                                            <dd class="nav-item"><a href="about.html">O nama</a></dd>
-                                            <dd class="nav-item"><a href="sign-in.html">Prijava</a></dd>
-                                            <dd class="nav-item"><a href="registration.html">Registracija</a></dd>
+                                            <dd class="nav-item"><a href="{{URL::route ('about')}}">O nama</a></dd>
+                                            <dd class="nav-item"><a href="{{URL::route ('getSignIn') }}">Prijava</a></dd>
+                                            <dd class="nav-item"><a href="{{URL::route ('getRegistration') }}">Registracija</a></dd>
                                         </dl>
                                     </div>
+                                    @elseif (Auth::user())
+                                    <div class="col-md-3">
+                                        <dl class="footer-nav">
+                                            <dt class="nav-title">ČLANSTVO</dt>
+                                            <dd class="nav-item"><a href="{{URL::route ('about')}}">O nama</a></dd> 
+                                        </dl>
+                                    </div>
+                                    @endif
                                 </div>
                             </div>
                         </div>

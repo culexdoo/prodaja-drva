@@ -312,7 +312,7 @@
                 </div>
                 <div class="view-more-btn">
                     <div class="more-btn-inner">
-                        <a href="publish-ad.html">
+                        <a href="<?php echo URL::route ('adsCreate'); ?>">
                             <span>Objavite oglas </span>
                         </a>
                     </div>
@@ -342,12 +342,12 @@
             <div id="owl-demo" class="owl-carousel owl-theme mt50">
                 <div class="item">
                     <div class="col-md-12">
-                        <a href="single-ad-view.html">
+                        <a href="<?php echo URL::route ('singleAd'); ?>">
                             <img class="img-responsive img-portfolio img-hover setwh" src="http://www.njuskalo.hr/image-w920x690/grijanje-hladenje-ostalo/drva-ogrijev-bukva-slika-65133805.jpg" alt="">
                         </a>
                         <div class="panel">
                             <div class="panel-body p0">
-                                <a href="ad-view.html">
+                                <a href="<?php echo URL::route ('singleAd'); ?>">
                                     <p class="ad-title-homepage">Naslov 1</p>
                                 </a>
                                 <p class="ad-price-homepage">200 kn </p>
@@ -357,12 +357,12 @@
                 </div>
                 <div class="item">
                     <div class="col-md-12">
-                        <a href="single-ad-view.html">
+                        <a href="<?php echo URL::route ('singleAd'); ?>">
                             <img class="img-responsive img-portfolio img-hover setwh" src="http://www.njuskalo.hr/image-w920x690/grijanje-hladenje-ostalo/drva-ogrijev-1-klasa-slika-66298450.jpg" alt="">
                         </a>
                         <div class="panel">
                             <div class="panel-body p0">
-                                <a href="single-ad-view.html">
+                                <a href="<?php echo URL::route ('singleAd'); ?>">
                                     <p class="ad-title-homepage">Naslov 2</p>
                                 </a>
                                 <p class="ad-price-homepage">200 kn </p>
@@ -372,12 +372,12 @@
                 </div>
                 <div class="item">
                     <div class="col-md-12">
-                        <a href="single-ad-view.html">
+                        <a href="<?php echo URL::route ('singleAd'); ?>">
                             <img class="img-responsive img-portfolio img-hover setwh" src="http://www.njuskalo.hr/image-w920x690/grijanje-hladenje-ostalo/drva-ogrijev-besplatna-dostava-slika-66297816.jpg" alt="">
                         </a>
                         <div class="panel">
                             <div class="panel-body p0">
-                                <a href="single-ad-view.html">
+                                <a href="<?php echo URL::route ('singleAd'); ?>">
                                     <p class="ad-title-homepage">Naslov 3</p>
                                 </a>
                                 <p class="ad-price-homepage">200 kn </p>
@@ -387,12 +387,12 @@
                 </div>
                 <div class="item">
                     <div class="col-md-12">
-                        <a href="single-ad-view.html">
+                        <a href="<?php echo URL::route ('singleAd'); ?>">
                             <img class="img-responsive img-portfolio img-hover setwh" src="http://www.njuskalo.hr/image-w920x690/grijanje-hladenje-ostalo/drva-ogrijev-besplatna-dostava-slika-46716888.jpg" alt="">
                         </a>
                         <div class="panel">
                             <div class="panel-body p0">
-                                <a href="single-ad-view.html">
+                                <a href="<?php echo URL::route ('singleAd'); ?>">
                                     <p class="ad-title-homepage">Naslov 4</p>
                                 </a>
                                 <p class="ad-price-homepage">200 kn </p>
@@ -402,12 +402,12 @@
                 </div>
                 <div class="item">
                     <div class="col-md-12">
-                        <a href="single-ad-view.html">
+                        <a href="<?php echo URL::route ('singleAd'); ?>">
                             <img class="img-responsive img-portfolio img-hover setwh" src="http://www.njuskalo.hr/image-w920x690/grijanje-hladenje-ostalo/drva-ogrijev-1-klasa-slika-46718012.jpg" alt="">
                         </a>
                         <div class="panel">
                             <div class="panel-body p0">
-                                <a href="single-ad-view.html">
+                                <a href="<?php echo URL::route ('singleAd'); ?>">
                                     <p class="ad-title-homepage">Naslov 5</p>
                                 </a>
                                 <p class="ad-price-homepage">200 kn </p>
@@ -417,12 +417,12 @@
                 </div>
                 <div class="item">
                     <div class="col-md-12">
-                        <a href="single-ad-view.html">
+                        <a href="<?php echo URL::route ('singleAd'); ?>">
                             <img class="img-responsive img-portfolio img-hover setwh" src="http://www.njuskalo.hr/image-w920x690/grijanje-hladenje-ostalo/drva-ogrijev-besplatna-dostava-slika-42706312.jpg" alt="">
                         </a>
                         <div class="panel">
                             <div class="panel-body p0">
-                                <a href="single-ad-view.html">
+                                <a href="<?php echo URL::route ('singleAd'); ?>">
                                     <p class="ad-title-homepage">Naslov 6</p>
                                 </a>
                                 <p class="ad-price-homepage">200 kn </p>
@@ -432,12 +432,12 @@
                 </div>
                 <div class="item">
                     <div class="col-md-12">
-                        <a href="single-ad-view.html">
+                        <a href="<?php echo URL::route ('singleAd'); ?>">
                             <img class="img-responsive img-portfolio img-hover setwh" src="http://www.njuskalo.hr/image-w920x690/grijanje-hladenje-ostalo/drva-ogrijev-1-klasa-slika-66298106.jpg" alt="">
                         </a>
                         <div class="panel">
                             <div class="panel-body p0">
-                                <a href="single-ad-view.html">
+                                <a href="<?php echo URL::route ('singleAd'); ?>">
                                     <p class="ad-title-homepage">Naslov 7</p>
                                 </a>
                                 <p class="ad-price-homepage">200 kn </p>
@@ -450,7 +450,7 @@
     </div>
     <div class="row m0">
         <div class="col-md-offset-4 col-md-4 text-center">
-            <a class="btn btn-lg btn-default mt15 cta" href="ad-list.html"> <i class="fa fa-list pull-left mt4 mr8"></i>Svi oglasi</a>
+            <a class="btn btn-lg btn-default mt15 cta" href="<?php echo URL::route ('adList'); ?>"> <i class="fa fa-list pull-left mt4 mr8"></i>Svi oglasi</a>
         </div>
     </div>
     <!-- Najnoviji oglasi end -->

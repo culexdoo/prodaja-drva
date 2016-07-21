@@ -42,7 +42,7 @@ Route::group(array('prefix' => 'admin'), function()
 	 *	- Controller handles the type and file loading depending on user role
 	 */ 
 
-	
+	Route::get('/', array('as' => 'getDashboard', 'uses' => 'DashboardController@index'));
 
 
 		// Users accounts, create, save, edit, update, destroy
@@ -116,8 +116,14 @@ Route::get('/', array('as' => 'getLanding', 'uses' => 'FrontendController@index'
 
 // Sign in page
 Route::get('sign-in', array('before' => 'guest', 'as' => 'getSignIn', 'uses' => 'FrontendController@getSignIn'));
+
+// Sign in processing --- 'before' => 'guest|csrf', 
+Route::post('sign-me-in', array('before' => 'guest', 'as' => 'postSignIn', 'uses' => 'FrontendController@postSignIn'));
+
+// Sign out
+Route::get('sign-out', array('before' => 'auth', 'as' => 'SignOut', 'uses' => 'FrontendController@signout'));
   
-// Register page
+// Registration page
 Route::get('registration', array('before' => 'guest', 'as' => 'getRegistration', 'uses' => 'FrontendController@getRegistration'));
  
 // Post register page
@@ -126,8 +132,6 @@ Route::post('register-user', array('before' => 'csrf', 'as' => 'postRegister', '
 // Forgot password page
 Route::get('forgot-password', array('as' => 'getForgotPassword', 'uses' => 'FrontendController@getForgotPassword'));
  
-// Sign in processing --- 'before' => 'guest|csrf', 
-Route::post('sign-me-in', array('before' => 'guest', 'as' => 'postSignIn', 'uses' => 'FrontendController@postSignIn'));
 
 // Change language route (with redirect to Dashboard)
 Route::get('change-language/{id}', array('as' => 'changeLang', 'uses' => 'CoreController@getChangeLanguage'));
@@ -160,4 +164,34 @@ Route::get('profile', array('before' => 'auth', 'as' => 'getProfile', 'uses' => 
 Route::post('save-profile', array('before' => 'csrf', 'as' => 'postProfile', 'uses' => 'CoreController@postProfile'));
 
 
-  
+// Create ads page
+Route::get('create-ad', array('before' => 'auth', 'as' => 'adsCreate', 'uses' => 'FrontendController@adsCreate'));
+
+// Store ads 
+Route::post('store-ad', array('as' => 'adsStore', 'uses' => 'FrontendController@adsStore'));
+
+// Contact page
+Route::get('contact', array('as' => 'contact', 'uses' => 'FrontendController@contact'));
+
+
+// Store inquiry from contact page
+Route::post('store-inquiry', array('as' => 'inquiryStore', 'uses' => 'FrontendController@inquiryStore'));
+
+// About page
+Route::get('about', array('before' => 'auth', 'as' => 'about', 'uses' => 'FrontendController@about'));
+
+// Password recovery page
+Route::get('password-recovery', array('as' => 'passwordRecovery', 'uses' => 'FrontendController@passwordRecovery'));
+
+// Ad list page
+Route::get('ad-list', array('as' => 'adList', 'uses' => 'FrontendController@adList'));
+
+// Single ad page
+Route::get('single-ad', array('as' => 'singleAd', 'uses' => 'FrontendController@singleAd'));
+
+// My profile page
+Route::get('my-profile', array('as' => 'myProfile', 'uses' => 'FrontendController@myProfile'));
+
+// Prikaz jednog oglasa
+Route::get('oglas/{id}', array('as' => 'showad', 'uses' => 'FrontendController@showad'));
+

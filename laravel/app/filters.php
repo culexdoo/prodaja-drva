@@ -129,7 +129,7 @@ Route::filter('auth', function ()
 		}
 		else
 		{
-			return Redirect::guest('admin-sign-in')->with('info_message', Lang::get('messages.not_signed_in'));
+			return Redirect::guest('sign-in')->with('info_message', Lang::get('messages.not_signed_in'));
 		}
 	}
 	else
