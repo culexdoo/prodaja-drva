@@ -1,0 +1,381 @@
+                <div class="row" style="margin-bottom:5px;">
+                    <div class="col-md-2">
+                        <div class="sm-st clearfix">
+                            <span class="sm-st-icon st-red"><i class="fa fa-pencil"></i></span>
+                            <div class="sm-st-info">
+                                <span><?php echo $countallads; ?></span> Ukupno oglasa
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="sm-st clearfix">
+                            <span class="sm-st-icon st-red"><i class="fa fa-pencil"></i></span>
+                            <div class="sm-st-info">
+                                <span><?php echo $countactiveads; ?></span> Aktivnih oglasa
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="sm-st clearfix">
+                            <span class="sm-st-icon st-green"><i class="fa fa-user"></i></span>
+                            <div class="sm-st-info">
+                                <span><?php echo $countallusers; ?></span> Ukupno korisnika
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="sm-st clearfix">
+                            <span class="sm-st-icon st-green"><i class="fa fa-user"></i></span>
+                            <div class="sm-st-info">
+                                <span><?php echo $countactiveusers; ?></span> Aktivnih korisnika
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="sm-st clearfix">
+                            <span class="sm-st-icon st-blue"><i class="fa fa-comment"></i></span>
+                            <div class="sm-st-info">
+                                <span><?php echo $countallreviews; ?></span> Ukupno recenzija
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="sm-st clearfix">
+                            <span class="sm-st-icon st-blue"><i class="fa fa-comment"></i></span>
+                            <div class="sm-st-info">
+                                <span><?php echo $countactivereviews; ?></span> Aktivnih recenzija
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="bg-white">
+                            <header class="panel-heading">
+                                Pregled zadnje registriranih korisnika
+                            </header>
+                            <div class="panel-body table-responsive">
+                                <table class="table table-hover" id="user-list">
+                                    <thead>
+                                        <tr>
+                                            <th>Id</th>
+                                            <th>Ime</th>
+                                            <th>Prezime</th>
+                                            <th>Kontakt</th>
+                                            <th>Mjesto</th>
+                                            <th>Aktivan</th>
+                                            <th>Akcije</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    <?php if(count($users) > 0): ?> 
+                                    <?php foreach($users as $user): ?>
+                                        <tr>
+                                            <td><?php echo $user->id; ?></td>
+                                            <td><?php echo $user->first_name; ?></td>
+                                            <td><?php echo $user->last_name; ?></td>
+                                            <td><?php echo $user->contact1; ?></td>
+                                            <td><?php echo $user->name; ?></td>
+                                            <td><?php echo $user->published; ?></td>
+                                            <td>
+                                                <a href="<?php echo URL::route('UsersShow', array('id' => $user->id)); ?>">
+                                                    <button class="btn btn-primary btn-xs"><i class="fa fa-eye"></i></button>
+                                                </a>
+                                                <a href="<?php echo URL::route('UsersEdit', array('id' => $user->id)); ?>">
+                                                    <button class="btn btn-success btn-xs"><i class="fa fa-pencil"></i></button>
+                                                </a>
+                                                <button type="button" id="btn-delete-users-id-<?php echo $user->id; ?>" class="btn btn-danger btn-xs" data-target="#delete-users-id-<?php echo $user->id; ?>"><i class="fa fa-times"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <?php endforeach; ?>
+                                 <?php endif; ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="bg-white">
+                            <header class="panel-heading">
+                                Pregled zadnjih oglasa
+                            </header>
+                            <div class="panel-body table-responsive">
+                                <table class="table table-hover" id="ad-list">
+                                <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Korisničko ime</th>
+                                        <th>Naslov</th>
+                                        <th>Sadržaj oglasa</th>
+                                        <th>Aktivan</th>
+                                        <th>Akcije</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <?php if(count($ads) > 0): ?> 
+                                    <?php foreach($ads as $ad): ?>
+                                    <tr>
+                                        <td><?php echo $ad->id; ?></td>
+                                        <td><?php echo $ad->username; ?></td>
+                                        <td><?php echo $ad->title; ?></td>
+                                        <td><?php echo $ad->description; ?></td>
+                                        <td><?php echo $ad->published; ?></td>
+                                        <td>
+                                            <a href="<?php echo URL::route('AdsShow', array('id' => $ad->id)); ?>">
+                                                <button class="btn btn-primary btn-xs"><i class="fa fa-eye"></i></button>
+                                            </a>
+                                            <a href="<?php echo URL::route('AdsEdit', array('id' => $ad->id)); ?>">
+                                                <button class="btn btn-success btn-xs"><i class="fa fa-pencil"></i></button>
+                                            </a>
+                                            <button type="button" id="btn-delete-ads-id-<?php echo $ad->id; ?>" class="btn btn-danger btn-xs" data-target="#delete-ads-id-<?php echo $ad->id; ?>"><i class="fa fa-times"></i>
+                                            </button>
+                                        </td>
+                                    </tr> 
+                                    <?php endforeach; ?>
+                                 <?php endif; ?>
+                                </tbody>
+                            </table>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+
+                <div class="row mt20">
+                    <div class="col-md-6">
+                        <div class="bg-white">
+                            <header class="panel-heading">
+                                Pregled zadnjih recenzija
+                            </header>
+                            <div class="panel-body table-responsive">
+                                <table class="table table-hover" id="review-list">
+                                <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Korisnik</th>  
+                                        <th>Oglašivač</th>
+                                        <th>Sadržaj recenzije</th>
+                                        <th>Aktivan</th>
+                                        <th>Akcije</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <?php if(count($reviews) > 0): ?> 
+                                    <?php foreach($reviews as $review): ?>
+                                    <tr>
+                                        <td><?php echo $review->id; ?></td>
+                                        <td><?php echo $review->user; ?></td> 
+                                        <td><?php echo $review->reviewed_user; ?></td>
+                                        <td><?php echo $review->review_content; ?></td>
+                                        <td><?php echo $review->published; ?></td>
+                                        <td>
+                                            <a href="<?php echo URL::route('ReviewShow', array('id' => $review->id)); ?>">
+                                                <button class="btn btn-primary btn-xs"><i class="fa fa-eye"></i></button>
+                                            </a>
+                                            <a href="<?php echo URL::route('ReviewEdit', array('id' => $review->id)); ?>">
+                                                <button class="btn btn-success btn-xs"><i class="fa fa-pencil"></i></button>
+                                            </a>
+                                            <button type="button" id="btn-delete-review-id-<?php echo $review->id; ?>" class="btn btn-danger btn-xs" data-target="#delete-review-id-<?php echo $review->id; ?>"><i class="fa fa-times"></i>
+                                            </button>
+                                        </td>
+                                    </tr> 
+                                    <?php endforeach; ?>
+                                 <?php endif; ?>
+                                </tbody>
+                            </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="bg-white">
+                            <header class="panel-heading">
+                                Pregled zadnjih upita
+                            </header>
+                            <div class="panel-body table-responsive">
+                                <table class="table table-hover" id="review-list">
+                                <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Ime</th>  
+                                        <th>Prezime</th>
+                                        <th>Sadržaj upita</th>
+                                        <th>Akcije</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <?php if(count($inquirys) > 0): ?> 
+                                    <?php foreach($inquirys as $inquiry): ?>
+                                    <tr>
+                                        <td><?php echo $inquiry->id; ?></td>
+                                        <td><?php echo $inquiry->first_name; ?></td> 
+                                        <td><?php echo $inquiry->last_name; ?></td>
+                                        <td><?php echo $inquiry->content; ?></td>
+                                        <td>
+                                            <a href="<?php echo URL::route('InquiryShow', array('id' => $inquiry->id)); ?>">
+                                                <button class="btn btn-primary btn-xs"><i class="fa fa-eye"></i></button>
+                                            </a>
+                                            <a href="<?php echo URL::route('InquiryEdit', array('id' => $inquiry->id)); ?>">
+                                                <button class="btn btn-success btn-xs"><i class="fa fa-pencil"></i></button>
+                                            </a>
+                                            <button type="button" id="btn-delete-inquiry-id-<?php echo $inquiry->id; ?>" class="btn btn-danger btn-xs" data-target="#delete-inquiry-id-<?php echo $inquiry->id; ?>"><i class="fa fa-times"></i>
+                                            </button>
+                                        </td>
+                                    </tr> 
+                                    <?php endforeach; ?>
+                                 <?php endif; ?>
+                                </tbody>
+                            </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+            <!-- modals --> 
+<?php if(count($users) > 0): ?> 
+    <?php foreach($users as $user): ?>
+			    <!-- Modal 1-<?php echo $user->id; ?>-->
+	<div class="modal fade" id="delete-users-id-<?php echo $user->id; ?>" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Pozor!</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Želite li obrisati korisnika <?php echo $user->first_name; ?>?</p>
+                </div>
+                <div class="modal-footer">
+                <a href="<?php echo URL::route('UsersDestroy', array('id' => $user->id)); ?>">
+                    <button type="button" class="btn btn-default" data-ok="modal">U redu</button>
+                </a>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Odustani</button>
+                </div>
+            </div>
+        </div>
+    </div> 
+    <?php endforeach; ?>
+<?php endif; ?> 
+
+<?php if(count($ads) > 0): ?> 
+    <?php foreach($ads as $ad): ?>
+    <!-- Modal <?php echo $ad->id; ?>-->
+    <div class="modal fade" id="delete-ads-id-<?php echo $ad->id; ?>" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Pozor!</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Želite li obrisati oglas: <?php echo $ad->title; ?>?</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="<?php echo URL::route('AdsDestroy', array('id' => $ad->id)); ?>">
+                        <button type="button" class="btn btn-default" data-ok="modal">U redu</button>
+                    </a>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Odustani</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php endforeach; ?>
+<?php endif; ?> 
+
+<?php if(count($reviews) > 0): ?> 
+    <?php foreach($reviews as $review): ?>
+    <div class="modal fade" id="delete-review-id-<?php echo $review->id; ?>" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Pozor!</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Želite li obrisati recenziju: <?php echo $review->id; ?>?</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="<?php echo URL::route('ReviewDestroy', array('id' => $review->id)); ?>">
+                        <button type="button" class="btn btn-default" data-ok="modal">U redu</button>
+                    </a>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Odustani</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php endforeach; ?>
+<?php endif; ?> 
+
+<?php if(count($inquirys) > 0): ?> 
+    <?php foreach($inquirys as $inquiry): ?>
+    <!-- Modal <?php echo $inquiry->id; ?>-->
+    <div class="modal fade" id="delete-inquiry-id-<?php echo $inquiry->id; ?>" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Pozor!</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Želite li obrisati upit: <?php echo $inquiry->id; ?>?</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="<?php echo URL::route('InquiryDestroy', array('id' => $inquiry->id)); ?>">
+                        <button type="button" class="btn btn-default" data-ok="modal">U redu</button>
+                    </a>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Odustani</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php endforeach; ?>
+<?php endif; ?>
+            <!-- modals end -->
+
+            
+    <script type="text/javascript">
+    $(document).ready(function() {
+         <?php if(count($users) > 0): ?> 
+            <?php foreach($users as $user): ?>
+                $("#btn-delete-users-id-<?php echo $user->id; ?>").click(function() { 
+                    $('#delete-users-id-<?php echo $user->id; ?>').modal('show');
+                });
+           
+            <?php endforeach; ?>
+        <?php endif; ?> 
+    });
+    $(document).ready(function() {
+         <?php if(count($ads) > 0): ?> 
+            <?php foreach($ads as $ad): ?>
+                $("#btn-delete-ads-id-<?php echo $ad->id; ?>").click(function() { 
+                    $('#delete-ads-id-<?php echo $ad->id; ?>').modal('show');
+                });
+           
+            <?php endforeach; ?>
+        <?php endif; ?> 
+     });
+    $(document).ready(function() {
+         <?php if(count($reviews) > 0): ?> 
+            <?php foreach($reviews as $review): ?>
+                $("#btn-delete-review-id-<?php echo $review->id; ?>").click(function() { 
+                    $('#delete-review-id-<?php echo $review->id; ?>').modal('show');
+                });
+           
+            <?php endforeach; ?>
+        <?php endif; ?> 
+     });
+    $(document).ready(function() {
+         <?php if(count($inquirys) > 0): ?> 
+            <?php foreach($inquirys as $inquiry): ?>
+                $("#btn-delete-inquiry-id-<?php echo $inquiry->id; ?>").click(function() { 
+                    $('#delete-inquiry-id-<?php echo $inquiry->id; ?>').modal('show');
+                });
+           
+            <?php endforeach; ?>
+        <?php endif; ?> 
+     });
+    </script>
