@@ -1,0 +1,364 @@
+<?php echo $__env->make('frontend.includes.navbar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <!-- banner start -->
+    <div class="row m0 bg-whitesmoke">
+        <div class="container">
+            <div class="col-lg-12 p0">
+                <ol class="breadcrumb mb0 fs16">
+                    <li><a href="<?php echo URL::route ('getLanding'); ?>">Naslovna</a>
+                    </li>
+                    <li class="active"><?php echo $entry->username; ?></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <!-- /.row -->
+    <!-- Image Header -->
+    <div class="row m0">
+        <div class="col-lg-12 p0">
+            <div class="mh400" style="background-image: url(/img/frontend/classified-list-banner.jpg);">
+                <div class="container text-center ">
+                    <h1 class="text-white mt100 fs65"> Profil korisnika <?php echo $entry->username; ?> </h1>
+                    <h2 class="text-white fs33"> Pogledajte ostale oglase korisnika <?php echo $entry->username; ?>! </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- banner end -->
+    <!-- profile start -->
+    <div class="row m0 mt80">
+        <div class="container">
+            <div class="col-lg-3">
+                <div class="row">
+                    <div class="profile-picture">
+                        <?php if($entry->image == null): ?>
+                            <div class="form-group mb15">
+                            <label class="col-md-12 p0" for="image">Trenutna slika:</label>
+                                <div class="col-md-12 p0 img-style m0"></div>
+                            </div>
+                        <?php elseif($entry->image != null || $entry->image != ''): ?>
+                            <div class="form-group mb15">
+                                <label class="col-md-12 p0" for="image">Trenutna slika:</label> 
+                                <div class="col-md-12 p0 mb20">
+                                    <?php echo HTML::image(URL::to('/') . '/uploads/frontend/users/thumbs/' . $entry->image, $entry->first_name); ?>
+
+                                </div>
+                            </div>
+                        <?php endif; ?> 
+                    </div>
+                    <div class="user-info pl10">
+                        <h3><?php echo $entry->first_name . ' ' .$entry->last_name; ?></h3>
+                    </div>
+                    <div class="user-short-desc pl10">
+                        <p>Kratki opis:</p>
+                        <p><?php echo $entry->user_info; ?></p>
+                    </div>
+                    <div class="user-status pl10">
+                        <table class="table table-hover table-striped">
+                            <tbody>
+                                <tr>
+                                    <td>Status</td>
+                                    <td><span class="label label-success" style="position: relative; left:65px;">Aktivan</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Registriran od</td>
+                                    <td style="position: relative; left:40px;"><?php echo date('d. m. Y.', strtotime( $entry->created_at )); ?></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9">
+                <div class="tabs widget" id="tabs">
+                    <ul class="nav nav-tabs widget mt0">
+                        <li class="active">
+                            <a data-toogle="tab" href="#profile-tab">Profil </a>
+                        </li>
+                        <li>
+                            <a data-toogle="tab" href="#classified-tab">Oglasi </a>
+                        </li>
+                        <li>
+                            <a data-toogle="tab" href="#review-tab">Recenzije </a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="profile-tab" class="tab-pane active">
+                            <div class="p20">
+                                <i class="fa fa-user fa-2x"></i>
+                                <h3>Informacije o korisniku</h3>
+                                <div class="row mt25">
+                                    <div class="col-lg-6">
+                                        <div class="row">
+                                            <div class="col-lg-5">
+                                                <label class="control-label">Ime: </label>
+                                            </div>
+                                            <div class="col-lg-7">
+                                                <label class="fw-normal"><?php echo $entry->first_name; ?> </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="row">
+                                            <div class="col-lg-5">
+                                                <label class="control-label">Prezime: </label>
+                                            </div>
+                                            <div class="col-lg-7">
+                                                <label class="fw-normal"><?php echo $entry->last_name; ?> </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="row">
+                                            <div class="col-lg-5">
+                                                <label class="control-label">Korisničko ime: </label>
+                                            </div>
+                                            <div class="col-lg-7">
+                                                <label class="fw-normal"><?php echo $entry->username; ?> </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="row">
+                                            <div class="col-lg-5">
+                                                <label class="control-label">Email: </label>
+                                            </div>
+                                            <div class="col-lg-7">
+                                                <label class="fw-normal"><?php echo $entry->email; ?> </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="row">
+                                            <div class="col-lg-5">
+                                                <label class="control-label">Grad: </label>
+                                            </div>
+                                            <div class="col-lg-7">
+                                                <label class="fw-normal"><?php echo $city->name; ?> </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="row">
+                                            <div class="col-lg-5">
+                                                <label class="control-label">Primarni kontakt: </label>
+                                            </div>
+                                            <div class="col-lg-7">
+                                                <label class="fw-normal"><?php echo $entry->contact1; ?> </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="row">
+                                            <div class="col-lg-5">
+                                                <label class="control-label">Regija: </label>
+                                            </div>
+                                            <div class="col-lg-7">
+                                                <label class="fw-normal"><?php echo $region->name; ?> </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="row">
+                                            <div class="col-lg-5">
+                                                <label class="control-label">Sekundarni kontakt: </label>
+                                            </div>
+                                            <div class="col-lg-7">
+                                                <label class="fw-normal"><?php echo $entry->contact2; ?> </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="row">
+                                            <div class="col-lg-5">
+                                                <label class="control-label">Datum rođenja: </label>
+                                            </div>
+                                            <div class="col-lg-7">
+                                                <label class="fw-normal"><?php echo $entry->date_of_birth; ?></label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="classified-tab" class="tab-pane">
+                            <div class="p20">
+                                <?php if(count($userclassifieds) > 0): ?> 
+                                <?php foreach($userclassifieds as $userclassified): ?> 
+                                <div class="row box">
+                                    <div class="single-classified">
+                                        <div class="col-lg-4 p0">
+                                            <div class="classified-image">
+                                                <?php echo HTML::image(URL::to('/') . '/uploads/frontend/classifieds/thumbs/' . $userclassified->image, $userclassified->title); ?>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8 mb20">
+                                            <div class="classified-content">
+                                                <div class="col-lg-10 p0">
+                                                     <h3 class="classified-title"> <a href="<?php echo URL::route( 'ShowClassified', array('permalink' => $userclassified->permalink )); ?>">
+                                                        <?php echo $userclassified->title; ?>
+
+                                                    </a></h3>
+                                                </div>
+                                                <div class="col-lg-2 p0">
+                                                    <a href="<?php echo URL::route( 'ShowClassified', array('permalink' => $userclassified->permalink )); ?>">
+                                                        <i class="fa fa-eye fa-2x pull-right mt5"></i>
+                                                    </a>
+                                                </div>
+                                                <p class="classified-description"><?php echo $userclassified->description; ?></p>
+                                                <div class="row">
+                                                    <div class="col-lg-5">
+                                                        <p style="margin-top: 15px; margin-bottom: 0px;">Vrsta drveta:</p>
+                                                        <h5 class="classified-category" style="margin: 0px;"><?php echo $userclassified->woodname; ?></h5> 
+                                                     </div>
+                                                    <div class="col-lg-6">
+                                                        <p style="margin-top: 15px; margin-bottom: 0px;">Vrsta pakiranja:</p>
+                                                        <h5 class="classified-category" style="margin: 0px;"><?php echo $userclassified->packagingname; ?></h5> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="classified-footer">
+                                                <div class="row">
+                                                    <div class="col-lg-5">
+                                                        <div class="county">
+                                                            <h5><?php echo $userclassified->regionname; ?></h5>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-4">
+                                                        <div class="timestamp">
+                                                            <h5>Objavljeno <?php echo date('d. m. Y.', strtotime( $userclassified->created_at )); ?></h5>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-3">
+                                                        <div class="price">
+                                                            <h5><span class="price-eur"><?php echo $userclassified->price; ?> kn</span></h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <?php endforeach; ?>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                        <div id="review-tab" class="tab-pane">
+                            <div class="p20">
+                                <div class="row box">
+                                    <?php echo Form::open(array('route' => $postRoute, 'role' => 'form', 'class' => 'form-horizontal', 'autocomplete' => 'off', 'files' => true)); ?>
+
+                                        <div class="panel-body col-md-8">
+                                            <?php if(!Auth::guest()): ?>
+                                                <?php echo Form::hidden('user', isset(Auth::User()->id) ? Auth::User()->id : null, ['class' => 'form-control']); ?>
+
+                                                <?php echo Form::hidden('reviewed_user', $entry->id, ['class' => 'form-control']); ?>
+
+                                            <div class="col-md-12 mb15 p0">
+                                                <label>Ocijenite oglašivača</label>
+                                                    <select class="form-control" id="rating" name="rating">
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option> 
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                    </select>
+                                            </div>
+                                            <div class="col-md-12 mb15 p0">
+                                                <label>Sadržaj recenzije</label> 
+                                                    <?php echo Form::textarea('review_content', null, ['id' => 'review_content', 'placeholder' => 'Sadržaj recenzije', 'cols' => '107', 'rows' => '8', 'style' => 'border: 1px solid #CCC; border-radius: 5px;']); ?>
+
+                                            </div>
+                                            <?php echo Form::button(Lang::get('core.save'), array('type' => 'submit', 'class' => 'btn btn-primary btn-lg cta')); ?>
+
+                                            <?php endif; ?>
+                                            <?php if(Auth::guest()): ?>
+                                                <p>Recenzije mogu ostavljati samo registrirani korisnici!</p>
+                                                <a href= "<?php echo URL::Route('getSignIn'); ?>"> Prijava</a>
+                                            <?php endif; ?>
+                                        </div>
+                                    <?php echo Form::close(); ?>
+
+                                        <section class="panel">
+                                        <?php if(count($reviews) > 0): ?>
+                                        <?php foreach($reviews as $review): ?>
+                                            <div class="panel-body col-md-8"> 
+                                                <div class="form-group">
+                                                    <label>Korisnik</label>
+                                                    <?php echo Form::text('username', isset($review->username) ? $review->username : null, ['class' => 'form-control', 'id' => 'username', 'placeholder' => 'Korisnik', 'readonly' => 'true', 'style' => 'min-width: 772px;']); ?>
+
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Sadržaj recenzije</label> 
+                                                    <?php echo Form::textarea('review_content', isset($review->review_content) ? $review->review_content : null, ['id' => 'review_content', 'placeholder' => 'Sadržaj oglasa', 'cols' => '107', 'rows' => '8', 'style' => 'border: 1px solid #CCC; border-radius: 5px;', 'readonly' => 'true']); ?>
+
+                                                </div>
+                                                <div class="col-md-12 mb15 p0">
+                                                <label class="pat8">Ocjena:</label>
+                                                 <?php if( $review->rating == '1'): ?>
+                                                    <span class="ratingstar">☆</span>
+                                                    <?php elseif( $review->rating == '2'): ?>
+                                                    <span class="ratingstar">☆</span><span class="ratingstar">☆</span>
+                                                    <?php elseif( $review->rating == '3'): ?>
+                                                    <span class="ratingstar">☆</span><span class="ratingstar">☆</span><span class="ratingstar">☆</span>
+                                                    <?php elseif( $review->rating == '4'): ?>
+                                                    <span class="ratingstar">☆</span><span class="ratingstar">☆</span><span class="ratingstar">☆</span><span class="ratingstar">☆</span>
+                                                    <?php else: ?>
+                                                    <span class="ratingstar">☆</span><span class="ratingstar">☆</span><span class="ratingstar">☆</span><span class="ratingstar">☆</span><span class="ratingstar">☆</span>
+                                                    <?php endif; ?>
+                                                </div>
+                                            </div>
+                                        <?php endforeach; ?>
+                                        <?php endif; ?>
+                                        </section>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+        <!-- profile end -->
+        <!-- Izdvojeni oglasi start -->
+        <div class="row m0">
+            <div class="container">
+                <div class="col-lg-12">
+                    <h2 class="page-header text-center fs35">Izdvojeni oglasi</h2>
+                    <div class="text-center h2-separator"></div>
+                    <div class="text-center mb35 fs18">
+                        Novi ste korisnik stranice? Pogledajte naše izdvojene oglase birane od strane starih korisnika.
+                    </div>
+                </div>
+                <?php if(count($featuredclassifieds['entry']) > 0): ?> 
+                <?php foreach($featuredclassifieds['entry'] as $featuredclassified): ?>
+                    <div class="col-md-3">
+                        <a href="<?php echo URL::route ('ShowClassified', array('id' => $featuredclassified->permalink)); ?>">
+                            <?php echo HTML::image(URL::to('/') . '/uploads/frontend/classifieds/thumbs/' . $featuredclassified->image, $featuredclassified->title); ?>
+
+                        </a>
+                        <div class="panel mt10">
+                            <div class="panel-body p0">
+                                <a href="<?php echo URL::route ('ShowClassified', array('id' => $featuredclassified->permalink)); ?>">
+                                    <p class="classified-title-homepage"><?php echo $featuredclassified->title; ?></p>
+                                </a>
+                                <p class="classified-price-homepage"><?php echo $featuredclassified->price; ?> kn</p>
+                            </div>
+                        </div>
+                    </div> 
+                <?php endforeach; ?>
+            <?php endif; ?>
+            </div>
+        </div>
+        <!-- Izdvojeni oglasi end -->
+        <!-- Featured list button start -->
+        
+
+<script type="text/javascript">
+        $('#tabs a[href^="#"]').click(function(e) {
+            e.preventDefault()
+            $(this).tab('show')
+        })
+        </script>
+
+<?php echo $__env->make('frontend.includes.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

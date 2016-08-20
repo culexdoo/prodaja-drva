@@ -129,7 +129,7 @@ Route::filter('auth', function ()
 		}
 		else
 		{
-			return Redirect::guest('prijava')->with('info_message', Lang::get('messages.not_signed_in'));
+			return Redirect::guest('prijava')->with('info_message', Lang::get('Niste prijavljeni!'));
 		}
 	}
 	else
@@ -190,7 +190,7 @@ Route::filter('superadmin', function ()
 {
 	if (!Entrust::hasRole('superadmin'))
 	{
-		return Redirect::route('getDashboard')->with('error_message', Lang::get('messages.unauthorized_access'));
+		return Redirect::route('getDashboard')->with('error_message', Lang::get('Neovlašten pristup!'));
 	}
 });
 
@@ -199,7 +199,7 @@ Route::filter('admin', function()
 {
 	if (!Entrust::hasRole('admin'))
 	{
-		return Redirect::route('getDashboard')->with('error_message', Lang::get('messages.unauthorized_access'));
+		return Redirect::route('getDashboard')->with('error_message', Lang::get('Neovlašten pristup!'));
 	}
 });
 
@@ -208,7 +208,7 @@ Route::filter('superadmin_admin', function()
 {
 	if (!(Entrust::hasRole('superadmin') || Entrust::hasRole('admin')))
 	{
-		return Redirect::route('getDashboard')->with('error_message', Lang::get('messages.unauthorized_access'));
+		return Redirect::route('getDashboard')->with('error_message', Lang::get('Neovlašten pristup!'));
 	}
 });
 
@@ -217,7 +217,7 @@ Route::filter('superadmin_admin_manager', function ()
 {
 	if (!(Entrust::hasRole('superadmin') || Entrust::hasRole('admin') || Entrust::hasRole('manager')))
 	{
-		return Redirect::route('getDashboard')->with('error_message', Lang::get('messages.unauthorized_access'));
+		return Redirect::route('getDashboard')->with('error_message', Lang::get('Neovlašten pristup!'));
 	}
 }); 
 
@@ -226,7 +226,7 @@ Route::filter('manager', function ()
 {
 	if (!Entrust::hasRole('manager'))
 	{
-		return Redirect::route('getDashboard')->with('error_message', Lang::get('messages.unauthorized_access'));
+		return Redirect::route('getDashboard')->with('error_message', Lang::get('Neovlašten pristup!'));
 	}
 });
  

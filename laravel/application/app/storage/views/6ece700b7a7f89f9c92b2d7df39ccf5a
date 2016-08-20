@@ -90,7 +90,12 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Lozinka</label>
-                                        <?php echo Form::text('password', isset($entry->password) ? $entry->password : null, ['class' => 'form-control', 'id' => 'password', 'placeholder' => 'Lozinka']); ?>
+                                        <?php echo Form::password('password', array('id' => 'password', 'class' => 'form-control')); ?>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Potvrda lozinke</label>
+                                        <?php echo Form::password('repeat_password', array('id' => 'repeat_password', 'class' => 'form-control')); ?>
 
                                     </div>
                                     <div class="form-group">

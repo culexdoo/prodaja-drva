@@ -16,7 +16,7 @@
         <!-- Intro Content -->
         <div class="row m0">
             <div class="col-lg-12 p0">
-                <img class="img-responsive" src="/img/frontend/ad-list-banner.jpg" alt="">
+                <img class="img-responsive" src="/img/frontend/classified-list-banner.jpg" alt="">
             </div>
         </div>
         <div class="container">

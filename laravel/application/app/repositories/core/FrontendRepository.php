@@ -57,15 +57,15 @@ class FrontendRepository
 	
 
 	/**
-	 * Store a newly created ads in storage.
+	 * Store a newly created classifieds in storage.
 	 *
 	 * @return Response
 	 */
-	public function adsStore($user, $title, $wood, $packaging, $region, $city, $price, $description, $image = null, $permalink = null, $latitude, $longitude)
+	public function classifiedsStore($user, $title, $wood, $packaging, $region, $city, $price, $description, $image = null, $permalink = null, $latitude, $longitude)
 	{ 
 		try {
  
-			$entry = new Ads;
+			$entry = new Classifieds;
 			$entry->user = $user;
 			$entry->title = $title;
 			$entry->wood = $wood;
@@ -82,8 +82,8 @@ class FrontendRepository
 			if ($image != null)
 			{
 				// Image data
-				$largeImagePath = public_path() . "/uploads/frontend/ads/";
-				$thumbImagePath = public_path() . "/uploads/frontend/ads/thumbs/";
+				$largeImagePath = public_path() . "/uploads/frontend/classifieds/";
+				$thumbImagePath = public_path() . "/uploads/frontend/classifieds/thumbs/";
 
 				// Image name is the same in thumbs and full size image
 				$extension = $image->getClientOriginalExtension(); // getting image extension
@@ -91,9 +91,10 @@ class FrontendRepository
 
 				$uploadSuccess = Image::make($image->getRealPath())
 					->orientate()
-					->fit(768, 1024)
+					->fit(800, 600)
+					->crop(400, 300)
 					->save($largeImagePath . $imagename) // original
-					->crop(768, 768)
+					->fit(540, 380)
 					->resize(270, 190)
 					->save($thumbImagePath . $imagename) // thumb
 					->destroy();
@@ -201,14 +202,14 @@ class FrontendRepository
 		}   
 	}
 
-	public function UpdateAd($id, $user, $title, $wood, $packaging, $region, $city, $price, $description, $image = null, $permalink, $latitude, $longitude)
+	public function UpdateClassified($id, $user, $title, $wood, $packaging, $region, $city, $price, $description, $image = null, $permalink, $latitude, $longitude)
 	{ 
 		
 	try {
 
 
  
-			$entry = Ads::find($id);
+			$entry = Classifieds::find($id);
 			$entry->user = $user;
 			$entry->title = $title;
 			$entry->wood = $wood;
@@ -227,8 +228,8 @@ class FrontendRepository
 			if ($image != null)
 			{
 				// Image data
-				$largeImagePath = public_path() . "/uploads/frontend/ads/";
-				$thumbImagePath = public_path() . "/uploads/frontend/ads/thumbs/";
+				$largeImagePath = public_path() . "/uploads/frontend/classifieds/";
+				$thumbImagePath = public_path() . "/uploads/frontend/classifieds/thumbs/";
 
 				// Image name is the same in thumbs and full size image
 				$extension = $image->getClientOriginalExtension(); // getting image extension
@@ -236,17 +237,18 @@ class FrontendRepository
 
 				$uploadSuccess = Image::make($image->getRealPath())
 					->orientate()
-					->fit(768, 1024)
+					->fit(800, 600)
+					->crop(400, 300)
 					->save($largeImagePath . $imagename) // original
-					->crop(768, 768)
+					->fit(540, 380)
 					->resize(270, 190)
 					->save($thumbImagePath . $imagename) // thumb
 					->destroy();
 
 				if ($uploadSuccess)
 				{
-					$largeOldImagePath = public_path() . "/uploads/frontend/ads/" . $oldImage;
-					$thumbOldImagePath = public_path() . "/uploads/frontend/ads/thumbs"  . $oldImage;
+					$largeOldImagePath = public_path() . "/uploads/frontend/classifieds/" . $oldImage;
+					$thumbOldImagePath = public_path() . "/uploads/frontend/classifieds/thumbs"  . $oldImage;
 
 					if (File::exists($largeOldImagePath))
 					{

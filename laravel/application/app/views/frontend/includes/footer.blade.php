@@ -15,8 +15,8 @@
                                     <dl class="footer-nav">
                                         <dt class="nav-title">PRODAJEM DRVA</dt>
                                         <dd class="nav-item"><a href="{{URL::route ('getLanding') }}">Naslovna</a></dd>
-                                        <dd class="nav-item"><a href="{{URL::route ('CreateAd') }}">Prodajem drva</a></dd>
-                                        <dd class="nav-item"><a href="{{URL::route ('AdList') }}">Kupujem drva</a></dd>
+                                        <dd class="nav-item"><a href="{{URL::route ('CreateClassified') }}">Prodajem drva</a></dd>
+                                        <dd class="nav-item"><a href="{{URL::route ('ClassifiedList') }}">Kupujem drva</a></dd>
                                     </dl>
                                 </div>
                                 <div class="col-md-3">

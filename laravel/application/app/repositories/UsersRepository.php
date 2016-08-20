@@ -68,7 +68,7 @@ class UsersRepository {
 					->fit(768, 1024)
 					->save($largeImagePath . $imagename) // original
 					->crop(768, 768)
-					->resize(300, 300)
+					->resize(270, 270)
 					->save($thumbImagePath . $imagename) // thumb
 					->destroy();
 
@@ -132,7 +132,7 @@ class UsersRepository {
 					->fit(768, 1024)
 					->save($largeImagePath . $imagename) // original
 					->crop(768, 768)
-					->resize(300, 300)
+					->resize(270, 270)
 					->save($thumbImagePath . $imagename) // thumb
 					->destroy();
 
@@ -177,16 +177,16 @@ public function destroy($id)
 		try
 		{
 
-			$ad = Ads::getEntries(null, null, $id, null, null, null, null, null, null, null, null, null);
+			$classified = Classifieds::getEntries(null, null, $id, null, null, null, null, null, null, null, null, null);
 			 
 
-			foreach ($ad['entries'] as $ad) { 
+			foreach ($classified['entries'] as $classified) { 
 
-				$ad = Ads::find($ad->id, null, null, null, null, null, null, null, null, null, null, null);
+				$classified = Classifieds::find($classified->id, null, null, null, null, null, null, null, null, null, null, null);
 
-				$ad->published = '0';
+				$classified->published = '0';
 
-				$ad->save();
+				$classified->save();
  
 			}
 

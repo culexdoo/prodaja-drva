@@ -124,7 +124,7 @@ class ReviewController extends \BaseController {
 	 	
 		if ($users['status'] == 0)
 		{
-			return Redirect::route('getDashboard')->with('error_message', Lang::get('core.msg_error_getting_entries'));
+			return Redirect::route('getDashboard')->with('error_message', Lang::get('core.msg_error_getting_entry'));
 		}
 		foreach ($users['entries'] as $user)
 		{
@@ -179,11 +179,11 @@ class ReviewController extends \BaseController {
 
 		if ($store['status'] == 0)
 		{
-			return Redirect::back()->with('error_message', Lang::get('core.msg_error_adding_entry'))->withErrors($entryValidator)->withInput();
+			return Redirect::back()->with('error_message', Lang::get('core.msg_error_adding_review'))->withErrors($entryValidator)->withInput();
 		}
 		else
 		{
-			return Redirect::back()->with('success_message', Lang::get('core.msg_success_entry_added', array('name' => Input::get('name'))));
+			return Redirect::back()->with('success_message', Lang::get('core.msg_success_review_added', array('name' => Input::get('name'))));
 		}
 	}
 
@@ -231,7 +231,7 @@ class ReviewController extends \BaseController {
 
 	 	if ($users['status'] == 0)
 		{
-			return Redirect::route('getDashboard')->with('error_message', Lang::get('core.msg_error_getting_entries'));
+			return Redirect::route('getDashboard')->with('error_message', Lang::get('core.msg_error_getting_entry'));
 		}
 
 		foreach ($users['entries'] as $users)
@@ -319,7 +319,7 @@ class ReviewController extends \BaseController {
 
 	 	if ($users['status'] == 0)
 		{
-			return Redirect::route('getDashboard')->with('error_message', Lang::get('core.msg_error_getting_entries'));
+			return Redirect::route('getDashboard')->with('error_message', Lang::get('core.msg_error_getting_entry'));
 		}
 
 		foreach ($users['entries'] as $users)
@@ -393,11 +393,11 @@ class ReviewController extends \BaseController {
 		
 		if ($update['status'] == 0)
 		{
-			return Redirect::back()->with('error_message', Lang::get('core.msg_error_adding_entry'))->withErrors($entryValidator)->withInput();
+			return Redirect::back()->with('error_message', Lang::get('core.msg_error_updating_review'))->withErrors($entryValidator)->withInput();
 		}
 		else
 		{
-			return Redirect::route('ReviewIndex')->with('success_message', Lang::get('core.msg_success_entry_added', array('name' => Input::get('name'))));
+			return Redirect::route('ReviewIndex')->with('success_message', Lang::get('core.msg_success_review_updated', array('name' => Input::get('name'))));
 		}
 	}
 
@@ -459,11 +459,11 @@ class ReviewController extends \BaseController {
 
 		if ($destroy['status'] == 1)
 		{
-			return Redirect::back()->with('success_message', Lang::get('core.msg_success_entry_deleted'));
+			return Redirect::back()->with('success_message', Lang::get('core.msg_success_review_deactivated'));
 		}
 		else
 		{
-			return Redirect::back()->with('error_message', Lang::get('core.msg_error_deleting_entry'));
+			return Redirect::back()->with('error_message', Lang::get('core.msg_error_deactivating_review'));
 		}
 	}
 

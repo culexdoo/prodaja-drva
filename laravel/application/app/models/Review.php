@@ -29,13 +29,15 @@ class Review extends Eloquent
 		try
 		{
 			$entry = DB::table('review')
+				->join('users', 'review.user', '=', 'users.id')
 				->select(
 					'review.id AS id',
 					'review.user AS user',
 					'review.reviewed_user AS reviewed_user',
 					'review.review_content AS review_content',
 					'review.rating AS rating',
-					'review.published AS published'
+					'review.published AS published',
+					'users.username AS username'
 				); 
 
 
@@ -49,13 +51,13 @@ class Review extends Eloquent
 			}
 
 			elseif ($count != null) {
-						// Retrieve number of active ads
+						// Retrieve number of active classifieds
 						$countallreviews = DB::table('review')->count();
 						return array('status' => 1, 'entry' => $countallreviews);
 			}
 
 			elseif ($active != null) {
-						// Retrieve number of active ads
+						// Retrieve number of active classifieds
 						$countactivereviews = DB::table('review')->where('review.published', '=', '1')->count();
 						return array('status' => 1, 'entry' => $countactivereviews);
 			}

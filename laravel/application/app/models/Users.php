@@ -6,7 +6,9 @@ class Users extends Eloquent
  
 	// New entry validation
 	public static $store_rules = array(
-		'first_name'					=>	'required'
+		'username'						=>	'required',
+		'password'						=>	'required',
+		'repeat_password' 				=>	'required|same:password'
 	);
  
 	// Edit entry validation
@@ -16,7 +18,16 @@ class Users extends Eloquent
 
 	// New registration
 	public static $register_rules = array(
-		'username'					=>	'required' 
+		'username'					=>	'required',
+		'email'						=>	'required',
+		'password'					=>	'required',
+		'repeat_password' 			=>	'required|same:password'
+	);
+
+	// New registration password validation
+	public static $password_rules = array(
+		'password'					=>	'required',
+		'repeat_password' 			=>	'required|same:password'
 	);
  
 	/*

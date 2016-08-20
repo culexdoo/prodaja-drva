@@ -64,22 +64,22 @@ Route::group(array('prefix' => 'admin'), function()
 
 	});
 
-		// Ads entries, create, save, edit, update, destroy
-	Route::group(array('prefix' => 'ads'), function()
+		// Classifieds entries, create, save, edit, update, destroy
+	Route::group(array('prefix' => 'classifieds'), function()
 	{
-		Route::get('/', array('as' => 'AdsIndex', 'uses' => 'AdsController@index'));
+		Route::get('/', array('as' => 'ClassifiedsIndex', 'uses' => 'ClassifiedsController@index'));
 
-		Route::get('show/{id}', array('as' => 'AdsShow', 'uses' => 'AdsController@show'));
+		Route::get('show/{id}', array('as' => 'ClassifiedsShow', 'uses' => 'ClassifiedsController@show'));
  
-		Route::get('create', array('as' => 'AdsCreate', 'uses' => 'AdsController@create'));
+		Route::get('create', array('as' => 'ClassifiedsCreate', 'uses' => 'ClassifiedsController@create'));
 
-		Route::post('store', array('as' => 'AdsStore', 'uses' => 'AdsController@store'));
+		Route::post('store', array('as' => 'ClassifiedsStore', 'uses' => 'ClassifiedsController@store'));
 
-		Route::get('edit/{id}', array('as' => 'AdsEdit', 'uses' => 'AdsController@edit'));
+		Route::get('edit/{id}', array('as' => 'ClassifiedsEdit', 'uses' => 'ClassifiedsController@edit'));
 
-		Route::post('update/{id}', array('as' => 'AdsUpdate', 'uses' => 'AdsController@update'));
+		Route::post('update/{id}', array('as' => 'ClassifiedsUpdate', 'uses' => 'ClassifiedsController@update'));
 
-		Route::get('destroy/{id}', array('as' => 'AdsDestroy', 'uses' => 'AdsController@destroy'));
+		Route::get('destroy/{id}', array('as' => 'ClassifiedsDestroy', 'uses' => 'ClassifiedsController@destroy'));
 
 	});
 
@@ -136,7 +136,10 @@ Route::group(array('prefix' => 'admin'), function()
 	Route::get('/', array('as' => 'getLanding', 'uses' => 'FrontendController@index')); 
 
 
-	// Sign in / out routes
+	// Sign in / out 
+
+		// Sign in page
+		Route::get('sign-in', array('before' => 'guest', 'as' => 'getSignIn', 'uses' => 'FrontendController@getSignIn'));
 
 		// Sign in page
 		Route::get('prijava', array('before' => 'guest', 'as' => 'getSignIn', 'uses' => 'FrontendController@getSignIn'));
@@ -148,7 +151,7 @@ Route::group(array('prefix' => 'admin'), function()
 		Route::get('odjava', array('before' => 'auth', 'as' => 'SignOut', 'uses' => 'FrontendController@signout'));
   
 
-	// Registration and verification routes
+	// Registration and verification 
 
 		// Registration page
 		Route::get('registracija', array('before' => 'guest', 'as' => 'getRegistration', 'uses' => 'FrontendController@getRegistration'));
@@ -162,7 +165,7 @@ Route::group(array('prefix' => 'admin'), function()
 
 
 
-	// Forgot password and password recovery routes
+	// Forgot password and password recovery 
 
 		// Forgot password page
 		Route::get('forgot-password', array('as' => 'getForgotPassword', 'uses' => 'FrontendController@getForgotPassword'));
@@ -182,7 +185,7 @@ Route::group(array('prefix' => 'admin'), function()
 
 
 
-	// Show, edit, update destroy profile routes
+	// Show, edit, update destroy profile 
 
 		// Profile page
 		Route::get('profil', array('before' => 'auth', 'as' => 'getProfile', 'uses' => 'CoreController@getProfile'));
@@ -205,43 +208,43 @@ Route::group(array('prefix' => 'admin'), function()
 
 
 
-	// Create, edit, store, show, update, destroy ads routes
+	// Create, edit, store, show, update, destroy classifieds 
 
-		// Create ad
-		Route::get('kreiraj-oglas', array('before' => 'auth', 'as' => 'CreateAd', 'uses' => 'FrontendController@CreateAd'));
+		// Create classified
+		Route::get('kreiraj-oglas', array('before' => 'auth', 'as' => 'CreateClassified', 'uses' => 'FrontendController@CreateClassified'));
 
-		// Edit ad 
-		Route::get('uredi-oglas/{id}', array('as' => 'EditAd', 'uses' => 'FrontendController@EditAd'));
+		// Edit classified 
+		Route::get('uredi-oglas/{id}', array('as' => 'EditClassified', 'uses' => 'FrontendController@EditClassified'));
 
-		// Edit ad page
-		Route::post('azuriraj-oglas/{id}', array('as' => 'UpdateAd', 'uses' => 'FrontendController@UpdateAd'));
+		// Edit classified page
+		Route::post('azuriraj-oglas/{id}', array('as' => 'UpdateClassified', 'uses' => 'FrontendController@UpdateClassified'));
 
-		// Store ad 
-		Route::post('spremi-oglas', array('as' => 'adsStore', 'uses' => 'FrontendController@adsStore'));
+		// Store classified 
+		Route::post('spremi-oglas', array('as' => 'classifiedsStore', 'uses' => 'FrontendController@classifiedsStore'));
 
-		// Ad list page
-		Route::get('oglasi', array('as' => 'AdList', 'uses' => 'FrontendController@adList'));
+		// Classified list page
+		Route::get('oglasi', array('as' => 'ClassifiedList', 'uses' => 'FrontendController@ClassifiedList'));
 
-		// Single ad page
-		Route::get('oglas/{permalink}', array('as' => 'ShowAd', 'uses' => 'FrontendController@ShowAd'));
-
-
+		// Single classified page
+		Route::get('oglas/{permalink}', array('as' => 'ShowClassified', 'uses' => 'FrontendController@ShowClassified'));
 
 
-	// Search ads by parameter routes
+
+
+	// Search classifieds by parameter 
 
 		// Search by wood category
-		Route::get('oglasi/kategorija/{woodcategory}', array ('as' => 'ListAdsByWoodCategory', 'uses' => 'FrontendController@listadsbywoodcategory'));
+		Route::get('oglasi/kategorija/{woodcategory}', array ('as' => 'ListClassifiedsByWoodCategory', 'uses' => 'FrontendController@listclassifiedsbywoodcategory'));
 
 		// Search ogrjevno drvo
-		Route::get('oglasi/regija/{region}', array ('as' => 'ListAdsByRegion', 'uses' => 'FrontendController@listadsbyregion'));
+		Route::get('oglasi/regija/{region}', array ('as' => 'ListClassifiedsByRegion', 'uses' => 'FrontendController@listclassifiedsbyregion'));
 
-		// Search ads
-		Route::get('oglasi/rezultati-pretrage', array('as' => 'SearchAds', 'uses' => 'FrontendController@searchads'));
+		// Search classifieds
+		Route::get('oglasi/rezultati-pretrage', array('as' => 'SearchClassifieds', 'uses' => 'FrontendController@SearchClassifieds'));
 
 
 
-	// Info pages routes
+	// Info pages 
 
 		// Contact page
 		Route::get('kontakt', array('as' => 'contact', 'uses' => 'FrontendController@contact'));
@@ -257,7 +260,7 @@ Route::group(array('prefix' => 'admin'), function()
 
 
 
-	// Inquiry page route
+	// Inquiry page 
 
 		// Store inquiry from contact page
 		Route::post('store-inquiry', array('as' => 'inquiryStore', 'uses' => 'FrontendController@inquiryStore'));

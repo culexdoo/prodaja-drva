@@ -3,7 +3,7 @@
                         <div class="sm-st clearfix">
                             <span class="sm-st-icon st-red"><i class="fa fa-pencil"></i></span>
                             <div class="sm-st-info">
-                                <span>{{ $countallads }}</span> Ukupno oglasa
+                                <span>{{ $countallclassifieds }}</span> Ukupno oglasa
                             </div>
                         </div>
                     </div>
@@ -11,7 +11,7 @@
                         <div class="sm-st clearfix">
                             <span class="sm-st-icon st-red"><i class="fa fa-pencil"></i></span>
                             <div class="sm-st-info">
-                                <span>{{ $countactiveads }}</span> Aktivnih oglasa
+                                <span>{{ $countactiveclassifieds }}</span> Aktivnih oglasa
                             </div>
                         </div>
                     </div>
@@ -101,7 +101,7 @@
                                 Pregled zadnjih oglasa
                             </header>
                             <div class="panel-body table-responsive">
-                                <table class="table table-hover" id="ad-list">
+                                <table class="table table-hover" id="classified-list">
                                 <thead>
                                     <tr>
                                         <th>Id</th>
@@ -113,22 +113,22 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                @if (count($ads) > 0) 
-                                    @foreach($ads as $ad)
+                                @if (count($classifieds) > 0) 
+                                    @foreach($classifieds as $classified)
                                     <tr>
-                                        <td>{{ $ad->id }}</td>
-                                        <td>{{ $ad->username }}</td>
-                                        <td>{{ $ad->title }}</td>
-                                        <td>{{ $ad->description }}</td>
-                                        <td>{{ $ad->published }}</td>
+                                        <td>{{ $classified->id }}</td>
+                                        <td>{{ $classified->username }}</td>
+                                        <td>{{ $classified->title }}</td>
+                                        <td>{{ $classified->description }}</td>
+                                        <td>{{ $classified->published }}</td>
                                         <td>
-                                            <a href="{{ URL::route('AdsShow', array('id' => $ad->id)) }}">
+                                            <a href="{{ URL::route('ClassifiedsShow', array('id' => $classified->id)) }}">
                                                 <button class="btn btn-primary btn-xs"><i class="fa fa-eye"></i></button>
                                             </a>
-                                            <a href="{{ URL::route('AdsEdit', array('id' => $ad->id)) }}">
+                                            <a href="{{ URL::route('ClassifiedsEdit', array('id' => $classified->id)) }}">
                                                 <button class="btn btn-success btn-xs"><i class="fa fa-pencil"></i></button>
                                             </a>
-                                            <button type="button" id="btn-delete-ads-id-{{ $ad->id }}" class="btn btn-danger btn-xs" data-target="#delete-ads-id-{{ $ad->id }}"><i class="fa fa-times"></i>
+                                            <button type="button" id="btn-delete-classifieds-id-{{ $classified->id }}" class="btn btn-danger btn-xs" data-target="#delete-classifieds-id-{{ $classified->id }}"><i class="fa fa-times"></i>
                                             </button>
                                         </td>
                                     </tr> 
@@ -258,10 +258,10 @@
     @endforeach
 @endif 
 
-@if (count($ads) > 0) 
-    @foreach($ads as $ad)
-    <!-- Modal {{ $ad->id }}-->
-    <div class="modal fade" id="delete-ads-id-{{ $ad->id }}" role="dialog">
+@if (count($classifieds) > 0) 
+    @foreach($classifieds as $classified)
+    <!-- Modal {{ $classified->id }}-->
+    <div class="modal fade" id="delete-classifieds-id-{{ $classified->id }}" role="dialog">
         <div class="modal-dialog">
             <!-- Modal content-->
             <div class="modal-content">
@@ -270,10 +270,10 @@
                     <h4 class="modal-title">Pozor!</h4>
                 </div>
                 <div class="modal-body">
-                    <p>Želite li obrisati oglas: {{ $ad->title }}?</p>
+                    <p>Želite li obrisati oglas: {{ $classified->title }}?</p>
                 </div>
                 <div class="modal-footer">
-                    <a href="{{ URL::route('AdsDestroy', array('id' => $ad->id)) }}">
+                    <a href="{{ URL::route('ClassifiedsDestroy', array('id' => $classified->id)) }}">
                         <button type="button" class="btn btn-default" data-ok="modal">U redu</button>
                     </a>
                     <button type="button" class="btn btn-default" data-dismiss="modal">Odustani</button>
@@ -349,10 +349,10 @@
         @endif 
     });
     $(document).ready(function() {
-         @if (count($ads) > 0) 
-            @foreach($ads as $ad)
-                $("#btn-delete-ads-id-{{ $ad->id }}").click(function() { 
-                    $('#delete-ads-id-{{ $ad->id }}').modal('show');
+         @if (count($classifieds) > 0) 
+            @foreach($classifieds as $classified)
+                $("#btn-delete-classifieds-id-{{ $classified->id }}").click(function() { 
+                    $('#delete-classifieds-id-{{ $classified->id }}').modal('show');
                 });
            
             @endforeach

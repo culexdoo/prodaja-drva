@@ -122,7 +122,7 @@ class InquiryController extends \BaseController {
 	 	
 		if ($users['status'] == 0)
 		{
-			return Redirect::route('getDashboard')->with('error_message', Lang::get('core.msg_error_getting_entries'));
+			return Redirect::route('getDashboard')->with('error_message', Lang::get('core.msg_error_getting_entry'));
 		}
 		foreach ($users['entries'] as $user)
 		{
@@ -176,11 +176,11 @@ class InquiryController extends \BaseController {
 
 		if ($store['status'] == 0)
 		{
-			return Redirect::back()->with('error_message', Lang::get('core.msg_error_adding_entry'))->withErrors($entryValidator)->withInput();
+			return Redirect::back()->with('error_message', Lang::get('core.msg_error_adding_inquiry'))->withErrors($entryValidator)->withInput();
 		}
 		else
 		{
-			return Redirect::route('InquiryIndex')->with('success_message', Lang::get('core.msg_success_entry_added', array('name' => Input::get('name'))));
+			return Redirect::route('InquiryIndex')->with('success_message', Lang::get('core.msg_success_inquiry_added', array('name' => Input::get('name'))));
 		}
 	}
 
@@ -228,15 +228,13 @@ class InquiryController extends \BaseController {
 
 	 	if ($users['status'] == 0)
 		{
-			return Redirect::route('getDashboard')->with('error_message', Lang::get('core.msg_error_getting_entries'));
+			return Redirect::route('getDashboard')->with('error_message', Lang::get('core.msg_error_getting_entry'));
 		}
 
 		foreach ($users['entries'] as $users)
 		{
 			$userlist[$users->id] = $users->username;
 		}
-
-
 
  		$inquiry = Inquiry::getEntries($id, null);
 
@@ -300,16 +298,13 @@ class InquiryController extends \BaseController {
 
 	 	if ($users['status'] == 0)
 		{
-			return Redirect::route('getDashboard')->with('error_message', Lang::get('core.msg_error_getting_entries'));
+			return Redirect::route('getDashboard')->with('error_message', Lang::get('core.msg_error_getting_entry'));
 		}
 
 		foreach ($users['entries'] as $users)
 		{
 			$userlist[$users->id] = $users->username;
 		}
-
-			
-
 
 		$entry = Inquiry::getEntries($id, null); 
 
@@ -365,11 +360,11 @@ class InquiryController extends \BaseController {
 		
 		if ($update['status'] == 0)
 		{
-			return Redirect::back()->with('error_message', Lang::get('core.msg_error_adding_entry'))->withErrors($entryValidator)->withInput();
+			return Redirect::back()->with('error_message', Lang::get('core.msg_error_updating_inquiry'))->withErrors($entryValidator)->withInput();
 		}
 		else
 		{
-			return Redirect::route('InquiryIndex')->with('success_message', Lang::get('core.msg_success_entry_added', array('name' => Input::get('name'))));
+			return Redirect::route('InquiryIndex')->with('success_message', Lang::get('core.msg_success_inquiry_updated', array('name' => Input::get('name'))));
 		}
 	}
 
@@ -431,11 +426,11 @@ class InquiryController extends \BaseController {
 
 		if ($destroy['status'] == 1)
 		{
-			return Redirect::back()->with('success_message', Lang::get('core.msg_success_entry_deleted'));
+			return Redirect::back()->with('success_message', Lang::get('core.msg_success_inquiry_deactivated'));
 		}
 		else
 		{
-			return Redirect::back()->with('error_message', Lang::get('core.msg_error_deleting_entry'));
+			return Redirect::back()->with('error_message', Lang::get('core.msg_error_deactivating_inquiry'));
 		}
 	}
 

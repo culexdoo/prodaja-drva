@@ -23,13 +23,13 @@ class RemindersController extends \CoreController {
 
 	public function getRemind()
 	{
-		$this->layout->description = 'Zdravizub.hr je aplikacija za povezivanje pacijenata i zubara';
+		$this->layout->description = 'Prodaja drva je aplikacija za online kupovinu i prodaju drva';
 
-		$this->layout->keywords = 'Zdravizub.hr, dentist, zubari, pacijenti, pregled zuba';
+		$this->layout->keywords = 'Prodaja-drva.com.hr, drva, ogrjevno drvo, briketi, pelet';
 
 		$this->layout->bodyclass = 'login-page';
 
-		$this->layout->title = 'Zaboravljena lozinka | Zdravizub.hr';
+		$this->layout->title = 'Zaboravljena lozinka | Prodaja-drva.hr';
 
 		$this->layout->css_files = array(
 		);
@@ -50,7 +50,7 @@ class RemindersController extends \CoreController {
 	{
 		$response = Password::remind(Input::only('email'), function($message)
 		{
-			$message->subject('Zdravizub.hr: zahtjev za novom lozinkom');
+			$message->subject('Prodaja-drva.com.hr: zahtjev za novom lozinkom');
 		});
 
 		switch ($response)
@@ -75,13 +75,13 @@ class RemindersController extends \CoreController {
 	{
 		if (is_null($token)) App::abort(404);
 
-		$this->layout->description = 'Zdravizub.hr je aplikacija za povezivanje pacijenata i zubara';
+		$this->layout->description = 'Prodaja drva je aplikacija za online kupovinu i prodaju drva';
 
-		$this->layout->keywords = 'Zdravizub.hr, dentist, zubari, pacijenti, pregled zuba';
+		$this->layout->keywords = 'Prodaja-drva.com.hr, drva, ogrjevno drvo, briketi, pelet';
 
 		$this->layout->bodyclass = 'login-page';
 
-		$this->layout->title = 'Postavljanje nove lozinke | Zdravizub.hr';
+		$this->layout->title = 'Postavljanje nove lozinke | Prodaja-drva.hr';
 
 		$this->layout->css_files = array(
 		);
@@ -113,7 +113,7 @@ class RemindersController extends \CoreController {
 		switch ($response)
 		{
 			case Password::INVALID_PASSWORD:
-				return Redirect::back()->with('error_message', Lang::get('messages.password_do_not_match'));
+				return Redirect::back()->with('error_message', Lang::get('messages.msg_error_password_dont_match'));
 			case Password::INVALID_TOKEN:
 				return Redirect::back()->with('error_message', Lang::get('messages.token_error'));
 			case Password::INVALID_USER:

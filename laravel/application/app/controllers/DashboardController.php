@@ -41,16 +41,16 @@ class DashboardController extends \BaseController {
 */
 		$users = Users::getEntries(null, 10, null, null);
 		
-		$ads = Ads::getEntries(null, null, null, null, null, 10, null, null, null, null, null, null);
+		$classifieds = Classifieds::getEntries(null, null, null, null, null, 10, null, null, null, null, null, null);
 
         $reviews = Review::getEntries(null, 10, null, null);
 
         $inquirys = Inquiry::getEntries(null, 10);
 
 
-        $countallads = Ads::getEntries(null, null, null, null, null, null, null, null, null, null, true, null);
+        $countallclassifieds = Classifieds::getEntries(null, null, null, null, null, null, null, null, null, null, true, null);
 
-		$countactiveads = Ads::getEntries(null, null, null, null, null, null, null, null, null, null, null, null, true);
+		$countactiveclassifieds = Classifieds::getEntries(null, null, null, null, null, null, null, null, null, null, null, null, true);
 
 		$countallusers = Users::getEntries(null, null, null, true, null);
 
@@ -69,7 +69,7 @@ class DashboardController extends \BaseController {
 		$this->layout->js_footer_files = array(
 		);
 		
-		$this->layout->content = View::make('backend.dashboard', array('users' => $users['entries'], 'ads' => $ads['entries'], 'reviews' => $reviews['entries'], 'inquirys' => $inquirys['entries'], 'countallads' => $countallads['entry'], 'countallusers' => $countallusers['entry'], 'countactiveusers' => $countactiveusers['entry'], 'countactiveads' => $countactiveads['entry'], 'countallreviews' => $countallreviews['entry'], 'countactivereviews' => $countactivereviews['entry']));
+		$this->layout->content = View::make('backend.dashboard', array('users' => $users['entries'], 'classifieds' => $classifieds['entries'], 'reviews' => $reviews['entries'], 'inquirys' => $inquirys['entries'], 'countallclassifieds' => $countallclassifieds['entry'], 'countallusers' => $countallusers['entry'], 'countactiveusers' => $countactiveusers['entry'], 'countactiveclassifieds' => $countactiveclassifieds['entry'], 'countallreviews' => $countallreviews['entry'], 'countactivereviews' => $countactivereviews['entry']));
 	}
 
 

@@ -80,7 +80,11 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Lozinka</label>
-                                        {{ Form::text('password', isset($entry->password) ? $entry->password : null, ['class' => 'form-control', 'id' => 'password', 'placeholder' => 'Lozinka']) }}
+                                        {{ Form::password('password', array('id' => 'password', 'class' => 'form-control')) }}
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Potvrda lozinke</label>
+                                        {{ Form::password('repeat_password', array('id' => 'repeat_password', 'class' => 'form-control')) }}
                                     </div>
                                     <div class="form-group">
                                         <label>Kontakt Tel1</label>

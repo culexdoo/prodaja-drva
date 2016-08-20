@@ -40,7 +40,7 @@
                 </a>
             </div> 
             <div class="form-group">
-                <a href= "{{URL::route('getLanding')}}" style="font-size: 16px;">Povratak na naslovnicu! </a>
+                <a href= "{{URL::route('getLanding')}}" style="font-size: 16px;">Povratak na naslovnicu </a>
             </div>
             {{ Form::close() }}
         

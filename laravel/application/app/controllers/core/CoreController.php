@@ -91,12 +91,12 @@ class CoreController extends BaseController
   
 			App::setLocale($user_language);
 
-			return Redirect::route('getDashboard')->with('success_message', Lang::get('messages.sign_in_success'));
+			return Redirect::route('getDashboard')->with('success_message', Lang::get('messages.sign_in_successful'));
 
 		}
 		else
 		{
-			return Redirect::back()->with('error_message', Lang::get('messages.sign_in_error'))->withInput();
+			return Redirect::back()->with('error_message', Lang::get('messages.sign_in_failed'))->withInput();
 		}
 	}
 
@@ -109,7 +109,7 @@ class CoreController extends BaseController
 			Auth::logout();
 			Session::flush();
 
-			return Redirect::route('getLanding')->with('info_message', Lang::get('messages.sign_out_success'));
+			return Redirect::route('getLanding')->with('info_message', Lang::get('messages.sign_out_successful'));
 
 		}
 

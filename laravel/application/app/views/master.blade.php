@@ -169,7 +169,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{ URL::route('AdsIndex') }}">
+                        <a href="{{ URL::route('ClassifiedsIndex') }}">
                             <i class="fa fa-pencil"></i> <span>Oglasi</span>
                         </a>
                     </li> 

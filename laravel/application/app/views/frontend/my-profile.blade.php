@@ -15,7 +15,7 @@
     <!-- Image Header -->
     <div class="row m0">
         <div class="col-lg-12 p0">
-            <div class="mh400" style="background-image: url('/img/frontend/ad-list-banner.jpg');">
+            <div class="mh400" style="background-image: url('/img/frontend/classified-list-banner.jpg');">
                 <div class="container text-center ">
                     <h1 class="text-white mt100 fs65"> Moj profil! </h1>
                 </div>
@@ -29,7 +29,12 @@
             <div class="col-lg-3">
                 <div class="row">
                     <div class="profile-picture">
-                        @if ($entry->image != null || $entry->image != '')
+                        @if ($entry->image == null)
+                            <div class="form-group mb15">
+                            <label class="col-md-12 p0" for="image">Trenutna slika:</label>
+                                <div class="col-md-12 p0 img-style m0"></div>
+                            </div>
+                        @elseif ($entry->image != null || $entry->image != '')
                             <div class="form-group mb15">
                                 <label class="col-md-12 p0" for="image">Trenutna slika:</label> 
                                 <div class="col-md-12 p0 mb20">
@@ -70,7 +75,7 @@
                             <a data-toogle="tab" href="#profile-tab">Profil </a>
                         </li>
                         <li>
-                            <a data-toogle="tab" href="#ad-tab">Oglasi </a>
+                            <a data-toogle="tab" href="#classified-tab">Oglasi </a>
                         </li>
                     </ul>
                     <div class="tab-content">
@@ -172,60 +177,66 @@
                                 </div>
                             </div>
                         </div> 
-                        <div id="ad-tab" class="tab-pane">
+                        <div id="classified-tab" class="tab-pane">
                             <div class="p20">
-                            <!-- single ad listing start -->
-                                @if (count($userads) > 0) 
-                                @foreach($userads as $userad) 
+                            <!-- single classified listing start -->
+                                @if (count($userclassifieds) > 0) 
+                                @foreach($userclassifieds as $userclassified) 
                                 <div class="row box">
-                                    <div class="single-ad">
+                                    <div class="single-classified">
                                         <div class="col-lg-4 p0">
-                                            <div class="ad-image">
-                                                {{ HTML::image(URL::to('/') . '/uploads/frontend/ads/thumbs/' . $userad->image, $userad->title) }}
+                                            <div class="classified-image">
+                                                {{ HTML::image(URL::to('/') . '/uploads/frontend/classifieds/thumbs/' . $userclassified->image, $userclassified->title) }}
                                             </div>
                                         </div>
                                         <div class="col-lg-8 mb20">
-                                            <div class="ad-content">
+                                            <div class="classified-content">
                                                 <div class="col-lg-10 p0">
-                                                    <a href="{{ URL::route( 'ShowAd', array('permalink' => $userad->permalink ))}}">
-                                                        <h3 class="ad-title">{{ $userad->title }}</h3>
+                                                    <a href="{{ URL::route( 'ShowClassified', array('permalink' => $userclassified->permalink ))}}">
+                                                        <h3 class="classified-title">{{ $userclassified->title }}</h3>
                                                     </a>
+                                                    <p class="classified-description mt10" style="max-width: 420px;">{{ $userclassified->description }}</p>
                                                 </div>
-                                                <div class="col-lg-2 p0">
-                                                    <a href="{{ URL::route( 'EditAd', array('permalink' => $userad->permalink ))}}">
-                                                        <h4 class="mt5" style="position: absolute; top: 4px;">Uredi</h4><i class="fa fa-eye fa-2x pull-right mt5"></i>
+                                                <div class="col-lg-2 p0 mt5">
+                                                    <a href="{{ URL::route( 'EditClassified', array('permalink' => $userclassified->permalink ))}}">
+                                                        <h4 class="mt5" style="position: absolute; top: 20px;">Uredi</h4>
                                                     </a>
-                                                    <a href="{{ URL::route( 'EditAd', array('permalink' => $userad->permalink ))}}">
-                                                        <h4 class="mt5" style="position: absolute; top: 29px;">Obriši</h4><i class="fa fa-times fa-2x pull-right mt30" style="position: relative; left: 34px;"></i>
+                                                    <a href="{{ URL::route( 'EditClassified', array('permalink' => $userclassified->permalink ))}}">
+                                                        <h4 class="mt5" style="position: absolute; top: 45px;">Deaktiviraj</h4>
                                                     </a>
+                                                    @if($userclassified->published == 1)
+                                                    <span class="label label-success">Odobren</span>
+                                                    @else
+                                                    <span class="label label-danger">Nije odobren</span>
+                                                    @endif
                                                 </div>
-                                                <p class="ad-description">{{ $userad->description }}</p>
+                                                
                                                 <div class="row">
                                                     <div class="col-lg-5">
                                                         <p style="margin-top: 15px; margin-bottom: 0px;">Vrsta drveta:</p>
-                                                        <h5 class="ad-category" style="margin: 0px;">{{$userad->woodname}}</h5> 
+                                                        <h5 class="classified-category" style="margin: 0px;">{{$userclassified->woodname}}</h5> 
                                                      </div>
                                                     <div class="col-lg-6">
                                                         <p style="margin-top: 15px; margin-bottom: 0px;">Vrsta pakiranja:</p>
-                                                        <h5 class="ad-category" style="margin: 0px;">{{$userad->packagingname}}</h5> 
+                                                        <h5 class="classified-category" style="margin: 0px;">{{$userclassified->packagingname}}</h5> 
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="ad-footer">
+                                            <div class="classified-footer">
                                                 <div class="row">
                                                     <div class="col-lg-5">
                                                         <div class="county">
-                                                            <h5>{{ $userad->regionname }}</h5>
+                                                            <h5>{{ $userclassified->regionname }}</h5>
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-4">
                                                         <div class="timestamp">
-                                                            <h5>Objavljeno {{ date('d. m. Y.', strtotime( $userad->created_at )) }}</h5>
+                                                            <h5>Objavljeno {{ date('d. m. Y.', strtotime( $userclassified->created_at )) }}</h5>
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-3">
                                                         <div class="price">
-                                                            <h5><span class="price-eur">{{ $userad->price }} kn</span></h5>
+                                                            <h5><span class="price-eur">{{ $userclassified->price }} kn</span></h5>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -235,7 +246,7 @@
                                 </div>
                                 @endforeach
                                 @endif
-                                <!-- single ad listing end -->
+                                <!-- single classified listing end -->
                             </div>
                         </div>
                     </div>
@@ -254,18 +265,18 @@
                     Novi ste korisnik stranice? Pogledajte naše izdvojene oglase birane od strane starih korisnika.
                 </div>
             </div>
-            @if (count($featuredads['entry']) > 0) 
-                @foreach($featuredads['entry'] as $featuredad)
+            @if (count($featuredclassifieds['entry']) > 0) 
+                @foreach($featuredclassifieds['entry'] as $featuredclassified)
                     <div class="col-md-3">
-                        <a href="{{URL::route ('ShowAd', array('id' => $featuredad->permalink))}}">
-                            {{ HTML::image(URL::to('/') . '/uploads/frontend/ads/thumbs/' . $featuredad->image, $featuredad->title) }}
+                        <a href="{{URL::route ('ShowClassified', array('id' => $featuredclassified->permalink))}}">
+                            {{ HTML::image(URL::to('/') . '/uploads/frontend/classifieds/thumbs/' . $featuredclassified->image, $featuredclassified->title) }}
                         </a>
                         <div class="panel mt10">
                             <div class="panel-body p0">
-                                <a href="{{URL::route ('ShowAd', array('id' => $featuredad->permalink))}}">
-                                    <p class="ad-title-homepage">{{ $featuredad->title }}</p>
+                                <a href="{{URL::route ('ShowClassified', array('id' => $featuredclassified->permalink))}}">
+                                    <p class="classified-title-homepage">{{ $featuredclassified->title }}</p>
                                 </a>
-                                <p class="ad-price-homepage">{{ $featuredad->price }} kn</p>
+                                <p class="classified-price-homepage">{{ $featuredclassified->price }} kn</p>
                             </div>
                         </div>
                     </div> 

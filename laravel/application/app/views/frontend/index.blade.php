@@ -47,7 +47,7 @@
                             </div>
                             <div class="col-lg-12 text-center">
                                 <h5 class="category-title-homepage">Ogrjevno drvo</h5>
-                                <a href="{{ URL::route('ListAdsByWoodCategory', array('woodcategory' => 'ogrjevno-drvo' )) }}" class="btn btn-primary btn-lg cta"> <i class="fa fa-eye pull-left mt2"></i>Pogledajte</a>
+                                <a href="{{ URL::route('ListClassifiedsByWoodCategory', array('woodcategory' => 'ogrjevno-drvo' )) }}" class="btn btn-primary btn-lg cta"> <i class="fa fa-eye pull-left mt2"></i>Pogledajte</a>
                             </div>
                         </div>
                     </div>
@@ -60,7 +60,7 @@
                             </div>
                             <div class="col-lg-12 text-center">
                                 <h5 class="category-title-homepage ">Briketi</h5>
-                                <a href="{{ URL::route('ListAdsByWoodCategory', array('woodcategory' => 'briketi' )) }}" class="btn btn-primary btn-lg  cta"><i class="fa fa-eye pull-left mt2"></i>Pogledajte</a>
+                                <a href="{{ URL::route('ListClassifiedsByWoodCategory', array('woodcategory' => 'briketi' )) }}" class="btn btn-primary btn-lg  cta"><i class="fa fa-eye pull-left mt2"></i>Pogledajte</a>
                             </div>
                         </div>
                     </div>
@@ -73,7 +73,7 @@
                             </div>
                             <div class="col-lg-12 text-center">
                                 <h5 class="category-title-homepage">Pelet</h5>
-                                <a href="{{ URL::route('ListAdsByWoodCategory', array('woodcategory' => 'pelet' )) }}" class="btn btn-primary btn-lg  cta"><i class="fa fa-eye pull-left mt2"></i>Pogledajte</a>
+                                <a href="{{ URL::route('ListClassifiedsByWoodCategory', array('woodcategory' => 'pelet' )) }}" class="btn btn-primary btn-lg  cta"><i class="fa fa-eye pull-left mt2"></i>Pogledajte</a>
                             </div>
                         </div>
                     </div>
@@ -103,119 +103,119 @@
                 <div class="col-lg-12">
                     <div class="col-lg-4">
                         <div class="span3 border-black-red">
-                            <a href="{{ URL::route('ListAdsByRegion', array('region' => 'dubrovacko-neretvanska-zupanija' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Dubrovačko-neretvanska županija</a>
+                            <a href="{{ URL::route('ListClassifiedsByRegion', array('region' => 'dubrovacko-neretvanska-zupanija' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Dubrovačko-neretvanska županija</a>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="span3 border-black-red">
-                            <a href="{{URL::route('ListAdsByRegion', array('region' => 'krapinsko-zagorska-zupanija' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Krapinsko-zagorska županija</a>
+                            <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'krapinsko-zagorska-zupanija' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Krapinsko-zagorska županija</a>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="span3 border-black-red">
-                            <a href="{{URL::route('ListAdsByRegion', array('region' => 'sisacko-moslavacka-zupanija' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Sisačko-moslavačka županija</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <div class="col-lg-4">
-                        <div class="span3 border-black-red">
-                            <a href="{{URL::route('ListAdsByRegion', array('region' => 'karlovacka-zupanija' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Karlovačka županija</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="span3 border-black-red">
-                            <a href="{{URL::route('ListAdsByRegion', array('region' => 'varazdinska-zupanija' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Varaždinska županija</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="span3 border-black-red">
-                            <a href="{{URL::route('ListAdsByRegion', array('region' => 'licko-senjska-zupanija' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Ličko-senjska županija</a>
+                            <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'sisacko-moslavacka-zupanija' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Sisačko-moslavačka županija</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-12">
                     <div class="col-lg-4">
                         <div class="span3 border-black-red">
-                            <a href="{{URL::route('ListAdsByRegion', array('region' => 'bjelovarsko-bilogorska-zupanija' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Bjelovarsko-bilogorska županija</a>
+                            <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'karlovacka-zupanija' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Karlovačka županija</a>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="span3 border-black-red">
-                            <a href="{{URL::route('ListAdsByRegion', array('region' => 'viroviticko-podravska-zupanija' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Virovitičko-podravska županija</a>
+                            <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'varazdinska-zupanija' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Varaždinska županija</a>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="span3 border-black-red">
-                            <a href="{{URL::route('ListAdsByRegion', array('region' => 'koprivnicko-krizevacka-zupanija' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Koprivničko-križevačka županija</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <div class="col-lg-4">
-                        <div class="span3 border-black-red">
-                            <a href="{{URL::route('ListAdsByRegion', array('region' => 'osjecko-baranjska-zupanija' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Osječko-baranjska županija</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="span3 border-black-red">
-                            <a href="{{URL::route('ListAdsByRegion', array('region' => 'pozesko-slavonska-zupanija' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Požeško-slavonska županija</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="span3 border-black-red">
-                            <a href="{{URL::route('ListAdsByRegion', array('region' => 'brodsko-posavska-zupanija' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Brodsko-posavska županija</a>
+                            <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'licko-senjska-zupanija' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Ličko-senjska županija</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-12">
                     <div class="col-lg-4">
                         <div class="span3 border-black-red">
-                            <a href="{{URL::route('ListAdsByRegion', array('region' => 'istarska-zupanija' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Zadarska županija</a>
+                            <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'bjelovarsko-bilogorska-zupanija' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Bjelovarsko-bilogorska županija</a>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="span3 border-black-red">
-                            <a href="{{URL::route('ListAdsByRegion', array('region' => 'istarska-zupanija' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Istarska županija</a>
+                            <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'viroviticko-podravska-zupanija' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Virovitičko-podravska županija</a>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="span3 border-black-red">
-                            <a href="{{URL::route('ListAdsByRegion', array('region' => 'sibensko-kninska-zupanija' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Šibensko-kninska županija</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <div class="col-lg-4">
-                        <div class="span3 border-black-red">
-                            <a href="{{URL::route('ListAdsByRegion', array('region' => 'vukovarsko-srijemska-zupanija' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Vukovarsko-srijemska županija</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="span3 border-black-red">
-                            <a href="{{URL::route('ListAdsByRegion', array('region' => 'splitsko-dalmatinska-zupanija' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Splitsko-dalmatinska županija</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="span3 border-black-red">
-                            <a href="{{URL::route('ListAdsByRegion', array('region' => 'primorsko-goranska-županija' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Primorsko-goranska županija</a>
+                            <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'koprivnicko-krizevacka-zupanija' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Koprivničko-križevačka županija</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-12">
                     <div class="col-lg-4">
                         <div class="span3 border-black-red">
-                            <a href="{{URL::route('ListAdsByRegion', array('region' => 'zagrebacka-zupanija' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Zagrebačka županija</a>
+                            <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'osjecko-baranjska-zupanija' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Osječko-baranjska županija</a>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="span3 border-black-red">
-                            <a href="{{URL::route('ListAdsByRegion', array('region' => 'medimurska-zupanija' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Međimurska županija</a>
+                            <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'pozesko-slavonska-zupanija' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Požeško-slavonska županija</a>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="span3 border-black-red">
-                            <a href="{{URL::route('ListAdsByRegion', array('region' => 'grad-zagreb' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Grad Zagreb</a>
+                            <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'brodsko-posavska-zupanija' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Brodsko-posavska županija</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="col-lg-4">
+                        <div class="span3 border-black-red">
+                            <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'istarska-zupanija' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Zadarska županija</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="span3 border-black-red">
+                            <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'istarska-zupanija' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Istarska županija</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="span3 border-black-red">
+                            <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'sibensko-kninska-zupanija' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Šibensko-kninska županija</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="col-lg-4">
+                        <div class="span3 border-black-red">
+                            <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'vukovarsko-srijemska-zupanija' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Vukovarsko-srijemska županija</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="span3 border-black-red">
+                            <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'splitsko-dalmatinska-zupanija' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Splitsko-dalmatinska županija</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="span3 border-black-red">
+                            <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'primorsko-goranska-županija' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Primorsko-goranska županija</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="col-lg-4">
+                        <div class="span3 border-black-red">
+                            <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'zagrebacka-zupanija' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Zagrebačka županija</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="span3 border-black-red">
+                            <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'medimurska-zupanija' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Međimurska županija</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="span3 border-black-red">
+                            <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'grclassified-zagreb' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Grad Zagreb</a>
                         </div>
                     </div>
                 </div>
@@ -236,7 +236,7 @@
                 </div>
                 <div class="view-more-btn">
                     <div class="more-btn-inner">
-                        <a href="{{URL::route ('CreateAd')}}">
+                        <a href="{{URL::route ('CreateClassified')}}">
                             <span>Objavite oglas </span>
                         </a>
                     </div>
@@ -264,19 +264,19 @@
                 </div>
             </div>
             <div id="owl-demo" class="owl-carousel owl-theme mt50">
-            @if (count($publishedads['entry']) > 0) 
-                    @foreach($publishedads['entry'] as $publishedad)
+            @if (count($publishedclassifieds['entry']) > 0) 
+                    @foreach($publishedclassifieds['entry'] as $publishedclassified)
                 <div class="item">
                     <div class="col-md-12">
-                        <a href="{{URL::route ('ShowAd', array('id' => $publishedad->permalink))}}">
-                            {{ HTML::image(URL::to('/') . '/uploads/frontend/ads/thumbs/' . $publishedad->image, $publishedad->title) }}
+                        <a href="{{URL::route ('ShowClassified', array('id' => $publishedclassified->permalink))}}">
+                            {{ HTML::image(URL::to('/') . '/uploads/frontend/classifieds/thumbs/' . $publishedclassified->image, $publishedclassified->title) }}
                         </a>
                         <div class="panel mt10">
                             <div class="panel-body p0">
-                                <a href="{{URL::route ('ShowAd', array('id' => $publishedad->permalink))}}">
-                                    <p class="ad-title-homepage">{{ $publishedad->title }}</p>
+                                <a href="{{URL::route ('ShowClassified', array('id' => $publishedclassified->permalink))}}">
+                                    <p class="classified-title-homepage">{{ $publishedclassified->title }}</p>
                                 </a>
-                                <p class="ad-price-homepage">{{ $publishedad->price }} kn</p>
+                                <p class="classified-price-homepage">{{ $publishedclassified->price }} kn</p>
                             </div>
                         </div>
                     </div>
@@ -288,7 +288,7 @@
     </div>
     <div class="row m0">
         <div class="col-md-offset-4 col-md-4 text-center">
-            <a class="btn btn-lg btn-default mt15 cta" href="{{URL::route ('AdList')}}"> <i class="fa fa-list pull-left mt4 mr8"></i>Svi oglasi</a>
+            <a class="btn btn-lg btn-default mt15 cta" href="{{URL::route ('ClassifiedList')}}"> <i class="fa fa-list pull-left mt4 mr8"></i>Svi oglasi</a>
         </div>
     </div>
     <!-- Najnoviji oglasi end -->
@@ -302,18 +302,18 @@
                     Novi ste korisnik stranice? Pogledajte naše izdvojene oglase birane od strane starih korisnika.
                 </div>
             </div>
-            @if (count($featuredads['entry']) > 0) 
-                @foreach($featuredads['entry'] as $featuredad)
+            @if (count($featuredclassifieds['entry']) > 0) 
+                @foreach($featuredclassifieds['entry'] as $featuredclassified)
                     <div class="col-md-3">
-                        <a href="{{URL::route ('ShowAd', array('id' => $featuredad->permalink))}}">
-                            {{ HTML::image(URL::to('/') . '/uploads/frontend/ads/thumbs/' . $featuredad->image, $featuredad->title) }}
+                        <a href="{{URL::route ('ShowClassified', array('id' => $featuredclassified->permalink))}}">
+                            {{ HTML::image(URL::to('/') . '/uploads/frontend/classifieds/thumbs/' . $featuredclassified->image, $featuredclassified->title) }}
                         </a>
                         <div class="panel mt10">
                             <div class="panel-body p0">
-                                <a href="{{URL::route ('ShowAd', array('id' => $featuredad->permalink))}}">
-                                    <p class="ad-title-homepage">{{ $featuredad->title }}</p>
+                                <a href="{{URL::route ('ShowClassified', array('id' => $featuredclassified->permalink))}}">
+                                    <p class="classified-title-homepage">{{ $featuredclassified->title }}</p>
                                 </a>
-                                <p class="ad-price-homepage">{{ $featuredad->price }} kn</p>
+                                <p class="classified-price-homepage">{{ $featuredclassified->price }} kn</p>
                             </div>
                         </div>
                     </div> 
@@ -348,8 +348,8 @@
                                 <blockquote>
                                     <div class="row m0">
                                         <div class="col-sm-8 col-sm-offset-2">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. !</p>
-                                            <small>Someone famous</small>
+                                            <p>Super pregledna stranica. Odmah sam naletio na oglas koji trebam i riješio drva za ovu zimu!</p>
+                                            <small>Mirko J.</small>
                                         </div>
                                     </div>
                                 </blockquote>
@@ -359,8 +359,8 @@
                                 <blockquote>
                                     <div class="row m0">
                                         <div class="col-sm-8 col-sm-offset-2">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
-                                            <small>Someone famous</small>
+                                            <p>Mogao bih započeti s prodajom drva preko vas. Jednostavno je za koristiti i preporučam svima koji žele započeti sa prodajom drva preko interneta. Svaka čast! </p>
+                                            <small>Davor S.</small>
                                         </div>
                                     </div>
                                 </blockquote>
@@ -370,8 +370,8 @@
                                 <blockquote>
                                     <div class="row m0">
                                         <div class="col-sm-8 col-sm-offset-2">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. .</p>
-                                            <small>Someone famous</small>
+                                            <p>Prijatelj mi vas je preporučio i ja ću vas isto dalje preporučiti. Super jednostavna stranica i lagano sam našla sve što sam trebala.</p>
+                                            <small>Mirna M.</small>
                                         </div>
                                     </div>
                                 </blockquote>
@@ -395,7 +395,7 @@
                 </div>
                 <div class="col-md-6 bl1pxw">
                     <h3 class="mt5 stat-title">Aktivnih oglasa:</h3>
-                    <p style="font-size: 16px;">{{ $countactiveads }}</p>
+                    <p style="font-size: 16px;">{{ $countactiveclassifieds }}</p>
                 </div>
             </div>
             <div class="col-md-4">
@@ -404,7 +404,7 @@
                 </div>
                 <div class="col-md-6 bl1pxw">
                     <h3 class="mt5 stat-title">Novih oglasa:</h3>
-                    <p style="font-size: 16px;">{{ $countnewads }}</p>
+                    <p style="font-size: 16px;">{{ $countnewclassifieds }}</p>
                 </div>
             </div>
             <div class="col-md-4">
@@ -484,7 +484,7 @@
         var bounds = new google.maps.LatLngBounds();
         var mapOptions = {
             mapTypeId: 'roadmap',
-            center: new google.maps.LatLng(51.605139, -2.918567),
+            center: new google.maps.LatLng(45.605139, 18.918567),
             scrollwheel: false,
             draggable: true
         };
@@ -495,16 +495,37 @@
 
         // Multiple Markers
         var markers = [
-            ['Zagreb', 45.7888865, 16.0005137, 12]
+            @if(count($pins) > 0)
+            @foreach($pins as $pin)
+
+            ['{{$pin->regionname}}', {{$pin->latitude}}, {{$pin->longitude}}, {{ $pin->id }}],
+
+            @endforeach
+            @endif
         ];
 
         // Info Window Content
         var infoWindowContent = [
-            ['<div class="info_content">' +
-                '<h3>Zagreb</h3>' +
-                '<p>The London Eye is a giant Ferris wheel situated on the banks of the River Thames. The entire structure is 135 metres (443 ft) tall and the wheel has a diameter of 120 metres (394 ft).</p>' + '</div>'
-            ]
+            @if(count($pins) > 0)
+            @foreach($pins as $pin)
 
+            ['<div class="info_content">' +
+                '<div class="content_body">' +
+                    '<div class="content_title">' +
+                        '<h3>{{ $pin->title }}</h3>' +
+                    '</div>' +
+                    '<div class="content_image">' +
+                        '<img src="/uploads/frontend/classifieds/thumbs/{{$pin->image}}" style="width:140px;" >' +
+                    '</div>' +
+                    '<div class="content_descrtiption mt10">' +
+                        '<p>{{ $pin->description }}</p>' +
+                    '</div>' +
+                '</div>' +
+            '</div>'
+            ],
+
+            @endforeach
+            @endif
         ];
 
         // Display multiple markers on a map

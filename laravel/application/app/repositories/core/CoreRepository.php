@@ -24,7 +24,7 @@ class CoreRepository
 			$user = User::getUserByEmail($email);
 			if ($user['status'] == 0)
 			{
-				return Redirect::route('getDashboard')->with('error_message', Lang::get('messages.error_validating_email'));
+				return Redirect::route('getDashboard')->with('error_message', Lang::get('Greška pri validaciji emaila. Pokušajte ponovno!'));
 			}
 
 			$userItem = User::find($user['user']->id);
@@ -124,7 +124,7 @@ class CoreRepository
 			}
 			else
 			{
-				return array('status' => 0, 'reason' => 'Failure retrieving user informations.');
+				return array('status' => 0, 'reason' => 'Greška pri dohvatu korisničkih podataka.');
 			}
 		}
 		catch (Exception $exp)
@@ -146,7 +146,7 @@ class CoreRepository
 			}
 			else
 			{
-				return array('status' => 0, 'reason' => 'Failure retrieving user informations.');
+				return array('status' => 0, 'reason' => 'Greška pri dohvatu korisničkih podataka.');
 			}
 		}
 		catch (Exception $exp)

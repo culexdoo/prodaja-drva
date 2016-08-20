@@ -15,7 +15,7 @@
     <!-- Image Header -->
     <div class="row m0">
         <div class="col-lg-12 p0">
-            <div class="mh400" style="background-image: url(/img/frontend/ad-list-banner.jpg);">
+            <div class="mh400" style="background-image: url(/img/frontend/classified-list-banner.jpg);">
                 <div class="container text-center ">
                     <h1 class="text-white mt100 fs65"> Moj profil! </h1>
                 </div>
@@ -32,7 +32,12 @@
             {{ Form::hidden('permalink', $entry->permalink, array('permalink' => 'permalink')) }}
                 <div class="row">
                     <div class="profile-picture">
-                        @if ($entry->image != null || $entry->image != '')
+                        @if ($entry->image == null)
+                            <div class="form-group mb15">
+                            <label class="col-md-12" for="image">Trenutna slika:</label>
+                                <div class="col-md-12 p0 img-style"></div>
+                            </div>
+                        @elseif ($entry->image != null || $entry->image != '')
                             <div class="form-group mb15">
                                 <label class="col-md-12" for="image">Trenutna slika:</label> 
                                 <div class="col-md-12">

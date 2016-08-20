@@ -41,7 +41,7 @@ class FrontendController extends \CoreController {
 
 			if ($regions['status'] == 0)
 			{
-				return Redirect::route('getLanding')->with('error_message', Lang::get('core.msg_error_getting_entries'));
+				return Redirect::route('getLanding')->with('error_message', Lang::get('core.msg_error_getting_entry'));
 			}
 			foreach ($regions['entries'] as $regions)
 			{
@@ -57,7 +57,7 @@ class FrontendController extends \CoreController {
 
 		 	if ($wood['status'] == 0)
 			{
-				return Redirect::route('getlanding')->with('error_message', Lang::get('core.msg_error_getting_entries'));
+				return Redirect::route('getlanding')->with('error_message', Lang::get('core.msg_error_getting_entry'));
 			}
 
 			foreach ($wood['entries'] as $wood)
@@ -69,26 +69,26 @@ class FrontendController extends \CoreController {
 		  	$wood = Input::get('wood');
 		    $region = Input::get('region');
 		    $packaging = Input::get('packaging');
-		    $ads = $entry = DB::table('ads')
-				->join('users', 'ads.user', '=', 'users.id')
-				->join('region', 'ads.region', '=', 'region.id')
-				->join('wood', 'ads.wood', '=', 'wood.id')
-				->join('packaging', 'ads.packaging', '=', 'packaging.id')
+		    $classifieds = $entry = DB::table('classifieds')
+				->join('users', 'classifieds.user', '=', 'users.id')
+				->join('region', 'classifieds.region', '=', 'region.id')
+				->join('wood', 'classifieds.wood', '=', 'wood.id')
+				->join('packaging', 'classifieds.packaging', '=', 'packaging.id')
 				->select(
-					'ads.id AS id', 
-					'ads.title AS title',
-					'ads.permalink AS permalink',
-					'ads.wood AS wood',
-					'ads.packaging AS packaging',
-					'ads.price AS price',
-					'ads.description AS description',
-					'ads.user AS user',
-					'ads.region AS region',
-					'ads.city AS city',
-					'ads.published AS published',
-					'ads.featured AS featured',
-					'ads.image AS image',
-					'ads.created_at AS created_at',
+					'classifieds.id AS id', 
+					'classifieds.title AS title',
+					'classifieds.permalink AS permalink',
+					'classifieds.wood AS wood',
+					'classifieds.packaging AS packaging',
+					'classifieds.price AS price',
+					'classifieds.description AS description',
+					'classifieds.user AS user',
+					'classifieds.region AS region',
+					'classifieds.city AS city',
+					'classifieds.published AS published',
+					'classifieds.featured AS featured',
+					'classifieds.image AS image',
+					'classifieds.created_at AS created_at',
 					'users.email AS email',
 					'users.username AS username',
 					'region.name AS regionname',
@@ -96,7 +96,7 @@ class FrontendController extends \CoreController {
 					'wood.permalink AS woodpermalink',
 					'packaging.name AS packagingname'
 				)
-			->where('ads.published', 'LIKE', '1')
+			->where('classifieds.published', 'LIKE', '1')
 			->where('region.id', 'LIKE', '%'.$region.'%')
 			->where('packaging.id', 'LIKE', ''.$packaging.'%')
 			->where('wood.id', 'LIKE', ''.$wood.'%')
@@ -108,20 +108,22 @@ class FrontendController extends \CoreController {
 
 		    $packaging = mb_strtolower($packaging, 'UTF-8');
 
-		    $entry = $ads;
+		    $entry = $classifieds;
 		
 	 
 		$this->layout->title = 'Prodaja drva';
 
-		$featuredads = Ads::getEntries(null, null, null, true, true, 4, null, null, null, null, null, null);
+		$featuredclassifieds = Classifieds::getEntries(null, null, null, true, true, 4, null, null, null, null, null, null);
 
-		$publishedads = Ads::getEntries(null, null, null, true, null, 10, null, null, null, null, null, null);
+		$publishedclassifieds = Classifieds::getEntries(null, null, null, true, null, 10, null, null, null, null, null, null);
 
-		$countactiveads = Ads::getEntries(null, null, null, null, null, null, null, null, null, null, null, null, true);
+		$countactiveclassifieds = Classifieds::getEntries(null, null, null, null, null, null, null, null, null, null, null, null, true);
 
-		$countnewads = Ads::getEntries(null, null, null, null, null, null, null, null, null, null, null, true);
+		$countnewclassifieds = Classifieds::getEntries(null, null, null, null, null, null, null, null, null, null, null, true);
 
 		$countactiveusers = Users::getEntries(null, null, null, null, true);
+
+		$pins = Classifieds::getEntries(null, null, null, true, null, null, null, null, null, null, null, null);
 
 		$this->layout->css_files = array(
 
@@ -132,7 +134,7 @@ class FrontendController extends \CoreController {
 
 		);
 
-		$this->layout->content = View::make('frontend.index', array('featuredads' => $featuredads, 'publishedads' => $publishedads, 'countactiveads' => $countactiveads['entry'], 'countactiveusers' => $countactiveusers['entry'], 'countnewads' => $countnewads['entry'], 'postRoute' => 'SearchAds', 'woodlist' => $woodlist, 'regionslist' => $regionslist, 'ads' => $ads));
+		$this->layout->content = View::make('frontend.index', array('featuredclassifieds' => $featuredclassifieds, 'publishedclassifieds' => $publishedclassifieds, 'countactiveclassifieds' => $countactiveclassifieds['entry'], 'countactiveusers' => $countactiveusers['entry'], 'countnewclassifieds' => $countnewclassifieds['entry'], 'pins' => $pins['entries'], 'postRoute' => 'SearchClassifieds', 'woodlist' => $woodlist, 'regionslist' => $regionslist, 'classifieds' => $classifieds));
 	}
  
  
@@ -245,12 +247,12 @@ class FrontendController extends \CoreController {
 
 			App::setLocale($user_language);
 
-			return Redirect::route('getLanding')->with('success_message', Lang::get('messages.sign_in_success'));
+			return Redirect::route('getLanding')->with('success_message', Lang::get('messages.sign_in_successful'));
 
 		}
 		else
 		{
-			return Redirect::back()->with('error_message', Lang::get('messages.sign_in_error'))->withInput();
+			return Redirect::back()->with('error_message', Lang::get('messages.not_logged_in'))->withInput();
 		}
 	}
 
@@ -264,7 +266,7 @@ class FrontendController extends \CoreController {
 			Auth::logout();
 			Session::flush();
 
-			return Redirect::route('getLanding')->with('info_message', Lang::get('messages.sign_out_success'));
+			return Redirect::route('getLanding')->with('info_message', Lang::get('messages.sign_out_successful'));
 
 		}
 
@@ -289,7 +291,7 @@ class FrontendController extends \CoreController {
 
 			);
 
-		$this->layout->content = View::make('frontend.password-recovery', array('postRoute' => 'postForgotPassword'));
+		$this->layout->content = View::make('frontend.password-recovery', array('postRoute' => 'postRemind'));
 
 	}
 
@@ -331,7 +333,7 @@ class FrontendController extends \CoreController {
 	 	
 		if ($region['status'] == 0)
 		{
-			return Redirect::route('getLanding')->with('error_message', Lang::get('core.msg_error_getting_entries'));
+			return Redirect::route('getLanding')->with('error_message', Lang::get('core.msg_error_getting_entry'));
 		}
 		foreach ($region['entries'] as $region)
 		{
@@ -343,7 +345,7 @@ class FrontendController extends \CoreController {
 	 	
 		if ($city['status'] == 0)
 		{
-			return Redirect::route('getLanding')->with('error_message', Lang::get('core.msg_error_getting_entries'));
+			return Redirect::route('getLanding')->with('error_message', Lang::get('core.msg_error_getting_entry'));
 		}
 		foreach ($city['entries'] as $city)
 		{
@@ -369,11 +371,19 @@ class FrontendController extends \CoreController {
 	{
 		Input::merge(array_map('trim', Input::all()));
 
+
 		$userValidator = Validator::make(Input::all(), Users::$register_rules);
 
 		if ($userValidator->fails())
 		{
-			return Redirect::back()->with('error_message', Lang::get('messages.error_validating_registration'))->withErrors($userValidator)->withInput();
+			return Redirect::back()->with('error_message', Lang::get('messages.msg_error_registering_user'))->withErrors($userValidator)->withInput();
+		}
+
+		$passwordValidator = Validator::make(Input::all(), Users::$password_rules);
+
+		if ($passwordValidator->fails())
+		{
+			return Redirect::back()->with('error_message', Lang::get('messages.msg_error_password_dont_match'))->withErrors($passwordValidator)->withInput();
 		}
 
 		$tryNewUser = $this->repo->registerUser(Input::get('first_name'), Input::get('last_name'), Input::get('region'), Input::get('city'), Input::get('email'), Input::get('username'), Input::get('password'));
@@ -387,24 +397,25 @@ class FrontendController extends \CoreController {
 		{
 			Mail::send('emails.register', array('name' => Input::get('first_name'), 'password' => Input::get('password')), function($message)
 			{
-				$message->from('info@culex.hr', 'Prodaja drva+');
+				$message->from('info@culex.hr', 'Prodaja drva');
 				$message->subject('Hvala na registraciji');
 				$message->to(Input::get('email'));
 			});
 
+
  
 		 
-		    return Redirect::intended('/')->with('success_message', Lang::get('messages.sign_in_success'));
+		    return Redirect::intended('/')->with('success_message', Lang::get('messages.sign_in_successful'));
 	 
 
 			Session::put('lang', 'hr');
 			App::setLocale('hr');
 
-			return Redirect::intended('/')->with('success_message', Lang::get('messages.sign_in_success'));
+			return Redirect::intended('/')->with('success_message', Lang::get('messages.sign_in_successful'));
 		}
 		else
 		{
-			return Redirect::back()->with('error_message', Lang::get('messages.sign_in_error'))->withInput();
+			return Redirect::back()->with('error_message', Lang::get('messages.not_logged_in'))->withInput();
 		}
 	}
 
@@ -465,8 +476,6 @@ class FrontendController extends \CoreController {
 
 	public function UserProfile($permalink) {
 
-
-
 		$entry = Users::getEntries(null, null, $permalink, null);
 
 		$city = $entry['entry']->city;
@@ -479,23 +488,25 @@ class FrontendController extends \CoreController {
 
 		$user = $entry['entry']->id;
 
-		$userads = Ads::getEntries(null, null, $user, true, null, null, null, null, null, null, null, null, null);
+		$userclassifieds = Classifieds::getEntries(null, null, $user, true, null, null, null, null, null, null, null, null, null);
 
 		$reviews = Review::getEntries(null, null, $user, true);
 
-		$featuredads = Ads::getEntries(null, null, null, true, true, 4, null);
+
+
+		$featuredclassifieds = Classifieds::getEntries(null, null, null, true, true, 4, null);
 
 		if (is_null($entry['entry'])) {
 
-			return Redirect::route('getLanding')->with('error_message', Lang::get('core.user_not_found'));
+			return Redirect::route('getLanding')->with('error_message', Lang::get('core.msg_error_user_not_found'));
 		}
 
 		if ($entry['status'] == 0)
 		{
-			return Redirect::route('getLanding')->with('error_message', Lang::get('core.msg_error_getting_entries'));
+			return Redirect::route('getLanding')->with('error_message', Lang::get('core.msg_error_getting_entry'));
 		}
 
-		$this->layout->title = 'Profil korisnika' . ' ' . $entry['entry']->username .' | Prodaja drva';
+		$this->layout->title = 'Profil korisnika ' . $entry['entry']->username .' | Prodaja drva';
 
 		$this->layout->css_files = array(
 
@@ -505,7 +516,7 @@ class FrontendController extends \CoreController {
 
 			);
 
-		$this->layout->content = View::make('frontend.user-profile', array('entry' => $entry{'entry'}, 'city' => $city['entry'], 'region' => $region['entry'], 'userads' => $userads['entries'], 'featuredads' => $featuredads, 'reviews' => $reviews['entries'], 'postRoute' => 'ReviewStore'));
+		$this->layout->content = View::make('frontend.user-profile', array('entry' => $entry{'entry'}, 'city' => $city['entry'], 'region' => $region['entry'], 'userclassifieds' => $userclassifieds['entries'], 'featuredclassifieds' => $featuredclassifieds, 'reviews' => $reviews['entries'], 'postRoute' => 'ReviewStore'));
 
 	}
 
@@ -529,7 +540,7 @@ class FrontendController extends \CoreController {
 			}
 
 			if ($user['user']->id != $id) {
-				return Redirect::route('getLanding')->with('error_message', Lang::get('messages.unauthorized_access'));
+				return Redirect::route('getLanding')->with('error_message', Lang::get('core.unauthorized_access'));
 			}
 			
 		} else {
@@ -551,9 +562,9 @@ class FrontendController extends \CoreController {
 
 		$user = $entry['entry']->id;
 
-		$userads = Ads::getEntries(null, null, $user, null, null, null, null, null, null, null, null, null);
+		$userclassifieds = Classifieds::getEntries(null, null, $user, null, null, null, null, null, null, null, null, null);
 
-		$featuredads = Ads::getEntries(null, null, null, true, true, 4, null, null, null, null, null, null);
+		$featuredclassifieds = Classifieds::getEntries(null, null, null, true, true, 4, null, null, null, null, null, null);
 
 		$this->layout->title = 'Moj profil | Prodaja drva';
 
@@ -565,7 +576,7 @@ class FrontendController extends \CoreController {
 
 			);
 
-		$this->layout->content = View::make('frontend.my-profile', array('entry' => $entry['entry'], 'city' => $city['entry'], 'region' => $region['entry'], 'userads' => $userads['entries'], 'featuredads' => $featuredads));
+		$this->layout->content = View::make('frontend.my-profile', array('entry' => $entry['entry'], 'city' => $city['entry'], 'region' => $region['entry'], 'userclassifieds' => $userclassifieds['entries'], 'featuredclassifieds' => $featuredclassifieds));
 
 	}
 
@@ -578,7 +589,7 @@ class FrontendController extends \CoreController {
 	 	
 		if ($region['status'] == 0)
 		{
-			return Redirect::route('getLanding')->with('error_message', Lang::get('core.msg_error_getting_entries'));
+			return Redirect::route('getLanding')->with('error_message', Lang::get('core.msg_error_getting_entry'));
 		}
 		foreach ($region['entries'] as $region)
 		{
@@ -590,7 +601,7 @@ class FrontendController extends \CoreController {
 	 	
 		if ($city['status'] == 0)
 		{
-			return Redirect::route('getLanding')->with('error_message', Lang::get('core.msg_error_getting_entries'));
+			return Redirect::route('getLanding')->with('error_message', Lang::get('core.msg_error_getting_entry'));
 		}
 		foreach ($city['entries'] as $city)
 		{
@@ -620,7 +631,7 @@ class FrontendController extends \CoreController {
 	{
 		Input::merge(array_map('trim', Input::all()));
 
-		$entryValidator = Validator::make(Input::all(), Users::$store_rules);
+		$entryValidator = Validator::make(Input::all(), Users::$update_rules);
 
 		if ($entryValidator->fails())
 		{
@@ -645,22 +656,22 @@ class FrontendController extends \CoreController {
 
 		if ($update['status'] == 0)
 		{
-			return Redirect::back()->with('error_message', Lang::get('core.msg_error_adding_entry'))->withErrors($entryValidator)->withInput();
+			return Redirect::back()->with('error_message', Lang::get('core.msg_error_updating_user'))->withErrors($entryValidator)->withInput();
 		}
 		else
 		{
-			return Redirect::route('getLanding')->with('success_message', Lang::get('core.msg_success_entry_added', array('name' => Input::get('name'))));
+			return Redirect::route('getLanding')->with('success_message', Lang::get('core.msg_success_user_updated', array('name' => Input::get('name'))));
 		}
 	}
 
 
 	/*
-	 *	Show, Create, edit, update, destroy ads segment
+	 *	Show, Create, edit, update, destroy classifieds segment
 	 */
 
-	// Shows specific ad by permalink
+	// Shows specific classified by permalink
 
-	public function ShowAd($permalink) {
+	public function ShowClassified($permalink) {
 
 
 		// Getting all regions
@@ -670,7 +681,7 @@ class FrontendController extends \CoreController {
 
 		if ($regions['status'] == 0)
 		{
-			return Redirect::route('getLanding')->with('error_message', Lang::get('core.msg_error_getting_entries'));
+			return Redirect::route('getLanding')->with('error_message', Lang::get('core.msg_error_getting_entry'));
 		}
 		foreach ($regions['entries'] as $regions)
 		{
@@ -686,7 +697,7 @@ class FrontendController extends \CoreController {
 
 	 	if ($wood['status'] == 0)
 		{
-			return Redirect::route('getlanding')->with('error_message', Lang::get('core.msg_error_getting_entries'));
+			return Redirect::route('getlanding')->with('error_message', Lang::get('core.msg_error_getting_entry'));
 		}
 
 		foreach ($wood['entries'] as $wood)
@@ -702,7 +713,7 @@ class FrontendController extends \CoreController {
 
 	 	if ($packaging['status'] == 0)
 		{
-			return Redirect::route('getlanding')->with('error_message', Lang::get('core.msg_error_getting_entries'));
+			return Redirect::route('getlanding')->with('error_message', Lang::get('core.msg_error_getting_entry'));
 		}
 
 		foreach ($packaging['entries'] as $packaging)
@@ -715,26 +726,26 @@ class FrontendController extends \CoreController {
 	  	$wood = Input::get('wood');
 	    $region = Input::get('region');
 	    $packaging = Input::get('packaging');
-	    $ads = $entry = DB::table('ads')
-			->join('users', 'ads.user', '=', 'users.id')
-			->join('region', 'ads.region', '=', 'region.id')
-			->join('wood', 'ads.wood', '=', 'wood.id')
-			->join('packaging', 'ads.packaging', '=', 'packaging.id')
+	    $classifieds = $entry = DB::table('classifieds')
+			->join('users', 'classifieds.user', '=', 'users.id')
+			->join('region', 'classifieds.region', '=', 'region.id')
+			->join('wood', 'classifieds.wood', '=', 'wood.id')
+			->join('packaging', 'classifieds.packaging', '=', 'packaging.id')
 			->select(
-				'ads.id AS id', 
-				'ads.title AS title',
-				'ads.permalink AS permalink',
-				'ads.wood AS wood',
-				'ads.packaging AS packaging',
-				'ads.price AS price',
-				'ads.description AS description',
-				'ads.user AS user',
-				'ads.region AS region',
-				'ads.city AS city',
-				'ads.published AS published',
-				'ads.featured AS featured',
-				'ads.image AS image',
-				'ads.created_at AS created_at',
+				'classifieds.id AS id', 
+				'classifieds.title AS title',
+				'classifieds.permalink AS permalink',
+				'classifieds.wood AS wood',
+				'classifieds.packaging AS packaging',
+				'classifieds.price AS price',
+				'classifieds.description AS description',
+				'classifieds.user AS user',
+				'classifieds.region AS region',
+				'classifieds.city AS city',
+				'classifieds.published AS published',
+				'classifieds.featured AS featured',
+				'classifieds.image AS image',
+				'classifieds.created_at AS created_at',
 				'users.email AS email',
 				'users.username AS username',
 				'region.name AS regionname',
@@ -742,7 +753,7 @@ class FrontendController extends \CoreController {
 				'wood.permalink AS woodpermalink',
 				'packaging.name AS packagingname'
 			)
-		->where('ads.published', 'LIKE', '1')
+		->where('classifieds.published', 'LIKE', '1')
 		->where('region.id', 'LIKE', '%'.$region.'%')
 		->where('packaging.id', 'LIKE', ''.$packaging.'%')
 		->where('wood.id', 'LIKE', ''.$wood.'%')
@@ -755,17 +766,17 @@ class FrontendController extends \CoreController {
 	    $packaging = mb_strtolower($packaging, 'UTF-8');
 
 
-		$entry = Ads::getEntries(null, $permalink, null, null, null, null, null);
+		$entry = Classifieds::getEntries(null, $permalink, null, null, null, null, null);
 
  		if (is_null($entry['entry'])) {
 
-			return Redirect::route('getLanding')->with('error_message', Lang::get('core.user_not_found'));
+			return Redirect::route('getLanding')->with('error_message', Lang::get('core.msg_error_user_not_found'));
 
 		}
 
 		if ($entry['status'] == 0)
 		{
-			return Redirect::route('getLanding')->with('error_message', Lang::get('core.msg_error_getting_entries'));
+			return Redirect::route('getLanding')->with('error_message', Lang::get('core.msg_error_getting_entry'));
 		}
 
   		$user = $entry['entry']->user;
@@ -774,11 +785,15 @@ class FrontendController extends \CoreController {
 
 		$region = $entry['entry']->region;
 
-		$region = Region::getEntries($region,null);
+		$region = Region::getEntries($region, null);
 
+		$nearclassifieds = $region['entry']->id;
 
+		$nearclassifieds = Classifieds::getEntries(null, null, null, null, null, null, null, null, $nearclassifieds, null, null, null, null);
 
 		$this->layout->title = $entry['entry']->title .' | Prodaja drva';
+
+		$this->layout->description = 'Pregled oglasa: '. $entry['entry']->title;
 
 		$this->layout->css_files = array(
 		);
@@ -786,21 +801,21 @@ class FrontendController extends \CoreController {
 		$this->layout->js_footer_files = array(
 		);
 
-		$this->layout->content = View::make('frontend.single-ad', array('entry' => $entry['entry'], 'user' => $user['entry'], 'region' => $region['entry'], 'postRoute' => 'SearchAds', 'packaginglist' => $packaginglist, 'woodlist' => $woodlist, 'regionslist' => $regionslist, 'ads' => $ads ));
+		$this->layout->content = View::make('frontend.single-classified', array('entry' => $entry['entry'], 'user' => $user['entry'], 'region' => $region['entry'], 'nearclassifieds' => $nearclassifieds['entries'], 'postRoute' => 'SearchClassifieds', 'packaginglist' => $packaginglist, 'woodlist' => $woodlist, 'regionslist' => $regionslist, 'classifieds' => $classifieds ));
 	}
 
 
-	// Shows listing of all ads by specific wood category
+	// Shows listing of all classifieds by specific wood category
 
-	public function listadsbywoodcategory($woodcategory) {
+	public function listclassifiedsbywoodcategory($woodcategory) {
 
 		$wood = Wood::getEntries(null, null, $woodcategory);
 
 		$wood = $wood['entry']->id;
 
-		$entries = Ads::getEntries(null, null, null, true, null, null, null, $wood, null, null, null, null, null);
+		$entries = Classifieds::getEntries(null, null, null, true, null, null, null, $wood, null, null, null, null, null);
 		
-		$featuredads = Ads::getEntries(null, null, null, true, true, 4, null);
+		$featuredclassifieds = Classifieds::getEntries(null, null, null, true, true, 4, null);
 
 		// Getting all regions
 		$regionslist = array();
@@ -809,7 +824,7 @@ class FrontendController extends \CoreController {
 
 		if ($regions['status'] == 0)
 		{
-			return Redirect::route('getLanding')->with('error_message', Lang::get('core.msg_error_getting_entries'));
+			return Redirect::route('getLanding')->with('error_message', Lang::get('core.msg_error_getting_entry'));
 		}
 		foreach ($regions['entries'] as $regions)
 		{
@@ -824,7 +839,7 @@ class FrontendController extends \CoreController {
 
 	 	if ($wood['status'] == 0)
 		{
-			return Redirect::route('getlanding')->with('error_message', Lang::get('core.msg_error_getting_entries'));
+			return Redirect::route('getlanding')->with('error_message', Lang::get('core.msg_error_getting_entry'));
 		}
 
 		foreach ($wood['entries'] as $wood)
@@ -840,7 +855,7 @@ class FrontendController extends \CoreController {
 
 	 	if ($packaging['status'] == 0)
 		{
-			return Redirect::route('getlanding')->with('error_message', Lang::get('core.msg_error_getting_entries'));
+			return Redirect::route('getlanding')->with('error_message', Lang::get('core.msg_error_getting_entry'));
 		}
 
 		foreach ($packaging['entries'] as $packaging)
@@ -853,26 +868,26 @@ class FrontendController extends \CoreController {
 	  	$wood = Input::get('wood');
 	    $region = Input::get('region');
 	    $packaging = Input::get('packaging');
-	    $ads = $entry = DB::table('ads')
-			->join('users', 'ads.user', '=', 'users.id')
-			->join('region', 'ads.region', '=', 'region.id')
-			->join('wood', 'ads.wood', '=', 'wood.id')
-			->join('packaging', 'ads.packaging', '=', 'packaging.id')
+	    $classifieds = $entry = DB::table('classifieds')
+			->join('users', 'classifieds.user', '=', 'users.id')
+			->join('region', 'classifieds.region', '=', 'region.id')
+			->join('wood', 'classifieds.wood', '=', 'wood.id')
+			->join('packaging', 'classifieds.packaging', '=', 'packaging.id')
 			->select(
-				'ads.id AS id', 
-				'ads.title AS title',
-				'ads.permalink AS permalink',
-				'ads.wood AS wood',
-				'ads.packaging AS packaging',
-				'ads.price AS price',
-				'ads.description AS description',
-				'ads.user AS user',
-				'ads.region AS region',
-				'ads.city AS city',
-				'ads.published AS published',
-				'ads.featured AS featured',
-				'ads.image AS image',
-				'ads.created_at AS created_at',
+				'classifieds.id AS id', 
+				'classifieds.title AS title',
+				'classifieds.permalink AS permalink',
+				'classifieds.wood AS wood',
+				'classifieds.packaging AS packaging',
+				'classifieds.price AS price',
+				'classifieds.description AS description',
+				'classifieds.user AS user',
+				'classifieds.region AS region',
+				'classifieds.city AS city',
+				'classifieds.published AS published',
+				'classifieds.featured AS featured',
+				'classifieds.image AS image',
+				'classifieds.created_at AS created_at',
 				'users.email AS email',
 				'users.username AS username',
 				'region.name AS regionname',
@@ -880,7 +895,7 @@ class FrontendController extends \CoreController {
 				'wood.permalink AS woodpermalink',
 				'packaging.name AS packagingname'
 			)
-		->where('ads.published', 'LIKE', '1')
+		->where('classifieds.published', 'LIKE', '1')
 		->where('region.id', 'LIKE', '%'.$region.'%')
 		->where('packaging.id', 'LIKE', ''.$packaging.'%')
 		->where('wood.id', 'LIKE', ''.$wood.'%')
@@ -892,9 +907,9 @@ class FrontendController extends \CoreController {
 
 	    $packaging = mb_strtolower($packaging, 'UTF-8');
 
-	    goDie($wood);
+		$this->layout->title = 'Lista oglasa po kategoriji drveta: '. $woodcategory . ' | Prodaja drva';
 
-		$this->layout->title = 'Prodaja drva | Lista oglasa';
+		$this->layout->description = 'Pretraga oglasa za: ' . $woodcategory;
 
 		$this->layout->css_files = array(
 
@@ -904,23 +919,25 @@ class FrontendController extends \CoreController {
 
 			);
 
-		$this->layout->content = View::make('frontend.ad-list', array('entries' => $entries['entries'], 'featuredads' => $featuredads, 'postRoute' => 'SearchAds', 'packaginglist' => $packaginglist, 'woodlist' => $woodlist, 'regionslist' => $regionslist, 'packaging' => $packaging, 'wood' => $wood));
+		$this->layout->content = View::make('frontend.classified-list', array('entries' => $entries['entries'], 'featuredclassifieds' => $featuredclassifieds, 'postRoute' => 'SearchClassifieds', 'packaginglist' => $packaginglist, 'woodlist' => $woodlist, 'regionslist' => $regionslist, 'packaging' => $packaging, 'wood' => $wood));
 
 		
 
 	}
 
-	// Shows listing of all ads by specific wood category
+	// Shows listing of all classifieds by specific wood category
 
-	public function listadsbyregion($region) {
+	public function listclassifiedsbyregion($region) {
 
 		$region = Region::getEntries(null, null, $region);
 
-		$region = $region['entry']->id;
+		$regionname = $region['entry']->permalink;
 
-		$entries = Ads::getEntries(null, null, null, true, null, null, null, null, $region, null);
+		$region = $region['entry']->id;
 		
-		$featuredads = Ads::getEntries(null, null, null, true, true, 4, null);
+		$entries = Classifieds::getEntries(null, null, null, true, null, null, null, null, $region, null);
+		
+		$featuredclassifieds = Classifieds::getEntries(null, null, null, true, true, 4, null);
 
 		// Getting all regions
 		$regionslist = array();
@@ -929,7 +946,7 @@ class FrontendController extends \CoreController {
 
 		if ($regions['status'] == 0)
 		{
-			return Redirect::route('getLanding')->with('error_message', Lang::get('core.msg_error_getting_entries'));
+			return Redirect::route('getLanding')->with('error_message', Lang::get('core.msg_error_getting_entry'));
 		}
 		foreach ($regions['entries'] as $regions)
 		{
@@ -944,7 +961,7 @@ class FrontendController extends \CoreController {
 
 	 	if ($wood['status'] == 0)
 		{
-			return Redirect::route('getlanding')->with('error_message', Lang::get('core.msg_error_getting_entries'));
+			return Redirect::route('getlanding')->with('error_message', Lang::get('core.msg_error_getting_entry'));
 		}
 
 		foreach ($wood['entries'] as $wood)
@@ -960,7 +977,7 @@ class FrontendController extends \CoreController {
 
 	 	if ($packaging['status'] == 0)
 		{
-			return Redirect::route('getlanding')->with('error_message', Lang::get('core.msg_error_getting_entries'));
+			return Redirect::route('getlanding')->with('error_message', Lang::get('core.msg_error_getting_entry'));
 		}
 
 		foreach ($packaging['entries'] as $packaging)
@@ -973,26 +990,26 @@ class FrontendController extends \CoreController {
 	  	$wood = Input::get('wood');
 	    $region = Input::get('region');
 	    $packaging = Input::get('packaging');
-	    $ads = $entry = DB::table('ads')
-			->join('users', 'ads.user', '=', 'users.id')
-			->join('region', 'ads.region', '=', 'region.id')
-			->join('wood', 'ads.wood', '=', 'wood.id')
-			->join('packaging', 'ads.packaging', '=', 'packaging.id')
+	    $classifieds = $entry = DB::table('classifieds')
+			->join('users', 'classifieds.user', '=', 'users.id')
+			->join('region', 'classifieds.region', '=', 'region.id')
+			->join('wood', 'classifieds.wood', '=', 'wood.id')
+			->join('packaging', 'classifieds.packaging', '=', 'packaging.id')
 			->select(
-				'ads.id AS id', 
-				'ads.title AS title',
-				'ads.permalink AS permalink',
-				'ads.wood AS wood',
-				'ads.packaging AS packaging',
-				'ads.price AS price',
-				'ads.description AS description',
-				'ads.user AS user',
-				'ads.region AS region',
-				'ads.city AS city',
-				'ads.published AS published',
-				'ads.featured AS featured',
-				'ads.image AS image',
-				'ads.created_at AS created_at',
+				'classifieds.id AS id', 
+				'classifieds.title AS title',
+				'classifieds.permalink AS permalink',
+				'classifieds.wood AS wood',
+				'classifieds.packaging AS packaging',
+				'classifieds.price AS price',
+				'classifieds.description AS description',
+				'classifieds.user AS user',
+				'classifieds.region AS region',
+				'classifieds.city AS city',
+				'classifieds.published AS published',
+				'classifieds.featured AS featured',
+				'classifieds.image AS image',
+				'classifieds.created_at AS created_at',
 				'users.email AS email',
 				'users.username AS username',
 				'region.name AS regionname',
@@ -1000,19 +1017,20 @@ class FrontendController extends \CoreController {
 				'wood.permalink AS woodpermalink',
 				'packaging.name AS packagingname'
 			)
-		->where('ads.published', 'LIKE', '1')
+		->where('classifieds.published', 'LIKE', '1')
 		->where('region.id', 'LIKE', '%'.$region.'%')
 		->where('packaging.id', 'LIKE', ''.$packaging.'%')
 		->where('wood.id', 'LIKE', ''.$wood.'%')
 		->orderBy('id', 'ASC')
 		->paginate(10);
 
-		
 	    $wood = mb_strtolower($wood, 'UTF-8');
 
 	    $packaging = mb_strtolower($packaging, 'UTF-8');
 
-		$this->layout->title = 'Prodaja drva | Lista oglasa';
+		$this->layout->title = 'Lista oglasa iz zupanije: '. $regionname . ' | Prodaja drva';
+
+		$this->layout->description = 'Pretraga oglasa iz zupanije: ' . $regionname . ' | Prodaja drva';
 
 		$this->layout->css_files = array(
 
@@ -1022,22 +1040,21 @@ class FrontendController extends \CoreController {
 
 			);
 
-		$this->layout->content = View::make('frontend.ad-list', array('entries' => $entries['entries'], 'featuredads' => $featuredads, 'postRoute' => 'SearchAds', 'packaginglist' => $packaginglist, 'woodlist' => $woodlist, 'regionslist' => $regionslist));
+		$this->layout->content = View::make('frontend.classified-list', array('entries' => $entries['entries'], 'featuredclassifieds' => $featuredclassifieds, 'postRoute' => 'SearchClassifieds', 'packaginglist' => $packaginglist, 'woodlist' => $woodlist, 'regionslist' => $regionslist));
 	}
 
-	// Shows listing of all ads
+	// Shows listing of all classifieds
 
-	public function AdList() {
+	public function ClassifiedList() {
 
 		// Getting all regions
 			$regionslist = array();
-
 
 			$regions = Region::getEntries();
 
 			if ($regions['status'] == 0)
 			{
-				return Redirect::route('getLanding')->with('error_message', Lang::get('core.msg_error_getting_entries'));
+				return Redirect::route('getLanding')->with('error_message', Lang::get('core.msg_error_getting_entry'));
 			}
 			foreach ($regions['entries'] as $regions)
 			{
@@ -1053,7 +1070,7 @@ class FrontendController extends \CoreController {
 
 		 	if ($wood['status'] == 0)
 			{
-				return Redirect::route('getlanding')->with('error_message', Lang::get('core.msg_error_getting_entries'));
+				return Redirect::route('getlanding')->with('error_message', Lang::get('core.msg_error_getting_entry'));
 			}
 
 			foreach ($wood['entries'] as $wood)
@@ -1069,7 +1086,7 @@ class FrontendController extends \CoreController {
 
 		 	if ($packaging['status'] == 0)
 			{
-				return Redirect::route('getlanding')->with('error_message', Lang::get('core.msg_error_getting_entries'));
+				return Redirect::route('getlanding')->with('error_message', Lang::get('core.msg_error_getting_entry'));
 			}
 
 			foreach ($packaging['entries'] as $packaging)
@@ -1082,26 +1099,26 @@ class FrontendController extends \CoreController {
 		  	$wood = Input::get('wood');
 		    $region = Input::get('region');
 		    $packaging = Input::get('packaging');
-		    $ads = $entry = DB::table('ads')
-				->join('users', 'ads.user', '=', 'users.id')
-				->join('region', 'ads.region', '=', 'region.id')
-				->join('wood', 'ads.wood', '=', 'wood.id')
-				->join('packaging', 'ads.packaging', '=', 'packaging.id')
+		    $classifieds = $entry = DB::table('classifieds')
+				->join('users', 'classifieds.user', '=', 'users.id')
+				->join('region', 'classifieds.region', '=', 'region.id')
+				->join('wood', 'classifieds.wood', '=', 'wood.id')
+				->join('packaging', 'classifieds.packaging', '=', 'packaging.id')
 				->select(
-					'ads.id AS id', 
-					'ads.title AS title',
-					'ads.permalink AS permalink',
-					'ads.wood AS wood',
-					'ads.packaging AS packaging',
-					'ads.price AS price',
-					'ads.description AS description',
-					'ads.user AS user',
-					'ads.region AS region',
-					'ads.city AS city',
-					'ads.published AS published',
-					'ads.featured AS featured',
-					'ads.image AS image',
-					'ads.created_at AS created_at',
+					'classifieds.id AS id', 
+					'classifieds.title AS title',
+					'classifieds.permalink AS permalink',
+					'classifieds.wood AS wood',
+					'classifieds.packaging AS packaging',
+					'classifieds.price AS price',
+					'classifieds.description AS description',
+					'classifieds.user AS user',
+					'classifieds.region AS region',
+					'classifieds.city AS city',
+					'classifieds.published AS published',
+					'classifieds.featured AS featured',
+					'classifieds.image AS image',
+					'classifieds.created_at AS created_at',
 					'users.email AS email',
 					'users.username AS username',
 					'region.name AS regionname',
@@ -1109,7 +1126,7 @@ class FrontendController extends \CoreController {
 					'wood.permalink AS woodpermalink',
 					'packaging.name AS packagingname'
 				)
-			->where('ads.published', 'LIKE', '1')
+			->where('classifieds.published', 'LIKE', '1')
 			->where('region.name', 'LIKE', '%'.$region.'%')
 			->where('packaging.name', 'LIKE', ''.$packaging.'%')
 			->where('wood.name', 'LIKE', ''.$wood.'%')
@@ -1121,9 +1138,9 @@ class FrontendController extends \CoreController {
 
 		    $packaging = mb_strtolower($packaging, 'UTF-8');
 
-		    $entry = Ads::getEntries(null, null, null, true, null, null, null, null, null, null, null, null);
+		    $entry = Classifieds::getEntries(null, null, null, true, null, null, null, null, null, null, null, null);
 
-			$featuredads = Ads::getEntries(null, null, null, true, true, 4, null, null, null, null, null, null);
+			$featuredclassifieds = Classifieds::getEntries(null, null, null, true, true, 4, null, null, null, null, null, null);
 
 
 	 		$this->layout->title = 'Oglasi | Prodaja drva';
@@ -1137,12 +1154,12 @@ class FrontendController extends \CoreController {
 				);
 
             //return display search result to user by using a view
-            $this->layout->content = View::make('frontend.ad-list', array('entries' => $entry['entries'], 'featuredads' => $featuredads, 'postRoute' => 'SearchAds', 'packaginglist' => $packaginglist, 'woodlist' => $woodlist, 'regionslist' => $regionslist, 'ads' => $ads));
+            $this->layout->content = View::make('frontend.classified-list', array('entries' => $entry['entries'], 'featuredclassifieds' => $featuredclassifieds, 'postRoute' => 'SearchClassifieds', 'packaginglist' => $packaginglist, 'woodlist' => $woodlist, 'regionslist' => $regionslist, 'classifieds' => $classifieds));
 	}
 
-	// Searches ads by parameters
+	// Searches classifieds by parameters
 
-	public function searchads () {
+	public function SearchClassifieds () {
 
   			// Getting all regions
 			$regionslist = array();
@@ -1151,7 +1168,7 @@ class FrontendController extends \CoreController {
 
 			if ($regions['status'] == 0)
 			{
-				return Redirect::route('getLanding')->with('error_message', Lang::get('core.msg_error_getting_entries'));
+				return Redirect::route('getLanding')->with('error_message', Lang::get('core.msg_error_getting_entry'));
 			}
 			foreach ($regions['entries'] as $regions)
 			{
@@ -1167,7 +1184,7 @@ class FrontendController extends \CoreController {
 
 		 	if ($wood['status'] == 0)
 			{
-				return Redirect::route('getlanding')->with('error_message', Lang::get('core.msg_error_getting_entries'));
+				return Redirect::route('getlanding')->with('error_message', Lang::get('core.msg_error_getting_entry'));
 			}
 
 			foreach ($wood['entries'] as $wood)
@@ -1183,7 +1200,7 @@ class FrontendController extends \CoreController {
 
 		 	if ($packaging['status'] == 0)
 			{
-				return Redirect::route('getlanding')->with('error_message', Lang::get('core.msg_error_getting_entries'));
+				return Redirect::route('getlanding')->with('error_message', Lang::get('core.msg_error_getting_entry'));
 			}
 
 			foreach ($packaging['entries'] as $packaging)
@@ -1196,59 +1213,166 @@ class FrontendController extends \CoreController {
 		  	$wood = Input::get('wood');
 		    $region = Input::get('region');
 		    $packaging = Input::get('packaging');
-		    $ads = $entry = DB::table('ads')
-				->join('users', 'ads.user', '=', 'users.id')
-				->join('region', 'ads.region', '=', 'region.id')
-				->join('wood', 'ads.wood', '=', 'wood.id')
-				->join('packaging', 'ads.packaging', '=', 'packaging.id')
+		    $classifieds = $entry = DB::table('classifieds')
+				->join('users', 'classifieds.user', '=', 'users.id')
+				->join('region', 'classifieds.region', '=', 'region.id')
+				->join('wood', 'classifieds.wood', '=', 'wood.id')
+				->join('packaging', 'classifieds.packaging', '=', 'packaging.id')
 				->select(
-					'ads.id AS id', 
-					'ads.title AS title',
-					'ads.permalink AS permalink',
-					'ads.wood AS wood',
-					'ads.packaging AS packaging',
-					'ads.price AS price',
-					'ads.description AS description',
-					'ads.user AS user',
-					'ads.region AS region',
-					'ads.city AS city',
-					'ads.published AS published',
-					'ads.featured AS featured',
-					'ads.image AS image',
-					'ads.created_at AS created_at',
+					'classifieds.id AS id', 
+					'classifieds.title AS title',
+					'classifieds.permalink AS permalink',
+					'classifieds.wood AS wood',
+					'classifieds.packaging AS packaging',
+					'classifieds.price AS price',
+					'classifieds.description AS description',
+					'classifieds.user AS user',
+					'classifieds.region AS region',
+					'classifieds.city AS city',
+					'classifieds.published AS published',
+					'classifieds.featured AS featured',
+					'classifieds.image AS image',
+					'classifieds.created_at AS created_at',
 					'users.email AS email',
 					'users.username AS username',
 					'region.name AS regionname',
 					'wood.name AS woodname',
 					'wood.permalink AS woodpermalink',
 					'packaging.name AS packagingname'
-				)
-			->where('ads.published', 'LIKE', '1')
-			->where('region.id', 'LIKE', '%'.$region.'%')
-			->where('packaging.id', 'LIKE', ''.$packaging.'%')
-			->where('wood.id', 'LIKE', ''.$wood.'%')
-			->orderBy('id', 'ASC')
-			->paginate(10);
+				);
 
-			
+			$entry->where('classifieds.published', '=', '1');
+
+			if (!empty($region)) {
+			$entry->where('region.id', '=', $region);
+			}
+
+			if (!empty($packaging)) {
+			$entry->where('packaging.id', '=', $packaging);
+			}
+
+			if (!empty($wood)) {
+			$entry->where('wood.id', '=', $wood);
+			}
+ 
+
+			$classifieds = $entry->orderBy('id', 'ASC')->paginate(10);
+
+
 		    $wood = mb_strtolower($wood, 'UTF-8');
 
 		    $packaging = mb_strtolower($packaging, 'UTF-8');
 
-		    $entry = $ads;
+		    $entry = $classifieds;
 
-			$featuredads = Ads::getEntries(null, null, null, true, true, 4, null, null, null, null, null, null);
+			$featuredclassifieds = Classifieds::getEntries(null, null, null, true, true, 4, null, null, null, null, null, null);
+
+			// Getting wood permalink for title and description
 
 			$woodname = Wood::getEntries($wood, null, null);
+			if ($wood == null) {
+				$wood = null;
+				$woodname = $wood;
+			}else{
+				$woodname = $woodname['entry']->permalink;
+			}			
+
+			// Getting packaging permalink for title and description
 
 			$packagingname = Packaging::getEntries($packaging, null, null);
+			if ($packaging == null) {
+				$packaging = null;
+				$packagingname = $packaging;
+			}else{
+				$packagingname = $packagingname['entry']->permalink;
+			}
 
+			// Getting region permalink for title and description
 
-	 		$this->layout->title = 'Rezultati pretrage upita ' . $woodname['entry']->permalink . ' ' . $packagingname['entry']->permalink . ' ' . $region . ' | Prodaja drva';
+			$regionname = Region::getEntries($region, null, null);
+			if ($region == null) {
+				$region = null;
+				$regionname = $region;
+			}else{
+				$regionname = $regionname['entry']->permalink;
+			}
+			
+			// Creating title and description by given parameters
 
-			$this->layout->description = 'Pretraga upita za ' . $woodname['entry']->permalink . ' ' . $packagingname['entry']->permalink . ' ' . $region;
+			if ($woodname != null)
+			{
+				if ($packagingname != null)
+				{
+					if ($regionname != null)
+					{
+						$this->layout->title = 'Rezultati pretrage oglasa iz kategorija ' . $woodname . ' i ' . $packagingname . ' u županiji ' . $regionname . ' | Prodaja drva';
 
-			$this->layout->keywords = $woodname['entry']->permalink . ',' . $packagingname['entry']->permalink . ',' . $region;
+						$this->layout->description = 'Pretraga oglasa za ' . $woodname . ', ' . $packagingname . ', ' . $regionname;
+
+						$this->layout->keywords = $woodname . ',' . $packagingname . ',' . $regionname;
+
+					} else {
+						$this->layout->title = 'Rezultati pretrage oglasa iz kategorija ' . $woodname . ' i ' . $packagingname . ' | Prodaja drva';
+
+						$this->layout->description = 'Pretraga oglasa za ' . $woodname . ', ' . $packagingname;
+
+						$this->layout->keywords = $woodname . ',' . $packagingname;
+					}
+				} 
+				elseif ($regionname != null) 
+				{
+					$this->layout->title = 'Rezultati pretrage oglasa iz kategorije ' . $woodname . ' u županiji ' . $regionname . ' | Prodaja drva';
+
+					$this->layout->description = 'Pretraga oglasa za ' . $woodname . ', ' . $regionname;
+
+					$this->layout->keywords = $woodname . ',' . $regionname;
+				} 
+				elseif ($woodname != null)
+				{
+					$this->layout->title = 'Rezultati pretrage oglasa iz kategorije ' . $woodname . ' | Prodaja drva';
+
+					$this->layout->description = 'Pretraga oglasa za ' . $woodname;
+
+					$this->layout->keywords = $woodname;
+				}
+			}
+			elseif ($packagingname != null)
+			{
+				if ($regionname != null)
+				{
+					$this->layout->title = 'Rezultati pretrage oglasa iz kategorije ' . $packagingname . ' u županiji ' . $regionname . ' | Prodaja drva';
+
+					$this->layout->description = 'Pretraga oglasa za ' . $packagingname . ', ' . $regionname;
+
+					$this->layout->keywords = $packagingname . ',' . $regionname;
+
+				} else {
+					$this->layout->title = 'Rezultati pretrage oglasa iz kategorije ' . $packagingname . ' | Prodaja drva';
+
+					$this->layout->description = 'Pretraga oglasa za ' . $packagingname;
+
+					$this->layout->keywords = $packagingname;
+				}
+			} 
+			elseif ($regionname != null) {
+				$this->layout->title = 'Rezultati pretrage oglasa iz županije ' . $regionname . ' | Prodaja drva';
+
+				$this->layout->description = 'Pretraga oglasa za ' . $regionname;
+
+				$this->layout->keywords = $regionname;
+			} 
+			elseif ($woodname == null)
+			{
+				if ($packagingname == null)
+				{
+					if ($regionname == null)
+					{
+						$this->layout->title = 'Rezultati pretrage | Prodaja drva';
+
+						$this->layout->description = 'Pretraga svih oglasa';
+					}
+				}
+			}
 
 			$this->layout->css_files = array(
 
@@ -1259,13 +1383,14 @@ class FrontendController extends \CoreController {
 				);
 
             //return display search result to user by using a view
-            $this->layout->content = View::make('frontend.ad-list', array('entries' => $entry, 'featuredads' => $featuredads, 'postRoute' => 'SearchAds', 'packaginglist' => $packaginglist, 'woodlist' => $woodlist, 'regionslist' => $regionslist, 'ads' => $ads));
+
+            $this->layout->content = View::make('frontend.classified-list', array('entries' => $entry, 'featuredclassifieds' => $featuredclassifieds, 'postRoute' => 'SearchClassifieds', 'packaginglist' => $packaginglist, 'woodlist' => $woodlist, 'regionslist' => $regionslist, 'classifieds' => $classifieds));
 	}
 
 
-	// Show create-ad page
+	// Show create-classified page
 
-	public function CreateAd()
+	public function CreateClassified()
 	{ 
 
 		$regionlist = array();
@@ -1273,7 +1398,7 @@ class FrontendController extends \CoreController {
 	 	
 		if ($region['status'] == 0)
 		{
-			return Redirect::route('getLanding')->with('error_message', Lang::get('core.msg_error_getting_entries'));
+			return Redirect::route('getLanding')->with('error_message', Lang::get('core.msg_error_getting_entry'));
 		}
 		foreach ($region['entries'] as $region)
 		{
@@ -1286,7 +1411,7 @@ class FrontendController extends \CoreController {
 	 	
 		if ($city['status'] == 0)
 		{
-			return Redirect::route('getLanding')->with('error_message', Lang::get('core.msg_error_getting_entries'));
+			return Redirect::route('getLanding')->with('error_message', Lang::get('core.msg_error_getting_entry'));
 		}
 		foreach ($city['entries'] as $city)
 		{
@@ -1298,7 +1423,7 @@ class FrontendController extends \CoreController {
 	 	$wood = Wood::getEntries(null, null); 
 		if ($wood['status'] == 0)
 		{
-			return Redirect::route('getLanding')->with('error_message', Lang::get('core.msg_error_getting_entries'));
+			return Redirect::route('getLanding')->with('error_message', Lang::get('core.msg_error_getting_entry'));
 		}
 		foreach ($wood['entries'] as $wood)
 		{
@@ -1310,7 +1435,7 @@ class FrontendController extends \CoreController {
 	 	$packaging = Packaging::getEntries(null, null); 
 		if ($packaging['status'] == 0)
 		{
-			return Redirect::route('getLanding')->with('error_message', Lang::get('core.msg_error_getting_entries'));
+			return Redirect::route('getLanding')->with('error_message', Lang::get('core.msg_error_getting_entry'));
 		}
 		foreach ($packaging['entries'] as $packaging)
 		{
@@ -1318,7 +1443,7 @@ class FrontendController extends \CoreController {
 		}
 
 
-		$entries = Ads::getEntries(null, null, null, null, null, null);
+		$entries = Classifieds::getEntries(null, null, null, null, null, null);
 
 		$user = Users::getEntries(Auth::user()->id, null);
 
@@ -1333,23 +1458,23 @@ class FrontendController extends \CoreController {
 
 		);
 
-		$this->layout->content = View::make('frontend.create-ad', array('postRoute' =>  'adsStore', 'entries' => $entries['entries'], 'regionlist' => $regionlist, 'citylist' => $citylist, 'woodlist' => $woodlist, 'packaginglist' => $packaginglist, 'user' => $user['entry']));
+		$this->layout->content = View::make('frontend.create-classified', array('postRoute' =>  'classifiedsStore', 'entries' => $entries['entries'], 'regionlist' => $regionlist, 'citylist' => $citylist, 'woodlist' => $woodlist, 'packaginglist' => $packaginglist, 'user' => $user['entry']));
 	}
 
-	// Storing ad in storage
+	// Storing classified in storage
 
-	public function adsStore()
+	public function classifiedsStore()
 	{
 		Input::merge(array_map('trim', Input::all()));
 
-		$entryValidator = Validator::make(Input::all(), Ads::$store_rules);
+		$entryValidator = Validator::make(Input::all(), Classifieds::$store_rules);
 		
 		if ($entryValidator->fails())
 		{
 			return Redirect::back()->with('error_message', Lang::get('core.msg_error_validating_entry'))->withErrors($entryValidator)->withInput();
 		}
 
-		$store = $this->repo->adsStore( 
+		$store = $this->repo->classifiedsStore( 
 			Input::get('user'),
 			Input::get('title'),
 			Input::get('wood'),
@@ -1367,18 +1492,18 @@ class FrontendController extends \CoreController {
 			
 		if ($store['status'] == 0)
 		{
-			return Redirect::back()->with('error_message', Lang::get('core.msg_error_adding_entry'))->withErrors($entryValidator)->withInput();
+			return Redirect::back()->with('error_message', Lang::get('core.msg_error_adding_classified'))->withErrors($entryValidator)->withInput();
 		}
 		else
 		{
-			return Redirect::route('CreateAd')->with('success_message', Lang::get('core.msg_success_entry_added', array('name' => Input::get('name'))));
+			return Redirect::route('CreateClassified')->with('success_message', Lang::get('core.msg_success_classified_added', array('name' => Input::get('name'))));
 		}
 	}
 
 
-	// Show edit-ad page
+	// Show edit-classified page
 
-	public function EditAd($permalink)
+	public function EditClassified($permalink)
 
 	{ 
  
@@ -1387,7 +1512,7 @@ class FrontendController extends \CoreController {
 	 	
 		if ($region['status'] == 0)
 		{
-			return Redirect::route('getLanding')->with('error_message', Lang::get('core.msg_error_getting_entries'));
+			return Redirect::route('getLanding')->with('error_message', Lang::get('core.msg_error_getting_entry'));
 		}
 		foreach ($region['entries'] as $region)
 		{
@@ -1399,7 +1524,7 @@ class FrontendController extends \CoreController {
 	 	
 		if ($city['status'] == 0)
 		{
-			return Redirect::route('getLanding')->with('error_message', Lang::get('core.msg_error_getting_entries'));
+			return Redirect::route('getLanding')->with('error_message', Lang::get('core.msg_error_getting_entry'));
 		}
 		foreach ($city['entries'] as $city)
 		{
@@ -1410,7 +1535,7 @@ class FrontendController extends \CoreController {
 	 	$wood = Wood::getEntries(null, null); 
 		if ($wood['status'] == 0)
 		{
-			return Redirect::route('getLanding')->with('error_message', Lang::get('core.msg_error_getting_entries'));
+			return Redirect::route('getLanding')->with('error_message', Lang::get('core.msg_error_getting_entry'));
 		}
 		foreach ($wood['entries'] as $wood)
 		{
@@ -1421,7 +1546,7 @@ class FrontendController extends \CoreController {
 	 	$packaging = Packaging::getEntries(null, null); 
 		if ($packaging['status'] == 0)
 		{
-			return Redirect::route('getLanding')->with('error_message', Lang::get('core.msg_error_getting_entries'));
+			return Redirect::route('getLanding')->with('error_message', Lang::get('core.msg_error_getting_entry'));
 		}
 		foreach ($packaging['entries'] as $packaging)
 		{
@@ -1429,7 +1554,7 @@ class FrontendController extends \CoreController {
 		}
 
 		
-		$entry = Ads::getEntries(null, $permalink, null, null, null, null, null);
+		$entry = Classifieds::getEntries(null, $permalink, null, null, null, null, null);
 
 		$user = Users::getEntries(Auth::user()->id, null);
 		
@@ -1443,23 +1568,23 @@ class FrontendController extends \CoreController {
 
 		);
 
-		$this->layout->content = View::make('frontend.edit-ad', array('postRoute' =>  'UpdateAd', 'entry' => $entry['entry'], 'regionlist' => $regionlist, 'citylist' => $citylist, 'woodlist' => $woodlist, 'packaginglist' => $packaginglist, 'user' => $user['entry']));
+		$this->layout->content = View::make('frontend.edit-classified', array('postRoute' =>  'UpdateClassified', 'entry' => $entry['entry'], 'regionlist' => $regionlist, 'citylist' => $citylist, 'woodlist' => $woodlist, 'packaginglist' => $packaginglist, 'user' => $user['entry']));
 	}
 
-	// Updating specific ad by id
+	// Updating specific classified by id
 
-	public function UpdateAd($id)
+	public function UpdateClassified($id)
 	{
 		Input::merge(array_map('trim', Input::all()));
 		
-		$entryValidator = Validator::make(Input::all(), Ads::$update_rules);
+		$entryValidator = Validator::make(Input::all(), Classifieds::$update_rules);
 
 		if ($entryValidator->fails())
 		{
 			return Redirect::back()->with('error_message', Lang::get('core.msg_error_validating_entry'))->withErrors($entryValidator)->withInput();
 		}
 
-		$update = $this->repo->UpdateAd(
+		$update = $this->repo->UpdateClassified(
 			Input::get('id'),
 			Input::get('user'),
 			Input::get('title'),
@@ -1478,11 +1603,11 @@ class FrontendController extends \CoreController {
 
 		if ($update['status'] == 0)
 		{
-			return Redirect::back()->with('error_message', Lang::get('core.msg_error_adding_entry'))->withErrors($entryValidator)->withInput();
+			return Redirect::back()->with('error_message', Lang::get('core.msg_error_updating_classified'))->withErrors($entryValidator)->withInput();
 		}
 		else
 		{
-			return Redirect::route('getLanding')->with('success_message', Lang::get('core.msg_success_entry_added', array('name' => Input::get('name'))));
+			return Redirect::route('getLanding')->with('success_message', Lang::get('core.msg_success_classified_updated', array('name' => Input::get('name'))));
 		}
 	}
 
@@ -1490,7 +1615,7 @@ class FrontendController extends \CoreController {
 
 	public function contact() {
 
-		$entries = inquiry::getEntries(null, null);
+		$entries = Inquiry::getEntries(null, null);
 
 		$this->layout->title = 'Kontaktirajte nas | Prodaja drva';
 
@@ -1529,11 +1654,11 @@ class FrontendController extends \CoreController {
 
 		if ($store['status'] == 0)
 		{
-			return Redirect::back()->with('error_message', Lang::get('core.msg_error_adding_entry'))->withErrors($entryValidator)->withInput();
+			return Redirect::back()->with('error_message', Lang::get('core.msg_error_adding_inquiry'))->withErrors($entryValidator)->withInput();
 		}
 		else
 		{
-			return Redirect::route('contact')->with('success_message', Lang::get('core.msg_success_entry_added', array('name' => Input::get('name'))));
+			return Redirect::route('contact')->with('success_message', Lang::get('core.msg_success_inquiry_added', array('name' => Input::get('name'))));
 		}
 	}
 
@@ -1548,7 +1673,7 @@ class FrontendController extends \CoreController {
 
 		if ($regions['status'] == 0)
 		{
-			return Redirect::route('getLanding')->with('error_message', Lang::get('core.msg_error_getting_entries'));
+			return Redirect::route('getLanding')->with('error_message', Lang::get('core.msg_error_getting_entry'));
 		}
 		foreach ($regions['entries'] as $regions)
 		{
@@ -1564,7 +1689,7 @@ class FrontendController extends \CoreController {
 
 	 	if ($wood['status'] == 0)
 		{
-			return Redirect::route('getlanding')->with('error_message', Lang::get('core.msg_error_getting_entries'));
+			return Redirect::route('getlanding')->with('error_message', Lang::get('core.msg_error_getting_entry'));
 		}
 
 		foreach ($wood['entries'] as $wood)
@@ -1580,7 +1705,7 @@ class FrontendController extends \CoreController {
 
 	 	if ($packaging['status'] == 0)
 		{
-			return Redirect::route('getlanding')->with('error_message', Lang::get('core.msg_error_getting_entries'));
+			return Redirect::route('getlanding')->with('error_message', Lang::get('core.msg_error_getting_entry'));
 		}
 
 		foreach ($packaging['entries'] as $packaging)
@@ -1593,26 +1718,26 @@ class FrontendController extends \CoreController {
 	  	$wood = Input::get('wood');
 	    $region = Input::get('region');
 	    $packaging = Input::get('packaging');
-	    $ads = $entry = DB::table('ads')
-			->join('users', 'ads.user', '=', 'users.id')
-			->join('region', 'ads.region', '=', 'region.id')
-			->join('wood', 'ads.wood', '=', 'wood.id')
-			->join('packaging', 'ads.packaging', '=', 'packaging.id')
+	    $classifieds = $entry = DB::table('classifieds')
+			->join('users', 'classifieds.user', '=', 'users.id')
+			->join('region', 'classifieds.region', '=', 'region.id')
+			->join('wood', 'classifieds.wood', '=', 'wood.id')
+			->join('packaging', 'classifieds.packaging', '=', 'packaging.id')
 			->select(
-				'ads.id AS id', 
-				'ads.title AS title',
-				'ads.permalink AS permalink',
-				'ads.wood AS wood',
-				'ads.packaging AS packaging',
-				'ads.price AS price',
-				'ads.description AS description',
-				'ads.user AS user',
-				'ads.region AS region',
-				'ads.city AS city',
-				'ads.published AS published',
-				'ads.featured AS featured',
-				'ads.image AS image',
-				'ads.created_at AS created_at',
+				'classifieds.id AS id', 
+				'classifieds.title AS title',
+				'classifieds.permalink AS permalink',
+				'classifieds.wood AS wood',
+				'classifieds.packaging AS packaging',
+				'classifieds.price AS price',
+				'classifieds.description AS description',
+				'classifieds.user AS user',
+				'classifieds.region AS region',
+				'classifieds.city AS city',
+				'classifieds.published AS published',
+				'classifieds.featured AS featured',
+				'classifieds.image AS image',
+				'classifieds.created_at AS created_at',
 				'users.email AS email',
 				'users.username AS username',
 				'region.name AS regionname',
@@ -1620,7 +1745,7 @@ class FrontendController extends \CoreController {
 				'wood.permalink AS woodpermalink',
 				'packaging.name AS packagingname'
 			)
-		->where('ads.published', 'LIKE', '1')
+		->where('classifieds.published', 'LIKE', '1')
 		->where('region.id', 'LIKE', '%'.$region.'%')
 		->where('packaging.id', 'LIKE', ''.$packaging.'%')
 		->where('wood.id', 'LIKE', ''.$wood.'%')
@@ -1642,7 +1767,7 @@ class FrontendController extends \CoreController {
 
 			);
 
-		$this->layout->content = View::make('frontend.about', array('postRoute' => 'SearchAds', 'packaginglist' => $packaginglist, 'woodlist' => $woodlist, 'regionslist' => $regionslist, 'ads' => $ads));
+		$this->layout->content = View::make('frontend.about', array('postRoute' => 'SearchClassifieds', 'packaginglist' => $packaginglist, 'woodlist' => $woodlist, 'regionslist' => $regionslist, 'classifieds' => $classifieds));
 
 
 
@@ -1659,7 +1784,7 @@ class FrontendController extends \CoreController {
 
 		if ($regions['status'] == 0)
 		{
-			return Redirect::route('getLanding')->with('error_message', Lang::get('core.msg_error_getting_entries'));
+			return Redirect::route('getLanding')->with('error_message', Lang::get('core.msg_error_getting_entry'));
 		}
 		foreach ($regions['entries'] as $regions)
 		{
@@ -1675,7 +1800,7 @@ class FrontendController extends \CoreController {
 
 	 	if ($wood['status'] == 0)
 		{
-			return Redirect::route('getlanding')->with('error_message', Lang::get('core.msg_error_getting_entries'));
+			return Redirect::route('getlanding')->with('error_message', Lang::get('core.msg_error_getting_entry'));
 		}
 
 		foreach ($wood['entries'] as $wood)
@@ -1691,7 +1816,7 @@ class FrontendController extends \CoreController {
 
 	 	if ($packaging['status'] == 0)
 		{
-			return Redirect::route('getlanding')->with('error_message', Lang::get('core.msg_error_getting_entries'));
+			return Redirect::route('getlanding')->with('error_message', Lang::get('core.msg_error_getting_entry'));
 		}
 
 		foreach ($packaging['entries'] as $packaging)
@@ -1704,26 +1829,26 @@ class FrontendController extends \CoreController {
 	  	$wood = Input::get('wood');
 	    $region = Input::get('region');
 	    $packaging = Input::get('packaging');
-	    $ads = $entry = DB::table('ads')
-			->join('users', 'ads.user', '=', 'users.id')
-			->join('region', 'ads.region', '=', 'region.id')
-			->join('wood', 'ads.wood', '=', 'wood.id')
-			->join('packaging', 'ads.packaging', '=', 'packaging.id')
+	    $classifieds = $entry = DB::table('classifieds')
+			->join('users', 'classifieds.user', '=', 'users.id')
+			->join('region', 'classifieds.region', '=', 'region.id')
+			->join('wood', 'classifieds.wood', '=', 'wood.id')
+			->join('packaging', 'classifieds.packaging', '=', 'packaging.id')
 			->select(
-				'ads.id AS id', 
-				'ads.title AS title',
-				'ads.permalink AS permalink',
-				'ads.wood AS wood',
-				'ads.packaging AS packaging',
-				'ads.price AS price',
-				'ads.description AS description',
-				'ads.user AS user',
-				'ads.region AS region',
-				'ads.city AS city',
-				'ads.published AS published',
-				'ads.featured AS featured',
-				'ads.image AS image',
-				'ads.created_at AS created_at',
+				'classifieds.id AS id', 
+				'classifieds.title AS title',
+				'classifieds.permalink AS permalink',
+				'classifieds.wood AS wood',
+				'classifieds.packaging AS packaging',
+				'classifieds.price AS price',
+				'classifieds.description AS description',
+				'classifieds.user AS user',
+				'classifieds.region AS region',
+				'classifieds.city AS city',
+				'classifieds.published AS published',
+				'classifieds.featured AS featured',
+				'classifieds.image AS image',
+				'classifieds.created_at AS created_at',
 				'users.email AS email',
 				'users.username AS username',
 				'region.name AS regionname',
@@ -1731,7 +1856,7 @@ class FrontendController extends \CoreController {
 				'wood.permalink AS woodpermalink',
 				'packaging.name AS packagingname'
 			)
-		->where('ads.published', 'LIKE', '1')
+		->where('classifieds.published', 'LIKE', '1')
 		->where('region.id', 'LIKE', '%'.$region.'%')
 		->where('packaging.id', 'LIKE', ''.$packaging.'%')
 		->where('wood.id', 'LIKE', ''.$wood.'%')
@@ -1753,7 +1878,7 @@ class FrontendController extends \CoreController {
 
 			);
 
-		$this->layout->content = View::make('frontend.uvjeti-koristenja', array('postRoute' => 'SearchAds', 'packaginglist' => $packaginglist, 'woodlist' => $woodlist, 'regionslist' => $regionslist, 'ads' => $ads));
+		$this->layout->content = View::make('frontend.uvjeti-koristenja', array('postRoute' => 'SearchClassifieds', 'packaginglist' => $packaginglist, 'woodlist' => $woodlist, 'regionslist' => $regionslist, 'classifieds' => $classifieds));
 
 	}
 
@@ -1769,7 +1894,7 @@ class FrontendController extends \CoreController {
 
 		if ($regions['status'] == 0)
 		{
-			return Redirect::route('getLanding')->with('error_message', Lang::get('core.msg_error_getting_entries'));
+			return Redirect::route('getLanding')->with('error_message', Lang::get('core.msg_error_getting_entry'));
 		}
 		foreach ($regions['entries'] as $regions)
 		{
@@ -1785,7 +1910,7 @@ class FrontendController extends \CoreController {
 
 	 	if ($wood['status'] == 0)
 		{
-			return Redirect::route('getlanding')->with('error_message', Lang::get('core.msg_error_getting_entries'));
+			return Redirect::route('getlanding')->with('error_message', Lang::get('core.msg_error_getting_entry'));
 		}
 
 		foreach ($wood['entries'] as $wood)
@@ -1801,7 +1926,7 @@ class FrontendController extends \CoreController {
 
 	 	if ($packaging['status'] == 0)
 		{
-			return Redirect::route('getlanding')->with('error_message', Lang::get('core.msg_error_getting_entries'));
+			return Redirect::route('getlanding')->with('error_message', Lang::get('core.msg_error_getting_entry'));
 		}
 
 		foreach ($packaging['entries'] as $packaging)
@@ -1814,26 +1939,26 @@ class FrontendController extends \CoreController {
 	  	$wood = Input::get('wood');
 	    $region = Input::get('region');
 	    $packaging = Input::get('packaging');
-	    $ads = $entry = DB::table('ads')
-			->join('users', 'ads.user', '=', 'users.id')
-			->join('region', 'ads.region', '=', 'region.id')
-			->join('wood', 'ads.wood', '=', 'wood.id')
-			->join('packaging', 'ads.packaging', '=', 'packaging.id')
+	    $classifieds = $entry = DB::table('classifieds')
+			->join('users', 'classifieds.user', '=', 'users.id')
+			->join('region', 'classifieds.region', '=', 'region.id')
+			->join('wood', 'classifieds.wood', '=', 'wood.id')
+			->join('packaging', 'classifieds.packaging', '=', 'packaging.id')
 			->select(
-				'ads.id AS id', 
-				'ads.title AS title',
-				'ads.permalink AS permalink',
-				'ads.wood AS wood',
-				'ads.packaging AS packaging',
-				'ads.price AS price',
-				'ads.description AS description',
-				'ads.user AS user',
-				'ads.region AS region',
-				'ads.city AS city',
-				'ads.published AS published',
-				'ads.featured AS featured',
-				'ads.image AS image',
-				'ads.created_at AS created_at',
+				'classifieds.id AS id', 
+				'classifieds.title AS title',
+				'classifieds.permalink AS permalink',
+				'classifieds.wood AS wood',
+				'classifieds.packaging AS packaging',
+				'classifieds.price AS price',
+				'classifieds.description AS description',
+				'classifieds.user AS user',
+				'classifieds.region AS region',
+				'classifieds.city AS city',
+				'classifieds.published AS published',
+				'classifieds.featured AS featured',
+				'classifieds.image AS image',
+				'classifieds.created_at AS created_at',
 				'users.email AS email',
 				'users.username AS username',
 				'region.name AS regionname',
@@ -1841,7 +1966,7 @@ class FrontendController extends \CoreController {
 				'wood.permalink AS woodpermalink',
 				'packaging.name AS packagingname'
 			)
-		->where('ads.published', 'LIKE', '1')
+		->where('classifieds.published', 'LIKE', '1')
 		->where('region.id', 'LIKE', '%'.$region.'%')
 		->where('packaging.id', 'LIKE', ''.$packaging.'%')
 		->where('wood.id', 'LIKE', ''.$wood.'%')
@@ -1863,7 +1988,7 @@ class FrontendController extends \CoreController {
 
 			);
 
-		$this->layout->content = View::make('frontend.izjava-o-privatnosti', array('postRoute' => 'SearchAds', 'packaginglist' => $packaginglist, 'woodlist' => $woodlist, 'regionslist' => $regionslist, 'ads' => $ads));
+		$this->layout->content = View::make('frontend.izjava-o-privatnosti', array('postRoute' => 'SearchClassifieds', 'packaginglist' => $packaginglist, 'woodlist' => $woodlist, 'regionslist' => $regionslist, 'classifieds' => $classifieds));
 
 	}
 

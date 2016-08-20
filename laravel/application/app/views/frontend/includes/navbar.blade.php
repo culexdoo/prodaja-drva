@@ -22,7 +22,7 @@
                             <a href="{{ URL::route('getLanding') }}">Naslovna</a>
                         </li>
                         <li>
-                            <a href="{{URL::route ('AdList') }}">Oglasi</a>
+                            <a href="{{URL::route ('ClassifiedList') }}">Oglasi</a>
                         </li>
                         <li>
                             <a href="{{URL::route ('about')}}">O nama</a>
@@ -37,7 +37,7 @@
                             <a href="{{ URL::route('getRegistration') }}">Registracija</a>
                         </li>
                         <li>
-                            <a href="{{URL::route('CreateAd') }}" class="btn btn-primary btn-lg cta mt0"> <i class="fa fa-pencil-square stat-icon pull-left mt4 mr8"></i> Objavite oglas
+                            <a href="{{URL::route('CreateClassified') }}" class="btn btn-primary btn-lg cta mt0"> <i class="fa fa-pencil-square stat-icon pull-left mt4 mr8"></i> Objavite oglas
                             </a>
                         </li>
                     </ul>
@@ -47,7 +47,7 @@
                             <a href="{{ URL::route('getLanding') }}">Naslovna</a>
                         </li>
                         <li>
-                            <a href="{{URL::route ('AdList') }}">Oglasi</a>
+                            <a href="{{URL::route ('ClassifiedList') }}">Oglasi</a>
                         </li>
                         <li>
                             <a href="{{URL::route ('about')}}">O nama</a>
@@ -62,7 +62,7 @@
                             <a href="{{ URL::route('SignOut') }}">Odjava</a>
                         </li>
                         <li>
-                            <a href="{{URL::route('CreateAd') }}" class="btn btn-primary btn-lg cta mt0"> <i class="fa fa-pencil-square stat-icon pull-left mt4 mr8"></i> Objavite oglas
+                            <a href="{{URL::route('CreateClassified') }}" class="btn btn-primary btn-lg cta mt0"> <i class="fa fa-pencil-square stat-icon pull-left mt4 mr8"></i> Objavite oglas
                             </a>
                         </li>
                     </ul>

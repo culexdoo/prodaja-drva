@@ -119,7 +119,7 @@ class UsersController extends \BaseController {
 	 	
 		if ($region['status'] == 0)
 		{
-			return Redirect::route('getDashboard')->with('error_message', Lang::get('core.msg_error_getting_entries'));
+			return Redirect::route('getDashboard')->with('error_message', Lang::get('core.msg_error_getting_entry'));
 		}
 		foreach ($region['entries'] as $region)
 		{
@@ -131,7 +131,7 @@ class UsersController extends \BaseController {
 	 	
 		if ($city['status'] == 0)
 		{
-			return Redirect::route('getDashboard')->with('error_message', Lang::get('core.msg_error_getting_entries'));
+			return Redirect::route('getDashboard')->with('error_message', Lang::get('core.msg_error_getting_entry'));
 		}
 		foreach ($city['entries'] as $city)
 		{
@@ -199,11 +199,11 @@ class UsersController extends \BaseController {
 
 		if ($store['status'] == 0)
 		{
-			return Redirect::back()->with('error_message', Lang::get('core.msg_error_adding_entry'))->withErrors($entryValidator)->withInput();
+			return Redirect::back()->with('error_message', Lang::get('core.msg_error_adding_user'))->withErrors($entryValidator)->withInput();
 		}
 		else
 		{
-			return Redirect::route('UsersIndex')->with('success_message', Lang::get('core.msg_success_entry_added', array('name' => Input::get('name'))));
+			return Redirect::route('UsersIndex')->with('success_message', Lang::get('core.msg_success_user_added', array('name' => Input::get('name'))));
 		}
 	}
 
@@ -251,7 +251,7 @@ class UsersController extends \BaseController {
 	 	
 		if ($region['status'] == 0)
 		{
-			return Redirect::route('getDashboard')->with('error_message', Lang::get('core.msg_error_getting_entries'));
+			return Redirect::route('getDashboard')->with('error_message', Lang::get('core.msg_error_getting_entry'));
 		}
 		foreach ($region['entries'] as $region)
 		{
@@ -263,7 +263,7 @@ class UsersController extends \BaseController {
 	 	
 		if ($city['status'] == 0)
 		{
-			return Redirect::route('getDashboard')->with('error_message', Lang::get('core.msg_error_getting_entries'));
+			return Redirect::route('getDashboard')->with('error_message', Lang::get('core.msg_error_getting_entry'));
 		}
 		foreach ($city['entries'] as $city)
 		{
@@ -345,7 +345,7 @@ class UsersController extends \BaseController {
 
 	 	if ($region['status'] == 0)
 		{
-			return Redirect::route('getDashboard')->with('error_message', Lang::get('core.msg_error_getting_entries'));
+			return Redirect::route('getDashboard')->with('error_message', Lang::get('core.msg_error_getting_entry'));
 		}
 		foreach ($region['entries'] as $region)
 		{
@@ -357,17 +357,14 @@ class UsersController extends \BaseController {
 	 	
 		if ($city['status'] == 0)
 		{
-			return Redirect::route('getDashboard')->with('error_message', Lang::get('core.msg_error_getting_entries'));
+			return Redirect::route('getDashboard')->with('error_message', Lang::get('core.msg_error_getting_entry'));
 		}
 		foreach ($city['entries'] as $city)
 		{
 			$citylist[$city->id] = $city->name;
 		}
 
-
-
-		$entry = Users::getEntries($id, null); 
-
+		$entry = Users::getEntries($id, null);
 
 		if ($entry['status'] == 0)
 		{
@@ -428,11 +425,11 @@ class UsersController extends \BaseController {
 
 		if ($update['status'] == 0)
 		{
-			return Redirect::back()->with('error_message', Lang::get('core.msg_error_adding_entry'))->withErrors($entryValidator)->withInput();
+			return Redirect::back()->with('error_message', Lang::get('core.msg_error_updating_user'))->withErrors($entryValidator)->withInput();
 		}
 		else
 		{
-			return Redirect::route('UsersIndex')->with('success_message', Lang::get('core.msg_success_entry_added', array('name' => Input::get('name'))));
+			return Redirect::route('UsersIndex')->with('success_message', Lang::get('core.msg_success_user_updated', array('name' => Input::get('name'))));
 		}
 	}
 
@@ -494,12 +491,12 @@ class UsersController extends \BaseController {
 
 		if ($destroy['status'] == 1)
 		{
-			return Redirect::back()->with('success_message', Lang::get('core.msg_success_entry_deleted'));
+			return Redirect::back()->with('success_message', Lang::get('core.msg_success_user_deactivated!'));
 		}
 		else
 		{
 			goDie($destroy);
-			return Redirect::back()->with('error_message', Lang::get('core.msg_error_deleting_entry'));
+			return Redirect::back()->with('error_message', Lang::get('core.msg_error_deactivating_user'));
 		}
 	}
 
