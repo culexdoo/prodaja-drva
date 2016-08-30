@@ -38,8 +38,9 @@ class Users extends Eloquent
 	*	$permalink 	->	integer or null	->	if permalink, retrieve specific entry
 	*	$count		->	true or null 	->	displays how many active users in database
 	*	$active		->	true or null 	->	displays how many active users in database
+	*	$new		->	true or null 	->	displays how many new users in database
 	*/
-	public static function getEntries($id = null, $items = null, $permalink = null, $count = null, $active = null)
+	public static function getEntries($id = null, $items = null, $permalink = null, $count = null, $active = null, $new = null)
 	{
 		 try
 		{    
@@ -67,7 +68,16 @@ class Users extends Eloquent
 
 				);
 
-			if ($count != null) {
+			if ($new != null) {
+						
+						//get newest classifieds and displays on frontend
+						$from = date('Y-m-d H:i:s', strtotime('-8 days'));
+						$now = date('Y-m-d H:i:s');
+						$new = Classifieds::whereBetween('created_at', array($from, $now))->count();
+						return array('status' => 1, 'entry' => $new);
+			}
+
+			elseif ($count != null) {
 
 				// Retrieve all users
 				$countallusers = DB::table('users')->count();

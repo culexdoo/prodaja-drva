@@ -56,9 +56,9 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'minixpro_proddrva',
-			'username'  => 'minixpro_proddrv',
-			'password'  => 'iiKvySRZI0IG',
+			'database'  => 'prodaja-drva',
+			'username'  => 'root',
+			'password'  => '',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_general_ci',
 			'prefix'    => '',

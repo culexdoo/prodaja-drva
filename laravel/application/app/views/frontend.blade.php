@@ -76,9 +76,19 @@
 	<link href='https://fonts.googleapis.com/css?family=Lora&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Bree+Serif&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Raleway:400,900,800&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,700&subset=latin-ext" rel="stylesheet">
 
     <!-- Styles --> 
-	{{ HTML::style('css/frontend/bootstrap.min.css') }} 
+	{{ HTML::style('css/frontend/bootstrap.css') }}
+	{{ HTML::style('css/frontend/bootstrap.min.css') }}
+	{{ HTML::style('css/frontend/style.css') }}
+	{{ HTML::style('css/frontend/style-services.css') }}
+	{{ HTML::style('css/frontend/style-navigation.css') }}
+	{{ HTML::style('css/frontend/style-headers.css') }}
+	{{ HTML::style('css/frontend/style-content.css') }}
+	{{ HTML::style('css/frontend/style-extra-pages.css') }}
+	{{ HTML::style('css/frontend/style.complete.css') }}
+	{{ HTML::style('css/frontend/flat-ui.css') }}
 	{{ HTML::style('css/frontend/modern-business.css') }}
 	{{ HTML::style('css/frontend/font-awesome.min.css') }}
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
@@ -91,8 +101,12 @@
 
  
 	{{ HTML::script('js/frontend/jquery.js') }}
+	
+	{{ HTML::script('js/frontend/jquery.easy-pie-chart.js') }}
+
 	{{ HTML::script('js/frontend/bootstrap.min.js') }}
  	{{ HTML::script('js/frontend/owl.carousel.js') }}
+ 	{{ HTML::script('js/frontend/owl.carousel.min.js') }}
 	{{ HTML::script('js/backend/jquery.noty.packaged.min.js') }}
 	{{ HTML::script('js/backend/noty.app.theme.js') }}
 	{{ HTML::script('js/frontend/likely.js') }}
@@ -257,7 +271,7 @@
 		{{ HTML::script($js_file) }}
 		@endforeach
 	@endif
-
+	{{ HTML::script('js/frontend/main.js') }}
 
 </body>
 

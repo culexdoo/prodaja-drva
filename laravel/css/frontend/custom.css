@@ -20,6 +20,27 @@ a:hover {
     color: #e74c3c;
 }
 
+.footer a {
+    color: #fff;
+}
+
+.footer a:hover {
+    text-decoration: none;
+    color: #e74c3c;
+}
+
+.info-section {
+    color: #fff;
+    line-height: 1.4em;
+    font-size: 28px;
+    font-family: 'Lato', 'Helvetica', 'Arial', sans-serif;
+    font-weight: 300;
+}
+
+.lato-font {
+    font-family: 'Lato', 'Helvetica', 'Arial', sans-serif;
+}
+
 .border0 {
     border-left: 0;
 }
@@ -39,6 +60,16 @@ a:hover {
 
 .scrolloff {
     pointer-events: none;
+}
+
+.lowercase {
+    text-transform: none;
+}
+
+#bs-example-navbar-collapse-1 li a {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 300;
 }
 
 .p0 {
@@ -102,6 +133,10 @@ a:hover {
     margin-top: 4px;
 }
 
+.mt5 {
+    margin-top: 5px;
+}
+
 .mr8 {
     margin-right: 8px !important;
 }
@@ -122,6 +157,10 @@ a:hover {
     margin-top: 65px;
 }
 
+.mt70 {
+    margin-top: 70px;
+}
+
 .pl0 {
     padding-left: 0px;
 }
@@ -134,7 +173,7 @@ a:hover {
     padding-left: 15px;
 }
 
-.plr15{
+.plr15 {
     padding-left: 15px;
     padding-right: 15px;
 }
@@ -225,6 +264,61 @@ a:hover {
     font-size: 65px;
 }
 
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 360px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+.custom-position {
+    position: relative;
+    left: 287px;
+    margin-top: 60px;
+    margin-bottom: 16px;
+}
+
+.img-style {
+    background-image: url(/img/frontend/user-default.jpg);
+    min-height: 270px;
+    max-width: 270px;
+    margin-left: 15px;
+}
+
 .ratingstar {
     font-size: 25px;
     color: #e0a313;
@@ -240,7 +334,7 @@ a:hover {
     border-radius: 4px;
 }
 
-.add-ad-image {
+.add-classified-image {
     max-height: 300px;
     max-width: 400px;
 }
@@ -277,11 +371,11 @@ a:hover {
     font-weight: 500 !important;
 }
 
-.ad-category {
+.classified-category {
     display: inline-block;
 }
 
-.ad-title {
+.classified-title {
     margin-top: 5px !important;
     margin-bottom: 0px !important;
 }
@@ -327,7 +421,7 @@ a:hover {
     border: 1px solid #fefefe;
 }
 
-.ad-image {
+.classified-image {
     max-width: 273px;
 }
 
@@ -336,7 +430,7 @@ a:hover {
     border-top: 4px solid #e74c3c;
 }
 
-.ad-footer {
+.classified-footer {
     border-top: 1px solid #ddd;
     position: relative;
     top: 15px;
@@ -356,8 +450,10 @@ a:hover {
 
 .search-county {
     padding: 5px;
-    background: #fff;
-    border-radius: 1px;
+    background-color: rgba(237, 237, 237, 0.3);
+    border-radius: 2px;
+    border: 1px solid #ededed;
+    color: #fff;
 }
 
 .btn {
@@ -371,8 +467,8 @@ a:hover {
     display: inline-block;
 }
 
-#googlemap {
-    min-height: 500px;
+#map {
+    min-height: 600px;
 }
 
 .btn:active {
@@ -405,7 +501,6 @@ a:hover {
     left: 83px;
 }
 
-
 .panel-heading {
     border-left: 5px solid #e74c3c !important;
 }
@@ -421,13 +516,17 @@ a:hover {
     width: 280px !important;
 }
 
-.select2-container--open {
-    width: 380px !important;
+.select2-dropdown--below {
+    width: 361px !important;
 }
 
 .select2-container--open .select2-dropdown {
-    left: -5px;
-    top: 10px;
+    left: -66px;
+    top: 7px;
+    background-color: rgba(237, 237, 237, 0.3);
+    border-radius: 2px;
+    border: 1px solid #ededed;
+    color: #fff;
 }
 
 .select2-container--default .select2-selection--single {
@@ -435,19 +534,49 @@ a:hover {
 }
 
 .select2-container {
-    top: 7px;
+    top: 5px;
+    left: 60px;
     font-size: 16px;
 }
 
+.select2-container--default .select2-selection--single {
+    background-color: rgba(237, 237, 237, 0);
+}
+
+.select2-container--default .select2-selection--single .select2-selection__placeholder {
+    color: #fff;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: #fff;
+}
+
+.select2-search {
+    display: none;
+}
+
+.select2-container--default .select2-results>.select2-results__options {
+    padding-left: 15px;
+    padding-top: 5px;
+}
+
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+    background-color:transparent;
+    color:white;
+}
+
+.select2-results__option, select2-results__option--highlighted ul, li{
+    color: #fff;
+}
 
 /* Select 2 end */
 
 .icon-append {
-    color: #949494;
+    color: #fff;
     font-size: 25px;
     left: 13px;
     position: absolute;
-    top: 13px;
+    top: 8px;
     z-index: 9999;
 }
 
@@ -860,7 +989,7 @@ section#locations .location a:hover {
     color: #fff;
 }
 
-.publish-ad {
+.publish-classified {
     max-width: 1920px;
     background-color: #26A65B;
     height: 160px;
@@ -988,15 +1117,15 @@ dd {
     min-height: 856px;
 }
 
-.ad-title {
+.classified-title {
     color: #222;
 }
 
-.ad-title:hover {
+.classified-title:hover {
     color: #e74c3c !important
 }
 
-.ad-title-homepage {
+.classified-title-homepage {
     text-align: center;
     font-size: 16px;
     color: #222;
@@ -1004,32 +1133,32 @@ dd {
 
 .category-title-homepage {}
 
-.ad-title-homepage:hover {
+.classified-title-homepage:hover {
     text-decoration: none;
     color: #e74c3c !important;
 }
 
-.ad-price-homepage {
+.classified-price-homepage {
     text-align: center;
     font-weight: 700;
 }
 
-.featured-ad-title-homepage {
+.featured-classified-title-homepage {
     text-align: center;
     font-size: 16px;
     color: #222;
 }
 
-.featured-ad-title-homepage:hover {
+.featured-classified-title-homepage:hover {
     text-decoration: none;
     color: #e74c3c !important;
 }
 
-.featured-ad-title-homepage:hover {
+.featured-classified-title-homepage:hover {
     text-decoration: none;
 }
 
-.featured-ad-price-homepage {
+.featured-classified-price-homepage {
     text-align: center;
     font-weight: 700;
 }

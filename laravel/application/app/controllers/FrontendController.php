@@ -121,7 +121,9 @@ class FrontendController extends \CoreController {
 
 		$countnewclassifieds = Classifieds::getEntries(null, null, null, null, null, null, null, null, null, null, null, true);
 
-		$countactiveusers = Users::getEntries(null, null, null, null, true);
+		$countactiveusers = Users::getEntries(null, null, null, null, true, null);
+
+		$countnewusers = Users::getEntries(null, null, null, null, null, true);
 
 		$pins = Classifieds::getEntries(null, null, null, true, null, null, null, null, null, null, null, null);
 
@@ -134,7 +136,7 @@ class FrontendController extends \CoreController {
 
 		);
 
-		$this->layout->content = View::make('frontend.index', array('featuredclassifieds' => $featuredclassifieds, 'publishedclassifieds' => $publishedclassifieds, 'countactiveclassifieds' => $countactiveclassifieds['entry'], 'countactiveusers' => $countactiveusers['entry'], 'countnewclassifieds' => $countnewclassifieds['entry'], 'pins' => $pins['entries'], 'postRoute' => 'SearchClassifieds', 'woodlist' => $woodlist, 'regionslist' => $regionslist, 'classifieds' => $classifieds));
+		$this->layout->content = View::make('frontend.index', array('featuredclassifieds' => $featuredclassifieds, 'publishedclassifieds' => $publishedclassifieds, 'countactiveclassifieds' => $countactiveclassifieds['entry'], 'countactiveusers' => $countactiveusers['entry'], 'countnewclassifieds' => $countnewclassifieds['entry'], 'countnewusers' => $countnewusers['entry'], 'pins' => $pins['entries'], 'postRoute' => 'SearchClassifieds', 'woodlist' => $woodlist, 'regionslist' => $regionslist, 'classifieds' => $classifieds));
 	}
  
  

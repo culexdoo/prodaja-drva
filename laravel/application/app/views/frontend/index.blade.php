@@ -1,33 +1,43 @@
 @include('frontend.includes.navbar')
-<div class="row m0">
-        <!-- Header Carousel -->
-        <div class="mh400" style="background-image: url(img/frontend/main-banner.jpg);">
-            <div class="container text-center ">
-                <h1 class="text-white mt100"> Pretražite oglasnik </h1>
-                <div class="row">
-                    <div class="container posrel83l">
-                    {{ Form::open(array('route' => $postRoute, 'method' => 'get', 'role' => 'form', 'autocomplete' => 'on', 'files' => true))}}
-                        <div class="col-lg-4 p0">
-                            <div class="col-lg-12 search-county h50">
-                                <i class="fa fa-map-marker fa-2x bgw icon-append"></i>
-                                {{ Form::select('region',  ['' => 'Odaberite županiju'] + $regionslist, null, array('class' => 'choose-county', 'style' => 'border:none; color:#999', 'id' => 'id')) }}
-                            </div>
+<header id="header11" style="background-image: url('img/frontend/header.jpg');">
+<div class="container">
+    <div class="content">
+        <div class="top">
+            <h1 class="editContent" style="font-weight: 300;">Dobrodošli na stranicu za prodaju drva</h1>
+            <p class="editContent">Pronađite sve što vam treba za topliji i ugodniji dom!</p>
+            <div class="text-center">
+                <a href="{{ URL::route('ClassifiedList')}}" class="btn btn-default-white-transparent"><span class="fa fa-search" aria-hidden="true"></span> Pogledajte</a>
+            </div>
+        </div>
+        <div class="hr-register">
+            <span class="editContent">ili pretražite po kriterijima</span>
+        </div>
+        <div class="bottom">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                {{ Form::open(array('route' => $postRoute, 'method' => 'get', 'role' => 'form', 'autocomplete' => 'on', 'files' => true))}}
+                    <div class="col-md-6 nopaddingleft">
+                        <div class="col-lg-12 search-county h50">
+                            {{ Form::select('region',  ['' => 'Odaberite županiju'] + $regionslist, null, array('class' => 'choose-county', 'style' => 'border:none; color:#999', 'id' => 'id')) }}
                         </div>
-                        <div class="col-lg-4 p0">
-                            <div class="col-lg-12 search-county bl1pxs h50">
-                                <i class="fa fa-tree fa-2x bgw icon-append"></i>
-                                {{ Form::select('wood', ['' => 'Vrsta drveta'] + $woodlist, isset($wood) ? $wood : null, array('class' => 'choose-category', 'style' => 'width:100%', 'id' => 'id')) }}
-                            </div>
+                    </div>
+                    <div class="col-md-6 nopaddingright">
+                        <div class="col-lg-12 search-county h50">
+                            {{ Form::select('wood', ['' => 'Vrsta drveta'] + $woodlist, isset($wood) ? $wood : null, array('class' => 'choose-category', 'style' => 'width:100%', 'id' => 'id')) }}
                         </div>
-                        <div class="col-lg-2 mt4 p0">
-                            <button class="btn btn-primary btn-block br0 h50 ml0"><i class="fa fa-search pull-left"></i><strong>Pretražite</strong></button>
-                        </div>
-                    {{ Form::close() }}
                     </div>
                 </div>
+                <div class="col-md-4 col-md-offset-4 mt70">
+                    <div class="text-center">
+                        <button class="btn btn-primary btn-block br0 h50 ml0"><i class="fa fa-search pull-left"></i><strong>Pretražite</strong></button>
+                    </div>
+                </div>
+                {{ Form::close() }}
             </div>
         </div>
     </div>
+</div>
+</header>
     <!-- Kategorije start -->
     <div class="row m0 mtb120">
         <div class="container">
@@ -85,7 +95,7 @@
     <!-- Google map start -->
     <div class="row m0 mtb120">
         <div class="col-lg-12 p0">
-            <div id="googlemap" class="map">
+            <div id="map" class="map">
             </div>
         </div>
     </div>
@@ -323,115 +333,158 @@
     </div>
     <!-- Izdvojeni oglasi end -->
     <!-- Testimonials start -->
-    <div class="row m0 mt120">
-        <div class="container">
-            <div class="row m0">
-                <div class="col-md-12">
-                    <h2 class="page-header text-center fs40">Što korisnici kažu o nama</h2>
-                    <div class="text-center h2-separator"></div>
-                </div>
-                <div class="col-md-12" data-wow-delay="0.2s">
-                    <div class="carousel slide" data-ride="carousel" id="quote-carousel">
-                        <!-- Bottom Carousel Indicators -->
-                        <ol class="carousel-indicators">
-                            <li data-target="#quote-carousel" data-slide-to="0" class="active"><img class="img-responsive " src="https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg" alt="">
-                            </li>
-                            <li data-target="#quote-carousel" data-slide-to="1"><img class="img-responsive" src="https://s3.amazonaws.com/uifaces/faces/twitter/rssems/128.jpg" alt="">
-                            </li>
-                            <li data-target="#quote-carousel" data-slide-to="2"><img class="img-responsive" src="https://s3.amazonaws.com/uifaces/faces/twitter/adellecharles/128.jpg" alt="">
-                            </li>
-                        </ol>
-                        <!-- Carousel Slides / Quotes -->
-                        <div class="carousel-inner text-center">
-                            <!-- Quote 1 -->
-                            <div class="item active">
-                                <blockquote>
-                                    <div class="row m0">
-                                        <div class="col-sm-8 col-sm-offset-2">
-                                            <p>Super pregledna stranica. Odmah sam naletio na oglas koji trebam i riješio drva za ovu zimu!</p>
-                                            <small>Mirko J.</small>
-                                        </div>
-                                    </div>
-                                </blockquote>
-                            </div>
-                            <!-- Quote 2 -->
-                            <div class="item">
-                                <blockquote>
-                                    <div class="row m0">
-                                        <div class="col-sm-8 col-sm-offset-2">
-                                            <p>Mogao bih započeti s prodajom drva preko vas. Jednostavno je za koristiti i preporučam svima koji žele započeti sa prodajom drva preko interneta. Svaka čast! </p>
-                                            <small>Davor S.</small>
-                                        </div>
-                                    </div>
-                                </blockquote>
-                            </div>
-                            <!-- Quote 3 -->
-                            <div class="item">
-                                <blockquote>
-                                    <div class="row m0">
-                                        <div class="col-sm-8 col-sm-offset-2">
-                                            <p>Prijatelj mi vas je preporučio i ja ću vas isto dalje preporučiti. Super jednostavna stranica i lagano sam našla sve što sam trebala.</p>
-                                            <small>Mirna M.</small>
-                                        </div>
-                                    </div>
-                                </blockquote>
-                            </div>
-                        </div>
-                        <!-- Carousel Buttons Next/Prev -->
-                        <a data-slide="prev" href="#quote-carousel" class="left carousel-control"><i class="fa fa-chevron-left"></i></a>
-                        <a data-slide="next" href="#quote-carousel" class="right carousel-control"><i class="fa fa-chevron-right"></i></a>
+    <div id="content22" style="height: 450px;">
+    <div class="container">
+        <h2 class="page-header text-center fs40">Što korisnici kažu o nama</h2>
+        <div id="testimonials" class="owl-carousel owl-theme" style="opacity: 1; display: block;">
+            <div class="item">
+                <div class="box" style="border:0px;">
+                    <div class="icon">
+                        <img src="https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg" alt="Team">
                     </div>
+                    <p class="editContent">Super pregledna stranica. Odmah sam naletio na oglas koji trebam i riješio drva za ovu zimu!</p>
                 </div>
+                <div class="arrow-down"></div>
+                <h3 class="editContent">Mirko J.</h3>
+                <h6 class="editContent">Marketing Director - Boot Expert</h6>
+            </div>
+            <div class="item">
+                <div class="box" style="border:0px;">
+                    <div class="icon">
+                        <img src="https://s3.amazonaws.com/uifaces/faces/twitter/rssems/128.jpg" alt="Team">
+                    </div>
+                    <p class="editContent">Mogao bih započeti s prodajom drva preko vas. Jednostavno je za koristiti i preporučam svima koji žele započeti sa prodajom drva preko interneta. Svaka čast!</p>
+                </div>
+                <div class="arrow-down"></div>
+                <h3 class="editContent">Davor S.</h3>
+                <h6 class="editContent">Marketing Director - Boot Expert</h6>
+            </div>
+            <div class="item">
+                <div class="box" style="border:0px;">
+                    <div class="icon">
+                        <img src="https://s3.amazonaws.com/uifaces/faces/twitter/adellecharles/128.jpg" alt="Team">
+                    </div>
+                    <p class="editContent">Prijatelj mi vas je preporučio i ja ću vas isto dalje preporučiti. Super jednostavna stranica i lagano sam našla sve što sam trebala.</p>
+                </div>
+                <div class="arrow-down"></div>
+                <h3 class="editContent">Mirna M.</h3>
+                <h6 class="editContent">Marketing Director - Boot Expert</h6>
+            </div>
+            <div class="item">
+                <div class="box" style="border:0px;">
+                    <div class="icon">
+                        <img src="https://s3.amazonaws.com/uifaces/faces/twitter/rssems/128.jpg" alt="Team">
+                    </div>
+                    <p class="editContent">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock.</p>
+                </div>
+                <div class="arrow-down"></div>
+                <h3 class="editContent">Johnatan Doe</h3>
+                <h6 class="editContent">Marketing Director - Boot Expert</h6>
             </div>
         </div>
+    </div>
     </div>
     <!-- Testimonials end -->
     <!-- Stats start -->
-    <div class="row m0">
-        <div class="stats-homepage">
-            <div class="col-md-4">
-                <div class="col-md-6">
-                    <i class="fa fa-pencil-square fa-4x pull-right stat-icon"></i>
+        <section id="content-2-7" class="content-block content-2-7">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="underlined-title">
+                        <div class="editContent">
+                            <h1 class="lato-font">Malo zanimljivih brojki sa stranice</h1>
+                        </div>
+                        <hr>
+                        <div class="editContent">
+                            <h2 class="lato-font">Svidjet će vam se prodaja-drva </h2>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-6 bl1pxw">
-                    <h3 class="mt5 stat-title">Aktivnih oglasa:</h3>
-                    <p style="font-size: 16px;">{{ $countactiveclassifieds }}</p>
+
+                <div class="col-sm-3 text-center">
+                    <div class="counter-icon">
+                        <span class="fa fa-magic"></span>
+                    </div>
+                    <div class="counter-text">
+                        <div class="editContent">
+                            <h3 class="counter">{{ $countactiveclassifieds }}</h3>
+                        </div>
+                        <div class="editContent">
+                            <p>Aktivni oglasi</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="col-md-6">
-                    <i class="fa fa-plus-square fa-4x pull-right stat-icon"></i>
+
+                <div class="col-sm-3 text-center">
+                    <div class="counter-icon">
+                        <span class="fa fa-coffee"></span>
+                    </div>
+                    <div class="counter-text">
+                        <div class="editContent">
+                            <h3 class="counter">{{ $countnewclassifieds }}</h3>
+                        </div>
+                        <div class="editContent">
+                            <p>Novi oglasi</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-6 bl1pxw">
-                    <h3 class="mt5 stat-title">Novih oglasa:</h3>
-                    <p style="font-size: 16px;">{{ $countnewclassifieds }}</p>
+
+                <div class="col-sm-3 text-center">
+                    <div class="counter-icon">
+                        <span class="fa fa-lightbulb-o"></span>
+                    </div>
+                    <div class="counter-text">
+                        <div class="editContent">
+                            <h3 class="counter">{{ $countactiveusers }}</h3>
+                        </div>
+                        <div class="editContent">
+                            <p>Aktivni korisnici</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="col-md-6">
-                    <i class="fa fa-user fa-4x pull-right stat-icon"></i>
+
+                <div class="col-sm-3 text-center">
+                    <div class="counter-icon">
+                        <span class="fa fa-clock-o"></span>
+                    </div>
+                    <div class="counter-text">
+                        <div class="editContent">
+                            <h3 class="counter">{{ $countnewusers }}</h3>
+                        </div>
+                        <div class="editContent">
+                            <p>Novi korisnici</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-6 bl1pxw">
-                    <h3 class="mt5 stat-title">Aktivnih korisnika:</h3>
-                    <p style="font-size: 16px;">{{ $countactiveusers }}</p>
+                
+                <div class="col-sm-12 text-center pad45">
+                    <div class="editContent">
+                        <strong class="white lato-font">Niti jedan pustinjski skočimiš nije ozljeđen prilikom razvoja <a href="{{ URL::route('getLanding')}}" class="text-white">prodaje-drva.</a></strong>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </div>
+                
+            </div><!-- /.row -->
+
+        </div><!-- /.container -->
+    </section>
     <!-- Stats end -->
     <!-- tipka za poziv start -->
-    <div class="page-bottom-info">
-        <div class="page-bottom-info-inner">
-            <div class="page-bottom-info-content text-center">
-                <h3>Ako imate bilo kakvih pitanja, komentara ili pritužbi, slobodno nas kontaktirajte na broj 09x/xxx - xx - xx, ili email: info@prodaja-drva.com.hr</h3>
-                <a class="btn  btn-lg mt50 cta" href="tel:+000000000">
-                    <i class="fa fa-phone mr8"></i> Nazovite nas 09x/xxx - xx - xx </a>
+    <section id="content-2-6" class="content-block content-2-6 bg-deepocean">
+        <div class="container text-center">
+            <div class="col-sm-10 col-sm-offset-1">
+                <div class="editContent">
+                    <h3 class="info-section">Ako imate bilo kakvih pitanja, <strong>komentara ili pritužbi,</strong> slobodno nas kontaktirajte na broj 09x/xxx - xx - xx, ili email: info@prodaja-drva.com.hr</h3>
+                <a href="{{ URL::route('getRegistration') }}" class="btn btn-outline btn-outline-xl outline-light">REGISTRACIJA</a>
+                </div>
             </div>
         </div>
-    </div> 
+    </section>
     <script>
     $(document).ready(function() {
         initMap();
+        $(window).resize(function() {
+        google.maps.event.trigger(map, 'resize');
+    });
         var owl = $("#owl-demo");
 
         owl.owlCarousel({
@@ -483,14 +536,14 @@
         var map;
         var bounds = new google.maps.LatLngBounds();
         var mapOptions = {
-            mapTypeId: 'roadmap',
+            mapTypeId: 'map',
             center: new google.maps.LatLng(45.605139, 18.918567),
             scrollwheel: false,
             draggable: true
         };
 
         // Display a map on the page
-        map = new google.maps.Map(document.getElementById("googlemap"), mapOptions);
+        map = new google.maps.Map(document.getElementById("map"), mapOptions);
         map.setTilt(45);
 
         // Multiple Markers

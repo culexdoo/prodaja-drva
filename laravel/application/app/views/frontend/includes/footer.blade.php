@@ -1,64 +1,30 @@
-<div class="row m0 bg-image">
-    <section class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="footer">
-                        <div class="container">
-                            <div class="clearfix">
-                                <div class="col-md-3">
-                                    <div class="footer-logo">
-                                        <a href="{{URL::route ('getLanding') }}"><img class="logo-img" src="/img/frontend/loog.png"></a>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <dl class="footer-nav">
-                                        <dt class="nav-title">PRODAJEM DRVA</dt>
-                                        <dd class="nav-item"><a href="{{URL::route ('getLanding') }}">Naslovna</a></dd>
-                                        <dd class="nav-item"><a href="{{URL::route ('CreateClassified') }}">Prodajem drva</a></dd>
-                                        <dd class="nav-item"><a href="{{URL::route ('ClassifiedList') }}">Kupujem drva</a></dd>
-                                    </dl>
-                                </div>
-                                <div class="col-md-3">
-                                    <dl class="footer-nav">
-                                        <dt class="nav-title">POVEZNICE</dt>
-                                        <dd class="nav-item"><a href="{{URL::route ('UvjetiKoristenja')}}">Uvjeti korištenja</a></dd>
-                                        <dd class="nav-item"><a href="{{URL::route ('IzjavaOPrivatnosti')}}">Izjava o privatnosti</a></dd>
-                                        <dd class="nav-item"><a href="{{URL::route ('contact') }}">Kontakt</a></dd>
-
-                                    </dl>
-                                </div>
-                                @if (Auth::guest())
-                                <div class="col-md-3">
-                                    <dl class="footer-nav">
-                                        <dt class="nav-title">ČLANSTVO</dt>
-                                        <dd class="nav-item"><a href="{{URL::route ('about')}}">O nama</a></dd>
-                                        <dd class="nav-item"><a href="{{URL::route ('getSignIn') }}">Prijava</a></dd>
-                                        <dd class="nav-item"><a href="{{URL::route ('getRegistration') }}">Registracija</a></dd>
-                                    </dl>
-                                </div>
-                                @elseif (Auth::user())
-                                <div class="col-md-3">
-                                    <dl class="footer-nav">
-                                        <dt class="nav-title">ČLANSTVO</dt>
-                                        <dd class="nav-item"><a href="{{URL::route ('about')}}">O nama</a></dd> 
-                                    </dl>
-                                </div>
-                                @endif
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-</div>
 <div class="row m0 bg-color-38281b">
-    <div class="container bg-color-38281b">
-        <div class="footer" id="footer">
-            <ul class=" pull-right navbar-link footer-nav">
-                <li>© 2016, made with passion @ <a class="col-white" href="http://culex.hr/" target="_blank"> culex.hr </a></li>
-            </ul>
+    <section id="footer6">
+    <div class="container">
+        <ul class="list-inline">
+            <li class="editContent"><a href="{{ URL::route('getLanding') }}">Naslovna</a></li>
+            <li class="editContent"><a href="{{ URL::route('ClassifiedList') }}">Prodajem drva</a></li>
+            <li class="editContent"><a href="{{ URL::route('CreateClassified') }}">Kupujem drva</a></li>
+            <li class="editContent"><a href="{{ URL::route('about') }}">O nama</a></li>
+            <li class="editContent"><a href="{{ URL::route('contact') }}">Kontakt</a></li>
+        </ul>
+        <ul class="list-inline">
+            <li class="editContent"><a href="{{ URL::route('UvjetiKoristenja') }}" style="text-transform: initial;">Uvjeti korištenja</a></li>
+            <li class="editContent"><a href="{{ URL::route('IzjavaOPrivatnosti') }}" style="text-transform: initial;">Izjava o privatnosti</a></li>
+        </ul>
+        <div class="social-icons">
+            <a href="#"><span class="fa fa-facebook" aria-hidden="true"></span></a>
+            <a href="#"><span class="fa fa-twitter" aria-hidden="true"></span></a>
+            <a href="#"><span class="fa fa-youtube" aria-hidden="true"></span></a>
         </div>
     </div>
+</section>
+<!-- /#footer6 -->
+<section id="footer3">
+    <div class="container">
+        <p class="editContent pull-left">Copyrights © 2015 All Rights Reserved by <a href="http://www.culex.hr" class="text-white">Culex.hr</a></p>
+        <p class="editContent pull-right">Made with <span class="fa fa-heart"></span></p>
+    </div>
+</section>
+
 </div>

@@ -1,0 +1,30 @@
+<div class="row m0 bg-color-38281b">
+    <section id="footer6">
+    <div class="container">
+        <ul class="list-inline">
+            <li class="editContent"><a href="<?php echo URL::route('getLanding'); ?>">Naslovna</a></li>
+            <li class="editContent"><a href="<?php echo URL::route('ClassifiedList'); ?>">Prodajem drva</a></li>
+            <li class="editContent"><a href="<?php echo URL::route('CreateClassified'); ?>">Kupujem drva</a></li>
+            <li class="editContent"><a href="<?php echo URL::route('about'); ?>">O nama</a></li>
+            <li class="editContent"><a href="<?php echo URL::route('contact'); ?>">Kontakt</a></li>
+        </ul>
+        <ul class="list-inline">
+            <li class="editContent"><a href="<?php echo URL::route('UvjetiKoristenja'); ?>" style="text-transform: initial;">Uvjeti korištenja</a></li>
+            <li class="editContent"><a href="<?php echo URL::route('IzjavaOPrivatnosti'); ?>" style="text-transform: initial;">Izjava o privatnosti</a></li>
+        </ul>
+        <div class="social-icons">
+            <a href="#"><span class="fa fa-facebook" aria-hidden="true"></span></a>
+            <a href="#"><span class="fa fa-twitter" aria-hidden="true"></span></a>
+            <a href="#"><span class="fa fa-youtube" aria-hidden="true"></span></a>
+        </div>
+    </div>
+</section>
+<!-- /#footer6 -->
+<section id="footer3">
+    <div class="container">
+        <p class="editContent pull-left">Copyrights © 2015 All Rights Reserved by <a href="http://www.culex.hr" class="text-white">Culex.hr</a></p>
+        <p class="editContent pull-right">Made with <span class="fa fa-heart"></span></p>
+    </div>
+</section>
+
+</div>
