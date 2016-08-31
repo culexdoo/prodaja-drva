@@ -215,7 +215,7 @@ class Classifieds extends Eloquent
 							}
 							else { 
 								// get all published
-								$entry = $entry->where('classifieds.published', '=', '1')->orderBy('id', 'DESC')->get();
+								$entry = $entry->where('classifieds.published', '=', '1')->orderBy('id', 'DESC')->paginate(10);
 								return array('status' => 1, 'entries' => $entry);
 							}
 						}

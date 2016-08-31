@@ -86,12 +86,12 @@
                                     <p class="classified-description">{{$entry->description}}</p>
                                     <div class="row">
                                         <div class="col-lg-5">
-                                            <p style="margin-top: 15px; margin-bottom: 0px;">Vrsta drveta:</p>
-                                            <h5 class="classified-category" style="margin: 0px;">{{$entry->woodname}}</h5> 
+                                            <h5 style="margin-top: 15px; margin-bottom: 0px;">Vrsta drveta:</h5>
+                                            <p class="classified-category" style="margin: 0px;">{{$entry->woodname}}</p> 
                                         </div>
                                         <div class="col-lg-6">
-                                            <p style="margin-top: 15px; margin-bottom: 0px;">Vrsta pakiranja:</p>
-                                            <h5 class="classified-category" style="margin: 0px;">{{$entry->packagingname}}</h5> 
+                                            <h5 style="margin-top: 15px; margin-bottom: 0px;">Vrsta pakiranja:</h5>
+                                            <p class="classified-category" style="margin: 0px;">{{$entry->packagingname}}</p> 
                                         </div>
                                     </div>
                                 </div>

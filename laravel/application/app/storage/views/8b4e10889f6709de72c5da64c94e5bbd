@@ -3,8 +3,8 @@
     <div class="container">
         <ul class="list-inline">
             <li class="editContent"><a href="<?php echo URL::route('getLanding'); ?>">Naslovna</a></li>
-            <li class="editContent"><a href="<?php echo URL::route('ClassifiedList'); ?>">Prodajem drva</a></li>
-            <li class="editContent"><a href="<?php echo URL::route('CreateClassified'); ?>">Kupujem drva</a></li>
+            <li class="editContent"><a href="<?php echo URL::route('CreateClassified'); ?>">Prodajem drva</a></li>
+            <li class="editContent"><a href="<?php echo URL::route('ClassifiedList'); ?>">Kupujem drva</a></li>
             <li class="editContent"><a href="<?php echo URL::route('about'); ?>">O nama</a></li>
             <li class="editContent"><a href="<?php echo URL::route('contact'); ?>">Kontakt</a></li>
         </ul>
@@ -23,7 +23,7 @@
 <section id="footer3">
     <div class="container">
         <p class="editContent pull-left">Copyrights © 2015 All Rights Reserved by <a href="http://www.culex.hr" class="text-white">Culex.hr</a></p>
-        <p class="editContent pull-right">Made with <span class="fa fa-heart"></span></p>
+        <p class="editContent pull-right">Made with passion</p>
     </div>
 </section>
 

@@ -89,6 +89,10 @@ a:hover {
     margin-right: 0px !important;
 }
 
+.ml15 {
+    margin-left: 15px;
+}
+
 .ml-15 {
     margin-left: -15px !important;
 }
@@ -264,6 +268,8 @@ a:hover {
     font-size: 65px;
 }
 
+
+
 .dropbtn {
     background-color: #4CAF50;
     color: white;
@@ -347,7 +353,6 @@ a:hover {
 .cta {
     font-family: 'Raleway', sans-serif;
     font-weight: 800;
-    background-color: #e74c3c !important;
     color: #fff !important;
     border: 0px !important;
     box-shadow: 0px 5px 0px 0px #CE3323;
@@ -373,11 +378,28 @@ a:hover {
 
 .classified-category {
     display: inline-block;
+    font-size: 16px;
 }
 
-.classified-title {
-    margin-top: 5px !important;
-    margin-bottom: 0px !important;
+.classified-content h5 {
+    color: #222;
+    font-weight: normal;
+    font-size: 18px;
+}
+
+.classified-footer h5 {
+    color: #222;
+    font-weight: normal;
+    font-size: 18px;
+}
+
+.classified-description {
+    max-width: 500px;
+    font-size: 16px;
+}
+
+.pagination li > a, .pagination li > span, .dataTables_paginate li > a, .dataTables_paginate li > span {
+    color: #bd4e4e;
 }
 
 .mt5 {
@@ -417,12 +439,18 @@ a:hover {
     height: auto;
 }
 
+.bottom {
+    position: relative;
+    right: 100px;
+}
+
 .category-link-home {
     border: 1px solid #fefefe;
 }
 
 .classified-image {
     max-width: 273px;
+    padding: 25px 0px 0px 10px;
 }
 
 .profile-picture {
@@ -513,15 +541,15 @@ a:hover {
 }
 
 .select2 {
-    width: 280px !important;
+    width: 231px !important;
 }
 
 .select2-dropdown--below {
-    width: 361px !important;
+    width: 300px !important;
 }
 
 .select2-container--open .select2-dropdown {
-    left: -66px;
+    left: -56px;
     top: 7px;
     background-color: rgba(237, 237, 237, 0.3);
     border-radius: 2px;
@@ -535,7 +563,7 @@ a:hover {
 
 .select2-container {
     top: 5px;
-    left: 60px;
+    left: 50px;
     font-size: 16px;
 }
 
@@ -583,7 +611,7 @@ a:hover {
 .h2-separator {
     height: 1px;
     width: 100px;
-    background: #e74c3c;
+    background: #1abc9c;
     margin: 30px auto;
 }
 
@@ -617,20 +645,20 @@ section#locations .location .span3 a {
     text-transform: uppercase;
 }
 
-.border-black-red {
+.border-black-aquamarine {
     border-left: 5px solid #333;
 }
 
-.border-black-red:hover {
-    border-left: 5px solid #e74c3c;
+.border-black-aquamarine:hover {
+    border-left: 5px solid #1abc9c;
 }
 
 section#locations .location .span3 a:hover {
-    color: #e74c3c !important
+    color: #1abc9c !important;
 }
 
 section#locations .location a:hover {
-    color: #e74c3c !important;
+    color: #1abc9c !important;
     text-decoration: none;
 }
 
@@ -718,9 +746,9 @@ section#locations .location a:hover {
 
 .more-btn-inner a:hover {
     text-decoration: none !important;
-    background-color: #e74c3c !important;
     border-radius: 60px;
     color: #fff;
+    background: #1abc9c;
 }
 
 
@@ -734,12 +762,11 @@ section#locations .location a:hover {
 
 .btn-default:hover {
     color: #fff;
-    background-color: #e74c3c !important;
-    border-color: #e74c3c !important;
 }
 
 .page-header {
     border-bottom: 0px;
+    color: #222;
 }
 
 .btn-primary {
@@ -747,30 +774,24 @@ section#locations .location a:hover {
     background-color: #e74c3c;
     border-color: #e74c3c;
     text-transform: uppercase;
-    font-size: 14px;
+    font-size: 16px;
     border-radius: 0px;
 }
 
 .btn-primary:hover {
     color: #fff;
-    background-color: #e74c3c !important;
-    border-color: #e74c3c !important;
 }
 
-.btn-primary:active {
-    background-color: #e74c3c !important;
-    border-color: #e74c3c !important;
-}
-
-.btn-primary:focus {
-    background-color: #e74c3c !important;
-    border-color: #e74c3c !important;
-}
 
 .category-title-homepage {
     font-size: 16px;
     margin-top: 20px;
     margin-bottom: 20px;
+    color: #222;
+}
+
+.move-text {
+    margin-left: 17px;
 }
 
 
@@ -1119,7 +1140,11 @@ dd {
 
 .classified-title {
     color: #222;
+    margin-top: 5px !important;
+    margin-bottom: 0px !important;
+    font-size: 28px;
 }
+
 
 .classified-title:hover {
     color: #e74c3c !important
@@ -1130,8 +1155,6 @@ dd {
     font-size: 16px;
     color: #222;
 }
-
-.category-title-homepage {}
 
 .classified-title-homepage:hover {
     text-decoration: none;
@@ -1202,7 +1225,7 @@ dd {
 }
 
 .glyphicon {
-    color: #e74c3c;
+    color: #1abc9c;
     margin-top: 10px;
     margin-bottom: 10px;
     top: 35px;
