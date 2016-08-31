@@ -420,7 +420,7 @@ h6,
 p {
   margin: 0 0 15px;
   font-size: 18px;
-  line-height: 1.72222;
+  line-height: 1.4;
   }
 .lead {
   margin-bottom: 30px;
@@ -7618,7 +7618,7 @@ fieldset[disabled] .navbar-inverse .navbar-btn.active {
 .panel {
   margin-bottom: 30px;
   background-color: #fff;
-  border: 2px solid transparent;
+  border: 1px solid transparent;
   border-radius: 6px;
   box-shadow: none;
   }
@@ -7628,7 +7628,7 @@ fieldset[disabled] .navbar-inverse .navbar-btn.active {
   border-top-radius: 3px;
   }
 .panel-title {
-    font-size: 16px;
+    font-size: 20px;
     font-weight: normal;
     line-height: 1.292;
     text-align: center;
@@ -7722,7 +7722,7 @@ fieldset[disabled] .navbar-inverse .navbar-btn.active {
   border-bottom: 2px solid #bdc3c7;
   }
 .panel-default {
-  border-color: #bdc3c7;
+  border-color: #dddddd;
   }
 .panel-default > .panel-heading {
   color: #fff;

@@ -1,21 +1,6 @@
 @include('frontend.includes.navbar')
-    <!-- Page Content -->
-    <div class="row m0 bg-whitesmoke">
-        <div class="container">
-            <div class="col-lg-12 p0">
-                <ol class="breadcrumb mb0 fs16 pl0">
-                    <li><a href="{{URL::route ('getLanding')}}">Naslovna</a>
-                    </li>
-                    <li class="active">{{ $entry->title }}</li>
-                </ol>
-            </div>
-        </div>
-    </div>
     <div class="row m0">
-        <!-- Page Heading/Breadcrumbs -->
-        <!-- Intro Content -->
         <div class="container">
-            <!-- Page Heading/Breadcrumbs -->
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">{{ $entry->title }}

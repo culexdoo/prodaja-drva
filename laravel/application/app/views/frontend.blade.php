@@ -88,9 +88,12 @@
 	{{ HTML::style('css/frontend/style-content.css') }}
 	{{ HTML::style('css/frontend/style-extra-pages.css') }}
 	{{ HTML::style('css/frontend/style.complete.css') }}
-	{{ HTML::style('css/frontend/flat-ui.css') }}
+	{{ HTML::style('css/frontend/flat-ui.css') }} 
 	{{ HTML::style('css/frontend/modern-business.css') }}
 	{{ HTML::style('css/frontend/font-awesome.min.css') }}
+	{{ HTML::style('css/frontend/style-library-1.css') }}
+	{{ HTML::style('css/frontend/magnific-popup.css') }}
+	{{ HTML::style('css/frontend/shop-6.css') }}
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
 	{{ HTML::style('css/frontend/owl.carousel.css') }}
 	{{ HTML::style('css/frontend/owl.theme.css') }}
@@ -110,6 +113,9 @@
 	{{ HTML::script('js/backend/jquery.noty.packaged.min.js') }}
 	{{ HTML::script('js/backend/noty.app.theme.js') }}
 	{{ HTML::script('js/frontend/likely.js') }}
+	{{ HTML::script('js/frontend/modernizr.custom.js') }}
+	{{ HTML::script('js/frontend/jquery.isotope.min.js') }}
+	{{ HTML::script('js/frontend/jquery.magnific-popup.js') }}
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
 	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAGZyUPlcENH-4yfK4IzBvnclrAO-M5cCo">
 	</script>

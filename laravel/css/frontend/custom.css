@@ -17,7 +17,7 @@ a {
 
 a:hover {
     text-decoration: none;
-    color: #e74c3c;
+    color: #1abc9c;
 }
 
 .footer a {
@@ -530,7 +530,7 @@ a:hover {
 }
 
 .panel-heading {
-    border-left: 5px solid #e74c3c !important;
+    border-left: 5px solid #1abc9c !important;
 }
 
 
@@ -1147,7 +1147,7 @@ dd {
 
 
 .classified-title:hover {
-    color: #e74c3c !important
+    color: #1abc9c !important;
 }
 
 .classified-title-homepage {

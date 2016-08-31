@@ -1,16 +1,4 @@
 @include('frontend.includes.navbar')
-    <!-- banner start -->
-    <div class="row m0 bg-whitesmoke">
-        <div class="container">
-            <div class="col-lg-12 p0">
-                <ol class="breadcrumb mb0 fs16">
-                    <li><a href="{{URL::route ('getLanding')}}">Naslovna</a>
-                    </li>
-                    <li class="active">Oglasi</li>
-                </ol>
-            </div>
-        </div>
-    </div> 
     <!-- Image Header -->
     <div class="row m0">
         <div class="col-lg-12 p0">
@@ -50,7 +38,7 @@
                                 </div>
                                 <div class="button-group">
                                     <div class="action-buttons">
-                                       <button type="submit" style="margin-top: 10px; " class="btn btn-lg cta btn-search">Pretraži</button>
+                                       <button type="submit" style="margin-top: 10px; " class="btn btn-lg cta btn-search btn-primary">Pretraži</button>
                                     </div>
                                 </div>
                             {{ Form::close() }}
