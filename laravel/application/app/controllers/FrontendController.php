@@ -806,7 +806,6 @@ class FrontendController extends \CoreController {
 		$this->layout->content = View::make('frontend.single-classified', array('entry' => $entry['entry'], 'user' => $user['entry'], 'region' => $region['entry'], 'nearclassifieds' => $nearclassifieds['entries'], 'postRoute' => 'SearchClassifieds', 'packaginglist' => $packaginglist, 'woodlist' => $woodlist, 'regionslist' => $regionslist, 'classifieds' => $classifieds ));
 	}
 
-
 	// Shows listing of all classifieds by specific wood category
 
 	public function listclassifiedsbywoodcategory($woodcategory) {

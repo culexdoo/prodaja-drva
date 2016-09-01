@@ -115,10 +115,8 @@
 	{{ HTML::script('js/frontend/likely.js') }}
 	{{ HTML::script('js/frontend/modernizr.custom.js') }}
 	{{ HTML::script('js/frontend/jquery.isotope.min.js') }}
-	{{ HTML::script('js/frontend/jquery.magnific-popup.js') }}
+	{{ HTML::script('js/frontend/jquery.magnific-popup.min.js') }}
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
-	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAGZyUPlcENH-4yfK4IzBvnclrAO-M5cCo">
-	</script>
 
 	
 

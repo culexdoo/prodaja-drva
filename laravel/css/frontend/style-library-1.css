@@ -144,11 +144,11 @@ h5, .h5 { font-size: 18px; }
 h6, .h6 { font-size: 16px; }
 
 p {
-	font-family: "Open Sans", Helvetica, Arial, sans-serif;
-	font-size: 14px;
+	font-family: 'Lora', serif;
+	font-size: 15px;
 	line-height: 1.6;
 	margin: 15px 0;
-	color: #515157;
+	color: #222;
 }
 
 .lead {
@@ -194,7 +194,7 @@ ul {
 ul li,
 ol li {
 	font-family: "Open Sans", Helvetica, Arial, sans-serif;
-	font-size: 14px;
+	font-size: 15px;
 	color: #515157;
 	margin-bottom: 5px;
 }
@@ -539,7 +539,7 @@ fieldset legend {
 .form-control {
 	border: 2px solid #ecf0f1;
 	color: #34495e;
-	font-family: "Open Sans", Helvetica, Arial, sans-serif;
+	font-family: 'Lora', serif;
 	font-size: 14px;
 	line-height: 1.467;
 	padding: 8px 12px;

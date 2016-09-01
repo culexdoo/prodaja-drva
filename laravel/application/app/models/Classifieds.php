@@ -93,7 +93,7 @@ class Classifieds extends Eloquent
 
 						// Retrieve specific entry
 						$entries = $entry->where('classifieds.region', '=', $region)
-											->where('classifieds.published', '=', '1')->paginate(10);
+											->where('classifieds.published', '=', '1')->paginate(6);
 						return array('status' => 1, 'entries' => $entries);
 			}
 
@@ -101,7 +101,7 @@ class Classifieds extends Eloquent
 
 						// Retrieve specific entry
 						$entries = $entry->where('classifieds.wood', '=', $woodcategory)
-											->where('classifieds.published', '=', '1')->paginate(10);
+											->where('classifieds.published', '=', '1')->paginate(6);
 						return array('status' => 1, 'entries' => $entries);
 			}
 
@@ -109,7 +109,7 @@ class Classifieds extends Eloquent
 
 						// Retrieve specific entry
 						$entries = $entry->where('classifieds.packaging', '=', $packaging)
-											->where('classifieds.published', '=', '1')->paginate(10);
+											->where('classifieds.published', '=', '1')->paginate(6);
 						return array('status' => 1, 'entries' => $entries);
 			}
 

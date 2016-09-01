@@ -9,7 +9,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand hidden-sm" href="{{ URL::route('getLanding') }}"><img src="img/frontend/loog.png" alt="Logo"></a>
+            <a class="navbar-brand hidden-sm" href="{{ URL::route('getLanding') }}"><img src="/img/frontend/loog.png" alt="Logo"></a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

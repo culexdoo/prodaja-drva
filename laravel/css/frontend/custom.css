@@ -410,6 +410,10 @@ a:hover {
     margin-top: 10px;
 }
 
+.mb5 {
+    margin-bottom: 5px;
+}
+
 .mb15 {
     margin-bottom: 15px;
 }
@@ -432,6 +436,34 @@ a:hover {
 
 .mt50 {
     margin-top: 50px;
+}
+
+.product-times-viewed p {
+    margin-left: 15px;
+    margin-top: 26px;
+    font-size: 18px;
+}
+
+.product-desc ul li, ol li {
+    font-family: 'Lora', serif;
+    color: #222;
+}
+
+.more-info-tabs .nav-tabs li a{
+    color: #222;
+    font-size: 16px;
+}
+
+.more-info-tabs .nav-tabs li.active a{
+    color: #222;
+}
+
+.hoverme:hover {
+    background: #1abc9c;
+}
+
+.hoverme:focus{
+    background: white;
 }
 
 .img-reponsive {

@@ -97,11 +97,16 @@
 
 	<?php echo HTML::style('css/frontend/style.complete.css'); ?>
 
-	<?php echo HTML::style('css/frontend/flat-ui.css'); ?>
-
+	<?php echo HTML::style('css/frontend/flat-ui.css'); ?> 
 	<?php echo HTML::style('css/frontend/modern-business.css'); ?>
 
 	<?php echo HTML::style('css/frontend/font-awesome.min.css'); ?>
+
+	<?php echo HTML::style('css/frontend/style-library-1.css'); ?>
+
+	<?php echo HTML::style('css/frontend/magnific-popup.css'); ?>
+
+	<?php echo HTML::style('css/frontend/shop-6.css'); ?>
 
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
 	<?php echo HTML::style('css/frontend/owl.carousel.css'); ?>
@@ -134,9 +139,13 @@
 
 	<?php echo HTML::script('js/frontend/likely.js'); ?>
 
+	<?php echo HTML::script('js/frontend/modernizr.custom.js'); ?>
+
+	<?php echo HTML::script('js/frontend/jquery.isotope.min.js'); ?>
+
+	<?php echo HTML::script('js/frontend/jquery.magnific-popup.min.js'); ?>
+
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
-	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAGZyUPlcENH-4yfK4IzBvnclrAO-M5cCo">
-	</script>
 
 	
 

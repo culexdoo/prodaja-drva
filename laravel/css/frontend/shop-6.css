@@ -211,13 +211,14 @@ body:not(.device-touch):not(.device-xs):not(.device-xxs) .shop-1-6 .product-imag
 }
 
 .shop-1-6 .sml-item h5 {
-	float: left;
-	font-size: 16px;
-	font-weight: 600;
-	margin-top: 0;
-	margin-bottom: 20px;
-	text-decoration: none;
-	color: #454545;
+    float: left;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: #222;
+    font-family: 'Lora', serif;
 }
 
 .shop-1-6 .sml-item .product-rating {
