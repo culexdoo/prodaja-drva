@@ -21,7 +21,7 @@
                                         <li><i class="fa-li fa fa-eur" style="top: 5px;"></i>Cijena: {{ $entry->price }} kn</li>
                                         <li><i class="fa-li fa fa-tree" style="top: 5px;"></i>Vrsta drveta: <a href="#">{{ $entry->woodname }}</a></li>
                                         <li><i class="fa-li fa fa-tags" style="top: 5px;"></i>Vrsta pakiranja: <a href="#">{{ $entry->packagingname }}</a></li> 
-                                        <li><i class="fa-li fa fa-map-marker" style="top: 5px;"></i>Regija: <a href="#">{{ $entry->regionname }}</a></li>
+                                        <li><i class="fa-li fa fa-map-marker" style="top: 5px;"></i>Županija: <a href="#">{{ $entry->regionname }}</a></li>
                                         <li><i class="fa-li fa fa-user" style="top: 5px;"></i>Oglašivač: <a href="#">{{ $entry->username }}</a></li>
                                         <li><i class="fa-li fa fa-phone" style="top: 5px;"></i>Kontakt: {{ $user->contact1 }}</li>  
                                         <li><i class="fa-li fa fa-calendar" style="top: 5px;"></i>Datum objave:{{ $entry->created_at }}</li>
@@ -80,7 +80,7 @@
                                                         <td>{{ $entry->packagingname }}</td>
                                                     </tr>
                                                     <tr>
-                                                        <td>Lokacija:</td>
+                                                        <td>Županija:</td>
                                                         <td>{{ $entry->regionname }}</td>
                                                     </tr>
                                                     <tr>
@@ -168,7 +168,6 @@
 
 function initMap() {
   var myLatLng = {lat: -25.363, lng: 131.044};
-
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 4,
     center: myLatLng
@@ -181,9 +180,6 @@ function initMap() {
   });
 }
 </script>
-
-
-
 <script>
 $('.gallery-zoom').magnificPopup({
     type: 'image'

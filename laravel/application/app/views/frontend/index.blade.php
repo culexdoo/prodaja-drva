@@ -114,114 +114,114 @@
                 <div class="col-lg-12">
                     <div class="col-lg-4">
                         <div class="span3 border-black-aquamarine">
-                            <a href="{{ URL::route('ListClassifiedsByRegion', array('region' => 'dubrovacko-neretvanska-zupanija' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Dubrovačko-neretvanska <span class="move-text">županija</span></a>
+                            <a href="{{ URL::route('ListClassifiedsByRegion', array('region' => 'dubrovacko-neretvanska' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Dubrovačko-neretvanska <span class="move-text">županija</span></a>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="span3 border-black-aquamarine">
-                            <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'krapinsko-zagorska-zupanija' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Krapinsko-zagorska <span class="move-text">županija</span></a>
+                            <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'krapinsko-zagorska' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Krapinsko-zagorska <span class="move-text">županija</span></a>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="span3 border-black-aquamarine">
-                            <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'sisacko-moslavacka-zupanija' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Sisačko-moslavačka <span class="move-text">županija</span></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <div class="col-lg-4">
-                        <div class="span3 border-black-aquamarine">
-                            <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'karlovacka-zupanija' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Karlovačka županija</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="span3 border-black-aquamarine">
-                            <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'varazdinska-zupanija' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Varaždinska županija</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="span3 border-black-aquamarine">
-                            <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'licko-senjska-zupanija' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Ličko-senjska županija</a>
+                            <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'sisacko-moslavacka' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Sisačko-moslavačka <span class="move-text">županija</span></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-12">
                     <div class="col-lg-4">
                         <div class="span3 border-black-aquamarine">
-                            <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'bjelovarsko-bilogorska-zupanija' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Bjelovarsko-bilogorska <span class="move-text">županija</span></a>
+                            <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'karlovacka' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Karlovačka županija</a>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="span3 border-black-aquamarine">
-                            <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'viroviticko-podravska-zupanija' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Virovitičko-podravska <span class="move-text">županija</span></a>
+                            <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'varazdinska' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Varaždinska županija</a>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="span3 border-black-aquamarine">
-                            <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'koprivnicko-krizevacka-zupanija' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Koprivničko-križevačka <span class="move-text">županija</span></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <div class="col-lg-4">
-                        <div class="span3 border-black-aquamarine">
-                            <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'osjecko-baranjska-zupanija' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Osječko-baranjska <span class="move-text">županija</span></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="span3 border-black-aquamarine">
-                            <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'pozesko-slavonska-zupanija' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Požeško-slavonska <span class="move-text">županija</span></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="span3 border-black-aquamarine">
-                            <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'brodsko-posavska-zupanija' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Brodsko-posavska županija</a>
+                            <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'licko-senjska' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Ličko-senjska županija</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-12">
                     <div class="col-lg-4">
                         <div class="span3 border-black-aquamarine">
-                            <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'istarska-zupanija' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Zadarska županija</a>
+                            <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'bjelovarsko-bilogorska' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Bjelovarsko-bilogorska <span class="move-text">županija</span></a>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="span3 border-black-aquamarine">
-                            <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'istarska-zupanija' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Istarska županija</a>
+                            <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'viroviticko-podravska' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Virovitičko-podravska <span class="move-text">županija</span></a>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="span3 border-black-aquamarine">
-                            <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'sibensko-kninska-zupanija' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Šibensko-kninska županija</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <div class="col-lg-4">
-                        <div class="span3 border-black-aquamarine">
-                            <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'vukovarsko-srijemska-zupanija' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Vukovarsko-srijemska <span class="move-text">županija</span></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="span3 border-black-aquamarine">
-                            <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'splitsko-dalmatinska-zupanija' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Splitsko-dalmatinska <span class="move-text">županija</span></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="span3 border-black-aquamarine">
-                            <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'primorsko-goranska-županija' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Primorsko-goranska <span class="move-text">županija</span></a>
+                            <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'koprivnicko-krizevacka' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Koprivničko-križevačka <span class="move-text">županija</span></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-12">
                     <div class="col-lg-4">
                         <div class="span3 border-black-aquamarine">
-                            <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'zagrebacka-zupanija' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Zagrebačka županija</a>
+                            <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'osjecko-baranjska' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Osječko-baranjska <span class="move-text">županija</span></a>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="span3 border-black-aquamarine">
-                            <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'medimurska-zupanija' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Međimurska županija</a>
+                            <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'pozesko-slavonska' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Požeško-slavonska <span class="move-text">županija</span></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="span3 border-black-aquamarine">
+                            <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'brodsko-posavska' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Brodsko-posavska županija</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="col-lg-4">
+                        <div class="span3 border-black-aquamarine">
+                            <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'istarska' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Zadarska županija</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="span3 border-black-aquamarine">
+                            <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'istarska' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Istarska županija</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="span3 border-black-aquamarine">
+                            <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'sibensko-kninska' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Šibensko-kninska županija</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="col-lg-4">
+                        <div class="span3 border-black-aquamarine">
+                            <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'vukovarsko-srijemska' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Vukovarsko-srijemska <span class="move-text">županija</span></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="span3 border-black-aquamarine">
+                            <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'splitsko-dalmatinska' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Splitsko-dalmatinska <span class="move-text">županija</span></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="span3 border-black-aquamarine">
+                            <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'primorsko-goranska' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Primorsko-goranska <span class="move-text">županija</span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="col-lg-4">
+                        <div class="span3 border-black-aquamarine">
+                            <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'zagrebacka' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Zagrebačka županija</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="span3 border-black-aquamarine">
+                            <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'medimurska' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Međimurska županija</a>
                         </div>
                     </div>
                     <div class="col-lg-4">
@@ -276,7 +276,7 @@
             </div>
             <div id="owl-demo" class="owl-carousel owl-theme mt50">
             @if (count($publishedclassifieds['entry']) > 0) 
-                    @foreach($publishedclassifieds['entry'] as $publishedclassified)
+                @foreach($publishedclassifieds['entry'] as $publishedclassified)
                 <div class="item">
                     <div class="col-md-12">
                         <a href="{{URL::route ('ShowClassified', array('id' => $publishedclassified->permalink))}}">
@@ -292,7 +292,7 @@
                         </div>
                     </div>
                 </div>
-            @endforeach
+                @endforeach
             @endif
             </div>
         </div>
@@ -347,7 +347,6 @@
                 </div>
                 <div class="arrow-down"></div>
                 <h3 class="editContent">Mirko J.</h3>
-                <h6 class="editContent">Marketing Director - Boot Expert</h6>
             </div>
             <div class="item">
                 <div class="box" style="border:0px; min-height: 160px;">
@@ -358,7 +357,6 @@
                 </div>
                 <div class="arrow-down"></div>
                 <h3 class="editContent">Davor S.</h3>
-                <h6 class="editContent">Marketing Director - Boot Expert</h6>
             </div>
             <div class="item">
                 <div class="box" style="border:0px; min-height: 160px;">
@@ -369,7 +367,6 @@
                 </div>
                 <div class="arrow-down"></div>
                 <h3 class="editContent">Mirna M.</h3>
-                <h6 class="editContent">Marketing Director - Boot Expert</h6>
             </div>
             <div class="item">
                 <div class="box" style="border:0px; min-height: 160px;">
@@ -380,7 +377,6 @@
                 </div>
                 <div class="arrow-down"></div>
                 <h3 class="editContent">Johnatan Doe</h3>
-                <h6 class="editContent">Marketing Director - Boot Expert</h6>
             </div>
         </div>
     </div>

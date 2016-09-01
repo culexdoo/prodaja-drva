@@ -931,7 +931,7 @@ class FrontendController extends \CoreController {
 	public function listclassifiedsbyregion($region) {
 
 		$region = Region::getEntries(null, null, $region);
-
+		
 		$regionname = $region['entry']->permalink;
 
 		$region = $region['entry']->id;

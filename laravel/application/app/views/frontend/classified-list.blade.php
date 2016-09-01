@@ -11,40 +11,34 @@
         </div>
     </div>
     <div class="container custom-position">
-    <h3>Rezultati pretrage:</h3>
+    <h3 style="font-size: 28px;">Rezultati pretrage:</h3>
     </div>
     <!-- banner end -->
     <div class="row m0">
         <div class="container">
             <div class="col-lg-3">
-                <div class="sidebar-listing-page">
-                        <!--- single widget start -->
-                    <div class="panel panel-default m0">
-                        <div class="panel-heading">
-                            <h4 class="panel-title"> PRETRAGA PO KRITERIJIMA:</h4>
+                <div class="widget">
+                    <h4 class="mt0" style="font-size: 21px;">Pretraga po kriterijima:</h4>
+                    <div class="panel-body pl0">
+                        {{ Form::open(array('route' => $postRoute, 'method' => 'get', 'role' => 'form', 'autocomplete' => 'on', 'files' => true))}}
+                        <div class="row"> 
+                            <div class="form-group mb5 col-xs-12 ">
+                                {{ Form::select('packaging', ['' => 'Vrsta pakiranja'] + $packaginglist, isset($packaging) ? $packaging : null, array('class' => 'form-control selectpicker hoverme', 'style' => 'width:100%', 'id' => 'id')) }}
+                            </div>
+                            <div class="form-group mb5 col-xs-12">
+                                {{ Form::select('wood', ['' => 'Vrsta drveta'] + $woodlist, isset($wood) ? $wood : null, array('class' => 'form-control selectpicker hoverme', 'style' => 'width:100%', 'id' => 'id')) }}
+                            </div>
+                            <div class="form-group mb5 col-xs-12">
+                                {{ Form::select('region',  ['' => 'Županije'] + $regionslist, null, array('class' => 'form-control selectpicker hoverme', 'style' => 'width:100%', 'id' => 'id')) }}                   
+                            </div> 
                         </div>
-                        <div class="panel-body">
-                            {{ Form::open(array('route' => $postRoute, 'method' => 'get', 'role' => 'form', 'autocomplete' => 'on', 'files' => true))}}
-                                <div class="row"> 
-                                    <div class="form-group  col-xs-12">
-                                        {{ Form::select('packaging', ['' => 'Vrsta pakiranja'] + $packaginglist, null, array('class' => 'form-control selectpicker', 'style' => 'width:100%', 'id' => 'id')) }}
-                                    </div>
-                                    <div class="form-group  col-xs-12">
-                                        {{ Form::select('wood', ['' => 'Vrsta drveta'] + $woodlist, null, array('class' => 'form-control selectpicker', 'style' => 'width:100%', 'id' => 'id')) }}
-                                    </div>
-                                    <div class="form-group  col-xs-12">
-                                        {{ Form::select('region',  ['' => 'Županije'] + $regionslist, null, array('class' => 'form-control selectpicker', 'style' => 'width:100%', 'id' => 'id')) }}                   
-                                    </div> 
-                                </div>
-                                <div class="button-group">
-                                    <div class="action-buttons">
-                                       <button type="submit" style="margin-top: 10px; " class="btn btn-lg cta btn-search btn-primary">Pretraži</button>
-                                    </div>
-                                </div>
-                            {{ Form::close() }}
+                        <div class="button-group">
+                            <div class="action-buttons">
+                               <button type="submit" style="margin-left: 0px; " class="btn btn-lg cta btn-primary">Pretraži</button>
+                            </div>
                         </div>
+                        {{ Form::close() }}
                     </div>
-                        <!--- single widget end -->
                 </div>
             </div>
             <div class="col-lg-9">
@@ -87,17 +81,17 @@
                                     <div class="row">
                                         <div class="col-lg-5">
                                             <div class="county">
-                                                <h5>{{$entry->regionname}}</h5>
+                                                <h5 class="mb0">Županija:<br></h5><p class="mt2">{{$entry->regionname}}</p>
                                             </div>
                                         </div>
                                         <div class="col-lg-4">
                                             <div class="timestamp">
-                                                <h5>Objavljeno: {{ date('d. m. Y.', strtotime( $entry->created_at )) }}</h5>
+                                                <h5 class="mb0">Objavljeno:<br></h5><p class="mt2">{{ date('d. m. Y.', strtotime( $entry->created_at )) }}</p>
                                             </div>
                                         </div>
                                         <div class="col-lg-3">
                                             <div class="price">
-                                                <h5><span class="price-eur">{{$entry->price}} kn</span></h5>
+                                                <h5 class="mb0">Cijena:<br></h5><p class="mt2">{{$entry->price}} kn</p>
                                             </div>
                                         </div>
                                     </div>

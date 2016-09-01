@@ -244,6 +244,9 @@ a:hover {
     top: 8px;
 }
 
+.fs13{
+    font-size: 13px;
+}
 .fs16 {
     font-size: 16px;
 }
@@ -395,7 +398,7 @@ a:hover {
 
 .classified-description {
     max-width: 500px;
-    font-size: 16px;
+    font-size: 15px;
 }
 
 .pagination li > a, .pagination li > span, .dataTables_paginate li > a, .dataTables_paginate li > span {
