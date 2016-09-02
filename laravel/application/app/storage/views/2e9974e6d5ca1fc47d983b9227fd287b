@@ -1,9 +1,5 @@
 
-                <label for="email" class="cols-sm-2 control-label">Vaš Email</label>
-                <div class="cols-sm-10">
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                        <?php echo Form::text('email', null, array('id' => 'email', 'class' => 'form-control', 'required', 'placeholder' => 'Unesite vaš email')); ?>
+                <rray('id' => 'email', 'class' => 'form-control', 'required', 'placeholder' => 'Unesite vaš email')); ?>
 
                     </div>
                 </div>
