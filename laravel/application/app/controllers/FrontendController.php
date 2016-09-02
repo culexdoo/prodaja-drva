@@ -1048,7 +1048,7 @@ class FrontendController extends \CoreController {
 
 	public function ClassifiedList() {
 
-		// Getting all regions
+			// Getting all regions
 			$regionslist = array();
 
 			$regions = Region::getEntries();
@@ -1062,7 +1062,6 @@ class FrontendController extends \CoreController {
 				$regionslist[$regions->id] = $regions->name;
 
 			}
-
 	 		
 			// Getting all cities
 			$woodlist = array();
@@ -1141,7 +1140,7 @@ class FrontendController extends \CoreController {
 
 		    $entry = Classifieds::getEntries(null, null, null, true, null, null, null, null, null, null, null, null);
 
-			$featuredclassifieds = Classifieds::getEntries(null, null, null, true, true, 4, null, null, null, null, null, null);
+			$featuredclassifieds = Classifieds::getEntries(null, null, null, true, true, 10, null, null, null, null, null, null);
 
 
 	 		$this->layout->title = 'Oglasi | Prodaja drva';

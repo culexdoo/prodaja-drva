@@ -7,7 +7,7 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="editContent">
-                                    <h3 class="mt0" style="font-size: 30px;">{{ $entry->title }}</h3>
+                                    <h3 class="mt0" style="font-size: 28px;">{{ ucfirst($entry->title) }}</h3>
                                 </div>
                             </div>
                             <div class="col-lg-6">
@@ -24,10 +24,10 @@
                                         <li><i class="fa-li fa fa-map-marker" style="top: 5px;"></i>Županija: <a href="#">{{ $entry->regionname }}</a></li>
                                         <li><i class="fa-li fa fa-user" style="top: 5px;"></i>Oglašivač: <a href="#">{{ $entry->username }}</a></li>
                                         <li><i class="fa-li fa fa-phone" style="top: 5px;"></i>Kontakt: {{ $user->contact1 }}</li>  
-                                        <li><i class="fa-li fa fa-calendar" style="top: 5px;"></i>Datum objave:{{ $entry->created_at }}</li>
+                                        <li><i class="fa-li fa fa-calendar" style="top: 5px;"></i>Datum objave: {{ $entry->created_at }}</li>
                                     </ul>
                                 <div class="product-times-viewed">
-                                    <p>Pregledano: xy puta</p>
+                                    <p><i class="fa fa-search"></i> Pregledano: xy puta</p>
                                 </div>
                                 </div>
                                 <!-- /.product-desc -->
@@ -92,15 +92,13 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="tab-pane fade" id="location1">
-                                    <div class="form-horizontal">
+                                <div class="tab-pane fade active" id="location1">
                                         <div id="map" style="width: 100%; height: 100%;"></div>
                                         <div>
                                             <input type="hidden" name="latitude" class="form-control" style="width: 110px" id="map-lat" />
                                             <input type="hidden" name="longitude" class="form-control" style="width: 110px" id="map-lon" />
                                         </div>
                                         <div class="clearfix"></div>
-                                    </div>
                                 </div>
                             </div>
                             <!-- /.tab-content -->
@@ -111,7 +109,7 @@
                     <div class="sidebar col-lg-3 pull-left mt5">
                         <div class="widget">
                             <h4 style="font-size: 22px;">Pretraga po kriterijima:</h4>
-                            <div class="panel-body pl0">
+                            <div class="panel-body pl0 pt3">
                                     {{ Form::open(array('route' => $postRoute, 'method' => 'get', 'role' => 'form', 'autocomplete' => 'on', 'files' => true))}}
                                     <div class="row"> 
                                         <div class="form-group mb5 col-xs-12 ">
@@ -133,7 +131,7 @@
                                 </div>
                         </div>
                         <div class="widget clearfix">
-                            <h4>Oglasi u blizini</h4>
+                            <h4 style="font-size: 22px;">Oglasi u blizini</h4>
                              @if (count($nearclassifieds) > 0) 
                                 @foreach($nearclassifieds as $nearclassified)
                                 <div id="popular-items">
@@ -142,10 +140,10 @@
                                             {{ HTML::image(URL::to('/') . '/uploads/frontend/classifieds/thumbs/' . $nearclassified->image, $nearclassified->title) }}
                                         </div>
                                         <div class="editContent">
-                                            <h4><a href="#">{{ $nearclassified->title }}</a></h4>
+                                            <h4><a href="{{ URL::route( 'ShowClassified', array('id' => $nearclassified->permalink) )}}">{{ $nearclassified->title }}</a></h4>
                                         </div>
                                         <div class="editContent">
-                                            <h5 style="margin-top:10px;">Cijena: {{ $nearclassified->price }} kn</h5>
+                                            <h5>Cijena: {{ $nearclassified->price }} kn</h5>
                                         </div>
                                     </div>
                                 </div>
@@ -162,23 +160,24 @@
         </section>
         <!--// End Shop 1-6 v2 -->
 </div>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAGZyUPlcENH-4yfK4IzBvnclrAO-M5cCo&callback=initMap">
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAGZyUPlcENH-4yfK4IzBvnclrAO-M5cCo&callback=initMap">
 </script>
 <script>
+  function initMap() {
+    var myLatLng = {lat: {{ $entry->latitude }}, lng: {{ $entry->longitude }}};
 
-function initMap() {
-  var myLatLng = {lat: -25.363, lng: 131.044};
-  var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 4,
-    center: myLatLng
-  });
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 8,
+      center: myLatLng
+    });
 
-  var marker = new google.maps.Marker({
-    position: myLatLng,
-    map: map,
-    title: 'Hello World!'
-  });
-}
+    var marker = new google.maps.Marker({
+      position: myLatLng,
+      map: map,
+      title: 'Hello World!'
+    });
+  }
 </script>
 <script>
 $('.gallery-zoom').magnificPopup({

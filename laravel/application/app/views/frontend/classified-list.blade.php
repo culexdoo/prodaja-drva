@@ -10,13 +10,14 @@
             </div>
         </div>
     </div>
+    <!-- header end -->
     <div class="container custom-position">
     <h3 style="font-size: 28px;">Rezultati pretrage:</h3>
     </div>
-    <!-- banner end -->
     <div class="row m0">
         <div class="container">
-            <div class="col-lg-3">
+        <section id="shop-1-6" class="content-block shop-1-6 p0">
+            <div class="col-lg-3 sidebar">
                 <div class="widget">
                     <h4 class="mt0" style="font-size: 21px;">Pretraga po kriterijima:</h4>
                     <div class="panel-body pl0">
@@ -40,6 +41,26 @@
                         {{ Form::close() }}
                     </div>
                 </div>
+                <div class="widget">
+                    <h4 style="font-size: 21px;">Izdvojeni oglasi</h4>
+                     @if (count($featuredclassifieds['entry']) > 0) 
+                        @foreach($featuredclassifieds['entry'] as $featuredclassified)
+                        <div id="popular-items">
+                            <div class="sml-item">
+                                <div class="entry-image">
+                                    {{ HTML::image(URL::to('/') . '/uploads/frontend/classifieds/thumbs/' . $featuredclassified->image, $featuredclassified->title) }}
+                                </div>
+                                <div class="editContent">
+                                    <h4><a href="{{ URL::route( 'ShowClassified', array('id' => $featuredclassified->permalink) )}}">{{ ucfirst($featuredclassified->title) }}</a></h4>
+                                </div>
+                                <div class="editContent">
+                                    <h5>Cijena: {{ $featuredclassified->price }} kn</h5>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+                    @endif
+                </div>
             </div>
             <div class="col-lg-9">
                 <div class="listing-container">
@@ -57,7 +78,7 @@
                                 <div class="classified-content">
                                     <div class="col-lg-10 p0">
                                         <a href="{{ URL::route('ShowClassified', array('permalink' => $entry->permalink)) }}">
-                                            <h3 class="classified-title">{{$entry->title}}</h3>
+                                            <h3 class="classified-title">{{ ucfirst($entry->title) }}</h3>
                                         </a>
                                     </div>
                                     <div class="col-lg-2 p0">
@@ -109,45 +130,16 @@
                     </div>
                 @endif
                 </div>
-                <div class="row">
+                <div class="row mb70">
                     <div class="col-md-12 text-center">
                         {{ $entries->links() }}
                     </div>
                 </div>
             </div>
+            </section>
         </div>
     </div>
     <!-- /.row -->
-    <!-- Izdvojeni oglasi start -->
-    <div class="row m0">
-        <div class="container">
-            <div class="col-lg-12">
-                <h2 class="page-header text-center fs35">Izdvojeni oglasi</h2>
-                <div class="text-center h2-separator"></div>
-                <div class="text-center mb35 fs18">
-                    Novi ste korisnik stranice? Pogledajte naše izdvojene oglase birane od strane starih korisnika.
-                </div>
-            </div>
-            @if (count($featuredclassifieds['entry']) > 0) 
-                @foreach($featuredclassifieds['entry'] as $featuredclassified)
-                    <div class="col-md-3">
-                        <a href="{{URL::route ('ShowClassified', array('id' => $featuredclassified->permalink))}}">
-                            {{ HTML::image(URL::to('/') . '/uploads/frontend/classifieds/thumbs/' . $featuredclassified->image, $featuredclassified->title) }}
-                        </a>
-                        <div class="panel mt10">
-                            <div class="panel-body p0">
-                                <a href="{{URL::route ('ShowClassified', array('id' => $featuredclassified->permalink))}}">
-                                    <p class="classified-title-homepage">{{ $featuredclassified->title }}</p>
-                                </a>
-                                <p class="classified-price-homepage">{{ $featuredclassified->price }} kn</p>
-                            </div>
-                        </div>
-                    </div> 
-                @endforeach
-            @endif
-        </div>
-    </div>
-    <!-- Izdvojeni oglasi end -->
 
 <script type="text/javascript">
     $('.choose-county').select2({

@@ -10,13 +10,14 @@
             </div>
         </div>
     </div>
+    <!-- header end -->
     <div class="container custom-position">
     <h3 style="font-size: 28px;">Rezultati pretrage:</h3>
     </div>
-    <!-- banner end -->
     <div class="row m0">
         <div class="container">
-            <div class="col-lg-3">
+        <section id="shop-1-6" class="content-block shop-1-6 p0">
+            <div class="col-lg-3 sidebar">
                 <div class="widget">
                     <h4 class="mt0" style="font-size: 21px;">Pretraga po kriterijima:</h4>
                     <div class="panel-body pl0">
@@ -44,6 +45,27 @@
 
                     </div>
                 </div>
+                <div class="widget">
+                    <h4 style="font-size: 21px;">Izdvojeni oglasi</h4>
+                     <?php if(count($featuredclassifieds['entry']) > 0): ?> 
+                        <?php foreach($featuredclassifieds['entry'] as $featuredclassified): ?>
+                        <div id="popular-items">
+                            <div class="sml-item">
+                                <div class="entry-image">
+                                    <?php echo HTML::image(URL::to('/') . '/uploads/frontend/classifieds/thumbs/' . $featuredclassified->image, $featuredclassified->title); ?>
+
+                                </div>
+                                <div class="editContent">
+                                    <h4><a href="<?php echo URL::route( 'ShowClassified', array('id' => $featuredclassified->permalink) ); ?>"><?php echo ucfirst($featuredclassified->title); ?></a></h4>
+                                </div>
+                                <div class="editContent">
+                                    <h5>Cijena: <?php echo $featuredclassified->price; ?> kn</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                </div>
             </div>
             <div class="col-lg-9">
                 <div class="listing-container">
@@ -62,7 +84,7 @@
                                 <div class="classified-content">
                                     <div class="col-lg-10 p0">
                                         <a href="<?php echo URL::route('ShowClassified', array('permalink' => $entry->permalink)); ?>">
-                                            <h3 class="classified-title"><?php echo $entry->title; ?></h3>
+                                            <h3 class="classified-title"><?php echo ucfirst($entry->title); ?></h3>
                                         </a>
                                     </div>
                                     <div class="col-lg-2 p0">
@@ -114,47 +136,17 @@
                     </div>
                 <?php endif; ?>
                 </div>
-                <div class="row">
+                <div class="row mb70">
                     <div class="col-md-12 text-center">
                         <?php echo $entries->links(); ?>
 
                     </div>
                 </div>
             </div>
+            </section>
         </div>
     </div>
     <!-- /.row -->
-    <!-- Izdvojeni oglasi start -->
-    <div class="row m0">
-        <div class="container">
-            <div class="col-lg-12">
-                <h2 class="page-header text-center fs35">Izdvojeni oglasi</h2>
-                <div class="text-center h2-separator"></div>
-                <div class="text-center mb35 fs18">
-                    Novi ste korisnik stranice? Pogledajte naše izdvojene oglase birane od strane starih korisnika.
-                </div>
-            </div>
-            <?php if(count($featuredclassifieds['entry']) > 0): ?> 
-                <?php foreach($featuredclassifieds['entry'] as $featuredclassified): ?>
-                    <div class="col-md-3">
-                        <a href="<?php echo URL::route ('ShowClassified', array('id' => $featuredclassified->permalink)); ?>">
-                            <?php echo HTML::image(URL::to('/') . '/uploads/frontend/classifieds/thumbs/' . $featuredclassified->image, $featuredclassified->title); ?>
-
-                        </a>
-                        <div class="panel mt10">
-                            <div class="panel-body p0">
-                                <a href="<?php echo URL::route ('ShowClassified', array('id' => $featuredclassified->permalink)); ?>">
-                                    <p class="classified-title-homepage"><?php echo $featuredclassified->title; ?></p>
-                                </a>
-                                <p class="classified-price-homepage"><?php echo $featuredclassified->price; ?> kn</p>
-                            </div>
-                        </div>
-                    </div> 
-                <?php endforeach; ?>
-            <?php endif; ?>
-        </div>
-    </div>
-    <!-- Izdvojeni oglasi end -->
 
 <script type="text/javascript">
     $('.choose-county').select2({

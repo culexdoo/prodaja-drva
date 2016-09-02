@@ -182,6 +182,14 @@ a:hover {
     padding-right: 15px;
 }
 
+.pt0 {
+    padding-top: 0px;
+}
+
+.pt3 {
+    padding-top: 3px;
+}
+
 .pt11 {
     padding-top: 11px;
 }
@@ -271,7 +279,17 @@ a:hover {
     font-size: 65px;
 }
 
+.shop-1-6 .sml-item h5 {
+    font-size: 14px;
+    font-weight: 300;
+    margin-top: 0px;
+    margin-left: 62px;
+}
 
+
+.shop-1-6 .sidebar .widget h4 {
+    font-size: 16px;
+}
 
 .dropbtn {
     background-color: #4CAF50;
@@ -381,24 +399,31 @@ a:hover {
 
 .classified-category {
     display: inline-block;
-    font-size: 16px;
+    font-size: 14px;
+    position: relative;
+    bottom: 3px;
 }
 
 .classified-content h5 {
     color: #222;
     font-weight: normal;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .classified-footer h5 {
     color: #222;
     font-weight: normal;
-    font-size: 18px;
+    font-size: 16px;
+}
+
+.classified-footer p {
+    font-size: 14px;
 }
 
 .classified-description {
     max-width: 500px;
     font-size: 15px;
+    line-height: 1.4;
 }
 
 .pagination li > a, .pagination li > span, .dataTables_paginate li > a, .dataTables_paginate li > span {
@@ -429,6 +454,10 @@ a:hover {
     margin-bottom: 25px !important;
 }
 
+.mb70 {
+    margin-bottom: 70px;
+}
+
 .widget-title {
     margin-top: -0px;
 }
@@ -444,7 +473,6 @@ a:hover {
 .product-times-viewed p {
     margin-left: 15px;
     margin-top: 26px;
-    font-size: 18px;
 }
 
 .product-desc ul li, ol li {
@@ -532,6 +560,8 @@ a:hover {
 
 #map {
     min-height: 600px;
+    width: 100%;
+    height: 100%;
 }
 
 .btn:active {

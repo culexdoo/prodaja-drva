@@ -96,8 +96,7 @@
     <!-- Google map start -->
     <div class="row m0 mtb120">
         <div class="col-lg-12 p0">
-            <div id="map" class="map">
-            </div>
+            <div id="map" class="map"></div>
         </div>
     </div>
     <!-- Google map end -->
@@ -477,11 +476,6 @@
         </div>
     </section>
     <script>
-    $(document).ready(function() {
-        initMap();
-        $(window).resize(function() {
-        google.maps.event.trigger(map, 'resize');
-    });
         var owl = $("#owl-demo");
 
         owl.owlCarousel({
@@ -497,9 +491,7 @@
         })
         $(".prev").click(function() {
             owl.trigger('owl.prev');
-        })
-
-    });
+        });
     </script>
     <script type="text/javascript">
     $('.choose-county').select2({
@@ -516,34 +508,38 @@
 
         // you want to enable the pointer events only on click;
 
-        $('#map_canvas1').addClass('scrolloff'); // set the pointer events to none on doc ready
+        $('#map1').addClass('scrolloff'); // set the pointer events to none on doc ready
         $('#canvas1').on('click', function() {
-            $('#map_canvas1').removeClass('scrolloff'); // set the pointer events true on click
+            $('#map1').removeClass('scrolloff'); // set the pointer events true on click
         });
 
         // you want to disable pointer events when the mouse leave the canvas area;
 
-        $("#map_canvas1").mouseleave(function() {
-            $('#map_canvas1').addClass('scrolloff'); // set the pointer events to none when mouse leaves the map area
+        $("#map1").mouseleave(function() {
+            $('#map1').addClass('scrolloff'); // set the pointer events to none when mouse leaves the map area
         });
     });
     </script>
     <script>
-    function initMap() {
-        var map;
-        var bounds = new google.maps.LatLngBounds();
-        var mapOptions = {
-            mapTypeId: 'map',
-            center: new google.maps.LatLng(45.605139, 18.918567),
-            scrollwheel: false,
-            draggable: true
-        };
+jQuery(function($) {
+    // Asynchronously Load the map API 
+    var script = document.createElement('script');
+    script.src = "//maps.googleapis.com/maps/api/js?key=AIzaSyAGZyUPlcENH-4yfK4IzBvnclrAO-M5cCo&callback=initialize";
+    document.body.appendChild(script);
+});
 
-        // Display a map on the page
-        map = new google.maps.Map(document.getElementById("map"), mapOptions);
-        map.setTilt(45);
-
-        // Multiple Markers
+function initialize() {
+    var map;
+    var bounds = new google.maps.LatLngBounds();
+    var mapOptions = {
+        mapTypeId: 'roadmap'
+    };
+                    
+    // Display a map on the page
+    map = new google.maps.Map(document.getElementById("map"), mapOptions);
+    map.setTilt(45);
+        
+    // Multiple Markers
         var markers = [
             @if(count($pins) > 0)
             @foreach($pins as $pin)
@@ -553,8 +549,8 @@
             @endforeach
             @endif
         ];
-
-        // Info Window Content
+                        
+    // Info Window Content
         var infoWindowContent = [
             @if(count($pins) > 0)
             @foreach($pins as $pin)
@@ -562,7 +558,7 @@
             ['<div class="info_content">' +
                 '<div class="content_body">' +
                     '<div class="content_title">' +
-                        '<h3>{{ $pin->title }}</h3>' +
+                        '<h3>{{ ucfirst($pin->title) }}</h3>' +
                     '</div>' +
                     '<div class="content_image">' +
                         '<img src="/uploads/frontend/classifieds/thumbs/{{$pin->image}}" style="width:140px;" >' +
@@ -577,51 +573,50 @@
             @endforeach
             @endif
         ];
+        
+    // Display multiple markers on a map
+    var infoWindow = new google.maps.InfoWindow(), marker, i;
+    
+    // Loop through our array of markers & place each one on the map  
+    for( i = 0; i < markers.length; i++ ) {
+        var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
+        bounds.extend(position);
+        marker = new google.maps.Marker({
+            position: position,
+            map: map,
+            title: markers[i][0]
+        });
 
-        // Display multiple markers on a map
-        var infoWindow = new google.maps.InfoWindow(),
-            marker, i;
-
-        // Loop through our array of markers & place each one on the map  
-        for (i = 0; i < markers.length; i++) {
-            var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
-            bounds.extend(position);
-            var iconBase = 'https://maps.google.com/mapfiles/kml/pushpin/';
-            marker = new google.maps.Marker({
-                position: position,
-                map: map,
-                title: markers[i][0],
-                icon: iconBase + 'purple-pushpin.png'
-            });
-
-            // Allow each marker to have an info window    
-            google.maps.event.addListener(marker, 'click', (function(marker, i) {
-                return function() {
-                    infoWindow.setContent(infoWindowContent[i][0]);
-                    infoWindow.open(map, marker);
-                }
-            })(marker, i));
-
-            google.maps.event.addListener(map, 'click', function(event) {
+    google.maps.event.addListener(map, 'click', function(event) {
                 this.setOptions({
                     scrollwheel: true
                 });
             });
-            google.maps.event.addListener(map, 'mouseout', function(event) {
+
+    google.maps.event.addListener(map, 'mouseout', function(event) {
                 this.setOptions({
                     scrollwheel: false
                 });
             });
+        
+        // Allow each marker to have an info window    
+        google.maps.event.addListener(marker, 'click', (function(marker, i) {
+            return function() {
+                infoWindow.setContent(infoWindowContent[i][0]);
+                infoWindow.open(map, marker);
+            }
+        })(marker, i));
 
-            // Automatically center the map fitting all markers on the screen
-            map.fitBounds(bounds);
-        }
-
-        // Override our map zoom level once our fitBounds function runs (Make sure it only runs once)
-        var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
-            this.setZoom(11);
-            google.maps.event.removeListener(boundsListener);
-        });
+        // Automatically center the map fitting all markers on the screen
+        map.fitBounds(bounds);
     }
-    </script>
-    @include('frontend.includes.footer')
+
+    // Override our map zoom level once our fitBounds function runs (Make sure it only runs once)
+    var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
+        this.setZoom(14);
+        google.maps.event.removeListener(boundsListener);
+    });
+    
+}
+</script>
+@include('frontend.includes.footer')
