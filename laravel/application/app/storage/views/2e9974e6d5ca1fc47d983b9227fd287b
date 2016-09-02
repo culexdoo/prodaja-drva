@@ -1,9 +1,4 @@
 
-        <?php echo Form::open(array('route' => 'postSignIn', 'autocomplete' => 'on', 'role' => 'form', 'class' => 'form-signin')); ?>
-
-            <h2 class="form-signin-heading text-center">Prijavi se</h2>
-            <hr />
-            <div class="form-group"> 
                 <label for="email" class="cols-sm-2 control-label">Vaš Email</label>
                 <div class="cols-sm-10">
                     <div class="input-group">
