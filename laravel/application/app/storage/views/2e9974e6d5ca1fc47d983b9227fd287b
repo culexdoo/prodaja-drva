@@ -1,6 +1,4 @@
-    <div class="container" style="margin-top: 215px;">
-    
-        
+
         <?php echo Form::open(array('route' => 'postSignIn', 'autocomplete' => 'on', 'role' => 'form', 'class' => 'form-signin')); ?>
 
             <h2 class="form-signin-heading text-center">Prijavi se</h2>
