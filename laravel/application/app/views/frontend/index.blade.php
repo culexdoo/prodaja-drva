@@ -469,7 +469,7 @@
         <div class="container text-center">
             <div class="col-sm-10 col-sm-offset-1">
                 <div class="editContent">
-                    <h3 class="info-section">Akooo 666 imate bilo kakvih pitanja, <strong>komentara ili pritužbi,</strong> slobodno nas kontaktirajte na broj 09x/xxx - xx - xx, ili email: info@prodaja-drva.com.hr</h3>
+                    <h3 class="info-section">Akooo 888 imate bilo kakvih pitanja, <strong>komentara ili pritužbi,</strong> slobodno nas kontaktirajte na broj 09x/xxx - xx - xx, ili email: info@prodaja-drva.com.hr</h3>
                 <a href="{{ URL::route('getRegistration') }}" class="btn btn-outline btn-outline-xl outline-light">REGISTRACIJA</a>
                 </div>
             </div>
