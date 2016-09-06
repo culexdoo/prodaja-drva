@@ -234,10 +234,13 @@ Route::group(array('prefix' => 'admin'), function()
 	// Search classifieds by parameter 
 
 		// Search by wood category
-		Route::get('oglasi/kategorija/{woodcategory}', array ('as' => 'ListClassifiedsByWoodCategory', 'uses' => 'FrontendController@listclassifiedsbywoodcategory'));
+		Route::get('oglasi/drvo/{woodcategory}', array ('as' => 'ListClassifiedsByWoodCategory', 'uses' => 'FrontendController@listclassifiedsbywoodcategory'));
 
-		// Search ogrjevno drvo
+		// Search by region
 		Route::get('oglasi/regija/{region}', array ('as' => 'ListClassifiedsByRegion', 'uses' => 'FrontendController@listclassifiedsbyregion'));
+
+		// Search by packaging category
+		Route::get('oglasi/pakiranje/{packagingcategory}', array ('as' => 'ListClassifiedsByPackagingCategory', 'uses' => 'FrontendController@listclassifiedsbypackagingcategory'));
 
 		// Search classifieds
 		Route::get('oglasi/rezultati-pretrage', array('as' => 'SearchClassifieds', 'uses' => 'FrontendController@SearchClassifieds'));

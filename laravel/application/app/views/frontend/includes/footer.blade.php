@@ -22,7 +22,7 @@
 <!-- /#footer6 -->
 <section id="footer3">
     <div class="container">
-        <p class="editContent pull-left">Copyrights © 2015 All Rights Reserved by <a href="http://www.culex.hr" class="text-white">Culex.hr</a></p>
+        <p class="editContent pull-left">Autorska prava © 2016 Sva prava zadržana <a href="http://www.culex.hr" class="text-white">Culex.hr</a></p>
         <p class="editContent pull-right">Made with passion</p>
     </div>
 </section>

@@ -60,9 +60,12 @@ class Classifieds extends Eloquent
 					'classifieds.longitude AS longitude',
 					'users.email AS email',
 					'users.username AS username',
+					'users.permalink AS userpermalink',
 					'region.name AS regionname',
 					'wood.name AS woodname',
 					'wood.permalink AS woodpermalink',
+					'packaging.permalink AS packagingpermalink',
+					'region.permalink AS regionpermalink',
 					'packaging.name AS packagingname'
 				);		
 

@@ -37,8 +37,8 @@ a:hover {
     font-weight: 300;
 }
 
-.lato-font {
-    font-family: 'Lato', 'Helvetica', 'Arial', sans-serif;
+.lora-font {
+    font-family: 'Lora', serif;
 }
 
 .border0 {
@@ -177,6 +177,10 @@ a:hover {
     padding-left: 15px;
 }
 
+.pl50 {
+    padding-left: 50px;
+}
+
 .plr15 {
     padding-left: 15px;
     padding-right: 15px;
@@ -279,6 +283,53 @@ a:hover {
     font-size: 65px;
 }
 
+.arrow {
+    position:relative
+}
+.arrow:after {
+    content: '';
+    font: 1em"Consolas", monospace;
+    width: 0;
+    height: 0;
+    position: absolute;
+    right: 20px;
+    top: 16px;
+    padding: 0;
+    border-width: 3px 7px 3px 0px;
+    border-style: solid;
+    border-color: transparent #bbbbbb;
+    pointer-events: none;
+}
+
+.arrow:before {
+    content:'';
+    right:6px;
+    top:0px;
+    width:20px;
+}
+
+.spacer {
+    margin-top: 20px;
+}
+
+.lspacer {
+    margin-top: 100px;
+}
+
+.greyb {
+    border: 1px solid #ddd;
+    height: 192px;
+    border-radius: 5px;
+}
+
+.editContent h3 {
+    font-family: 'Lora', serif;
+}
+
+.editContent .counter h3 {
+    font-family: 'Lora', serif;
+}
+
 .shop-1-6 .sml-item h5 {
     font-size: 14px;
     font-weight: 300;
@@ -289,6 +340,10 @@ a:hover {
 
 .shop-1-6 .sidebar .widget h4 {
     font-size: 16px;
+}
+
+.shop-1-6 .sidebar .widget {
+    margin-top: 30px;
 }
 
 .dropbtn {
@@ -334,7 +389,7 @@ a:hover {
 
 .custom-position {
     position: relative;
-    left: 287px;
+    left: 320px;
     margin-top: 60px;
     margin-bottom: 16px;
 }
@@ -372,7 +427,7 @@ a:hover {
 }
 
 .cta {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Lora', serif;
     font-weight: 800;
     color: #fff !important;
     border: 0px !important;
@@ -399,35 +454,61 @@ a:hover {
 
 .classified-category {
     display: inline-block;
-    font-size: 14px;
+    font-size: 13px;
     position: relative;
     bottom: 3px;
+    color: #6b6b6b;
+}
+.classified-category:hover{
+
+    color: #1abc9c !important;
 }
 
 .classified-content h5 {
     color: #222;
     font-weight: normal;
-    font-size: 16px;
+    font-size: 15px;
 }
 
 .classified-footer h5 {
     color: #222;
     font-weight: normal;
-    font-size: 16px;
+    font-size: 15px;
 }
 
 .classified-footer p {
-    font-size: 14px;
+    font-size: 13px;
+    color: #6b6b6b;
 }
 
 .classified-description {
     max-width: 500px;
-    font-size: 15px;
+    font-size: 14px;
     line-height: 1.4;
+}
+
+.classified-description span {
+  display: block;
+  width: 500px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .pagination li > a, .pagination li > span, .dataTables_paginate li > a, .dataTables_paginate li > span {
     color: #bd4e4e;
+}
+.pagination > li > a:hover {
+    color: #fff;
+}
+
+.pagination li.disabled > span {
+    color: #1abc9c;
+    border-left: none;
+}
+
+.pagination li > a {
+    color: #1abc9c;
 }
 
 .mt5 {
@@ -458,8 +539,37 @@ a:hover {
     margin-bottom: 70px;
 }
 
+.mb120 {
+    margin-bottom: 120px;
+}
+
+.widget-body {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.widget-image {
+    vertical-align: middle;
+}
+
 .widget-title {
-    margin-top: -0px;
+    margin-top: 0px;
+}
+
+.sidebar .widget-title h4 {
+    margin-bottom: 0px !important;
+    font-size: 15px;
+}
+
+.widget-body .col-lg-12 {
+    border-bottom: 1px solid #dcdcdc;
+    padding: 0px;
+    margin-bottom: 11px;
+}
+
+.widget-region h5 {
+    font-size: 14px;
+    font-family: 'Lora', serif;
 }
 
 .mt30 {
@@ -491,10 +601,12 @@ a:hover {
 
 .hoverme:hover {
     background: #1abc9c;
+    color: #fff;
 }
 
 .hoverme:focus{
     background: white;
+    color: #555;
 }
 
 .img-reponsive {
@@ -513,7 +625,6 @@ a:hover {
 
 .classified-image {
     max-width: 273px;
-    padding: 25px 0px 0px 10px;
 }
 
 .profile-picture {
@@ -524,7 +635,7 @@ a:hover {
 .classified-footer {
     border-top: 1px solid #ddd;
     position: relative;
-    top: 15px;
+    top: 23px;
 }
 
 .mh400 {
@@ -701,8 +812,9 @@ section#locations .location .span3 {
 
 section#locations .location .span3 a {
     display: block;
-    font-size: 14px;
-    font-family: 'Bree Serif';
+    font-size: 13px;
+    font-family: 'Lora', serif;
+    font-weight: 600;
     color: #333;
     padding: 10px;
     border: 1px solid #eee;
@@ -1207,7 +1319,7 @@ dd {
     color: #222;
     margin-top: 5px !important;
     margin-bottom: 0px !important;
-    font-size: 28px;
+    font-size: 24px;
 }
 
 
@@ -1229,6 +1341,15 @@ dd {
 .classified-price-homepage {
     text-align: center;
     font-weight: 700;
+}
+
+
+
+.price p {
+    font-size: 16px;
+    font-weight: 900;
+    margin-top: -4px;
+    color: #222;
 }
 
 .featured-classified-title-homepage {
@@ -1266,11 +1387,6 @@ dd {
     border-bottom: 0px;
 }
 
-
-/* Detalji proizvoda start */
-
-
-/* Detalji proizvoda end */
 
 
 /* Owl Carousel Bootstrap Custom CSS */
@@ -1394,12 +1510,13 @@ pre.pre-show {
 }
 
 .tab-content {
-    border-left: 1px solid #ddd;
-    border-right: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
     -webkit-border-radius: 0px 0px 4px 4px;
     -moz-border-radius: 0px 0px 4px 4px;
     border-radius: 0px 0px 4px 4px;
+}
+
+.tab-pane {
+    border-bottom: none;
 }
 
 

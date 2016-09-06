@@ -6,7 +6,7 @@
             <h1 class="editContent" style="font-weight: 300; font-size: 50px;">Dobrodošli na stranicu za prodaju drva</h1>
             <p class="editContent">Pronađite sve što vam treba za topliji i ugodniji dom!</p>
             <div class="text-center">
-                <a href="{{ URL::route('getRegistration')}}" class="btn btn-default-white-transparent"><span class="fa fa-user" aria-hidden="true"></span> Registracija</a>
+                <a href="{{ URL::route('ClassifiedList')}}" class="btn btn-default-white-transparent"><span class="fa fa-eye" aria-hidden="true"></span> Oglasi</a>
             </div>
         </div>
         <div class="hr-register">
@@ -32,7 +32,6 @@
                     </div>
                 </div>
                 </div>
-                
                 {{ Form::close() }}
             </div>
         </div>
@@ -50,6 +49,51 @@
                         Izaberite optimalan ogrijevni materijal za vašu peć. Jednim klikom do toplijeg doma.
                     </div>
                 </div>
+                <div id="page" class="page">
+                    <div id="services6">
+                        <div class="container">
+                            <div class="row">
+                            <a href="{{ URL::route('ListClassifiedsByWoodCategory', array('woodcategory' => 'ogrjevno-drvo' )) }}">
+                                <div class="col-lg-4">
+                                    <div class="services-box">
+                                        <div class="icon">
+                                            <span class="fa fa-tree"></span>
+                                        </div>
+                                        <h3 class="editContent">Ogrjevno drvo</h3>
+                                        <p class="editContent">Drvo je tradicionalan i ekonomičan način grijanja. Za razliku od zemnog plina i loživog ulja drvo je obnovljiv izvor energije. Za grijanje se najčešće koristi bukva i grab jer je poznato da bukvino drvo proizvodi jaki žar te zbog toga ujednačeno i dugotrajno emitira toplinu i uz atraktivni plamen gori gotovo bez iskri.</p>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="{{ URL::route('ListClassifiedsByWoodCategory', array('woodcategory' => 'briketi' )) }}">
+                                <div class="col-lg-4">
+                                    <div class="services-box">
+                                        <div class="icon">
+                                            <span class="fa fa-tree"></span>
+                                        </div>
+                                        <h3 class="editContent">Briketi</h3>
+                                        <p class="editContent">Briket za razliku od ostalih proizvoda iste namijene ima izvrsnu moć zagrijavanja te toplinu unutar peći zadržava iznimno dugo. Zbog svojih prirodnih karakteristika i zahvaljujući svojoj visokoj gustoći i niskom sadržaju vlage, sagorijevaju mnogo sporije i uz manje dima od primjerice drva.</p>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="{{ URL::route('ListClassifiedsByWoodCategory', array('woodcategory' => 'pelet' )) }}">
+                                <div class="col-lg-4">
+                                    <div class="services-box">
+                                        <div class="icon">
+                                            <span class="fa fa-tree"></span>
+                                        </div>
+                                        <h3 class="editContent">Pelet</h3>
+                                        <p class="editContent">Drveni pelet se proizvodi iz usitnjenog drveta, prešanog pod velikim pritiskom koji omogućava prirodno vezanje drveta. Peleti su ekstremno gusti i imaju mali udio vlage. Pri izgaranju peleti proizvode znatno manje emisije NOx, SOx, te CO od dozvoljenih graničnih vrijednosti.</p>
+                                    </div>
+                                </div>
+                            </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+<!--
                 <div class="col-md-4">
                     <div class="category-link-home">
                         <div class="row m0">
@@ -89,6 +133,7 @@
                         </div>
                     </div>
                 </div>
+-->
             </div>
         </div>
     </div>
@@ -174,7 +219,7 @@
                     </div>
                     <div class="col-lg-4">
                         <div class="span3 border-black-aquamarine">
-                            <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'brodsko-posavska' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Brodsko-posavska županija</a>
+                            <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'brodsko-posavska' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Brodsko-posavska <span class="move-text">županija</span></a>
                         </div>
                     </div>
                 </div>
@@ -345,7 +390,9 @@
                     <p class="editContent">Super pregledna stranica. Odmah sam naletio na oglas koji trebam i riješio drva za ovu zimu!</p>
                 </div>
                 <div class="arrow-down"></div>
-                <h3 class="editContent">Mirko J.</h3>
+                <div class="editContent">
+                    <h3>Mirko J.</h3>
+                </div>
             </div>
             <div class="item">
                 <div class="box" style="border:0px; min-height: 160px;">
@@ -355,7 +402,9 @@
                     <p class="editContent">Mogao bih započeti s prodajom drva preko vas. Jednostavno je za koristiti i preporučam svima koji žele započeti sa prodajom drva preko interneta. Svaka čast!</p>
                 </div>
                 <div class="arrow-down"></div>
-                <h3 class="editContent">Davor S.</h3>
+                <div class="editContent">
+                    <h3>Davor S.</h3>
+                </div>
             </div>
             <div class="item">
                 <div class="box" style="border:0px; min-height: 160px;">
@@ -365,7 +414,9 @@
                     <p class="editContent">Prijatelj mi vas je preporučio i ja ću vas isto dalje preporučiti. Super jednostavna stranica i lagano sam našla sve što sam trebala.</p>
                 </div>
                 <div class="arrow-down"></div>
-                <h3 class="editContent">Mirna M.</h3>
+                <div class="editContent">
+                    <h3>Mirna M.</h3>
+                </div>
             </div>
             <div class="item">
                 <div class="box" style="border:0px; min-height: 160px;">
@@ -375,7 +426,9 @@
                     <p class="editContent">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock.</p>
                 </div>
                 <div class="arrow-down"></div>
-                <h3 class="editContent">Johnatan Doe</h3>
+                <div class="editContent">
+                    <h3>Johnatan Doe</h3>
+                </div>
             </div>
         </div>
     </div>
@@ -388,11 +441,11 @@
                 <div class="col-sm-12">
                     <div class="underlined-title">
                         <div class="editContent">
-                            <h1 class="lato-font">Malo zanimljivih brojki sa stranice</h1>
+                            <h1 class="lora-font">Malo zanimljivih brojki sa stranice</h1>
                         </div>
                         <hr>
                         <div class="editContent">
-                            <h2 class="lato-font">Svidjet će vam se prodaja-drva </h2>
+                            <h2 class="lora-font">Svidjet će vam se prodaja-drva </h2>
                         </div>
                     </div>
                 </div>
@@ -403,7 +456,7 @@
                     </div>
                     <div class="counter-text">
                         <div class="editContent">
-                            <h3 class="counter">{{ $countactiveclassifieds }}</h3>
+                            <h3 class="counter" style="font-family: 'Lora', serif">{{ $countactiveclassifieds }}</h3>
                         </div>
                         <div class="editContent">
                             <p>Aktivni oglasi</p>
@@ -417,7 +470,7 @@
                     </div>
                     <div class="counter-text">
                         <div class="editContent">
-                            <h3 class="counter">{{ $countnewclassifieds }}</h3>
+                            <h3 class="counter" style="font-family: 'Lora', serif">{{ $countnewclassifieds }}</h3>
                         </div>
                         <div class="editContent">
                             <p>Novi oglasi</p>
@@ -431,7 +484,7 @@
                     </div>
                     <div class="counter-text">
                         <div class="editContent">
-                            <h3 class="counter">{{ $countactiveusers }}</h3>
+                            <h3 class="counter" style="font-family: 'Lora', serif">{{ $countactiveusers }}</h3>
                         </div>
                         <div class="editContent">
                             <p>Aktivni korisnici</p>
@@ -445,7 +498,7 @@
                     </div>
                     <div class="counter-text">
                         <div class="editContent">
-                            <h3 class="counter">{{ $countnewusers }}</h3>
+                            <h3 class="counter" style="font-family: 'Lora', serif">{{ $countnewusers }}</h3>
                         </div>
                         <div class="editContent">
                             <p>Novi korisnici</p>
@@ -455,7 +508,7 @@
                 
                 <div class="col-sm-12 text-center pad45">
                     <div class="editContent">
-                        <strong class="white lato-font">Niti jedan pustinjski skočimiš nije ozljeđen prilikom razvoja <a href="{{ URL::route('getLanding')}}" class="text-white">prodaje-drva.</a></strong>
+                        <strong class="white lora-font">Niti jedan pustinjski skočimiš nije ozljeđen prilikom razvoja <a href="{{ URL::route('getLanding')}}" class="text-white">prodaje-drva.</a></strong>
                     </div>
                 </div>
                 
@@ -469,7 +522,7 @@
         <div class="container text-center">
             <div class="col-sm-10 col-sm-offset-1">
                 <div class="editContent">
-                    <h3 class="info-section">Akooo 888 imate bilo kakvih pitanja, <strong>komentara ili pritužbi,</strong> slobodno nas kontaktirajte na broj 09x/xxx - xx - xx, ili email: info@prodaja-drva.com.hr</h3>
+                    <h3 class="info-section">Ako imate bilo kakvih pitanja, <strong>komentara ili pritužbi,</strong> slobodno nas kontaktirajte na broj 09x/xxx - xx - xx, ili email: info@prodaja-drva.com.hr</h3>
                 <a href="{{ URL::route('getRegistration') }}" class="btn btn-outline btn-outline-xl outline-light">REGISTRACIJA</a>
                 </div>
             </div>

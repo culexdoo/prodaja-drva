@@ -922,9 +922,132 @@ class FrontendController extends \CoreController {
 
 		$this->layout->content = View::make('frontend.classified-list', array('entries' => $entries['entries'], 'featuredclassifieds' => $featuredclassifieds, 'postRoute' => 'SearchClassifieds', 'packaginglist' => $packaginglist, 'woodlist' => $woodlist, 'regionslist' => $regionslist, 'packaging' => $packaging, 'wood' => $wood));
 
+	}
+
+	// Shows listing of all classifieds by specific packaging category
+
+	public function listclassifiedsbypackagingcategory($packagingcategory) {
+
+		$packaging = Packaging::getEntries(null, null, $packagingcategory);
+
+		$packaging = $packaging['entry']->id;
+
+		$entries = Classifieds::getEntries(null, null, null, true, null, null, null, null, null, $packaging, null, null, null);
+		
+		$featuredclassifieds = Classifieds::getEntries(null, null, null, true, true, 4, null);
+
+		// Getting all regions
+		$regionslist = array();
+
+		$regions = Region::getEntries();
+
+		if ($regions['status'] == 0)
+		{
+			return Redirect::route('getLanding')->with('error_message', Lang::get('core.msg_error_getting_entry'));
+		}
+		foreach ($regions['entries'] as $regions)
+		{
+			$regionslist[$regions->id] = $regions->name;
+
+		}
+		
+		// Getting all cities
+		$woodlist = array();
+
+	 	$wood = Wood::getEntries(null, null);
+
+	 	if ($wood['status'] == 0)
+		{
+			return Redirect::route('getlanding')->with('error_message', Lang::get('core.msg_error_getting_entry'));
+		}
+
+		foreach ($wood['entries'] as $wood)
+		{
+			$woodlist[$wood->id] = $wood->name;
+		}
+
+
+		// Getting all packaging 
+		$packaginglist = array();
+
+	 	$packaging = Packaging::getEntries(null, null);
+
+	 	if ($packaging['status'] == 0)
+		{
+			return Redirect::route('getlanding')->with('error_message', Lang::get('core.msg_error_getting_entry'));
+		}
+
+		foreach ($packaging['entries'] as $packaging)
+		{
+			$packaginglist[$packaging->id] = $packaging->name;
+		}
+
+
+			/* Magic */
+	  	$wood = Input::get('wood');
+	    $region = Input::get('region');
+	    $packaging = Input::get('packaging');
+	    $classifieds = $entry = DB::table('classifieds')
+			->join('users', 'classifieds.user', '=', 'users.id')
+			->join('region', 'classifieds.region', '=', 'region.id')
+			->join('wood', 'classifieds.wood', '=', 'wood.id')
+			->join('packaging', 'classifieds.packaging', '=', 'packaging.id')
+			->select(
+				'classifieds.id AS id', 
+				'classifieds.title AS title',
+				'classifieds.permalink AS permalink',
+				'classifieds.wood AS wood',
+				'classifieds.packaging AS packaging',
+				'classifieds.price AS price',
+				'classifieds.description AS description',
+				'classifieds.user AS user',
+				'classifieds.region AS region',
+				'classifieds.city AS city',
+				'classifieds.published AS published',
+				'classifieds.featured AS featured',
+				'classifieds.image AS image',
+				'classifieds.created_at AS created_at',
+				'users.email AS email',
+				'users.username AS username',
+				'region.name AS regionname',
+				'wood.name AS woodname',
+				'wood.permalink AS woodpermalink',
+				'packaging.name AS packagingname'
+			)
+		->where('classifieds.published', 'LIKE', '1')
+		->where('region.id', 'LIKE', '%'.$region.'%')
+		->where('packaging.id', 'LIKE', ''.$packaging.'%')
+		->where('wood.id', 'LIKE', ''.$wood.'%')
+		->orderBy('id', 'ASC')
+		->paginate(10);
+
+		
+	    $wood = mb_strtolower($wood, 'UTF-8');
+
+	    $packaging = mb_strtolower($packaging, 'UTF-8');
+
+		$this->layout->title = 'Lista oglasa po vrsti pakiranja: '. $packagingcategory . ' | Prodaja drva';
+
+		$this->layout->description = 'Pretraga oglasa za: ' . $packagingcategory;
+
+		$this->layout->css_files = array(
+
+			);
+
+		$this->layout->js_footer_files = array(
+
+			);
+
+		$this->layout->content = View::make('frontend.classified-list', array('entries' => $entries['entries'], 'featuredclassifieds' => $featuredclassifieds, 'postRoute' => 'SearchClassifieds', 'packaginglist' => $packaginglist, 'woodlist' => $woodlist, 'regionslist' => $regionslist, 'packaging' => $packaging, 'wood' => $wood));
+
 		
 
 	}
+
+
+
+
+
 
 	// Shows listing of all classifieds by specific wood category
 
@@ -1142,7 +1265,6 @@ class FrontendController extends \CoreController {
 
 			$featuredclassifieds = Classifieds::getEntries(null, null, null, true, true, 10, null, null, null, null, null, null);
 
-
 	 		$this->layout->title = 'Oglasi | Prodaja drva';
 
 			$this->layout->css_files = array(
@@ -1238,6 +1360,8 @@ class FrontendController extends \CoreController {
 					'region.name AS regionname',
 					'wood.name AS woodname',
 					'wood.permalink AS woodpermalink',
+					'packaging.permalink AS packagingpermalink',
+					'region.permalink AS regionpermalink',
 					'packaging.name AS packagingname'
 				);
 
@@ -1757,6 +1881,8 @@ class FrontendController extends \CoreController {
 
 	    $packaging = mb_strtolower($packaging, 'UTF-8');
 
+	    $featuredclassifieds = Classifieds::getEntries(null, null, null, true, true, 4, null, null, null, null, null, null);
+
 		$this->layout->title = 'O nama | Prodaja drva';
 
 		$this->layout->css_files = array(
@@ -1767,7 +1893,7 @@ class FrontendController extends \CoreController {
 
 			);
 
-		$this->layout->content = View::make('frontend.about', array('postRoute' => 'SearchClassifieds', 'packaginglist' => $packaginglist, 'woodlist' => $woodlist, 'regionslist' => $regionslist, 'classifieds' => $classifieds));
+		$this->layout->content = View::make('frontend.about', array('featuredclassifieds' => $featuredclassifieds, 'postRoute' => 'SearchClassifieds', 'packaginglist' => $packaginglist, 'woodlist' => $woodlist, 'regionslist' => $regionslist, 'classifieds' => $classifieds));
 
 
 

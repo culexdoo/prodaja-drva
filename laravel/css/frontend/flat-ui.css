@@ -3062,7 +3062,6 @@ fieldset[disabled] .input-group-btn .btn-default.active {
 .pagination li:first-child > span,
 .dataTables_paginate li:first-child > a,
 .dataTables_paginate li:first-child > span {
-  border-left: none;
   border-radius: 6px 0 0 6px;
   }
 .pagination li:first-child.previous + li > a,
