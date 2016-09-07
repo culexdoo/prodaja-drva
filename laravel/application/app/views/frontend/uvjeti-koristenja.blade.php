@@ -1,18 +1,4 @@
 @include('frontend.includes.navbar')
-    <div class="row m0 bg-whitesmoke">
-        <div class="container">
-            <div class="col-lg-12 p0">
-                <ol class="breadcrumb mb0 fs16">
-                    <li><a href="{{URL::route ('getLanding')}}">Naslovna</a>
-                    </li>
-                    <li class="active">Uvjeti korištenja</li>
-                </ol>
-            </div>
-        </div>
-    </div>
-        <!-- Page Heading/Breadcrumbs -->
-        
-        <!-- /.row -->
         <!-- Intro Content -->
         <div class="row m0">
             <div class="col-lg-12 p0">

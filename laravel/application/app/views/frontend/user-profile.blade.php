@@ -1,17 +1,4 @@
 @include('frontend.includes.navbar')
-    <!-- banner start -->
-    <div class="row m0 bg-whitesmoke">
-        <div class="container">
-            <div class="col-lg-12 p0">
-                <ol class="breadcrumb mb0 fs16">
-                    <li><a href="{{URL::route ('getLanding')}}">Naslovna</a>
-                    </li>
-                    <li class="active">{{ $entry->username}}</li>
-                </ol>
-            </div>
-        </div>
-    </div>
-    <!-- /.row -->
     <!-- Image Header -->
     <div class="row m0">
         <div class="col-lg-12 p0">

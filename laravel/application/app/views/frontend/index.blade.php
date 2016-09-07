@@ -43,9 +43,9 @@
         <div class="container">
             <div class="row m0">
                 <div class="col-lg-12">
-                    <h2 class="page-header text-center fs40">Kategorije</h2>
+                    <h2 class="page-header text-center fs50 pb2">Kategorije</h2>
                     <div class="text-center h2-separator"></div>
-                    <div class="text-center mb35 fs18">
+                    <div class="text-center mb35 fs14">
                         Izaberite optimalan ogrijevni materijal za vašu peć. Jednim klikom do toplijeg doma.
                     </div>
                 </div>
@@ -90,50 +90,6 @@
                         </div>
                     </div>
                 </div>
-
-
-
-<!--
-                <div class="col-md-4">
-                    <div class="category-link-home">
-                        <div class="row m0">
-                            <div class="col-lg-12">
-                                <img src="img/frontend/ogrjevno-drvo.png" class="img-reponsive" />
-                            </div>
-                            <div class="col-lg-12 text-center">
-                                <h5 class="category-title-homepage">Ogrjevno drvo</h5>
-                                <a href="{{ URL::route('ListClassifiedsByWoodCategory', array('woodcategory' => 'ogrjevno-drvo' )) }}" class="btn btn-primary btn-lg cta"> <i class="fa fa-eye pull-left mt2"></i>Pogledajte</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="category-link-home">
-                        <div class="row m0">
-                            <div class="col-lg-12">
-                                <img src="img/frontend/briketi.png" class="img-reponsive" />
-                            </div>
-                            <div class="col-lg-12 text-center">
-                                <h5 class="category-title-homepage ">Briketi</h5>
-                                <a href="{{ URL::route('ListClassifiedsByWoodCategory', array('woodcategory' => 'briketi' )) }}" class="btn btn-primary btn-lg  cta"><i class="fa fa-eye pull-left mt2"></i>Pogledajte</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="category-link-home">
-                        <div class="row m0">
-                            <div class="col-lg-12">
-                                <img src="img/frontend/pelet.png" class="img-reponsive" />
-                            </div>
-                            <div class="col-lg-12 text-center">
-                                <h5 class="category-title-homepage">Pelet</h5>
-                                <a href="{{ URL::route('ListClassifiedsByWoodCategory', array('woodcategory' => 'pelet' )) }}" class="btn btn-primary btn-lg  cta"><i class="fa fa-eye pull-left mt2"></i>Pogledajte</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
--->
             </div>
         </div>
     </div>
@@ -148,128 +104,128 @@
     <!-- Lista županija start -->
     <section id="locations">
         <div class="container">
-            <h2 class="page-header text-center fs40">Izaberite županiju</h2>
+            <h2 class="page-header text-center fs50 pb2">Izaberite županiju</h2>
             <div class="text-center h2-separator"></div>
-            <div class="text-center mb35 fs18">
+            <div class="text-center mb35 fs14">
                 U kojoj god županiji - gradu se nalazili, naša drva će pronaći put do vas.
             </div>
             <div class="h2-seprator"></div>
             <div class="location clearfix">
                 <div class="col-lg-12">
                     <div class="col-lg-4">
-                        <div class="span3 border-black-aquamarine">
+                        <div class="span3 border-black-green">
                             <a href="{{ URL::route('ListClassifiedsByRegion', array('region' => 'dubrovacko-neretvanska' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Dubrovačko-neretvanska <span class="move-text">županija</span></a>
                         </div>
                     </div>
                     <div class="col-lg-4">
-                        <div class="span3 border-black-aquamarine">
+                        <div class="span3 border-black-green">
                             <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'krapinsko-zagorska' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Krapinsko-zagorska <span class="move-text">županija</span></a>
                         </div>
                     </div>
                     <div class="col-lg-4">
-                        <div class="span3 border-black-aquamarine">
+                        <div class="span3 border-black-green">
                             <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'sisacko-moslavacka' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Sisačko-moslavačka <span class="move-text">županija</span></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-12">
                     <div class="col-lg-4">
-                        <div class="span3 border-black-aquamarine">
+                        <div class="span3 border-black-green">
                             <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'karlovacka' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Karlovačka županija</a>
                         </div>
                     </div>
                     <div class="col-lg-4">
-                        <div class="span3 border-black-aquamarine">
+                        <div class="span3 border-black-green">
                             <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'varazdinska' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Varaždinska županija</a>
                         </div>
                     </div>
                     <div class="col-lg-4">
-                        <div class="span3 border-black-aquamarine">
+                        <div class="span3 border-black-green">
                             <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'licko-senjska' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Ličko-senjska županija</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-12">
                     <div class="col-lg-4">
-                        <div class="span3 border-black-aquamarine">
+                        <div class="span3 border-black-green">
                             <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'bjelovarsko-bilogorska' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Bjelovarsko-bilogorska <span class="move-text">županija</span></a>
                         </div>
                     </div>
                     <div class="col-lg-4">
-                        <div class="span3 border-black-aquamarine">
+                        <div class="span3 border-black-green">
                             <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'viroviticko-podravska' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Virovitičko-podravska <span class="move-text">županija</span></a>
                         </div>
                     </div>
                     <div class="col-lg-4">
-                        <div class="span3 border-black-aquamarine">
+                        <div class="span3 border-black-green">
                             <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'koprivnicko-krizevacka' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Koprivničko-križevačka <span class="move-text">županija</span></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-12">
                     <div class="col-lg-4">
-                        <div class="span3 border-black-aquamarine">
+                        <div class="span3 border-black-green">
                             <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'osjecko-baranjska' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Osječko-baranjska <span class="move-text">županija</span></a>
                         </div>
                     </div>
                     <div class="col-lg-4">
-                        <div class="span3 border-black-aquamarine">
+                        <div class="span3 border-black-green">
                             <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'pozesko-slavonska' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Požeško-slavonska <span class="move-text">županija</span></a>
                         </div>
                     </div>
                     <div class="col-lg-4">
-                        <div class="span3 border-black-aquamarine">
+                        <div class="span3 border-black-green">
                             <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'brodsko-posavska' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Brodsko-posavska <span class="move-text">županija</span></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-12">
                     <div class="col-lg-4">
-                        <div class="span3 border-black-aquamarine">
+                        <div class="span3 border-black-green">
                             <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'istarska' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Zadarska županija</a>
                         </div>
                     </div>
                     <div class="col-lg-4">
-                        <div class="span3 border-black-aquamarine">
+                        <div class="span3 border-black-green">
                             <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'istarska' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Istarska županija</a>
                         </div>
                     </div>
                     <div class="col-lg-4">
-                        <div class="span3 border-black-aquamarine">
+                        <div class="span3 border-black-green">
                             <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'sibensko-kninska' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Šibensko-kninska županija</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-12">
                     <div class="col-lg-4">
-                        <div class="span3 border-black-aquamarine">
+                        <div class="span3 border-black-green">
                             <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'vukovarsko-srijemska' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Vukovarsko-srijemska <span class="move-text">županija</span></a>
                         </div>
                     </div>
                     <div class="col-lg-4">
-                        <div class="span3 border-black-aquamarine">
+                        <div class="span3 border-black-green">
                             <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'splitsko-dalmatinska' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Splitsko-dalmatinska <span class="move-text">županija</span></a>
                         </div>
                     </div>
                     <div class="col-lg-4">
-                        <div class="span3 border-black-aquamarine">
+                        <div class="span3 border-black-green">
                             <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'primorsko-goranska' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Primorsko-goranska <span class="move-text">županija</span></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-12">
                     <div class="col-lg-4">
-                        <div class="span3 border-black-aquamarine">
+                        <div class="span3 border-black-green">
                             <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'zagrebacka' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Zagrebačka županija</a>
                         </div>
                     </div>
                     <div class="col-lg-4">
-                        <div class="span3 border-black-aquamarine">
+                        <div class="span3 border-black-green">
                             <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'medimurska' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Međimurska županija</a>
                         </div>
                     </div>
                     <div class="col-lg-4">
-                        <div class="span3 border-black-aquamarine">
+                        <div class="span3 border-black-green">
                             <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'grclassified-zagreb' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Grad Zagreb</a>
                         </div>
                     </div>
@@ -305,10 +261,10 @@
         <div class="container">
             <div class="row m0 text-center mb25">
                 <div class="col-lg-12">
-                    <h2 class="page-header fs40">Najnoviji oglasi</h2>
+                    <h2 class="page-header fs50 pb2">Najnoviji oglasi</h2>
                     <div class="text-center h2-separator"></div>
                 </div>
-                <div class="text-center mb35 fs18">
+                <div class="text-center mb35 fs14">
                     Pogledajte i pronađite upravo ono što vam treba za vaš dom.
                 </div>
             </div>
@@ -349,17 +305,17 @@
     <!-- Najnoviji oglasi end -->
     <!-- Izdvojeni oglasi start -->
     <div class="row m0 mt120">
-        <div class="container">
+        <div class="container mb120">
             <div class="col-lg-12">
-                <h2 class="page-header text-center fs40">Izdvojeni oglasi</h2>
+                <h2 class="page-header text-center fs50 pb2">Izdvojeni oglasi</h2>
                 <div class="text-center h2-separator"></div>
-                <div class="text-center mb35 fs18">
+                <div class="text-center mb35 fs14">
                     Novi ste korisnik stranice? Pogledajte naše izdvojene oglase birane od strane starih korisnika.
                 </div>
             </div>
             @if (count($featuredclassifieds['entry']) > 0) 
                 @foreach($featuredclassifieds['entry'] as $featuredclassified)
-                    <div class="col-md-3">
+                    <div class="col-md-3 img-position">
                         <a href="{{URL::route ('ShowClassified', array('id' => $featuredclassified->permalink))}}">
                             {{ HTML::image(URL::to('/') . '/uploads/frontend/classifieds/thumbs/' . $featuredclassified->image, $featuredclassified->title) }}
                         </a>
@@ -380,7 +336,7 @@
     <!-- Testimonials start -->
     <div id="content22" style="height: 450px;">
     <div class="container">
-        <h2 class="page-header text-center fs40">Što korisnici kažu o nama</h2>
+        <h2 class="page-header text-center fs50 pb2">Što korisnici kažu o nama</h2>
         <div id="testimonials" class="owl-carousel owl-theme" style="opacity: 1; display: block;">
             <div class="item">
                 <div class="box" style="border:0px; min-height: 160px;">
@@ -432,148 +388,131 @@
             </div>
         </div>
     </div>
-    </div>
+</div>
     <!-- Testimonials end -->
     <!-- Stats start -->
-        <section id="content-2-7" class="content-block content-2-7">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="underlined-title">
-                        <div class="editContent">
-                            <h1 class="lora-font">Malo zanimljivih brojki sa stranice</h1>
-                        </div>
-                        <hr>
-                        <div class="editContent">
-                            <h2 class="lora-font">Svidjet će vam se prodaja-drva </h2>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-3 text-center">
-                    <div class="counter-icon">
-                        <span class="fa fa-magic"></span>
-                    </div>
-                    <div class="counter-text">
-                        <div class="editContent">
-                            <h3 class="counter" style="font-family: 'Lora', serif">{{ $countactiveclassifieds }}</h3>
-                        </div>
-                        <div class="editContent">
-                            <p>Aktivni oglasi</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-3 text-center">
-                    <div class="counter-icon">
-                        <span class="fa fa-coffee"></span>
-                    </div>
-                    <div class="counter-text">
-                        <div class="editContent">
-                            <h3 class="counter" style="font-family: 'Lora', serif">{{ $countnewclassifieds }}</h3>
-                        </div>
-                        <div class="editContent">
-                            <p>Novi oglasi</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-3 text-center">
-                    <div class="counter-icon">
-                        <span class="fa fa-lightbulb-o"></span>
-                    </div>
-                    <div class="counter-text">
-                        <div class="editContent">
-                            <h3 class="counter" style="font-family: 'Lora', serif">{{ $countactiveusers }}</h3>
-                        </div>
-                        <div class="editContent">
-                            <p>Aktivni korisnici</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-3 text-center">
-                    <div class="counter-icon">
-                        <span class="fa fa-clock-o"></span>
-                    </div>
-                    <div class="counter-text">
-                        <div class="editContent">
-                            <h3 class="counter" style="font-family: 'Lora', serif">{{ $countnewusers }}</h3>
-                        </div>
-                        <div class="editContent">
-                            <p>Novi korisnici</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-sm-12 text-center pad45">
+<section id="content-2-7" class="content-block content-2-7">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="underlined-title">
                     <div class="editContent">
-                        <strong class="white lora-font">Niti jedan pustinjski skočimiš nije ozljeđen prilikom razvoja <a href="{{ URL::route('getLanding')}}" class="text-white">prodaje-drva.</a></strong>
+                        <h1 class="lora-font">Malo zanimljivih brojki sa stranice</h1>
                     </div>
-                </div>
-                
-            </div><!-- /.row -->
-
-        </div><!-- /.container -->
-    </section>
-    <!-- Stats end -->
-    <!-- tipka za poziv start -->
-    <section id="content-2-6" class="content-block content-2-6 bg-deepocean">
-        <div class="container text-center">
-            <div class="col-sm-10 col-sm-offset-1">
-                <div class="editContent">
-                    <h3 class="info-section">Ako imate bilo kakvih pitanja, <strong>komentara ili pritužbi,</strong> slobodno nas kontaktirajte na broj 09x/xxx - xx - xx, ili email: info@prodaja-drva.com.hr</h3>
-                <a href="{{ URL::route('getRegistration') }}" class="btn btn-outline btn-outline-xl outline-light">REGISTRACIJA</a>
+                    <hr>
+                    <div class="editContent">
+                        <h2 class="lora-font">Svidjet će vam se prodaja-drva </h2>
+                    </div>
                 </div>
             </div>
+
+            <div class="col-sm-3 text-center">
+                <div class="counter-icon">
+                    <span class="fa fa-magic"></span>
+                </div>
+                <div class="counter-text">
+                    <div class="editContent">
+                        <h3 class="counter" style="font-family: 'Lora', serif">{{ $countactiveclassifieds }}</h3>
+                    </div>
+                    <div class="editContent">
+                        <p>Aktivni oglasi</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3 text-center">
+                <div class="counter-icon">
+                    <span class="fa fa-coffee"></span>
+                </div>
+                <div class="counter-text">
+                    <div class="editContent">
+                        <h3 class="counter" style="font-family: 'Lora', serif">{{ $countnewclassifieds }}</h3>
+                    </div>
+                    <div class="editContent">
+                        <p>Novi oglasi</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3 text-center">
+                <div class="counter-icon">
+                    <span class="fa fa-lightbulb-o"></span>
+                </div>
+                <div class="counter-text">
+                    <div class="editContent">
+                        <h3 class="counter" style="font-family: 'Lora', serif">{{ $countactiveusers }}</h3>
+                    </div>
+                    <div class="editContent">
+                        <p>Aktivni korisnici</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3 text-center">
+                <div class="counter-icon">
+                    <span class="fa fa-clock-o"></span>
+                </div>
+                <div class="counter-text">
+                    <div class="editContent">
+                        <h3 class="counter" style="font-family: 'Lora', serif">{{ $countnewusers }}</h3>
+                    </div>
+                    <div class="editContent">
+                        <p>Novi korisnici</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-12 text-center pad45">
+                <div class="editContent">
+                    <strong class="white lora-font">Niti jedan pustinjski skočimiš nije ozljeđen prilikom razvoja <a href="{{ URL::route('getLanding')}}" class="text-white">prodaje-drva.</a></strong>
+                </div>
+            </div>
+            
+        </div><!-- /.row -->
+
+    </div><!-- /.container -->
+</section>
+    <!-- Stats end -->
+    <!-- tipka za poziv start -->
+<section id="content-2-6" class="content-block content-2-6 bg-green">
+    <div class="container text-center">
+        <div class="col-sm-10 col-sm-offset-1">
+            <div class="editContent">
+                <h3 class="info-section">Ako imate bilo kakvih pitanja, <strong>komentara ili pritužbi,</strong> slobodno nas kontaktirajte na broj 09x/xxx - xx - xx, ili email: info@prodaja-drva.com.hr</h3>
+            <a href="{{ URL::route('getRegistration') }}" class="btn btn-outline btn-outline-xl outline-light">REGISTRACIJA</a>
+            </div>
         </div>
-    </section>
-    <script>
-        var owl = $("#owl-demo");
+    </div>
+</section>
+<script>
+    var owl = $("#owl-demo");
 
-        owl.owlCarousel({
-            items: 4, //10 items above 1000px browser width
-            itemsDesktop: [1000, 4], //5 items between 1000px and 901px
-            itemsDesktopSmall: [900, 3], // betweem 900px and 601px
-            itemsTablet: [600, 2], //2 items between 600 and 0
-            itemsMobile: false // itemsMobile disabled - inherit from itemsTablet option
-        });
-
-        $(".next").click(function() {
-            owl.trigger('owl.next');
-        })
-        $(".prev").click(function() {
-            owl.trigger('owl.prev');
-        });
-    </script>
-    <script type="text/javascript">
-    $('.choose-county').select2({
-        placeholder: "Odaberite županiju",
-        allowClear: true
+    owl.owlCarousel({
+        items: 4, //10 items above 1000px browser width
+        itemsDesktop: [1000, 4], //5 items between 1000px and 901px
+        itemsDesktopSmall: [900, 3], // betweem 900px and 601px
+        itemsTablet: [600, 2], //2 items between 600 and 0
+        itemsMobile: false // itemsMobile disabled - inherit from itemsTablet option
     });
-    $('.choose-category').select2({
-        placeholder: "Odaberite kategoriju",
-        allowClear: true
+
+    $(".next").click(function() {
+        owl.trigger('owl.next');
+    })
+    $(".prev").click(function() {
+        owl.trigger('owl.prev');
     });
-    </script>
-    <script>
-    $(document).ready(function() {
-
-        // you want to enable the pointer events only on click;
-
-        $('#map1').addClass('scrolloff'); // set the pointer events to none on doc ready
-        $('#canvas1').on('click', function() {
-            $('#map1').removeClass('scrolloff'); // set the pointer events true on click
-        });
-
-        // you want to disable pointer events when the mouse leave the canvas area;
-
-        $("#map1").mouseleave(function() {
-            $('#map1').addClass('scrolloff'); // set the pointer events to none when mouse leaves the map area
-        });
-    });
-    </script>
-    <script>
+</script>
+<script type="text/javascript">
+$('.choose-county').select2({
+    placeholder: "Odaberite županiju",
+    allowClear: true
+});
+$('.choose-category').select2({
+    placeholder: "Odaberite kategoriju",
+    allowClear: true
+});
+</script>
+<script>
 jQuery(function($) {
     // Asynchronously Load the map API 
     var script = document.createElement('script');
@@ -611,7 +550,9 @@ function initialize() {
             ['<div class="info_content">' +
                 '<div class="content_body">' +
                     '<div class="content_title">' +
+                        '<a href="{{URL::route ('ShowClassified', array('id' => $pin->permalink))}}">' +
                         '<h3>{{ ucfirst($pin->title) }}</h3>' +
+                        '</a>' +
                     '</div>' +
                     '<div class="content_image">' +
                         '<img src="/uploads/frontend/classifieds/thumbs/{{$pin->image}}" style="width:140px;" >' +

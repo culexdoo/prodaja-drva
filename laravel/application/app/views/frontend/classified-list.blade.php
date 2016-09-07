@@ -76,14 +76,14 @@
                     <!-- single classified listing start -->
                     <div class="row greyb mb20">
                         <div class="single-classified">
-                            <div class="col-lg-4 p0">
+                            <div class="col-lg-4 col-xs-4 p0">
                                 <a href="{{ URL::route('ShowClassified', array('permalink' => $entry->permalink)) }}">
                                     <div class="classified-image">
                                         {{ HTML::image(URL::to('/') . '/uploads/frontend/classifieds/thumbs/' . $entry->image, $entry->title, array('style' => 'border-radius: 5px 0px 0px 5px')) }}
                                     </div>
                                 </a>
                             </div>
-                            <div class="col-lg-8">
+                            <div class="col-lg-8 col-xs-8">
                                 <div class="classified-content">
                                     <div class="col-lg-12 p0 mb15">
                                         <a href="{{ URL::route('ShowClassified', array('permalink' => $entry->permalink)) }}">
@@ -109,7 +109,7 @@
                                 </div>
                                 <div class="classified-footer">
                                     <div class="row">
-                                        <div class="col-lg-5">
+                                        <div class="col-lg-5 col-xs-6">
                                             <div class="spacer"></div>
                                             <div class="county">
                                                 <a href="{{ URL::route('ListClassifiedsByRegion', array('region' => $entry->regionpermalink)) }}">
@@ -123,7 +123,7 @@
                                                 <p class="mt2"><i class="fa fa-clock-o"></i> Objavljeno: {{ date('d. m. Y.', strtotime( $entry->created_at )) }}</p>
                                             </div>
                                         </div>
-                                        <div class="col-lg-2">
+                                        <div class="col-lg-2 col-xs-6">
                                             <div class="spacer"></div>
                                             <div class="price">
                                             <p class="mt2">{{$entry->price}} kn</p>

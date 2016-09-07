@@ -23,7 +23,7 @@ class Classifieds extends Eloquent
 	*	$published			->	true 	or null ->	display published classifieds 
 	*	$featured			->	true 	or null ->	display featured classifieds 
 	*	$items				->	integer	or null ->	items of specific user, fallback to all 
-	*	$paginate			->	true	or null ->	---
+	*	$paginate			->	true	or null ->	returns specific number of items
 	*	$woodcategory		->	integer or null	->	displays classifieds by wood category
 	*	$region 			->	integer or null	->	displays classifieds by region
 	*	$packaging			->	integer or null ->	displays classifieds by packaging category
@@ -208,7 +208,7 @@ class Classifieds extends Eloquent
 
 							}
 						}
-
+/*
 						if ($published != null) {
 							if ($featured != null) { 
 							 	
@@ -222,6 +222,31 @@ class Classifieds extends Eloquent
 								return array('status' => 1, 'entries' => $entry);
 							}
 						}
+*/
+						if ($published != null) {
+							if ($paginate != null) {
+								if ($featured != null) { 
+							 	
+							 	//get all  published and featured
+								$entry = $entry->where('classifieds.featured', '=', '1')->get();
+								return array('status' => 1, 'entries' => $entry);
+								}
+								else {
+
+									// get specific number of published
+									$entry = $entry->where('classifieds.published', '=', '1')->orderBy('id', 'DESC')->get();
+									return array('status' => 1, 'entries' => $entry);
+								}
+							}
+							
+							else { 
+								// get all published
+								$entry = $entry->where('classifieds.published', '=', '1')->orderBy('id', 'DESC')->paginate(10);
+								return array('status' => 1, 'entries' => $entry);
+							}
+						}
+
+
 					}
 					
 

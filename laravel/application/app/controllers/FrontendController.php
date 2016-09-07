@@ -49,7 +49,6 @@ class FrontendController extends \CoreController {
 
 			}
 
-
 			// Getting all cities
 			$woodlist = array();
 
@@ -125,7 +124,8 @@ class FrontendController extends \CoreController {
 
 		$countnewusers = Users::getEntries(null, null, null, null, null, true);
 
-		$pins = Classifieds::getEntries(null, null, null, true, null, null, null, null, null, null, null, null);
+		$pins = Classifieds::getEntries(null, null, null, true, null, null, true, null, null, null, null, null);
+
 
 		$this->layout->css_files = array(
 

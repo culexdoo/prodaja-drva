@@ -1,16 +1,5 @@
 @include('frontend.includes.navbar')
     <!-- Page Content -->
-    <div class="row m0 bg-whitesmoke">
-        <div class="container">
-            <div class="col-lg-12 p0">
-                <ol class="breadcrumb mb0 fs16 pl0">
-                    <li><a href="{{URL::route ('getLanding') }}">Naslovna</a>
-                    </li>
-                    <li class="active">Kontakt</li>
-                </ol>
-            </div>
-        </div>
-    </div>
     <div class="row m0">
         <div class="container">
             <div class="col-lg-12 p0">
@@ -91,12 +80,12 @@
                     <div class="control-group form-group pl15">
                         <div class="controls">
                             <label>Poruka:</label>
-                            {{ Form::textarea('content', isset($entry->content) ? $entry->content : null, ['id' => 'content', 'placeholder' => 'Sadržaj upita', 'cols' => '105', 'rows' => '10', 'style' => 'border: 1px solid #CCC; border-radius: 5px;']) }}
+                            {{ Form::textarea('content', isset($entry->content) ? $entry->content : null, ['id' => 'content', 'placeholder' => 'Sadržaj upita', 'cols' => '65', 'rows' => '10', 'style' => 'border: 1px solid #CCC; border-radius: 5px;']) }}
                         </div>
                     </div>
                     <div id="success"></div>
                     <!-- For success/fail messages -->
-                    <button type="submit" class="btn btn-lg btn-default mt15 cta ml0">Pošalji</button>
+                    <button type="submit" class="btn btn-lg btn-primary mt15 cta ml0">Pošalji</button>
                 {{Form::close()}}
             </div>
         </div>

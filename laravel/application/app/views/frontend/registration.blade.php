@@ -101,6 +101,11 @@
                     </div>
                 </div> 
             </div>
+            <div class="row">
+                <a href="{{ URL::route('getLanding') }}">
+                <P>Povratak na naslovnicu</P>
+                </a>                
+            </div>
             {{ Form::close() }}
         </div>
     </div>
