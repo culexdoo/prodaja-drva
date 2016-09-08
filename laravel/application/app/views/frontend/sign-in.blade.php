@@ -2,7 +2,8 @@
     
         
         {{ Form::open(array('route' => 'postSignIn', 'autocomplete' => 'on', 'role' => 'form', 'class' => 'form-signin')) }}
-            <h2 class="form-signin-heading text-center">Prijavi se</h2>
+            <h2 class="form-signin-heading text-center">Prijavite se</h2>
+            <p class="text-center">kako biste mogli objavljivati oglase</p>
             <hr />
             <div class="form-group"> 
                 <label for="email" class="cols-sm-2 control-label">Vaš Email</label>

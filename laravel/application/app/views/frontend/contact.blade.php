@@ -79,8 +79,10 @@
                     </div>
                     <div class="control-group form-group pl15">
                         <div class="controls">
+                            <div class="col-lg-12 p0">
                             <label>Poruka:</label>
-                            {{ Form::textarea('content', isset($entry->content) ? $entry->content : null, ['id' => 'content', 'placeholder' => 'Sadržaj upita', 'cols' => '65', 'rows' => '10', 'style' => 'border: 1px solid #CCC; border-radius: 5px;']) }}
+                            </div>
+                            {{ Form::textarea('content', isset($entry->content) ? $entry->content : null, ['id' => 'content', 'placeholder' => 'Sadržaj upita', 'cols' => '103', 'rows' => '10', 'style' => 'border: 1px solid #CCC; border-radius: 5px;']) }}
                         </div>
                     </div>
                     <div id="success"></div>

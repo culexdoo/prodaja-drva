@@ -96,14 +96,10 @@
                                     <div class="spacer"></div>
                                     <div class="row">
                                         <div class="col-lg-5">
-                                            <a href="{{ URL::route('ListClassifiedsByWoodCategory', array('woodcategory' => $entry->woodpermalink)) }}">
-                                                <p class="classified-category" style="margin: 0px;">Vrsta drveta: {{$entry->woodname}}</p>
-                                            </a> 
+                                                <p class="classified-category" style="margin: 0px;">Vrsta drveta: <a href="{{ URL::route('ListClassifiedsByWoodCategory', array('woodcategory' => $entry->woodpermalink)) }}">{{$entry->woodname}}</a></p>
                                         </div>
                                         <div class="col-lg-5">
-                                        <a href="{{ URL::route('ListClassifiedsByPackagingCategory', array('packagingcategory' => $entry->packagingpermalink)) }}">
-                                            <p class="classified-category" style="margin: 0px;">Vrsta pakiranja: {{$entry->packagingname}}</p> 
-                                        </a>
+                                            <p class="classified-category" style="margin: 0px;">Vrsta pakiranja: <a href="{{ URL::route('ListClassifiedsByPackagingCategory', array('packagingcategory' => $entry->packagingpermalink)) }}">{{$entry->packagingname}}</a></p>
                                         </div>
                                     </div>
                                 </div>
@@ -112,9 +108,7 @@
                                         <div class="col-lg-5 col-xs-6">
                                             <div class="spacer"></div>
                                             <div class="county">
-                                                <a href="{{ URL::route('ListClassifiedsByRegion', array('region' => $entry->regionpermalink)) }}">
-                                                    <p class="mt2"><i class="fa fa-map-marker"></i> {{$entry->regionname}}</p>
-                                                </a>
+                                                    <p class="mt2"><i class="fa fa-map-marker"></i> <a href="{{ URL::route('ListClassifiedsByRegion', array('region' => $entry->regionpermalink)) }}">{{$entry->regionname}}</a></p>
                                             </div>
                                         </div>
                                         <div class="col-lg-5">

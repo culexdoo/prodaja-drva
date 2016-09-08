@@ -198,12 +198,20 @@ a:hover {
     padding-top: 3px;
 }
 
+.pt6 {
+    padding-top: 6px;
+}
+
 .pt11 {
     padding-top: 11px;
 }
 
 .pt20 {
     padding-top: 20px;
+}
+
+.mt8 {
+    margin-top: 8px;
 }
 
 .mt10 {
@@ -482,10 +490,7 @@ a:hover {
     bottom: 3px;
     color: #6b6b6b;
 }
-.classified-category:hover{
 
-    color: #1abc9c !important;
-}
 
 .classified-content h5 {
     color: #222;
@@ -523,15 +528,26 @@ a:hover {
 }
 .pagination > li > a:hover {
     color: #fff;
+    background-color: #62b151
+}
+
+.pagination li.active > a, .pagination li.active > span, .dataTables_paginate li.active > a, .dataTables_paginate li.active > span {
+    background-color: #62b151;
 }
 
 .pagination li.disabled > span {
-    color: #1abc9c;
+    color: #62b151;
     border-left: none;
 }
 
 .pagination li > a {
-    color: #1abc9c;
+    color: #62b151;
+    border: 1px solid #62b151;
+}
+
+.pagination > .active > span, .pagination > .active > span:hover {
+    background-color: #62b151;
+    border-color: #16A085;
 }
 
 .mt5 {
@@ -650,9 +666,13 @@ a:hover {
     max-width: 273px;
 }
 
+#profile-tab h3 {
+    font-size: 24px;
+}
+
 .profile-picture {
-    padding: 30px 10px;
-    border-top: 4px solid #e74c3c;
+    padding: 20px 10px 10px 10px;
+    border-top: 4px solid #62b151;
 }
 
 .classified-footer {
@@ -1194,12 +1214,20 @@ section#locations .location a:hover {
     transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
 
+.checkbox input[type=checkbox] {
+    display: block;
+    position: relative;
+    top: 6px;
+    left: 20px;
+}
+
 .checkbox label {
     min-height: 20px;
     padding-left: 20px;
     margin-bottom: 0;
     font-weight: 400;
     cursor: pointer;
+
 }
 
 .btn-lg {
@@ -1233,37 +1261,9 @@ section#locations .location a:hover {
     height: 160px;
 }
 
-
-/*
-.footer {
-    background: #fff;
-    border-top: solid 1px #ddd;
-    padding: 30px 0;
-    font-size: 16px;
-    color: #673a1e;
+textarea {
+    font-size: 14px;
 }
-
-.footer-nav {
-    list-style-type: none;
-    color: #333;
-}
-
-.footer-nav a {
-    list-style-type: none;
-    border-left: 1px solid #c1bbbb;
-    padding-left: 5px;
-    padding-right: 2px;
-    color: #333;
-}
-
-.footer-nav a:hover {
-    text-decoration: underline;
-}
-
-.footer-nav li a:first-child {
-    border-left: 0;
-}
-*/
 
 
 /* FOOTER start */
@@ -1364,7 +1364,7 @@ dd {
 
 
 .classified-title:hover {
-    color: #1abc9c !important;
+    color: #62b151 !important;
 }
 
 .classified-title-homepage {
@@ -1544,6 +1544,10 @@ pre.pre-show {
     margin: 0px 0px 0px 0px;
 }
 
+.nav-tabs > li.active {
+    padding-bottom: 0 !important;
+}
+
 .nav-tabs {
     margin-top: 20px;
     margin-bottom: 0px;
@@ -1551,6 +1555,10 @@ pre.pre-show {
 
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
     border-bottom: 4px solid #62b151 !important;
+}
+
+.nav-tabs > li > a:hover, .nav-tabs > li > a:focus {
+    color: #62b151;
 }
 
 .tab-content {
@@ -1563,8 +1571,15 @@ pre.pre-show {
     border-bottom: none;
 }
 
+.label-success {
+    background-color: #62b151;
+}
 
 /* Content */
+
+.table > tbody > tr > td {
+    padding: 9px 0;
+}
 
 .table th,
 .table td {

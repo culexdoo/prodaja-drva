@@ -79,25 +79,32 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:300,700&subset=latin-ext" rel="stylesheet">
 
     <!-- Styles --> 
-	{{ HTML::style('css/frontend/bootstrap.css') }}
-	{{ HTML::style('css/frontend/bootstrap.min.css') }}
-	{{ HTML::style('css/frontend/style.css') }}
+    {{ HTML::style('css/frontend/bootstrap.css') }}
+    {{ HTML::style('css/frontend/bootstrap.min.css') }}
 	{{ HTML::style('css/frontend/style-services.css') }}
 	{{ HTML::style('css/frontend/style-navigation.css') }}
 	{{ HTML::style('css/frontend/style-headers.css') }}
 	{{ HTML::style('css/frontend/style-content.css') }}
-	{{ HTML::style('css/frontend/style-extra-pages.css') }}
-	{{ HTML::style('css/frontend/style.complete.css') }}
-	{{ HTML::style('css/frontend/flat-ui.css') }} 
 	{{ HTML::style('css/frontend/modern-business.css') }}
 	{{ HTML::style('css/frontend/font-awesome.min.css') }}
-	{{ HTML::style('css/frontend/style-library-1.css') }}
 	{{ HTML::style('css/frontend/magnific-popup.css') }}
 	{{ HTML::style('css/frontend/shop-6.css') }}
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
 	{{ HTML::style('css/frontend/owl.carousel.css') }}
 	{{ HTML::style('css/frontend/owl.theme.css') }}
 	{{ HTML::style('css/frontend/likely.css') }}
+
+	
+	@if(Route::current()->getName() == 'MyProfile' || 'EditMyProfile' || 'UserProfile')
+    
+    @else
+    {{ HTML::style('css/frontend/style.css') }}
+	{{ HTML::style('css/frontend/style.complete.css') }}
+	{{ HTML::style('css/frontend/flat-ui.css') }} 
+	{{ HTML::style('css/frontend/style-library-1.css') }}
+	{{ HTML::style('css/frontend/style-extra-pages.css') }}
+	
+	@endif
 	{{ HTML::style('css/frontend/custom.css') }}
 
 

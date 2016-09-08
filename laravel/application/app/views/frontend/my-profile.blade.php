@@ -18,12 +18,12 @@
                     <div class="profile-picture">
                         @if ($entry->image == null)
                             <div class="form-group mb15">
-                            <label class="col-md-12 p0" for="image">Trenutna slika:</label>
+                            <label class="col-md-12 p0 mb20" for="image">Trenutna slika:</label>
                                 <div class="col-md-12 p0 img-style m0"></div>
                             </div>
                         @elseif ($entry->image != null || $entry->image != '')
                             <div class="form-group mb15">
-                                <label class="col-md-12 p0" for="image">Trenutna slika:</label> 
+                                <label class="col-md-12 p0 mb20" for="image">Trenutna slika:</label> 
                                 <div class="col-md-12 p0 mb20">
                                     {{ HTML::image(URL::to('/') . '/uploads/frontend/users/thumbs/' . $entry->image, $entry->first_name) }}
                                 </div>
@@ -57,7 +57,7 @@
             </div>
             <div class="col-lg-9">
                 <div class="tabs widget" id="tabs">
-                    <ul class="nav nav-tabs widget mt0">
+                    <ul class="nav nav-tabs widget mt0 text-center" style="border-bottom: 0px;">
                         <li class="active">
                             <a data-toogle="tab" href="#profile-tab">Profil </a>
                         </li>
@@ -65,8 +65,8 @@
                             <a data-toogle="tab" href="#classified-tab">Oglasi </a>
                         </li>
                     </ul>
-                    <div class="tab-content">
-                        <div id="profile-tab" class="tab-pane active">
+                    <div class="tab-content pt0">
+                        <div id="profile-tab" class="tab-pane active p0">
                             <div class="p20">
                                 <i class="fa fa-user fa-2x"></i>
                                 <h3>Informacije o korisniku</h3>
@@ -164,12 +164,68 @@
                                 </div>
                             </div>
                         </div> 
-                        <div id="classified-tab" class="tab-pane">
+                        <div id="classified-tab" class="tab-pane p0">
                             <div class="p20">
                             <!-- single classified listing start -->
                                 @if (count($userclassifieds) > 0) 
                                 @foreach($userclassifieds as $userclassified) 
-                                <div class="row box">
+                                <div class="row box" style="border-radius: 5px 0 0 5px;">
+
+                                    <div class="single-classified">
+                            <div class="col-lg-4 col-xs-4 p0">
+                                <a href="{{ URL::route('ShowClassified', array('permalink' => $userclassified->permalink)) }}">
+                                    <div class="classified-image">
+                                        {{ HTML::image(URL::to('/') . '/uploads/frontend/classifieds/thumbs/' . $userclassified->image, $userclassified->title, array('style' => 'border-radius: 5px 0px 0px 5px')) }}
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-lg-8 col-xs-8">
+                                <div class="classified-content">
+                                    <div class="col-lg-12 p0 mb15">
+                                        <a href="{{ URL::route('ShowClassified', array('permalink' => $userclassified->permalink)) }}">
+                                            <h3 class="classified-title">{{ ucfirst($userclassified->title) }}</h3>
+                                        </a>
+                                    </div>
+                                    <div class="classified-description">
+                                        <span>{{ ucfirst($userclassified->description) }}</span>
+                                    </div>
+                                    <div class="spacer"></div>
+                                    <div class="row">
+                                        <div class="col-lg-5">
+                                                <p class="classified-category" style="margin: 0px;">Vrsta drveta: <a href="{{ URL::route('ListClassifiedsByWoodCategory', array('woodcategory' => $userclassified->woodpermalink)) }}">{{$userclassified->woodname}}</a></p>
+                                        </div>
+                                        <div class="col-lg-5">
+                                            <p class="classified-category" style="margin: 0px;">Vrsta pakiranja: <a href="{{ URL::route('ListClassifiedsByPackagingCategory', array('packagingcategory' => $userclassified->packagingpermalink)) }}">{{$userclassified->packagingname}}</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="classified-footer">
+                                    <div class="row">
+                                        <div class="col-lg-5 col-xs-6">
+                                            <div class="spacer"></div>
+                                            <div class="county">
+                                                    <p class="mt2"><i class="fa fa-map-marker"></i> <a href="{{ URL::route('ListClassifiedsByRegion', array('region' => $userclassified->regionpermalink)) }}">{{$userclassified->regionname}}</a></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-5">
+                                            <div class="spacer"></div>
+                                            <div class="timestamp">
+                                                <p class="mt2"><i class="fa fa-clock-o"></i> Objavljeno: {{ date('d. m. Y.', strtotime( $userclassified->created_at )) }}</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-xs-6">
+                                            <div class="price mt8">
+                                            <p class="mt2">{{$userclassified->price}} kn</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <!--
                                     <div class="single-classified">
                                         <div class="col-lg-4 p0">
                                             <div class="classified-image">
@@ -230,6 +286,8 @@
                                             </div>
                                         </div>
                                     </div>
+
+                                    -->
                                 </div>
                                 @endforeach
                                 @endif

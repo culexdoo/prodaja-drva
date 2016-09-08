@@ -2,7 +2,8 @@
     <div class="row main">
         <div class="panel-heading" style="border-left: 0 !important; border-bottom: none;">
             <div class="panel-title text-center">
-                <h2 class="title">Registriraj se</h2>
+                <h2 class="title">Registrirajte se</h2>
+                    <p style="text-transform: lowercase; font-weight: 100;">kako biste mogli objavljivati oglase</p>
                 <hr>
             </div>
         </div>
@@ -10,7 +11,7 @@
             {{ Form::open(array('route' => 'postRegister', 'autocomplete' => 'off', 'role' => 'form')) }}
             <div class="row">
                 <div class="col-lg-6">
-                    <label for="first_name" class="cols-sm-2 control-label">Vaše ime</label>
+                    <label for="first_name" class="cols-sm-2 control-label mb0">Vaše ime</label>
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
@@ -19,7 +20,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <label for="last_name" class="cols-sm-2 control-label">Vaše prezime</label>
+                    <label for="last_name" class="cols-sm-2 control-label mb0">Vaše prezime</label>
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
@@ -28,7 +29,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <label for="last_name" class="cols-sm-2 control-label">Regija</label>
+                    <label for="last_name" class="cols-sm-2 control-label mt15 mb0">Regija</label>
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
@@ -37,7 +38,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <label for="last_name" class="cols-sm-2 control-label">Grad</label>
+                    <label for="last_name" class="cols-sm-2 control-label mt15 mb0">Grad</label>
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
@@ -46,7 +47,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <label for="email" class="cols-sm-2 control-label">Vaš Email</label>
+                    <label for="email" class="cols-sm-2 control-label mt15 mb0">Vaš Email</label>
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
@@ -55,7 +56,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <label for="username" class="cols-sm-2 control-label">Korisničko ime</label>
+                    <label for="username" class="cols-sm-2 control-label mt15 mb0">Korisničko ime</label>
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
@@ -64,7 +65,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <label for="password" class="cols-sm-2 control-label">Lozinka</label>
+                    <label for="password" class="cols-sm-2 control-label mt15 mb0">Lozinka</label>
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
@@ -73,7 +74,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <label for="confirm" class="cols-sm-2 control-label">Potvrda lozinke</label>
+                    <label for="confirm" class="cols-sm-2 control-label mt15 mb0">Potvrda lozinke</label>
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
@@ -98,13 +99,11 @@
                         <a href="{{URL::route('getSignIn') }}">
                             <button type="button" class="btn btn-primary btn-lg btn-block m0">Prijavi se</button>
                         </a>
+                        <a href="{{ URL::route('getLanding') }}">
+                        <P>Povratak na naslovnicu</P>
+                        </a>  
                     </div>
                 </div> 
-            </div>
-            <div class="row">
-                <a href="{{ URL::route('getLanding') }}">
-                <P>Povratak na naslovnicu</P>
-                </a>                
             </div>
             {{ Form::close() }}
         </div>

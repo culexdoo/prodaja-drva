@@ -127,6 +127,8 @@ class FrontendController extends \CoreController {
 		$pins = Classifieds::getEntries(null, null, null, true, null, null, true, null, null, null, null, null);
 
 
+
+
 		$this->layout->css_files = array(
 
 		);
@@ -529,7 +531,15 @@ class FrontendController extends \CoreController {
 
 	// Shows my profile page
 
-	public function MyProfile($id) {
+	public function MyProfile() {
+
+		if (Auth::Guest())
+		{
+			return Redirect::route('getLanding')->with('error_message', Lang::get('messages.not_logged_in'));
+		}
+
+		$id = Auth::User()->id;
+
 
 		// - CHECK IF USER IS LOGGED IN - //
 		if (Auth::check())
@@ -571,7 +581,7 @@ class FrontendController extends \CoreController {
 		$this->layout->title = 'Moj profil | Prodaja drva';
 
 		$this->layout->css_files = array(
-
+		
 			);
 
 		$this->layout->js_footer_files = array(

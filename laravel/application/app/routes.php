@@ -194,7 +194,7 @@ Route::group(array('prefix' => 'admin'), function()
 		Route::post('save-profile', array('before' => 'csrf', 'as' => 'postProfile', 'uses' => 'CoreController@postProfile'));
 
 		// My profile page
-		Route::get('moj-profil/{id}', array('as' => 'MyProfile', 'uses' => 'FrontendController@MyProfile'));
+		Route::get('moj-profil', array('as' => 'MyProfile', 'uses' => 'FrontendController@MyProfile'));
 
 		// Update my profile page
 		Route::get('moj-profil/uredi/{id}', array('as' => 'EditMyProfile', 'uses' => 'FrontendController@EditMyProfile'));

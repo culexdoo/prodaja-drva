@@ -524,13 +524,16 @@ function initialize() {
     var map;
     var bounds = new google.maps.LatLngBounds();
     var mapOptions = {
+        center: new google.maps.LatLng(),
+        zoom: 8,
         mapTypeId: 'roadmap'
+
     };
                     
     // Display a map on the page
     map = new google.maps.Map(document.getElementById("map"), mapOptions);
-    map.setTilt(45);
-        
+
+            
     // Multiple Markers
         var markers = [
             @if(count($pins) > 0)
@@ -601,13 +604,15 @@ function initialize() {
             }
         })(marker, i));
 
-        // Automatically center the map fitting all markers on the screen
-        map.fitBounds(bounds);
+        var latLng = marker.getPosition(); // returns LatLng object
+        map.setCenter(latLng); // setCenter takes a LatLng object
     }
+
+
 
     // Override our map zoom level once our fitBounds function runs (Make sure it only runs once)
     var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
-        this.setZoom(14);
+        this.setZoom(8);
         google.maps.event.removeListener(boundsListener);
     });
     

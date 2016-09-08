@@ -78,7 +78,7 @@
                                     <div class="col-lg-6">
                                         <div class="row">
                                             <div class="col-lg-5">
-                                                <label class="control-label">Ime: </label>
+                                                <label class="control-label pt6">Ime: </label>
                                             </div>
                                             <div class="col-lg-7">
                                                 {{ Form::text('first_name', isset($entry->first_name) ? $entry->first_name : null, ['class' => 'form-control', 'id' => 'first_name', 'placeholder' => 'Ime']) }}
@@ -88,7 +88,7 @@
                                     <div class="col-lg-6">
                                         <div class="row">
                                             <div class="col-lg-5">
-                                                <label class="control-label">Prezime: </label>
+                                                <label class="control-label pt6">Prezime: </label>
                                             </div>
                                             <div class="col-lg-7">
                                                 {{ Form::text('last_name', isset($entry->last_name) ? $entry->last_name : null, ['class' => 'form-control', 'id' => 'last_name', 'placeholder' => 'Prezime']) }}
@@ -98,7 +98,7 @@
                                     <div class="col-lg-6">
                                         <div class="row">
                                             <div class="col-lg-5">
-                                                <label class="control-label">Korisničko ime: </label>
+                                                <label class="control-label pt6">Korisničko ime: </label>
                                             </div>
                                             <div class="col-lg-7">
                                                 {{ Form::text('username', isset($entry->username) ? $entry->username : null, ['class' => 'form-control', 'id' => 'username', 'placeholder' => 'Korisničko ime']) }}
@@ -108,7 +108,7 @@
                                     <div class="col-lg-6">
                                         <div class="row">
                                             <div class="col-lg-5">
-                                                <label class="control-label">Email: </label>
+                                                <label class="control-label pt6">Email: </label>
                                             </div>
                                             <div class="col-lg-7">
                                                 {{ Form::text('email', isset($entry->email) ? $entry->email : null, ['class' => 'form-control', 'id' => 'email', 'placeholder' => 'Email']) }}
@@ -118,7 +118,7 @@
                                     <div class="col-lg-6">
                                         <div class="row">
                                             <div class="col-lg-5">
-                                                <label class="control-label">Mjesto: </label>
+                                                <label class="control-label pt6">Mjesto: </label>
                                             </div>
                                             <div class="col-lg-7">
                                                 {{ Form::select('city', $citylist, isset($entry->city) ? $entry->city : null, array('class' => 'form-control selectpicker', 'style' => 'width:100%', 'id' => 'id')) }}
@@ -128,7 +128,7 @@
                                     <div class="col-lg-6">
                                         <div class="row">
                                             <div class="col-lg-5">
-                                                <label class="control-label">Primarni kontakt: </label>
+                                                <label class="control-label pt6">Primarni kontakt: </label>
                                             </div>
                                             <div class="col-lg-7">
                                                 {{ Form::text('contact1', isset($entry->contact1) ? $entry->contact1 : null, ['class' => 'form-control', 'id' => 'contact1', 'placeholder' => 'Kontakt Tel1']) }}
@@ -138,7 +138,7 @@
                                     <div class="col-lg-6">
                                         <div class="row">
                                             <div class="col-lg-5">
-                                                <label class="control-label">Regija: </label>
+                                                <label class="control-label pt6">Regija: </label>
                                             </div>
                                             <div class="col-lg-7">
                                                 {{ Form::select('region', $regionlist, isset($entry->region) ? $entry->region : null, array('class' => 'form-control selectpicker', 'style' => 'width:100%', 'id' => 'id')) }}
@@ -148,7 +148,7 @@
                                     <div class="col-lg-6">
                                         <div class="row">
                                             <div class="col-lg-5">
-                                                <label class="control-label">Sekundarni kontakt: </label>
+                                                <label class="control-label pt6">Sekundarni kontakt: </label>
                                             </div>
                                             <div class="col-lg-7">
                                                 {{ Form::text('contact2', isset($entry->contact2) ? $entry->contact2 : null, ['class' => 'form-control', 'id' => 'contact2', 'placeholder' => 'Kontakt Tel2']) }}
@@ -158,7 +158,7 @@
                                     <div class="col-lg-6">
                                         <div class="row">
                                             <div class="col-lg-5">
-                                                <label class="control-label">Datum rođenja: </label>
+                                                <label class="control-label pt6">Datum rođenja: </label>
                                             </div>
                                             <div class="col-lg-7">
                                                 {{ Form::text('date_of_birth', isset($entry->date_of_birth) ? $entry->date_of_birth : null, ['class' => 'form-control', 'id' => 'date_of_birth', 'placeholder' => 'Datum rođenja']) }}
