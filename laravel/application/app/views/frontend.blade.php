@@ -98,14 +98,10 @@
 	@if(Route::current()->getName() == 'MyProfile' || 'EditMyProfile' || 'UserProfile')
     
     @else
-    {{ HTML::style('css/frontend/style.css') }}
-	{{ HTML::style('css/frontend/style.complete.css') }}
-	{{ HTML::style('css/frontend/flat-ui.css') }} 
-	{{ HTML::style('css/frontend/style-library-1.css') }}
-	{{ HTML::style('css/frontend/style-extra-pages.css') }}
+    
 	
 	@endif
-	{{ HTML::style('css/frontend/custom.css') }}
+	
 
 
 

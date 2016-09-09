@@ -24,7 +24,7 @@
                             </div>
                         @elseif ($entry->image != null || $entry->image != '')
                             <div class="form-group mb15">
-                                <label class="col-md-12 p0" for="image">Trenutna slika:</label> 
+                                <label class="col-md-12 p0 mb20" for="image">Trenutna slika:</label> 
                                 <div class="col-md-12 p0 mb20">
                                     {{ HTML::image(URL::to('/') . '/uploads/frontend/users/thumbs/' . $entry->image, $entry->first_name) }}
                                 </div>
@@ -35,7 +35,6 @@
                         <h3>{{ $entry->first_name . ' ' .$entry->last_name}}</h3>
                     </div>
                     <div class="user-short-desc pl10">
-                        <p>Kratki opis:</p>
                         <p>{{ $entry->user_info }}</p>
                     </div>
                     <div class="user-status pl10">
@@ -56,7 +55,7 @@
             </div>
             <div class="col-lg-9">
                 <div class="tabs widget" id="tabs">
-                    <ul class="nav nav-tabs widget mt0">
+                    <ul class="nav nav-tabs widget mt0 b0">
                         <li class="active">
                             <a data-toogle="tab" href="#profile-tab">Profil </a>
                         </li>
@@ -166,56 +165,56 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="classified-tab" class="tab-pane">
+                        <div id="classified-tab" class="tab-pane p0">
                             <div class="p20">
                                 @if (count($userclassifieds) > 0) 
                                 @foreach($userclassifieds as $userclassified) 
-                                <div class="row box">
+                                <div class="row box" style="border-radius: 5px 0 0 5px;">
                                     <div class="single-classified">
-                                        <div class="col-lg-4 p0">
-                                            <div class="classified-image">
-                                                {{ HTML::image(URL::to('/') . '/uploads/frontend/classifieds/thumbs/' . $userclassified->image, $userclassified->title) }}
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-8 mb20">
-                                            <div class="classified-content">
-                                                <div class="col-lg-10 p0">
-                                                     <h3 class="classified-title"> <a href="{{ URL::route( 'ShowClassified', array('permalink' => $userclassified->permalink ))}}">
-                                                        {{ $userclassified->title }}
-                                                    </a></h3>
+                                        <div class="col-lg-4 col-xs-4 p0">
+                                            <a href="{{ URL::route('ShowClassified', array('permalink' => $userclassified->permalink)) }}">
+                                                <div class="classified-image">
+                                                    {{ HTML::image(URL::to('/') . '/uploads/frontend/classifieds/thumbs/' . $userclassified->image, $userclassified->title, array('style' => 'border-radius: 5px 0px 0px 5px')) }}
                                                 </div>
-                                                <div class="col-lg-2 p0">
-                                                    <a href="{{ URL::route( 'ShowClassified', array('permalink' => $userclassified->permalink ))}}">
-                                                        <i class="fa fa-eye fa-2x pull-right mt5"></i>
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-8 col-xs-8">
+                                            <div class="classified-content">
+                                                <div class="col-lg-12 p0 mb15">
+                                                    <a href="{{ URL::route('ShowClassified', array('permalink' => $userclassified->permalink)) }}">
+                                                        <h3 class="classified-title">{{ ucfirst($userclassified->title) }}</h3>
                                                     </a>
                                                 </div>
-                                                <p class="classified-description">{{ $userclassified->description }}</p>
+                                                <div class="classified-description">
+                                                    <span>{{ ucfirst($userclassified->description) }}</span>
+                                                </div>
+                                                <div class="spacer"></div>
                                                 <div class="row">
                                                     <div class="col-lg-5">
-                                                        <p style="margin-top: 15px; margin-bottom: 0px;">Vrsta drveta:</p>
-                                                        <h5 class="classified-category" style="margin: 0px;">{{$userclassified->woodname}}</h5> 
-                                                     </div>
-                                                    <div class="col-lg-6">
-                                                        <p style="margin-top: 15px; margin-bottom: 0px;">Vrsta pakiranja:</p>
-                                                        <h5 class="classified-category" style="margin: 0px;">{{$userclassified->packagingname}}</h5> 
+                                                            <p class="classified-category" style="margin: 0px;">Vrsta drveta: <a href="{{ URL::route('ListClassifiedsByWoodCategory', array('woodcategory' => $userclassified->woodpermalink)) }}">{{$userclassified->woodname}}</a></p>
+                                                    </div>
+                                                    <div class="col-lg-5">
+                                                        <p class="classified-category" style="margin: 0px;">Vrsta pakiranja: <a href="{{ URL::route('ListClassifiedsByPackagingCategory', array('packagingcategory' => $userclassified->packagingpermalink)) }}">{{$userclassified->packagingname}}</a></p>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="classified-footer">
                                                 <div class="row">
-                                                    <div class="col-lg-5">
+                                                    <div class="col-lg-5 col-xs-6">
+                                                        <div class="spacer"></div>
                                                         <div class="county">
-                                                            <h5>{{ $userclassified->regionname }}</h5>
+                                                                <p class="mt2"><i class="fa fa-map-marker"></i> <a href="{{ URL::route('ListClassifiedsByRegion', array('region' => $userclassified->regionpermalink)) }}">{{$userclassified->regionname}}</a></p>
                                                         </div>
                                                     </div>
-                                                    <div class="col-lg-4">
+                                                    <div class="col-lg-5">
+                                                        <div class="spacer"></div>
                                                         <div class="timestamp">
-                                                            <h5>Objavljeno {{ date('d. m. Y.', strtotime( $userclassified->created_at )) }}</h5>
+                                                            <p class="mt2"><i class="fa fa-clock-o"></i> Objavljeno: {{ date('d. m. Y.', strtotime( $userclassified->created_at )) }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="col-lg-3">
-                                                        <div class="price">
-                                                            <h5><span class="price-eur">{{ $userclassified->price }} kn</span></h5>
+                                                    <div class="col-lg-2 col-xs-6">
+                                                        <div class="price mt8">
+                                                        <p class="mt2">{{$userclassified->price}} kn</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -225,11 +224,12 @@
                                 </div>
                                 @endforeach
                                 @endif
+                                <!-- single classified listing end -->
                             </div>
                         </div>
                         <div id="review-tab" class="tab-pane">
                             <div class="p20">
-                                <div class="row box">
+                                <div class="row">
                                     {{ Form::open(array('route' => $postRoute, 'role' => 'form', 'class' => 'form-horizontal', 'autocomplete' => 'off', 'files' => true)) }}
                                         <div class="panel-body col-md-8">
                                             @if(!Auth::guest())
@@ -257,7 +257,7 @@
                                             @endif
                                         </div>
                                     {{Form::close()}}
-                                        <section class="panel">
+                                    <section class="panel">
                                         @if (count($reviews) > 0)
                                         @foreach($reviews as $review)
                                             <div class="panel-body col-md-8"> 
@@ -286,7 +286,7 @@
                                             </div>
                                         @endforeach
                                         @endif
-                                        </section>
+                                    </section>
                                 </div>
                             </div>
                         </div>

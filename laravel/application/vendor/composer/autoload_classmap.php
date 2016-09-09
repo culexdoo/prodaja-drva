@@ -91,6 +91,7 @@ return array(
     'Coordinates' => $baseDir . '/app/constants/Coordinates.php',
     'CoreController' => $baseDir . '/app/controllers/core/CoreController.php',
     'CoreRepository' => $baseDir . '/app/repositories/core/CoreRepository.php',
+    'CreateSessionTable' => $baseDir . '/app/database/migrations/2016_09_09_121205_create_session_table.php',
     'Crypt_AES' => $vendorDir . '/phpseclib/phpseclib/phpseclib/Crypt/AES.php',
     'Crypt_Base' => $vendorDir . '/phpseclib/phpseclib/phpseclib/Crypt/Base.php',
     'Crypt_Blowfish' => $vendorDir . '/phpseclib/phpseclib/phpseclib/Crypt/Blowfish.php',

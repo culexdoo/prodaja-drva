@@ -117,7 +117,7 @@
                                                 <p class="mt2"><i class="fa fa-clock-o"></i> Objavljeno: {{ date('d. m. Y.', strtotime( $entry->created_at )) }}</p>
                                             </div>
                                         </div>
-                                        <div class="col-lg-2 col-xs-6">
+                                        <div class="col-lg-2 col-xs-6 p0">
                                             <div class="spacer"></div>
                                             <div class="price">
                                             <p class="mt2">{{$entry->price}} kn</p>

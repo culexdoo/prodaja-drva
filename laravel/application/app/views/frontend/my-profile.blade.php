@@ -57,7 +57,7 @@
             </div>
             <div class="col-lg-9">
                 <div class="tabs widget" id="tabs">
-                    <ul class="nav nav-tabs widget mt0 text-center" style="border-bottom: 0px;">
+                    <ul class="nav nav-tabs widget mt0 text-center b0">
                         <li class="active">
                             <a data-toogle="tab" href="#profile-tab">Profil </a>
                         </li>
@@ -166,128 +166,65 @@
                         </div> 
                         <div id="classified-tab" class="tab-pane p0">
                             <div class="p20">
-                            <!-- single classified listing start -->
                                 @if (count($userclassifieds) > 0) 
                                 @foreach($userclassifieds as $userclassified) 
                                 <div class="row box" style="border-radius: 5px 0 0 5px;">
-
                                     <div class="single-classified">
-                            <div class="col-lg-4 col-xs-4 p0">
-                                <a href="{{ URL::route('ShowClassified', array('permalink' => $userclassified->permalink)) }}">
-                                    <div class="classified-image">
-                                        {{ HTML::image(URL::to('/') . '/uploads/frontend/classifieds/thumbs/' . $userclassified->image, $userclassified->title, array('style' => 'border-radius: 5px 0px 0px 5px')) }}
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-8 col-xs-8">
-                                <div class="classified-content">
-                                    <div class="col-lg-12 p0 mb15">
-                                        <a href="{{ URL::route('ShowClassified', array('permalink' => $userclassified->permalink)) }}">
-                                            <h3 class="classified-title">{{ ucfirst($userclassified->title) }}</h3>
-                                        </a>
-                                    </div>
-                                    <div class="classified-description">
-                                        <span>{{ ucfirst($userclassified->description) }}</span>
-                                    </div>
-                                    <div class="spacer"></div>
-                                    <div class="row">
-                                        <div class="col-lg-5">
-                                                <p class="classified-category" style="margin: 0px;">Vrsta drveta: <a href="{{ URL::route('ListClassifiedsByWoodCategory', array('woodcategory' => $userclassified->woodpermalink)) }}">{{$userclassified->woodname}}</a></p>
+                                        <div class="col-lg-4 col-xs-4 p0">
+                                            <a href="{{ URL::route('ShowClassified', array('permalink' => $userclassified->permalink)) }}">
+                                                <div class="classified-image">
+                                                    {{ HTML::image(URL::to('/') . '/uploads/frontend/classifieds/thumbs/' . $userclassified->image, $userclassified->title, array('style' => 'border-radius: 5px 0px 0px 5px')) }}
+                                                </div>
+                                            </a>
                                         </div>
-                                        <div class="col-lg-5">
-                                            <p class="classified-category" style="margin: 0px;">Vrsta pakiranja: <a href="{{ URL::route('ListClassifiedsByPackagingCategory', array('packagingcategory' => $userclassified->packagingpermalink)) }}">{{$userclassified->packagingname}}</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="classified-footer">
-                                    <div class="row">
-                                        <div class="col-lg-5 col-xs-6">
-                                            <div class="spacer"></div>
-                                            <div class="county">
-                                                    <p class="mt2"><i class="fa fa-map-marker"></i> <a href="{{ URL::route('ListClassifiedsByRegion', array('region' => $userclassified->regionpermalink)) }}">{{$userclassified->regionname}}</a></p>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-5">
-                                            <div class="spacer"></div>
-                                            <div class="timestamp">
-                                                <p class="mt2"><i class="fa fa-clock-o"></i> Objavljeno: {{ date('d. m. Y.', strtotime( $userclassified->created_at )) }}</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-2 col-xs-6">
-                                            <div class="price mt8">
-                                            <p class="mt2">{{$userclassified->price}} kn</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-
-                        <!--
-                                    <div class="single-classified">
-                                        <div class="col-lg-4 p0">
-                                            <div class="classified-image">
-                                                {{ HTML::image(URL::to('/') . '/uploads/frontend/classifieds/thumbs/' . $userclassified->image, $userclassified->title) }}
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-8 mb20">
+                                        <div class="col-lg-8 col-xs-8">
                                             <div class="classified-content">
-                                                <div class="col-lg-10 p0">
-                                                    <a href="{{ URL::route( 'ShowClassified', array('permalink' => $userclassified->permalink ))}}">
-                                                        <h3 class="classified-title">{{ $userclassified->title }}</h3>
+                                                <div class="col-lg-10 p0 mb15">
+                                                    <a href="{{ URL::route('ShowClassified', array('permalink' => $userclassified->permalink)) }}">
+                                                        <h3 class="classified-title">{{ ucfirst($userclassified->title) }}</h3>
                                                     </a>
-                                                    <p class="classified-description mt10" style="max-width: 420px;">{{ $userclassified->description }}</p>
                                                 </div>
-                                                <div class="col-lg-2 p0 mt5">
-                                                    <a href="{{ URL::route( 'EditClassified', array('permalink' => $userclassified->permalink ))}}">
-                                                        <h4 class="mt5" style="position: absolute; top: 20px;">Uredi</h4>
+                                                <div class="col-lg-2 p0 mb15">
+                                                    <a href="{{ URL::route('EditClassified', array('permalink' => $userclassified->permalink)) }}">
+                                                    Uredi
                                                     </a>
-                                                    <a href="{{ URL::route( 'EditClassified', array('permalink' => $userclassified->permalink ))}}">
-                                                        <h4 class="mt5" style="position: absolute; top: 45px;">Deaktiviraj</h4>
-                                                    </a>
-                                                    @if($userclassified->published == 1)
-                                                    <span class="label label-success">Odobren</span>
-                                                    @else
-                                                    <span class="label label-danger">Nije odobren</span>
-                                                    @endif
                                                 </div>
-                                                
+                                                <div class="classified-description">
+                                                    <span>{{ ucfirst($userclassified->description) }}</span>
+                                                </div>
+                                                <div class="spacer"></div>
                                                 <div class="row">
                                                     <div class="col-lg-5">
-                                                        <p style="margin-top: 15px; margin-bottom: 0px;">Vrsta drveta:</p>
-                                                        <h5 class="classified-category" style="margin: 0px;">{{$userclassified->woodname}}</h5> 
-                                                     </div>
-                                                    <div class="col-lg-6">
-                                                        <p style="margin-top: 15px; margin-bottom: 0px;">Vrsta pakiranja:</p>
-                                                        <h5 class="classified-category" style="margin: 0px;">{{$userclassified->packagingname}}</h5> 
+                                                            <p class="classified-category" style="margin: 0px;">Vrsta drveta: <a href="{{ URL::route('ListClassifiedsByWoodCategory', array('woodcategory' => $userclassified->woodpermalink)) }}">{{$userclassified->woodname}}</a></p>
+                                                    </div>
+                                                    <div class="col-lg-5">
+                                                        <p class="classified-category" style="margin: 0px;">Vrsta pakiranja: <a href="{{ URL::route('ListClassifiedsByPackagingCategory', array('packagingcategory' => $userclassified->packagingpermalink)) }}">{{$userclassified->packagingname}}</a></p>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="classified-footer">
                                                 <div class="row">
-                                                    <div class="col-lg-5">
+                                                    <div class="col-lg-5 col-xs-6">
+                                                        <div class="spacer"></div>
                                                         <div class="county">
-                                                            <h5>{{ $userclassified->regionname }}</h5>
+                                                                <p class="mt2"><i class="fa fa-map-marker"></i> <a href="{{ URL::route('ListClassifiedsByRegion', array('region' => $userclassified->regionpermalink)) }}">{{$userclassified->regionname}}</a></p>
                                                         </div>
                                                     </div>
-                                                    <div class="col-lg-4">
+                                                    <div class="col-lg-5">
+                                                        <div class="spacer"></div>
                                                         <div class="timestamp">
-                                                            <h5>Objavljeno {{ date('d. m. Y.', strtotime( $userclassified->created_at )) }}</h5>
+                                                            <p class="mt2"><i class="fa fa-clock-o"></i> Objavljeno: {{ date('d. m. Y.', strtotime( $userclassified->created_at )) }}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="col-lg-3">
-                                                        <div class="price">
-                                                            <h5><span class="price-eur">{{ $userclassified->price }} kn</span></h5>
+                                                    <div class="col-lg-2 col-xs-6">
+                                                        <div class="price mt8">
+                                                        <p class="mt2">{{$userclassified->price}} kn</p>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-
-                                    -->
                                 </div>
                                 @endforeach
                                 @endif
@@ -298,7 +235,6 @@
                 </div>
             </div>
         </div>
-
         <!-- profile end -->
         <!-- Izdvojeni oglasi start -->
     <div class="row m0 mt120">

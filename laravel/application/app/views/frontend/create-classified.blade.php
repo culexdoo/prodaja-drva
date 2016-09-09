@@ -19,24 +19,24 @@
                     {{ Form::hidden('user', Auth::user()->id) }}
                     <div class="row">
                         <div class="col-lg-6 p0">
-                            <div class="add-classified-image" style='height:300px; width:400px;'>
-                                {{ Form::file('image', array('class' => 'form-control filestyle', 'style' => 'position:absolute; bottom:74px; width:230px;'))  }}
+                            <div class="add-classified-image box mb20" style='height:300px; width:400px;'>
+                            <div class="no-classified-image"></div>
+                                {{ Form::file('image', array('class' => 'form-control filestyle', 'style' => 'width:218px; margin-top: 20px;'))  }}
                                 @if (isset($errors) && ($errors->first('image') != '' || $errors->first('image') != null))
                                 <small class="text-danger">{{ $errors->first('image') }}</small>
                                 @endif
                             </div>
-                            <h3 class=" btn btn-lg cta mb35 ml0" style="width:230px;"><i class="fa fa-arrow-up mr10"></i>Odaberite sliku<i class="fa fa-arrow-up ml10"></i></h3>
                         </div>
                         <div class="col-lg-6">
-                            <div class="form-horizontal">
+                            <div class="form-horizontal mb20">
                                     <div id="us3" style="width: 400px; height: 300px;"></div>
                                     <div>
-                                            <input type="hidden" name="latitude" class="form-control" style="width: 110px" id="us3-lat" />
-                                            <input type="hidden" name="longitude" class="form-control" style="width: 110px" id="us3-lon" />
+                                        <input type="hidden" name="latitude" class="form-control" style="width: 110px" id="us3-lat" />
+                                        <input type="hidden" name="longitude" class="form-control" style="width: 110px" id="us3-lon" />
                                     </div>
                                     <div class="clearfix"></div>
                             </div>
-                            <a class=" btn btn-lg cta mb35 ml0" href="#">Postavite lokaciju</a>
+                            <h3>Postavite lokaciju</h3>
                         </div>
                     </div>
                     <!-- Kontakt forma start -->
@@ -99,7 +99,7 @@
                                         </div>
                                     </div>
                                     <!-- For success/fail messages -->
-                                    {{ Form::button(Lang::get('core.save'), array('type' => 'submit', 'class' => 'btn btn-lg btn-default cta ml-15')) }}
+                                    {{ Form::button(Lang::get('core.save'), array('type' => 'submit', 'class' => 'btn btn-lg btn-primary cta ml-15')) }}
                                 </div>
                         </div>
                     </div>
@@ -124,6 +124,7 @@
     </div>
 @include('frontend.includes.footer')
 <script src="/js/frontend/locationpicker.jquery.min.js"></script>
+<script type="text/javascript" src='http://maps.google.com/maps/api/js?key=AIzaSyAGZyUPlcENH-4yfK4IzBvnclrAO-M5cCo&callback'></script>
 <script>
     $('#us3').locationpicker({
         location: {

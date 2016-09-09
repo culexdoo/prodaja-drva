@@ -64,10 +64,10 @@
                                                 <tbody>
                                                     <tr>
                                                         <td>Oglašivač:</td>
-                                                        <td>{{ $entry->username }}</td>
+                                                        <td><a href="{{ URL::route('UserProfile', array('permalink' => $entry->userpermalink))}}">{{ $entry->username }}</a></td>
                                                     </tr>
                                                     <tr>
-                                                        <td>SKU:</td>
+                                                        <td>Šifra oglasa:</td>
                                                         <td>{{ $entry->id }}</td>
                                                     </tr>
                                                     <tr>
@@ -80,15 +80,15 @@
                                                     </tr>
                                                     <tr>
                                                         <td>Vrsta drveta:</td>
-                                                        <td>{{ $entry->woodname }}</td>
+                                                        <td><a href="{{ URL::route('ListClassifiedsByWoodCategory', array('woodcategory' => $entry->woodpermalink)) }}">{{ $entry->woodname }}</a></td>
                                                     </tr>
                                                     <tr>
                                                         <td>Vrsta pakiranja:</td>
-                                                        <td>{{ $entry->packagingname }}</td>
+                                                        <td><a href="{{ URL::route('ListClassifiedsByPackagingCategory', array('packagingcategory' => $entry->packagingpermalink)) }}">{{ $entry->packagingname }}</a></td>
                                                     </tr>
                                                     <tr>
                                                         <td>Županija:</td>
-                                                        <td>{{ $entry->regionname }}</td>
+                                                        <td><a href="{{ URL::route('ListClassifiedsByRegion', array('region' => $entry->regionpermalink)) }}">{{ $entry->regionname }}</a></td>
                                                     </tr>
                                                     <tr>
                                                         <td>Kontakt:</td>

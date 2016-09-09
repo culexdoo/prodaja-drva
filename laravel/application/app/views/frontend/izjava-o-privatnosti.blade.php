@@ -141,34 +141,30 @@
             <a href ="http://www.youronlinechoices.eu/">http://www.youronlinechoices.eu/</a> <br><br>
             </p>
             </div>
-            <div class="col-lg-3">
-                <!--- single widget start -->
-                <div class="panel panel-default m0">
-                    <div class="panel-heading">
-                        <h4 class="panel-title"> PRETRAGA PO KRITERIJIMA:</h4>
-                    </div>
-                    <div class="panel-body">
+            <div class="col-lg-3 sidebar">
+                <div class="widget">
+                    <h4 class="mt0" style="font-size: 21px;">Pretraga po kriterijima:</h4>
+                    <div class="panel-body pl0">
                         {{ Form::open(array('route' => $postRoute, 'method' => 'get', 'role' => 'form', 'autocomplete' => 'on', 'files' => true))}}
                         <div class="row"> 
-                            <div class="form-group  col-xs-12">
-                                {{ Form::select('packaging', ['' => 'Vrsta pakiranja'] + $packaginglist, isset($packaging) ? $packaging : null, array('class' => 'form-control selectpicker', 'style' => 'width:100%', 'id' => 'id')) }}
+                            <div class="form-group mb5 col-xs-12 arrow">
+                                {{ Form::select('packaging', ['' => 'Vrsta pakiranja'] + $packaginglist, isset($packaging) ? $packaging : null, array('class' => 'form-control selectpicker hoverme', 'style' => 'width:100%', 'background-image' => 'url(/img/frontend/dropdown-icon.png)', 'id' => 'id')) }}
                             </div>
-                            <div class="form-group  col-xs-12">
-                                {{ Form::select('wood', ['' => 'Vrsta drveta'] + $woodlist, isset($wood) ? $wood : null, array('class' => 'form-control selectpicker', 'style' => 'width:100%', 'id' => 'id')) }}
+                            <div class="form-group mb5 col-xs-12 arrow">
+                                {{ Form::select('wood', ['' => 'Vrsta drveta'] + $woodlist, isset($wood) ? $wood : null, array('class' => 'form-control selectpicker hoverme', 'style' => 'width:100%', 'id' => 'id')) }}
                             </div>
-                            <div class="form-group  col-xs-12">
-                                {{ Form::select('region',  ['' => 'Županije'] + $regionslist, null, array('class' => 'form-control selectpicker', 'style' => 'width:100%', 'id' => 'id')) }}                   
+                            <div class="form-group mb5 col-xs-12 arrow">
+                                {{ Form::select('region',  ['' => 'Županije'] + $regionslist, null, array('class' => 'form-control selectpicker hoverme', 'style' => 'width:100%', 'id' => 'id')) }}                   
                             </div> 
                         </div>
                         <div class="button-group">
                             <div class="action-buttons">
-                               <button type="submit" style="margin-top: 10px; " class="btn btn-lg cta btn-search">Pretraži</button>
+                               <button type="submit" style="width: 100%; margin: 0px;" class="btn btn-lg cta btn-primary"><i class="fa fa-search"></i> Pretraži</button>
                             </div>
                         </div>
                         {{ Form::close() }}
                     </div>
                 </div>
-                <!--- single widget end -->
             </div>
         </div>
 @include('frontend.includes.footer')

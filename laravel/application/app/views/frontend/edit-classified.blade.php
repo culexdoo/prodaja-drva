@@ -4,8 +4,7 @@
             <!-- Page Heading/Breadcrumbs -->
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Objavite oglas
-                </h1>
+                    <h1 class="page-header">Uredite oglas</h1>
                 </div>
             </div>
         </div>
@@ -22,7 +21,7 @@
                     {{ Form::hidden('user', $entry->user, array('user' => 'user')) }}
                     <div class="row">
                         <div class="col-lg-6 p0"> 
-                            <div class="add-classified-image" style='height:300px; width:400px;'>
+                            <div class="add-classified-image mb20" style='height:300px; width:400px;'>
                                 @if ($entry->image != null || $entry->image != '')
                                     <div class="form-group mb15">
                                         <div class="col-md-12">
@@ -31,8 +30,7 @@
                                     </div>
                                 @endif
                             </div> 
-                                <h3>Odaberite sliku</h3>
-                                {{ Form::file('image', array('class' => 'form-control filestyle text-center', 'style' => 'width: 211px;'))  }}
+                                {{ Form::file('image', array('class' => 'form-control filestyle text-center', 'style' => 'width: 230px;'))  }}
                                 @if (isset($errors) && ($errors->first('image') != '' || $errors->first('image') != null))
                                 <small class="text-danger">{{ $errors->first('image') }}</small>
                                 @endif
@@ -46,7 +44,7 @@
                                     </div>
                                     <div class="clearfix"></div>
                             </div>
-                            <h3>Odaberite lokaciju</h3>
+                            <h3>Postavite lokaciju</h3>
                         </div>
                     </div>
                     <!-- Kontakt forma start -->
@@ -109,7 +107,7 @@
                                         </div>
                                     </div>
                                     <!-- For success/fail messages -->
-                                    {{ Form::button(Lang::get('core.save'), array('type' => 'submit', 'class' => 'btn btn-lg btn-default cta ml-15')) }}
+                                    {{ Form::button(Lang::get('core.save'), array('type' => 'submit', 'class' => 'btn btn-lg btn-primary cta ml-15')) }}
                                 </div>
                         </div>
                     </div>
@@ -125,7 +123,7 @@
                         </div>
                         <div class="user-data mb15">
                             <h4 class="mb20">{{ $user->username }}</h4>
-                            <p>Registriran od: {{$user->created_at}} </p> 
+                            <p>Registriran od: {{ date('d. m. Y.', strtotime( $user->created_at )) }}</p> 
                             <p>Kontakt: {{$user->contact1}} </p>
                         </div>
                         <i class="fa fa-arrow-right pull-left"></i><a href="{{URL::route ('MyProfile', array('permalink' => Auth::user()->permalink ))}}"> Moj profil </a>
@@ -136,11 +134,12 @@
     </div>
 @include('frontend.includes.footer')
 <script src="/js/frontend/locationpicker.jquery.min.js"></script>
+<script type="text/javascript" src='http://maps.google.com/maps/api/js?key=AIzaSyAGZyUPlcENH-4yfK4IzBvnclrAO-M5cCo&callback'></script>
 <script>
     $('#us3').locationpicker({
         location: {
-            latitude: {{ $entry->latitude }},
-            longitude: {{ $entry->longitude }}
+            latitude: {{ $entry->latitude}},
+            longitude: {{ $entry->longitude}}
         },
         radius: 300,
         zoom: 7,

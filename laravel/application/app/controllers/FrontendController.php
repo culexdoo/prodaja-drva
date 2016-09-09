@@ -130,7 +130,12 @@ class FrontendController extends \CoreController {
 
 
 		$this->layout->css_files = array(
-
+			'css/frontend/style.css',
+			'css/frontend/style.complete.css',
+			'css/frontend/flat-ui.css',
+			'css/frontend/style-library-1.css',
+			'css/frontend/style-extra-pages.css',
+			'css/frontend/custom.css'
 		);
 
 
@@ -226,7 +231,12 @@ class FrontendController extends \CoreController {
 		$this->layout->title = 'Prijava | Prodaja drva';
 
  		$this->layout->css_files = array( 
- 			'css/frontend/custom.css'
+ 			'css/frontend/style.css',
+			'css/frontend/style.complete.css',
+			'css/frontend/flat-ui.css',
+			'css/frontend/style-library-1.css',
+			'css/frontend/style-extra-pages.css',
+			'css/frontend/custom.css'
 
 		);
 		$this->layout->js_footer_files = array( 
@@ -288,7 +298,12 @@ class FrontendController extends \CoreController {
 		$this->layout->title = 'Prodaja drva | Vraćanje lozinke';
 
 		$this->layout->css_files = array(
-
+			'css/frontend/style.css',
+			'css/frontend/style.complete.css',
+			'css/frontend/flat-ui.css',
+			'css/frontend/style-library-1.css',
+			'css/frontend/style-extra-pages.css',
+			'css/frontend/custom.css'
 			);
 
 		$this->layout->js_footer_files = array(
@@ -359,7 +374,13 @@ class FrontendController extends \CoreController {
 		$this->layout->title = 'Registracija | Prodaja drva';
 
  		$this->layout->css_files = array( 
- 			'css/frontend/registration.css'
+ 			'css/frontend/registration.css',
+ 			'css/frontend/style.css',
+			'css/frontend/style.complete.css',
+			'css/frontend/flat-ui.css',
+			'css/frontend/style-library-1.css',
+			'css/frontend/style-extra-pages.css',
+			'css/frontend/custom.css'
 
 		);
 		$this->layout->js_footer_files = array( 
@@ -514,6 +535,8 @@ class FrontendController extends \CoreController {
 
 		$this->layout->css_files = array(
 
+			'css/frontend/custom.css'
+
 			);
 
 		$this->layout->js_footer_files = array(
@@ -581,7 +604,7 @@ class FrontendController extends \CoreController {
 		$this->layout->title = 'Moj profil | Prodaja drva';
 
 		$this->layout->css_files = array(
-		
+			'css/frontend/custom.css'
 			);
 
 		$this->layout->js_footer_files = array(
@@ -626,6 +649,7 @@ class FrontendController extends \CoreController {
 
 		$this->layout->css_files = array(
 
+			'css/frontend/custom.css'
 			);
 
 		$this->layout->js_footer_files = array(
@@ -808,6 +832,14 @@ class FrontendController extends \CoreController {
 		$this->layout->description = 'Pregled oglasa: '. $entry['entry']->title;
 
 		$this->layout->css_files = array(
+
+			'css/frontend/registration.css',
+ 			'css/frontend/style.css',
+			'css/frontend/style.complete.css',
+			'css/frontend/flat-ui.css',
+			'css/frontend/style-library-1.css',
+			'css/frontend/style-extra-pages.css',
+			'css/frontend/custom.css'
 		);
 
 		$this->layout->js_footer_files = array(
@@ -1279,6 +1311,14 @@ class FrontendController extends \CoreController {
 
 			$this->layout->css_files = array(
 
+			'css/frontend/registration.css',
+ 			'css/frontend/style.css',
+			'css/frontend/style.complete.css',
+			'css/frontend/flat-ui.css',
+			'css/frontend/style-library-1.css',
+			'css/frontend/style-extra-pages.css',
+			'css/frontend/custom.css'
+
 			);
 
 			$this->layout->js_footer_files = array(
@@ -1510,6 +1550,14 @@ class FrontendController extends \CoreController {
 
 			$this->layout->css_files = array(
 
+			'css/frontend/registration.css',
+ 			'css/frontend/style.css',
+			'css/frontend/style.complete.css',
+			'css/frontend/flat-ui.css',
+			'css/frontend/style-library-1.css',
+			'css/frontend/style-extra-pages.css',
+			'css/frontend/custom.css'
+
 			);
 
 			$this->layout->js_footer_files = array(
@@ -1585,6 +1633,8 @@ class FrontendController extends \CoreController {
 		$this->layout->title = 'Objavite oglas | Prodaja drva';
 		
  		$this->layout->css_files = array( 
+
+			'css/frontend/custom.css'
 
 		);
 
@@ -1695,7 +1745,7 @@ class FrontendController extends \CoreController {
 		$this->layout->title = 'Uredite oglas | Prodaja drva';
 		
  		$this->layout->css_files = array( 
-
+ 			'css/frontend/custom.css'
 		);
 
 		$this->layout->js_footer_files = array( 
@@ -1754,6 +1804,14 @@ class FrontendController extends \CoreController {
 		$this->layout->title = 'Kontaktirajte nas | Prodaja drva';
 
 		$this->layout->css_files = array(
+
+			'css/frontend/registration.css',
+ 			'css/frontend/style.css',
+			'css/frontend/style.complete.css',
+			'css/frontend/flat-ui.css',
+			'css/frontend/style-library-1.css',
+			'css/frontend/style-extra-pages.css',
+			'css/frontend/custom.css'
 
 			);
 
@@ -1897,6 +1955,14 @@ class FrontendController extends \CoreController {
 
 		$this->layout->css_files = array(
 
+			'css/frontend/registration.css',
+ 			'css/frontend/style.css',
+			'css/frontend/style.complete.css',
+			'css/frontend/flat-ui.css',
+			'css/frontend/style-library-1.css',
+			'css/frontend/style-extra-pages.css',
+			'css/frontend/custom.css'
+
 			);
 
 		$this->layout->js_footer_files = array(
@@ -2008,6 +2074,14 @@ class FrontendController extends \CoreController {
 
 		$this->layout->css_files = array(
 
+			'css/frontend/registration.css',
+ 			'css/frontend/style.css',
+			'css/frontend/style.complete.css',
+			'css/frontend/flat-ui.css',
+			'css/frontend/style-library-1.css',
+			'css/frontend/style-extra-pages.css',
+			'css/frontend/custom.css'
+
 			);
 
 		$this->layout->js_footer_files = array(
@@ -2117,6 +2191,14 @@ class FrontendController extends \CoreController {
 		$this->layout->title = 'Izjava o privatnosti | Prodaja drva';
 
 		$this->layout->css_files = array(
+
+			'css/frontend/registration.css',
+ 			'css/frontend/style.css',
+			'css/frontend/style.complete.css',
+			'css/frontend/flat-ui.css',
+			'css/frontend/style-library-1.css',
+			'css/frontend/style-extra-pages.css',
+			'css/frontend/custom.css'
 
 			);
 

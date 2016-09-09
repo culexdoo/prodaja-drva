@@ -72,6 +72,10 @@ a:hover {
     font-weight: 300;
 }
 
+.b0 {
+    border: none;
+}
+
 .p0 {
     padding: 0px !important;
 }
@@ -574,6 +578,10 @@ a:hover {
     margin-bottom: 25px !important;
 }
 
+.mb50 {
+    margin-bottom: 50px;
+}
+
 .mb70 {
     margin-bottom: 70px;
 }
@@ -624,6 +632,14 @@ a:hover {
     margin-top: 26px;
 }
 
+ul li, ol li {
+    font-size: 13px;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    color: #515157;
+    margin-bottom: 5px;
+    font-weight: 100;
+}
+
 .product-desc ul li, ol li {
     font-family: 'Lora', serif;
     color: #222;
@@ -639,7 +655,7 @@ a:hover {
 }
 
 .hoverme:hover {
-    background: #1abc9c;
+    background: #62b151;
     color: #fff;
 }
 
@@ -660,6 +676,14 @@ a:hover {
 
 .category-link-home {
     border: 1px solid #fefefe;
+}
+
+.no-classified-image {
+    max-width: 100%;
+    height: 100%;
+    height: 298px;
+    background-image: url(/img/frontend/wood-drawing.jpg);
+    background-repeat: no-repeat;
 }
 
 .classified-image {
@@ -766,7 +790,7 @@ a:hover {
 }
 
 .panel-heading {
-    border-left: 5px solid #1abc9c !important;
+    border-left: 5px solid #62b151 !important;
 }
 
 
@@ -1423,6 +1447,13 @@ dd {
     font-size: 12px;
 }
 
+.navbar-nav li a {
+    transition-duration: 0.25s;
+    transition-property: all;
+    transition-timing-function: ease;
+    -webkit-font-smoothing: antialiased;
+}
+
 .table>thead>tr>th {
     border-bottom: 0px;
 }
@@ -1437,6 +1468,12 @@ dd {
 
 
 /* Header Navigation */
+
+#navigation8 {
+    letter-spacing: 1px;
+}
+
+
 
 .customnavigation {
     position: absolute;
@@ -1602,6 +1639,63 @@ pre.pre-show {
     position: relative;
 }
 
+#footer6 {
+    padding: 40px 0;
+    background: #fff;
+    color: #282828;
+    border-top: 1px solid #ccc;
+    line-height: 1.722;
+    font-size: 18px;
+}
+
+#footer6 ul {
+    text-align: center;
+}
+
+#footer6 a {
+    color: #282828;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: none;
+    margin: 0 8px;
+}
+
+#footer6 a:hover {
+    color: #898989;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#footer6 .social-icons {
+    text-align: center;
+}
+
+#footer6 .social-icons a {
+    margin: 0 15px;
+}
+
+#footer6 .social-icons .fa {
+    font-size: 20px;
+    color: #ccc;
+}
+
+#footer3 {
+    text-transform: uppercase;
+    font-size: 18px;
+    padding: 15px 10px;
+    background: #282828;
+    text-align: center;
+    color: #fff;
+}
+
+#footer3 p {
+    margin: 0;
+    font-size: 14px;
+    color: grey;
+}
 
 /* Demo Slides */
 
@@ -1968,6 +2062,12 @@ pre.pre-show {
     .classified-footer .price {
         float: right
     }
+
+@media (max-width: 620px) {
+    #footer6 .editContent {
+        width: 100%;
+    }
+}
 
     
 
