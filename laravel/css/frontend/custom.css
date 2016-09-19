@@ -1955,6 +1955,9 @@ pre.pre-show {
     .classified-footer .timestamp {
         display: none;
     }
+    textarea {
+        width: 100%;
+    }
 }
 
 @media (max-width: 991px) {

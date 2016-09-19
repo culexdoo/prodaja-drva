@@ -19,13 +19,13 @@
                     <div class="profile-picture">
                         @if ($entry->image == null)
                             <div class="form-group mb15">
-                            <label class="col-md-12 p0" for="image">Trenutna slika:</label>
-                                <div class="col-md-12 p0 img-style m0"></div>
+                            <label class="col-lg-12 p0" for="image">Trenutna slika:</label>
+                                <div class="col-lg-12 p0 img-style m0"></div>
                             </div>
                         @elseif ($entry->image != null || $entry->image != '')
                             <div class="form-group mb15">
-                                <label class="col-md-12 p0 mb20" for="image">Trenutna slika:</label> 
-                                <div class="col-md-12 p0 mb20">
+                                <label class="col-lg-12 p0 mb20" for="image">Trenutna slika:</label> 
+                                <div class="col-lg-12 p0 mb20">
                                     {{ HTML::image(URL::to('/') . '/uploads/frontend/users/thumbs/' . $entry->image, $entry->first_name) }}
                                 </div>
                             </div>
@@ -231,11 +231,11 @@
                             <div class="p20">
                                 <div class="row">
                                     {{ Form::open(array('route' => $postRoute, 'role' => 'form', 'class' => 'form-horizontal', 'autocomplete' => 'off', 'files' => true)) }}
-                                        <div class="panel-body col-md-8">
+                                        <div class="panel-body col-lg-10">
                                             @if(!Auth::guest())
                                                 {{ Form::hidden('user', isset(Auth::User()->id) ? Auth::User()->id : null, ['class' => 'form-control']) }}
                                                 {{ Form::hidden('reviewed_user', $entry->id, ['class' => 'form-control']) }}
-                                            <div class="col-md-12 mb15 p0">
+                                            <div class="col-lg-12 mb15 p0">
                                                 <label>Ocijenite oglašivača</label>
                                                     <select class="form-control" id="rating" name="rating">
                                                         <option value="1">1</option>
@@ -245,9 +245,11 @@
                                                         <option value="5">5</option>
                                                     </select>
                                             </div>
-                                            <div class="col-md-12 mb15 p0">
+                                            <div class="col-lg-12 mb15 p0">
                                                 <label>Sadržaj recenzije</label> 
-                                                    {{ Form::textarea('review_content', null, ['id' => 'review_content', 'placeholder' => 'Sadržaj recenzije', 'cols' => '107', 'rows' => '8', 'style' => 'border: 1px solid #CCC; border-radius: 5px;']) }}
+                                            </div>
+                                            <div class="col-lg-12 p0">
+                                                    {{ Form::textarea('review_content', null, ['id' => 'review_content', 'placeholder' => 'Sadržaj recenzije', 'cols' => '89', 'rows' => '8', 'style' => 'border: 1px solid #CCC; border-radius: 5px;']) }}
                                             </div>
                                             {{ Form::button(Lang::get('core.save'), array('type' => 'submit', 'class' => 'btn btn-primary btn-lg cta')) }}
                                             @endif
@@ -260,16 +262,16 @@
                                     <section class="panel">
                                         @if (count($reviews) > 0)
                                         @foreach($reviews as $review)
-                                            <div class="panel-body col-md-8"> 
-                                                <div class="form-group">
-                                                    <label>Korisnik</label>
-                                                    {{ Form::text('username', isset($review->username) ? $review->username : null, ['class' => 'form-control', 'id' => 'username', 'placeholder' => 'Korisnik', 'readonly' => 'true', 'style' => 'min-width: 772px;']) }}
+                                            <div class="panel-body col-lg-10"> 
+                                                <div class="form-group mb15">
+                                                    <label class="mb15">Korisnik</label>
+                                                    {{ Form::text('username', isset($review->username) ? $review->username : null, ['class' => 'form-control', 'id' => 'username', 'placeholder' => 'Korisnik', 'readonly' => 'true']) }}
                                                 </div>
                                                 <div class="form-group">
-                                                    <label>Sadržaj recenzije</label> 
-                                                    {{ Form::textarea('review_content', isset($review->review_content) ? $review->review_content : null, ['id' => 'review_content', 'placeholder' => 'Sadržaj oglasa', 'cols' => '107', 'rows' => '8', 'style' => 'border: 1px solid #CCC; border-radius: 5px;', 'readonly' => 'true']) }}
+                                                    <label class="mb15">Sadržaj recenzije</label> 
+                                                    {{ Form::textarea('review_content', isset($review->review_content) ? $review->review_content : null, ['id' => 'review_content', 'placeholder' => 'Sadržaj oglasa', 'cols' => '89', 'rows' => '8', 'style' => 'border: 1px solid #CCC; border-radius: 5px;', 'readonly' => 'true']) }}
                                                 </div>
-                                                <div class="col-md-12 mb15 p0">
+                                                <div class="col-lg-12 mb15 p0">
                                                 <label class="pat8">Ocjena:</label>
                                                  @if( $review->rating == '1')
                                                     <span class="ratingstar">☆</span>
@@ -308,7 +310,7 @@
                 </div>
                 @if (count($featuredclassifieds['entry']) > 0) 
                 @foreach($featuredclassifieds['entry'] as $featuredclassified)
-                    <div class="col-md-3">
+                    <div class="col-lg-3">
                         <a href="{{URL::route ('ShowClassified', array('id' => $featuredclassified->permalink))}}">
                             {{ HTML::image(URL::to('/') . '/uploads/frontend/classifieds/thumbs/' . $featuredclassified->image, $featuredclassified->title) }}
                         </a>

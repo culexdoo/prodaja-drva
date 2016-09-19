@@ -854,6 +854,10 @@ class FrontendController extends \CoreController {
 
 		$wood = Wood::getEntries(null, null, $woodcategory);
 
+		$pagetitle = $wood['entry']->name;
+
+		$pagetitle = 'Rezultati pretrage iz kategorije ' . mb_strtolower($pagetitle);
+
 		$wood = $wood['entry']->id;
 
 		$entries = Classifieds::getEntries(null, null, null, true, null, null, null, $wood, null, null, null, null, null);
@@ -948,7 +952,7 @@ class FrontendController extends \CoreController {
 		
 	    $wood = mb_strtolower($wood, 'UTF-8');
 
-	    $packaging = mb_strtolower($packaging, 'UTF-8');
+	    $packaging = mb_strtolower($packaging, 'UTF-8'); 
 
 		$this->layout->title = 'Lista oglasa po kategoriji drveta: '. $woodcategory . ' | Prodaja drva';
 
@@ -970,7 +974,7 @@ class FrontendController extends \CoreController {
 
 			);
 
-		$this->layout->content = View::make('frontend.classified-list', array('entries' => $entries['entries'], 'featuredclassifieds' => $featuredclassifieds, 'postRoute' => 'SearchClassifieds', 'packaginglist' => $packaginglist, 'woodlist' => $woodlist, 'regionslist' => $regionslist, 'packaging' => $packaging, 'wood' => $wood));
+		$this->layout->content = View::make('frontend.classified-list', array('entries' => $entries['entries'], 'featuredclassifieds' => $featuredclassifieds, 'pagetitle' => $pagetitle, 'postRoute' => 'SearchClassifieds', 'packaginglist' => $packaginglist, 'woodlist' => $woodlist, 'regionslist' => $regionslist, 'packaging' => $packaging, 'wood' => $wood));
 
 	}
 
@@ -979,6 +983,10 @@ class FrontendController extends \CoreController {
 	public function listclassifiedsbypackagingcategory($packagingcategory) {
 
 		$packaging = Packaging::getEntries(null, null, $packagingcategory);
+
+		$pagetitle = $packaging['entry']->name;
+
+		$pagetitle = 'Rezultati pretrage iz kategorije ' . mb_strtolower($pagetitle);
 
 		$packaging = $packaging['entry']->id;
 
@@ -1096,7 +1104,7 @@ class FrontendController extends \CoreController {
 
 			);
 
-		$this->layout->content = View::make('frontend.classified-list', array('entries' => $entries['entries'], 'featuredclassifieds' => $featuredclassifieds, 'postRoute' => 'SearchClassifieds', 'packaginglist' => $packaginglist, 'woodlist' => $woodlist, 'regionslist' => $regionslist, 'packaging' => $packaging, 'wood' => $wood));
+		$this->layout->content = View::make('frontend.classified-list', array('entries' => $entries['entries'], 'featuredclassifieds' => $featuredclassifieds, 'pagetitle' => $pagetitle, 'postRoute' => 'SearchClassifieds', 'packaginglist' => $packaginglist, 'woodlist' => $woodlist, 'regionslist' => $regionslist, 'packaging' => $packaging, 'wood' => $wood));
 
 		
 
@@ -1111,11 +1119,11 @@ class FrontendController extends \CoreController {
 
 	public function listclassifiedsbyregion($region) {
 
-
-
 		$region = Region::getEntries(null, null, $region);
 		
 		$regionname = $region['entry']->permalink;
+
+		$pagetitle = $region['entry']->name;
 
 		$region = $region['entry']->id;
 		
@@ -1214,6 +1222,8 @@ class FrontendController extends \CoreController {
 
 		$this->layout->title = 'Lista oglasa iz zupanije: '. $regionname . ' | Prodaja drva';
 
+		$pagetitle = 'Lista oglasa iz županije '. $pagetitle;
+
 		$this->layout->description = 'Pretraga oglasa iz zupanije: ' . $regionname . ' | Prodaja drva';
 
 		$this->layout->css_files = array(
@@ -1232,7 +1242,7 @@ class FrontendController extends \CoreController {
 
 			);
 
-		$this->layout->content = View::make('frontend.classified-list', array('entries' => $entries['entries'], 'featuredclassifieds' => $featuredclassifieds, 'postRoute' => 'SearchClassifieds', 'packaginglist' => $packaginglist, 'woodlist' => $woodlist, 'regionslist' => $regionslist));
+		$this->layout->content = View::make('frontend.classified-list', array('entries' => $entries['entries'], 'featuredclassifieds' => $featuredclassifieds, 'pagetitle' => $pagetitle, 'postRoute' => 'SearchClassifieds', 'packaginglist' => $packaginglist, 'woodlist' => $woodlist, 'regionslist' => $regionslist));
 	}
 
 	// Shows listing of all classifieds
@@ -1486,6 +1496,7 @@ class FrontendController extends \CoreController {
 				$packaging = null;
 				$packagingname = $packaging;
 			}else{
+				$packagename = $packagingname['entry']->name;
 				$packagingname = $packagingname['entry']->permalink;
 			}
 
@@ -1496,8 +1507,10 @@ class FrontendController extends \CoreController {
 				$region = null;
 				$regionname = $region;
 			}else{
+				$pagetitle = $regionname['entry']->name;
 				$regionname = $regionname['entry']->permalink;
 			}
+			
 			
 			// Creating title and description by given parameters
 
@@ -1509,7 +1522,7 @@ class FrontendController extends \CoreController {
 					{
 						$this->layout->title = 'Rezultati pretrage oglasa iz kategorija ' . $woodname . ' i ' . $packagingname . ' u županiji ' . $regionname . ' | Prodaja drva';
 
-						$pagetitle = 'Rezultati pretrage oglasa iz kategorija ' . $woodname . ' i ' . $packagingname . ' u županiji ' . $regionname;
+						$pagetitle = 'Rezultati pretrage oglasa iz kategorija ' . $woodname . ' i ' . mb_strtolower($packagename, 'UTF-8') . ' u županiji ' . $pagetitle;
 
 						$this->layout->description = 'Pretraga oglasa za ' . $woodname . ', ' . $packagingname . ', ' . $regionname;
 
@@ -1518,7 +1531,7 @@ class FrontendController extends \CoreController {
 					} else {
 						$this->layout->title = 'Rezultati pretrage oglasa iz kategorija ' . $woodname . ' i ' . $packagingname . ' | Prodaja drva';
 
-						$pagetitle = 'Rezultati pretrage oglasa iz kategorija ' . $woodname . ' i ' . $packagingname;
+						$pagetitle = 'Rezultati pretrage oglasa iz kategorija ' . $woodname . ' i ' . mb_strtolower($packagename, 'UTF-8');
 
 						$this->layout->description = 'Pretraga oglasa za ' . $woodname . ', ' . $packagingname;
 
@@ -1529,7 +1542,7 @@ class FrontendController extends \CoreController {
 				{
 					$this->layout->title = 'Rezultati pretrage oglasa iz kategorije ' . $woodname . ' u županiji ' . $regionname . ' | Prodaja drva';
 
-					$pagetitle = 'Rezultati pretrage oglasa iz kategorije ' . $woodname . ' u županiji ' . $regionname;
+					$pagetitle = 'Rezultati pretrage oglasa iz kategorije ' . $woodname . ' u županiji ' . $pagetitle;
 
 					$this->layout->description = 'Pretraga oglasa za ' . $woodname . ', ' . $regionname;
 
@@ -1552,7 +1565,7 @@ class FrontendController extends \CoreController {
 				{
 					$this->layout->title = 'Rezultati pretrage oglasa iz kategorije ' . $packagingname . ' u županiji ' . $regionname . ' | Prodaja drva';
 
-					$pagetitle = 'Rezultati pretrage oglasa iz kategorije ' . $packagingname . ' u županiji ' . $regionname;
+					$pagetitle = 'Rezultati pretrage oglasa iz kategorije ' . mb_strtolower($packagename, 'UTF-8') . ' u županiji ' . $pagetitle;
 
 					$this->layout->description = 'Pretraga oglasa za ' . $packagingname . ', ' . $regionname;
 
@@ -1561,7 +1574,7 @@ class FrontendController extends \CoreController {
 				} else {
 					$this->layout->title = 'Rezultati pretrage oglasa iz kategorije ' . $packagingname . ' | Prodaja drva';
 
-					$pagetitle = 'Rezultati pretrage oglasa iz kategorije ' . $packagingname;
+					$pagetitle = 'Rezultati pretrage oglasa iz kategorije ' . mb_strtolower($packagename, 'UTF-8');
 
 					$this->layout->description = 'Pretraga oglasa za ' . $packagingname;
 
@@ -1571,7 +1584,7 @@ class FrontendController extends \CoreController {
 			elseif ($regionname != null) {
 				$this->layout->title = 'Rezultati pretrage oglasa iz županije ' . $regionname . ' | Prodaja drva';
 
-				$pagetitle = 'Rezultati pretrage oglasa iz županije ' . $regionname;
+				$pagetitle = 'Rezultati pretrage oglasa iz županije ' . $pagetitle;
 
 				$this->layout->description = 'Pretraga oglasa za ' . $regionname;
 

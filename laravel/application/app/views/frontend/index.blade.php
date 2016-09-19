@@ -226,7 +226,7 @@
                     </div>
                     <div class="col-lg-4">
                         <div class="span3 border-black-green">
-                            <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'grclassified-zagreb' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Grad Zagreb</a>
+                            <a href="{{URL::route('ListClassifiedsByRegion', array('region' => 'grad-zagreb' )) }}"><i class="fa fa-map-marker"></i>&nbsp; Grad Zagreb</a>
                         </div>
                     </div>
                 </div>

@@ -8,7 +8,7 @@
                     @if ($pagetitle == null)
                     <h1 class="text-white mt100 fs65">Jednostavno do ogrijeva! </h1>
                     @else
-                    <h1 class="text-white mt100 fs65"> {{ $pagetitle}}! </h1>
+                    <h1 class="text-white mt100 fs50"> {{ $pagetitle}}! </h1>
                     @endif
                     <h2 class="text-white fs33"> Pronađite drva za ogrijev u svojoj blizini i u svom cijenovnom rangu! </h2>
                 </div>
@@ -110,7 +110,7 @@
                                 </div>
                                 <div class="classified-footer">
                                     <div class="row">
-                                        <div class="col-lg-5 col-xs-6">
+                                        <div class="col-lg-5 col-xs-7">
                                             <div class="spacer"></div>
                                             <div class="county">
                                                     <p class="mt2"><i class="fa fa-map-marker"></i> <a href="{{ URL::route('ListClassifiedsByRegion', array('region' => $entry->regionpermalink)) }}">{{$entry->regionname}}</a></p>
@@ -122,7 +122,7 @@
                                                 <p class="mt2"><i class="fa fa-clock-o"></i> Objavljeno: {{ date('d. m. Y.', strtotime( $entry->created_at )) }}</p>
                                             </div>
                                         </div>
-                                        <div class="col-lg-2 col-xs-6 p0">
+                                        <div class="col-lg-2 col-xs-5 p0">
                                             <div class="spacer"></div>
                                             <div class="price">
                                             <p class="mt2">{{$entry->price}} kn</p>
