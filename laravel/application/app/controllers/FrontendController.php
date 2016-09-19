@@ -956,6 +956,14 @@ class FrontendController extends \CoreController {
 
 		$this->layout->css_files = array(
 
+			'css/frontend/registration.css',
+ 			'css/frontend/style.css',
+			'css/frontend/style.complete.css',
+			'css/frontend/flat-ui.css',
+			'css/frontend/style-library-1.css',
+			'css/frontend/style-extra-pages.css',
+			'css/frontend/custom.css'
+
 			);
 
 		$this->layout->js_footer_files = array(
@@ -1074,6 +1082,14 @@ class FrontendController extends \CoreController {
 
 		$this->layout->css_files = array(
 
+			'css/frontend/registration.css',
+ 			'css/frontend/style.css',
+			'css/frontend/style.complete.css',
+			'css/frontend/flat-ui.css',
+			'css/frontend/style-library-1.css',
+			'css/frontend/style-extra-pages.css',
+			'css/frontend/custom.css'
+
 			);
 
 		$this->layout->js_footer_files = array(
@@ -1094,6 +1110,8 @@ class FrontendController extends \CoreController {
 	// Shows listing of all classifieds by specific wood category
 
 	public function listclassifiedsbyregion($region) {
+
+
 
 		$region = Region::getEntries(null, null, $region);
 		
@@ -1199,6 +1217,14 @@ class FrontendController extends \CoreController {
 		$this->layout->description = 'Pretraga oglasa iz zupanije: ' . $regionname . ' | Prodaja drva';
 
 		$this->layout->css_files = array(
+
+			'css/frontend/registration.css',
+ 			'css/frontend/style.css',
+			'css/frontend/style.complete.css',
+			'css/frontend/flat-ui.css',
+			'css/frontend/style-library-1.css',
+			'css/frontend/style-extra-pages.css',
+			'css/frontend/custom.css'
 
 			);
 
@@ -1307,6 +1333,8 @@ class FrontendController extends \CoreController {
 
 			$featuredclassifieds = Classifieds::getEntries(null, null, null, true, true, 10, null, null, null, null, null, null);
 
+			$pagetitle = null;
+
 	 		$this->layout->title = 'Oglasi | Prodaja drva';
 
 			$this->layout->css_files = array(
@@ -1326,7 +1354,7 @@ class FrontendController extends \CoreController {
 				);
 
             //return display search result to user by using a view
-            $this->layout->content = View::make('frontend.classified-list', array('entries' => $entry['entries'], 'featuredclassifieds' => $featuredclassifieds, 'postRoute' => 'SearchClassifieds', 'packaginglist' => $packaginglist, 'woodlist' => $woodlist, 'regionslist' => $regionslist, 'classifieds' => $classifieds));
+            $this->layout->content = View::make('frontend.classified-list', array('entries' => $entry['entries'], 'featuredclassifieds' => $featuredclassifieds, 'pagetitle' => $pagetitle, 'postRoute' => 'SearchClassifieds', 'packaginglist' => $packaginglist, 'woodlist' => $woodlist, 'regionslist' => $regionslist, 'classifieds' => $classifieds));
 	}
 
 	// Searches classifieds by parameters
@@ -1481,12 +1509,16 @@ class FrontendController extends \CoreController {
 					{
 						$this->layout->title = 'Rezultati pretrage oglasa iz kategorija ' . $woodname . ' i ' . $packagingname . ' u županiji ' . $regionname . ' | Prodaja drva';
 
+						$pagetitle = 'Rezultati pretrage oglasa iz kategorija ' . $woodname . ' i ' . $packagingname . ' u županiji ' . $regionname;
+
 						$this->layout->description = 'Pretraga oglasa za ' . $woodname . ', ' . $packagingname . ', ' . $regionname;
 
 						$this->layout->keywords = $woodname . ',' . $packagingname . ',' . $regionname;
 
 					} else {
 						$this->layout->title = 'Rezultati pretrage oglasa iz kategorija ' . $woodname . ' i ' . $packagingname . ' | Prodaja drva';
+
+						$pagetitle = 'Rezultati pretrage oglasa iz kategorija ' . $woodname . ' i ' . $packagingname;
 
 						$this->layout->description = 'Pretraga oglasa za ' . $woodname . ', ' . $packagingname;
 
@@ -1497,6 +1529,8 @@ class FrontendController extends \CoreController {
 				{
 					$this->layout->title = 'Rezultati pretrage oglasa iz kategorije ' . $woodname . ' u županiji ' . $regionname . ' | Prodaja drva';
 
+					$pagetitle = 'Rezultati pretrage oglasa iz kategorije ' . $woodname . ' u županiji ' . $regionname;
+
 					$this->layout->description = 'Pretraga oglasa za ' . $woodname . ', ' . $regionname;
 
 					$this->layout->keywords = $woodname . ',' . $regionname;
@@ -1504,6 +1538,8 @@ class FrontendController extends \CoreController {
 				elseif ($woodname != null)
 				{
 					$this->layout->title = 'Rezultati pretrage oglasa iz kategorije ' . $woodname . ' | Prodaja drva';
+
+					$pagetitle = 'Rezultati pretrage oglasa iz kategorije ' . $woodname;
 
 					$this->layout->description = 'Pretraga oglasa za ' . $woodname;
 
@@ -1516,12 +1552,16 @@ class FrontendController extends \CoreController {
 				{
 					$this->layout->title = 'Rezultati pretrage oglasa iz kategorije ' . $packagingname . ' u županiji ' . $regionname . ' | Prodaja drva';
 
+					$pagetitle = 'Rezultati pretrage oglasa iz kategorije ' . $packagingname . ' u županiji ' . $regionname;
+
 					$this->layout->description = 'Pretraga oglasa za ' . $packagingname . ', ' . $regionname;
 
 					$this->layout->keywords = $packagingname . ',' . $regionname;
 
 				} else {
 					$this->layout->title = 'Rezultati pretrage oglasa iz kategorije ' . $packagingname . ' | Prodaja drva';
+
+					$pagetitle = 'Rezultati pretrage oglasa iz kategorije ' . $packagingname;
 
 					$this->layout->description = 'Pretraga oglasa za ' . $packagingname;
 
@@ -1530,6 +1570,8 @@ class FrontendController extends \CoreController {
 			} 
 			elseif ($regionname != null) {
 				$this->layout->title = 'Rezultati pretrage oglasa iz županije ' . $regionname . ' | Prodaja drva';
+
+				$pagetitle = 'Rezultati pretrage oglasa iz županije ' . $regionname;
 
 				$this->layout->description = 'Pretraga oglasa za ' . $regionname;
 
@@ -1543,10 +1585,13 @@ class FrontendController extends \CoreController {
 					{
 						$this->layout->title = 'Rezultati pretrage | Prodaja drva';
 
+						$pagetitle == null;
+
 						$this->layout->description = 'Pretraga svih oglasa';
 					}
 				}
 			}
+
 
 			$this->layout->css_files = array(
 
@@ -1566,7 +1611,7 @@ class FrontendController extends \CoreController {
 
             //return display search result to user by using a view
 
-            $this->layout->content = View::make('frontend.classified-list', array('entries' => $entry, 'featuredclassifieds' => $featuredclassifieds, 'postRoute' => 'SearchClassifieds', 'packaginglist' => $packaginglist, 'woodlist' => $woodlist, 'regionslist' => $regionslist, 'classifieds' => $classifieds));
+            $this->layout->content = View::make('frontend.classified-list', array('entries' => $entry, 'featuredclassifieds' => $featuredclassifieds, 'pagetitle' => $pagetitle, 'postRoute' => 'SearchClassifieds', 'packaginglist' => $packaginglist, 'woodlist' => $woodlist, 'regionslist' => $regionslist, 'classifieds' => $classifieds));
 	}
 
 

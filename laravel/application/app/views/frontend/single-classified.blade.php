@@ -16,7 +16,7 @@
                                 </div>
                             </div>
                             <div class="col-lg-6">
-                                <div class="product-desc">
+                                <div class="product-desc mt30">
                                     <ul class="fa-ul">
                                         <li><i class="fa-li fa fa-eur" style="top: 5px;"></i>Cijena: {{ $entry->price }} kn</li>
 

@@ -32,8 +32,7 @@
                                 </div>
                             </div>
                         @endif 
-                        <div class="col-md-12"> 
-                            <h3 class="text-center btn-default btn-block pt11 fs16"><i class="fa fa-arrow-down mr10"></i>Odaberite sliku<i class="fa fa-arrow-down ml10"></i></h3>
+                        <div class="col-md-12 p0">
                             {{ Form::file('image', array('class' => 'form-control filestyle text-center'))  }}
                             @if (isset($errors) && ($errors->first('image') != '' || $errors->first('image') != null))
                             <small class="text-danger">{{ $errors->first('image') }}</small>
@@ -59,6 +58,9 @@
                                 </tr>
                             </tbody>
                         </table>
+                        <div class="row p0 mb50"> 
+                        {{ Form::button(Lang::get('core.save'), array('type' => 'submit', 'class' => 'btn btn-primary btn-lg cta mt0')) }}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -172,7 +174,7 @@
                 </div>
             </div>
         </div>
-        {{ Form::button(Lang::get('core.save'), array('type' => 'submit', 'class' => 'btn btn-primary btn-lg cta mt0', 'style' => 'margin-left: 388px; margin-bottom: 50px;')) }}
+        
         {{ Form::close() }}
         <!-- profile end -->
 </div>

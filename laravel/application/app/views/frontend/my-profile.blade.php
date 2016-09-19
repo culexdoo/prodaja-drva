@@ -18,13 +18,13 @@
                     <div class="profile-picture">
                         @if ($entry->image == null)
                             <div class="form-group mb15">
-                            <label class="col-md-12 p0 mb20" for="image">Trenutna slika:</label>
-                                <div class="col-md-12 p0 img-style m0"></div>
+                            <label class="col-lg-12 p0 mb20" for="image">Trenutna slika:</label>
+                                <div class="col-lg-12 p0 img-style mb20 ml0"></div>
                             </div>
                         @elseif ($entry->image != null || $entry->image != '')
                             <div class="form-group mb15">
-                                <label class="col-md-12 p0 mb20" for="image">Trenutna slika:</label> 
-                                <div class="col-md-12 p0 mb20">
+                                <label class="col-lg-12 p0 mb20 ml0" for="image">Trenutna slika:</label> 
+                                <div class="col-lg-12 p0 mb20">
                                     {{ HTML::image(URL::to('/') . '/uploads/frontend/users/thumbs/' . $entry->image, $entry->first_name) }}
                                 </div>
                             </div>
@@ -184,9 +184,8 @@
                                                         <h3 class="classified-title">{{ ucfirst($userclassified->title) }}</h3>
                                                     </a>
                                                 </div>
-                                                <div class="col-lg-2 p0 mb15">
-                                                    <a href="{{ URL::route('EditClassified', array('permalink' => $userclassified->permalink)) }}">
-                                                    Uredi
+                                                <div class="col-lg-2 p0 mb15 mt10">
+                                                    <a href="{{ URL::route('EditClassified', array('permalink' => $userclassified->permalink)) }}"> Uredi oglas
                                                     </a>
                                                 </div>
                                                 <div class="classified-description">
@@ -248,7 +247,7 @@
             </div>
             @if (count($featuredclassifieds['entry']) > 0) 
                 @foreach($featuredclassifieds['entry'] as $featuredclassified)
-                    <div class="col-md-3">
+                    <div class="col-lg-3">
                         <a href="{{URL::route ('ShowClassified', array('id' => $featuredclassified->permalink))}}">
                             {{ HTML::image(URL::to('/') . '/uploads/frontend/classifieds/thumbs/' . $featuredclassified->image, $featuredclassified->title) }}
                         </a>

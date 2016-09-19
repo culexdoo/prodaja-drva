@@ -4,7 +4,12 @@
         <div class="col-lg-12 p0">
             <div class="mh400" style="background-image: url(/img/frontend/classified-list-banner.jpg);">
                 <div class="container text-center ">
-                    <h1 class="text-white mt100 fs65"> Jednostavno do ogrijeva! </h1>
+
+                    @if ($pagetitle == null)
+                    <h1 class="text-white mt100 fs65">Jednostavno do ogrijeva! </h1>
+                    @else
+                    <h1 class="text-white mt100 fs65"> {{ $pagetitle}}! </h1>
+                    @endif
                     <h2 class="text-white fs33"> Pronađite drva za ogrijev u svojoj blizini i u svom cijenovnom rangu! </h2>
                 </div>
             </div>

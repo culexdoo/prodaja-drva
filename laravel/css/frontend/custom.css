@@ -308,6 +308,15 @@ a:hover {
     font-size: 65px;
 }
 
+.user-info {
+    margin-top: 40px;
+    margin-bottom: 25px;
+}
+
+.user-status {
+    margin-top: 25px;
+}
+
 #services6 p {
     color: #333;
 }
@@ -1971,6 +1980,11 @@ pre.pre-show {
 }
 
 @media (max-width: 768px) {
+
+    .black {
+        color: #222;
+    }
+
     .navbar.navbar-fixed-top {
         position: static;
     }
@@ -2063,6 +2077,16 @@ pre.pre-show {
         float: right
     }
 
+    .form-signin {
+        border: none;
+    }
+
+@media (max-width: 675px) {
+    #footer3 p {
+        text-align: center !important;
+    }
+}
+
 @media (max-width: 620px) {
     #footer6 .editContent {
         width: 100%;
@@ -2095,6 +2119,21 @@ pre.pre-show {
 
     .controls textarea {
         width: 390px;
+    }
+}
+
+@media (max-width: 425px) {
+    .np {
+        padding-right: 15px !important;
+        padding-left: 15px !important;
+    }
+
+    .form-control {
+        width: 100% !important;
+    }
+
+    .gm {
+        margin-top: 80px;
     }
 }
 

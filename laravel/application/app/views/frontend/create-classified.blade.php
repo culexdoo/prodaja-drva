@@ -18,7 +18,7 @@
                 {{ Form::open(array('route' => $postRoute, 'role' => 'form', 'class' => 'form-horizontal', 'autocomplete' => 'off', 'files' => true)) }}
                     {{ Form::hidden('user', Auth::user()->id) }}
                     <div class="row">
-                        <div class="col-lg-6 p0">
+                        <div class="col-lg-6 p0 np">
                             <div class="add-classified-image box mb20" style='height:300px; width:400px;'>
                             <div class="no-classified-image"></div>
                                 {{ Form::file('image', array('class' => 'form-control filestyle', 'style' => 'width:218px; margin-top: 20px;'))  }}
@@ -28,7 +28,7 @@
                             </div>
                         </div>
                         <div class="col-lg-6">
-                            <div class="form-horizontal mb20">
+                            <div class="form-horizontal mb20 gm">
                                     <div id="us3" style="width: 400px; height: 300px;"></div>
                                     <div>
                                         <input type="hidden" name="latitude" class="form-control" style="width: 110px" id="us3-lat" />
@@ -41,7 +41,7 @@
                     </div>
                     <!-- Kontakt forma start -->
                     <div class="row mb15 mt65">
-                        <div class="col-lg-12 p0">
+                        <div class="col-lg-12 p0 np">
                             
                                 <div class="col-lg-6">
                                     <div class="control-group form-group">
