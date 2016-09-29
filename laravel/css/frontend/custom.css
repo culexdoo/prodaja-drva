@@ -550,7 +550,8 @@ a:hover {
 
 .pagination li.disabled > span {
     color: #62b151;
-    border-left: none;
+    border-radius: 0px;
+    border-color: #62b151;
 }
 
 .pagination li > a {
@@ -1940,6 +1941,15 @@ pre.pre-show {
 /* Responsive Stuff */
 
 @media (max-width: 1200px){
+
+    .mobile-mb80 {
+        margin-bottom: 80px;
+    }
+
+    .center {
+        text-align: center;
+    }
+
     .pl50 {
         padding-left: 15px;
     }

@@ -13,7 +13,7 @@
     <!-- profile start -->
     <div class="row m0 mt80">
         <div class="container">
-            <div class="col-lg-3">
+            <div class="col-lg-3 mobile-mb80">
                 <div class="row">
                     <div class="profile-picture">
                         @if ($entry->image == null)
@@ -52,7 +52,7 @@
                     </div> 
                 </div>
                 <div class="row">
-                    <a href="{{ URL::route('EditMyProfile', array('id' => Auth::user()->id )) }}" class="btn btn-primary btn-lg cta mt0"> Uredi </a>
+                    <a href="{{ URL::route('EditMyProfile', array('id' => Auth::user()->id )) }}" class="btn btn-primary btn-lg cta mt0" style="margin-left: 8px;"> Uredi </a>
                 </div>
             </div>
             <div class="col-lg-9">
@@ -227,6 +227,9 @@
                                 </div>
                                 @endforeach
                                 @endif
+                                    <div class="classified-button">
+                                    <a href="{{URL::route('CreateClassified') }}" class="btn btn-primary btn-lg cta ml0" style="position: relative; right: 15px;"> Objavite oglas</a>
+                                    </div>
                                 <!-- single classified listing end -->
                             </div>
                         </div>
@@ -247,7 +250,7 @@
             </div>
             @if (count($featuredclassifieds['entry']) > 0) 
                 @foreach($featuredclassifieds['entry'] as $featuredclassified)
-                    <div class="col-lg-3">
+                    <div class="col-lg-3 center">
                         <a href="{{URL::route ('ShowClassified', array('id' => $featuredclassified->permalink))}}">
                             {{ HTML::image(URL::to('/') . '/uploads/frontend/classifieds/thumbs/' . $featuredclassified->image, $featuredclassified->title) }}
                         </a>

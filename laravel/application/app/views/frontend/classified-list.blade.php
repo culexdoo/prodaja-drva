@@ -145,7 +145,7 @@
                 </div>
                 <div class="row mb70">
                     <div class="col-md-12 text-center">
-                        {{ $entries->links() }}
+                        {{ $entries->appends(Request::except('page'))->links() }}
                     </div>
                 </div>
             </div>

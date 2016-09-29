@@ -34,7 +34,7 @@
                                         
                                     </ul>
                                     <div class="product-times-viewed">
-                                        <p><i class="fa fa-search"></i> Pregledano: xy puta</p>
+                                        <p><i class="fa fa-search"></i> Oglas pregledan: {{ $stats->hits }} puta</p>
                                     </div>
                                 </div>
                                 <!-- /.product-desc -->
